@@ -1,0 +1,115 @@
+[@逆魔套装111]
+{
+#if
+checkitem 逆魔戒指(战) 1
+#act
+take 逆魔戒指(战)  1
+inc m38 600000
+inc m39 1
+inc m37 50
+goto @逆魔套装111
+
+#if
+checkitem 逆魔戒指(法) 1
+#act
+take 逆魔戒指(法)  1
+inc m38 600000
+inc m39 1
+inc m37 50
+goto @逆魔套装111
+
+
+
+#if
+checkitem 逆魔戒指(道) 1
+#act
+take 逆魔戒指(道)  1
+inc m38 600000
+inc m39 1
+inc m37 50
+goto @逆魔套装111
+
+
+
+
+
+#if
+checkitem 逆魔手镯(战) 1
+#act
+take 逆魔手镯(战) 1
+inc m38 600000
+inc m39 1
+inc m37 50
+goto @逆魔套装111
+
+
+
+
+#if
+checkitem 逆魔手镯(法) 1
+#act
+take 逆魔手镯(法) 1
+inc m38 600000
+inc m39 1
+inc m37 50
+goto @逆魔套装111
+
+
+
+#if
+checkitem 逆魔手镯(道) 1
+#act
+take 逆魔手镯(道) 1
+inc m38 600000
+inc m39 1
+inc m37 50
+goto @逆魔套装111
+
+
+#if
+checkitem 逆魔项链(战) 1
+#act
+take 逆魔项链(战) 1
+inc m38 600000
+inc m39 1
+inc m37 50
+goto @逆魔套装111
+
+
+#if
+checkitem 逆魔项链(法) 1
+#act
+take 逆魔项链(法) 1
+inc m38 600000
+inc m39 1
+inc m37 50
+goto @逆魔套装111
+
+
+
+
+#if
+checkitem 逆魔项链(道) 1
+#act
+take 逆魔项链(道) 1
+inc m38 600000
+inc m39 1
+inc m37 50
+goto @逆魔套装111
+
+
+
+ 
+
+#IF
+LARGE M37 0
+#ACT
+GAMEGOLD + <$STR(M37)>
+CHANGEEXP + <$STR(M38)>
+SENDMSG 0 【%s】回收了<$STR(M39)>个逆魔系列装备,获得元宝<$STR(M37)>个,经验<$STR(M38)>点！
+MOV M37 0
+MOV M38 0
+MOV M39 0
+BREAK
+#ELSEACT
+}

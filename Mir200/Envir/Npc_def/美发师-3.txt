@@ -1,0 +1,69 @@
+[@main]
+#IF
+ checkpkpoint 2
+#SAY
+我不想和一个杀人狂做生意！请走开。\ 
+ <关闭/@exit>
+#ELSEACT
+ goto @main-1
+
+[@main-1]
+我的生意一直都很火，所以我只为有钱人服务。\
+不要说我势利眼，你要是真有本事就拿出一根金条给我。\
+当然，发型还原是不会收取你费用的。\ \
+ <换发型/@ChangHair>\ \
+ <关闭/@exit>
+
+[@ChangHair]
+#IF
+gender man
+#ACT
+goto @ChangHairMan
+#ELSEACT
+goto @ChangHairWoman
+[@ChangHairMan]
+想不想来个光头呀，酷呆了！！！\ \
+『<光头/@hairman0>』\
+『<长头发/@hairman1>』\ \
+〖<返回/@MemberFace>〗 〖<关闭/@exit>〗
+[@hairman0]
+#IF
+checkitem 金条 1
+#ACT
+take 金条 1
+  HAIRSTYLE 0
+#SAY
+呵呵，光头是不是很酷呀！！！ \ \
+〖<返回/@ChangHairMan>〗
+[@hairman1]
+#IF
+checkitem 金条 1
+#ACT
+take 金条 1
+  HAIRSTYLE 1
+#SAY
+呵呵，你的发型已经改变了... \ \
+〖<返回/@ChangHairMan>〗
+
+[@ChangHairWoman]
+『<短发型/@hairWoman0>』\
+『<长发型/@hairWoman1>』\ \
+〖<返回/@MemberFace>〗 〖<关闭/@exit>〗
+[@hairWoman0]
+#IF
+checkitem 金条 1
+#ACT
+take 金条 1
+  HAIRSTYLE 0
+#SAY
+呵呵，你的发型已经改变了... \ \
+〖<返回/@ChangHairWoman>〗 〖<关闭/@Exit>〗
+[@hairWoman1]
+#IF
+checkitem 金条 1
+#ACT
+take 金条 1
+  HAIRSTYLE 1
+#SAY
+呵呵，你的发型已经改变了... \ \
+〖<返回/@ChangHairWoman>〗 〖<关闭/@Exit>〗 

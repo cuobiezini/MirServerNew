@@ -1,0 +1,347 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+
+[@main]
+尊敬的会员，您可以在这里领取一次会员装备。\
+注意包内必须有8个空间，否则物品将掉落地上！\ \
+<领取初级会员装备/@cjhy>　<领取高级会员装备/@gjhy>\
+<领取每日会员费用/@lqhf>\ \
+ <关闭/@exit>
+
+;初级会员装备
+;##################################################
+[@cjhy]
+#IF
+ checknamelist 会员_已领.txt
+#ACT
+ goto @yl
+ break
+
+#IF
+ 
+#ELSEACT
+ goto @bm
+ break
+
+;初级会员（战士）
+;--------------------------------------------------
+#IF
+ checknamelist A初级会员.txt
+ checkjob warrior
+#ACT
+ give 裁决之杖 1
+ give 记忆头盔 1
+ give 幽灵项链 1
+ give 骑士手镯 1
+ give 幽灵手套 1
+ give 龙之戒指 2
+ give 金条 1
+ addnamelist 会员_已领.txt
+ break
+
+;初级会员（法师）
+;--------------------------------------------------
+#IF
+ checknamelist A初级会员.txt
+ checkjob wizard
+#ACT
+ give 血饮 1
+ give 道士头盔 1
+ give 生命项链 1
+ give 龙之手镯 2
+ give 红宝石戒指 2
+ give 金条 1
+ addnamelist 会员_已领.txt
+ break
+
+;初级会员（道士）
+;--------------------------------------------------
+#IF
+ checknamelist A初级会员.txt
+ checkjob taoist
+#ACT
+ give 无极棍 1
+ give 道士头盔 1
+ give 天珠项链 1
+ give 心灵手镯 1
+ give 铂金戒指 2
+ give 金条 1
+ addnamelist 会员_已领.txt
+#ELSESAY
+你目前不是初级会员！\ \
+ <关闭/@exit>
+
+;高级会员装备
+;##################################################
+[@gjhy]
+#IF
+ checknamelist 会员_已领.txt
+#ACT
+ goto @yl
+ break
+
+#IF
+ 
+#ELSEACT
+ goto @bm
+ break
+
+;高级会员（战士）
+;--------------------------------------------------
+#IF
+ checknamelist A高级会员.txt
+ checkjob warrior
+#ACT
+ give 屠龙 1
+ give 黑铁头盔 1
+ give 绿色项链 1
+ give 骑士手镯 1
+ give 阎罗手套 1
+ give 力量戒指 2
+ give 金砖 1
+ addnamelist 会员_已领.txt
+ break
+
+;高级会员（法师）
+;--------------------------------------------------
+#IF
+ checknamelist A高级会员.txt
+ checkjob wizard
+#ACT
+ give 骨玉权杖 1
+ give 祈祷头盔 1
+ give 恶魔铃铛 1
+ give 思贝儿手镯 2
+ give 紫碧螺 2
+ give 金砖 1
+ addnamelist 会员_已领.txt
+ break
+
+;高级会员（道士）
+;--------------------------------------------------
+#IF
+ checknamelist A高级会员.txt
+ checkjob taoist
+#ACT
+ give 龙纹剑 1
+ give 祈祷头盔 1
+ give 灵魂项链 1
+ give 三眼手镯 2
+ give 泰坦戒指 2
+ give 金砖 1
+ addnamelist 会员_已领.txt
+#ELSESAY
+你目前不是高级会员！\ \
+ <关闭/@exit>
+
+[@yl]
+您已经领取过会员装备，不能重复领取。\ \
+有任何问题请与<本服务器管理员>联系。\ \
+ <关闭/@exit>
+
+[@bm]
+您的背包已满，请清理后再来领取！\ \
+ <关闭/@exit>
+
+
+;领取每日会员费用
+;##################################################
+[@lqhf]
+您好，我每天会为初级会员提供2万金币，\
+为高级会员提供5万金币。\ \
+ <领取会员费用/@give>\ \
+ <返回/@main>
+
+[@give]
+;初级会员费用（星期一）
+;--------------------------------------------------
+#IF
+ dayofweek mon
+ check [711] 0
+ checknamelist A初级会员.txt
+#ACT
+ reset [711] 7
+ set [711] 1
+ give 金币 20000
+ goto @yf
+ break
+
+;初级会员费用（星期二）
+;--------------------------------------------------
+#IF
+ dayofweek tue
+ check [712] 0
+ checknamelist A初级会员.txt
+#ACT
+ reset [711] 7
+ set [712] 1
+ give 金币 20000
+ goto @yf
+ break
+
+;初级会员费用（星期三）
+;--------------------------------------------------
+#IF
+ dayofweek wed
+ check [713] 0
+ checknamelist A初级会员.txt
+#ACT
+ reset [711] 7
+ set [713] 1
+ give 金币 20000
+ goto @yf
+ break
+
+;初级会员费用（星期四）
+;--------------------------------------------------
+#IF
+ dayofweek thu
+ check [714] 0
+ checknamelist A初级会员.txt
+#ACT
+ reset [711] 7
+ set [714] 1
+ give 金币 20000
+ goto @yf
+ break
+
+;初级会员费用（星期五）
+;--------------------------------------------------
+#IF
+ dayofweek fri
+ check [715] 0
+ checknamelist A初级会员.txt
+#ACT
+ reset [711] 7
+ set [715] 1
+ give 金币 20000
+ goto @yf
+ break
+
+;初级会员费用（星期六）
+;--------------------------------------------------
+#IF
+ dayofweek sat
+ check [716] 0
+ checknamelist A初级会员.txt
+#ACT
+ reset [711] 7
+ set [716] 1
+ give 金币 20000
+ goto @yf
+ break
+
+;初级会员费用（星期日）
+;--------------------------------------------------
+#IF
+ dayofweek sun
+ check [717] 0
+ checknamelist A初级会员.txt
+#ACT
+ reset [711] 7
+ set [717] 1
+ give 金币 20000
+ goto @yf
+ break
+
+;高级会员费用（星期一）
+;--------------------------------------------------
+#IF
+ dayofweek mon
+ check [711] 0
+ checknamelist A高级会员.txt
+#ACT
+ reset [711] 7
+ set [711] 1
+ give 金币 50000
+ goto @yf
+ break
+
+;高级会员费用（星期二）
+;--------------------------------------------------
+#IF
+ dayofweek tue
+ check [712] 0
+ checknamelist A高级会员.txt
+#ACT
+ reset [711] 7
+ set [712] 1
+ give 金币 50000
+ goto @yf
+ break
+
+;高级会员费用（星期三）
+;--------------------------------------------------
+#IF
+ dayofweek wed
+ check [713] 0
+ checknamelist A高级会员.txt
+#ACT
+ reset [711] 7
+ set [713] 1
+ give 金币 50000
+ goto @yf
+ break
+
+;高级会员费用（星期四）
+;--------------------------------------------------
+#IF
+ dayofweek thu
+ check [714] 0
+ checknamelist A高级会员.txt
+#ACT
+ reset [711] 7
+ set [714] 1
+ give 金币 50000
+ goto @yf
+ break
+
+;高级会员费用（星期五）
+;--------------------------------------------------
+#IF
+ dayofweek fri
+ check [715] 0
+ checknamelist A高级会员.txt
+#ACT
+ reset [711] 7
+ set [715] 1
+ give 金币 50000
+ goto @yf
+ break
+
+;高级会员费用（星期六）
+;--------------------------------------------------
+#IF
+ dayofweek sat
+ check [716] 0
+ checknamelist A高级会员.txt
+#ACT
+ reset [711] 7
+ set [716] 1
+ give 金币 50000
+ goto @yf
+ break
+
+;高级会员费用（星期日）
+;--------------------------------------------------
+#IF
+ dayofweek sun
+ check [717] 0
+ checknamelist A高级会员.txt
+#ACT
+ reset [711] 7
+ set [717] 1
+ give 金币 50000
+ goto @yf
+#ELSESAY
+你必须要清楚：\
+（1）只有会员才能领取这些费用；\
+（2）每天限制只能领取一次；\
+（3）有任何问题请与管理员联系。\ \
+ <返回/@main>
+
+[@yf]
+你已成功领取今天的会员费用。\ \
+ <返回/@main>

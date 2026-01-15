@@ -1,0 +1,331 @@
+[@main]
+这个城堡的交易货币是 <$CASTLEGOLD>金币, 今天的收入是 \
+<$TODAYINCOME>金币.\ \
+
+ <更改城名/@@castlename> <发送宣言/@@sendMsg>\
+ <取回资金/@@withdrawal> <存储资金/@@receipts>\
+ <门卫命令/@guardcmd> <领取奖励/@lingqu>\
+ <城门的规章制度命令/@treatdoor>\
+ <简单维护的命令/@repaircastle>\
+
+
+[@@sendMsg]
+#if
+checkcastlegold > 4000000
+#act
+takecastlegold 4000000
+SETSENDMSGFLAG
+#elsesay
+城内资金不足，不要乱用钱。\ \
+<返回/@main>
+
+[@lingqu]
+固守沙城一定时间可以领取相应奖励！\
+<注：>守城期间被其它行会占领后再次抢回沙城将重新计时！\ \
+<查看占领时间/@查看占领时间>\
+<查看奖励物品/@查看奖励物品>\
+<领取奖励/@领取奖励>\
+<返回/@main>
+
+
+[@领取奖励]
+#if
+CHECKGUILDLIST ../Market_Def/守沙记录/城主30天.txt
+#ACT
+messagebox 占领天数30天的奖励已经领取！
+break
+
+#if
+CHECKGUILDLIST ../Market_Def/守沙记录/城主20天.txt
+#ACT
+messagebox 占领天数20天的奖励已经领取！
+break
+
+#if
+CHECKGUILDLIST ../Market_Def/守沙记录/城主10天.txt
+#ACT
+messagebox 占领天数10天的奖励已经领取！
+break
+
+#if
+CASTLECHANGEDAY > 30
+ISCASTLEMASTER
+#ACT
+ADDGUILDLIST ../Market_Def/守沙记录/城主30天.txt
+give 2元风云券 2
+goto @lingqu
+break
+
+#if
+CASTLECHANGEDAY > 20
+ISCASTLEMASTER
+#ACT
+ADDGUILDLIST ../Market_Def/守沙记录/城主20天.txt
+give 2元风云券 1
+give 1元风云券 1
+goto @lingqu
+break
+
+#if
+CASTLECHANGEDAY > 10
+ISCASTLEMASTER
+#ACT
+ADDGUILDLIST ../Market_Def/守沙记录/城主10天.txt
+give 2元风云券 1
+goto @lingqu
+break
+
+
+[@查看占领时间]
+#if
+CASTLECHANGEDAY > 31
+#ACT
+messagebox 当前已占领沙城：大于31天
+break
+#if
+CASTLECHANGEDAY > 30
+#ACT
+messagebox 当前已占领沙城：30天
+break
+#if
+CASTLECHANGEDAY > 29
+#ACT
+messagebox 当前已占领沙城：29天
+break
+#if
+CASTLECHANGEDAY > 28
+#ACT
+messagebox 当前已占领沙城：28天
+break
+#if
+CASTLECHANGEDAY > 27
+#ACT
+messagebox 当前已占领沙城：27天
+break
+#if
+CASTLECHANGEDAY > 26
+#ACT
+messagebox 当前已占领沙城：26天
+break
+#if
+CASTLECHANGEDAY > 25
+#ACT
+messagebox 当前已占领沙城：25天
+break
+#if
+CASTLECHANGEDAY > 24
+#ACT
+messagebox 当前已占领沙城：24天
+break
+#if
+CASTLECHANGEDAY > 23
+#ACT
+messagebox 当前已占领沙城：23天
+break
+#if
+CASTLECHANGEDAY > 22
+#ACT
+messagebox 当前已占领沙城：22天
+break
+#if
+CASTLECHANGEDAY > 21
+#ACT
+messagebox 当前已占领沙城：21天
+break
+#if
+CASTLECHANGEDAY > 20
+#ACT
+messagebox 当前已占领沙城：20天
+break
+#if
+CASTLECHANGEDAY > 19
+#ACT
+messagebox 当前已占领沙城：19天
+break
+#if
+CASTLECHANGEDAY > 18
+#ACT
+messagebox 当前已占领沙城：18天
+break
+#if
+CASTLECHANGEDAY > 17
+#ACT
+messagebox 当前已占领沙城：17天
+break
+#if
+CASTLECHANGEDAY > 16
+#ACT
+messagebox 当前已占领沙城：16天
+break
+#if
+CASTLECHANGEDAY > 15
+#ACT
+messagebox 当前已占领沙城：15天
+break
+#if
+CASTLECHANGEDAY > 14
+#ACT
+messagebox 当前已占领沙城：14天
+break
+#if
+CASTLECHANGEDAY > 13
+#ACT
+messagebox 当前已占领沙城：13天
+break
+#if
+CASTLECHANGEDAY > 12
+#ACT
+messagebox 当前已占领沙城：12天
+break
+#if
+CASTLECHANGEDAY > 12
+#ACT
+messagebox 当前已占领沙城：12天
+break
+#if
+CASTLECHANGEDAY > 12
+#ACT
+messagebox 当前已占领沙城：12天
+break
+#if
+CASTLECHANGEDAY > 11
+#ACT
+messagebox 当前已占领沙城：11天
+break
+#if
+CASTLECHANGEDAY > 10
+#ACT
+messagebox 当前已占领沙城：10天
+break
+#if
+CASTLECHANGEDAY > 9
+#ACT
+messagebox 当前已占领沙城：9天
+break
+#if
+CASTLECHANGEDAY > 8
+#ACT
+messagebox 当前已占领沙城：8天
+break
+#if
+CASTLECHANGEDAY > 7
+#ACT
+messagebox 当前已占领沙城：7天
+break
+#if
+CASTLECHANGEDAY > 6
+#ACT
+messagebox 当前已占领沙城：6天
+break
+#if
+CASTLECHANGEDAY > 5
+#ACT
+messagebox 当前已占领沙城：5天
+break
+#if
+CASTLECHANGEDAY > 4
+#ACT
+messagebox 当前已占领沙城：4天
+break
+#if
+CASTLECHANGEDAY > 3
+#ACT
+messagebox 当前已占领沙城：3天
+break
+#if
+CASTLECHANGEDAY > 2
+#ACT
+messagebox 当前已占领沙城：2天
+break
+#if
+CASTLECHANGEDAY > 1
+#ACT
+messagebox 当前已占领沙城：1天
+#elseact
+messagebox 当前已占领沙城：0天
+;--------------------------------------------------
+;城门的规则
+
+[@查看奖励物品]
+占领10天以上，每天领取2元风云券。\
+占领20天以上，每天领取3元风云券。\
+占领30天以上，每天领取4元风云券。\
+占领40天以上，每天领取5元风云券。\
+占领50天以上，每天领取10元风云券。\
+占领60天以上，每天领取20元风云券。\
+占领70天以上，每天领取40元风云券。\
+<返回/@lingqu>
+
+[@treatdoor]
+当前大门是 <$CASTLEDOORSTATE>.\ \
+ <关闭大门./@closemaindoor>\
+ <打开大门./@openmaindoor>\
+ <返回/@main>\
+
+[@openmaindoor]
+大门被打开了.\ \
+ <返回/@treatdoor>\
+
+[@closemaindoor]
+大门被关闭了.\ \
+ <返回/@treatdoor>\
+
+
+;--------------------------------------------------
+;关于维护 
+
+[@repaircastle]
+你想去哪里修理 ?\ \
+ <修理大门./@repairdoor>\
+ <修理城墙./@repairwalls>\
+ <返回/@main>\
+
+[@repairdoor]
+如果你要加强城堡大门的话，你必须要支付一定的 <$REPAIRDOORGOLD> 金币 .\ \
+ <加强大门建筑./@repairdoornow>\
+ <返回/@repaircastle>\
+
+[@repairwalls]
+如果你要加强城堡的城墙的话，也是需要支付一定的 <$REPAIRWALLGOLD> 金币.\ \
+ <修理左城墙./@repairwallnow1>\
+ <修理中城墙./@repairwallnow2>\
+ <修理右城墙./@repairwallnow3>\
+ <返回/@repaircastle>\
+
+
+;--------------------------------------------------
+;关于卫士
+
+[@guardcmd]
+请对卫士指定你的命令.\ \
+; <雇佣卫士./@hireguards>\
+ <雇佣弓箭手./@hirearchers>\
+ <改变攻击命令./@commandorder>\
+ <返回/@main>\
+
+
+[@hireguards]
+你想要把你雇佣的卫士放在什么地方？?\
+你必须要向每个卫士<$GUARDFEE>支付金币.\ \
+ 大门前<左门为/@hireguardnow1>, <右门卫/@hireguardnow2>\
+ 城墙前<左卫士/@hireguardnow3>, <右卫士/@hireguardnow4>\
+ <返回/@guardcmd>\
+
+[@hirearchers]
+你想要把你雇佣的弓箭手方在什么地方？?\
+你必须要向每个弓箭手<$ARCHERFEE>支付金币.\ \
+ 左城墙 <左弓箭手/@hirearchernow1>, <中弓箭手/@hirearchernow2>, <右弓箭手/@hirearchernow3>\
+ 城内弓箭手<左弓箭手/@hirearchernow4>, <中弓箭手/@hirearchernow5>,
+ <右弓箭手/@hirearchernow6>\
+ 城内的第二层<左弓箭手/@hirearchernow7>, <右弓箭手/@hirearchernow8>\
+ 放置在门前<左弓箭手/@hirearchernow9>, <右弓箭手/@hirearchernow10>\
+ 放置在大门右边<左弓箭手/@hirearchernow11>, <右弓箭手/@hirearchernow12>\
+ <返回/@guardcmd>\
+
+[@commandorder]
+当前卫士的命令<$GUARDRULE>.\
+你需要怎样改变?\ \
+ <一般卫士命令/@guardrule_normalnow>\
+ <攻击卫士命令/@guardrule_pkattack>\
+ <返回/@guardcmd>\
+

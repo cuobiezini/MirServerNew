@@ -1,0 +1,17 @@
+[@main]
+#IF
+CHECKgold 300000 
+#ACT
+break
+
+#ELSEACT
+goto @yunxing33
+break
+
+[@yunxing33]
+#IF
+CHECKRENEWLEVEL < 1
+CHECKLEVELEX < 28
+#ACT
+give ½ð±Ò 2000
+break

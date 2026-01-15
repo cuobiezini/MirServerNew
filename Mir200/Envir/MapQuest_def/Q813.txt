@@ -1,0 +1,156 @@
+[@main]
+#IF
+check [631] 1
+#ACT
+break
+
+#IF
+  EQUAL G0 0
+#SAY 
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领 取/@lq0>\
+<离 开/@exit>\
+#ACT
+  MOV M6 0
+break
+
+#IF
+  EQUAL G0 1
+#SAY 
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领 取/@lq1>\
+<离 开/@exit>\
+#ACT
+  MOV M6 1
+break
+
+#IF
+  EQUAL G0 2
+#SAY 
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领 取/@lq2>\
+<离 开/@exit>\
+#ACT
+  MOV M6 2
+break
+
+#IF
+  EQUAL G0 3
+#SAY 
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领 取/@lq3>\
+<离 开/@exit>\
+#ACT
+  MOV M6 3
+break
+
+#IF
+  EQUAL G0 4
+#SAY 
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领 取/@lq4>\
+<离 开/@exit>\
+#ACT
+  MOV M6 4
+break
+
+#IF
+  EQUAL G0 5
+#SAY 
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领 取/@lq5>\
+<离 开/@exit>\
+#ACT
+  MOV M6 5
+break
+
+#IF
+  EQUAL G0 6
+#SAY 
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领 取/@lq6>\
+<离 开/@exit>\
+#ACT
+  MOV M6 6
+break
+
+[@lq0]
+#IF
+  EQUAL M6 0
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@lq1]
+#IF
+  EQUAL M6 1
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@lq2]
+#IF
+  EQUAL M6 2
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@lq3]
+#IF
+  EQUAL M6 3
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@lq4]
+#IF
+  EQUAL M6 4
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@lq5]
+#IF
+  EQUAL M6 5
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@lq6]
+#IF
+  EQUAL M6 6
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+
+[@viphuashaocf123]
+#CALL [NPC\VIP超级传送.txt] @viphuashaocf888

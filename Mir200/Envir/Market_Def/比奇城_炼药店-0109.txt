@@ -1,0 +1,11 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+(@buy @Sell @makedrug)
+%100
++0
++42
+
+[@main]
+#CALL [商店\炼药店.txt] @sxsf

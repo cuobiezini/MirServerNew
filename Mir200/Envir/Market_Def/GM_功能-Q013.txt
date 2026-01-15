@@ -1,0 +1,1021 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+
+[@main]
+您好管理员！\
+风云传说（v1.9）服务端程序可以实现以下功能：\ \
+ <改变发型/@gbfx>　　 <购买宝宝/@gmbb>　　<级别经验/@jbjy>\
+ <改变性别/@gbxb>　　 <名字颜色/@mzys>　　<检测功能/@jcgn>　　<转生功能/@zsgn>\
+ <改变职业/@gbzy>　　 <清洗红名/@qxhm>　　<其它功能/@qtgn>　　<修改说明/@xgsm>\ \
+ <关闭/@exit>
+
+;改变发型
+;##################################################
+[@gbfx]
+我的生意一直都很火，所以我只为有钱人服务。\
+不要说我势利眼，你要是真有本事就拿出一根金条给我。\
+当然，发型还原是不会收取你费用的。\ \
+ <换发型/@ChangHair>\ \
+ <返回/@main>
+
+[@ChangHair]
+#IF
+ gender MAN
+#SAY
+请告诉我你要做什么样的发型。\ \
+ <清凉型/@Chair>\ \
+ <还原发型/@Bhair>\ \
+ <返回/@gbfx>
+#ELSESAY
+请告诉我你要做什么样的发型。\ \
+ <淑女型/@Chair>\ \
+ <还原发型/@Bhair>\ \
+ <返回/@gbfx>
+
+;改变发型
+;-------------------------------------------------
+[@Chair]
+#IF
+ checkitem 金条 1
+#ACT
+ take 金条 1
+ marry ChaHair 0
+#SAY
+呵呵，你的发型已经改变了...\ \
+ <返回/@gbfx>
+#ELSESAY
+我可以为你做头发，但需要1根金条！\ \
+ <返回/@gbfx>
+
+;还原发型
+;-------------------------------------------------
+[@Bhair]
+#IF
+ gender MAN
+#ACT
+ marry ChaHair 1
+#ELSEACT
+ marry ChaHair 2
+
+#IF
+#SAY
+你的发型已经还原了...\ \
+ <返回/@gbfx>
+
+
+;改变性别
+;##################################################
+[@gbxb]
+变性的手术费暂定为200万传奇币，\
+如果你还没有这么多钱请去努力赚！\ \
+ <我要变性/@wybx>\ \
+ <返回/@main>
+
+[@wybx]
+#IF
+ checkmarry 已婚
+#ACT
+ goto @Married
+ break
+
+#IF
+ checkgold 2000000
+#ACT
+ take 金币 2000000
+ goquest gender
+#SAY
+你已经改变了性别，需小退一下才可以正常显示！\ \
+ <返回/@gbxb>
+#ELSESAY
+钱都没有你让我怎么帮你啊？\ \
+ <返回/@gbxb>
+
+[@Married]
+对不起，你已经结过婚我不能给你改变性别。\
+如果你真的想改变性别请先离婚！\ \
+ <返回/@gbxb>
+
+
+;改变职业
+;##################################################
+[@gbzy]
+作为战士您是否已经厌倦了烈火和半月呢？\
+作为法师您是否不再喜欢闪电和冰咆哮了呢？\
+作为道士您是否不在只想做为别人的配角只放宝宝和魔防了呢？\
+OK！现在机会来了，为了满足您的要求，特提供转职服务，\
+当然天上是不会掉“馅饼”的，自然您也得付出小小的代价，\
+先看清楚下面的需知再做决定吧！\ \
+　<转职必看/@zzbk>　<不转/@exit>
+
+[@zzbk]
+一：转职后你的等级<降2>，而且各项技能必须从头学起，\
+　　我们要相信“好好学习，天天向上”的真理。\ 
+二：需要等级40级以上才可以转职，而且要付<1根金条>的费用。\ 
+　　好了祝好运，快去体验那完全不一样的职业给您带来的快感吧！\ \
+　<转职/@zhzy>　<不转/@exit>
+
+[@zhzy]
+#IF
+ checklevel 40
+ checkitem 金条 1
+#SAY
+转职之前再次提醒你：\
+<转职后身上原有的技能将全部消失，等级降2，切记！>\
+你是否确定转职？\ \
+ <转职/@zhzy-3>　<不转/@exit>
+#ELSESAY
+“英雄”请确定您是否有40级，而且包里要有1根金条。\ \
+ <返回/@gbzy>
+
+[@zhzy-3]
+#IF
+ checklevel 40
+ checkitem 金条 1
+#SAY
+请选择合适的职业（注意不要选现在的职业）：\ \
+ <武士/@warr>　<魔法师/@wizard>　<道士/@taos>
+#ELSEACT
+ goto @usewg
+ break
+
+[@warr]
+#IF
+ checkjob warrior
+#SAY
+你现在的职业已经是武士，不需要再转。\ \
+ <返回/@zhzy-3>
+#ELSEACT
+ goto @warr-1
+ break
+
+[@warr-1]
+#IF
+ checklevel 40
+ checkitem 金条 1
+#ACT
+ goquest 火球术
+ goquest 治愈术
+ goquest 基本剑术
+ goquest 精神力战法
+ goquest 大火球
+ goquest 施毒术
+ goquest 攻杀剑术
+ goquest 抗拒火环
+ goquest 地狱火
+ goquest 疾光电影
+ goquest 雷电术
+ goquest 刺杀剑术
+ goquest 灵魂火符
+ goquest 幽灵盾
+ goquest 神圣战甲术
+ goquest 困魔咒
+ goquest 召唤骷髅
+ goquest 隐身术
+ goquest 集体隐身术
+ goquest 瞬息移动
+ goquest 诱惑之光
+ goquest 火墙
+ goquest 爆裂火焰
+ goquest 地狱雷光
+ goquest 半月弯刀
+ goquest 烈火剑法
+ goquest 野蛮冲撞
+ goquest 心灵启示
+ goquest 群体治疗术
+ goquest 召唤神兽
+ goquest 魔法盾
+ goquest 圣言术
+ goquest 冰咆哮
+ goquest 圣战诱惑
+ goquest 法神骷髅
+ goquest 天尊剑术
+ TAKE 金条 1
+ goquest 武士
+#SAY
+亲爱的勇士您已经完成了转职，现在是一位伟大的战士了。\ \
+ <返回/@gbzy>
+#ELSEACT
+ goto @usewg
+ break
+
+[@wizard]
+#IF
+ checkjob wizard
+#SAY
+你现在的职业已经是魔法师，不需要再转。\ \
+ <返回/@zhzy-3>
+#ELSEACT
+ goto @wizard-1
+ break
+
+[@wizard-1]
+#IF
+ checklevel 40
+ checkitem 金条 1
+#ACT
+ goquest 火球术
+ goquest 治愈术
+ goquest 基本剑术
+ goquest 精神力战法
+ goquest 大火球
+ goquest 施毒术
+ goquest 攻杀剑术
+ goquest 抗拒火环
+ goquest 地狱火
+ goquest 疾光电影
+ goquest 雷电术
+ goquest 刺杀剑术
+ goquest 灵魂火符
+ goquest 幽灵盾
+ goquest 神圣战甲术
+ goquest 困魔咒
+ goquest 召唤骷髅
+ goquest 隐身术
+ goquest 集体隐身术
+ goquest 瞬息移动
+ goquest 诱惑之光
+ goquest 火墙
+ goquest 爆裂火焰
+ goquest 地狱雷光
+ goquest 半月弯刀
+ goquest 烈火剑法
+ goquest 野蛮冲撞
+ goquest 心灵启示
+ goquest 群体治疗术
+ goquest 召唤神兽
+ goquest 魔法盾
+ goquest 圣言术
+ goquest 冰咆哮
+ goquest 圣战诱惑
+ goquest 法神骷髅
+ goquest 天尊剑术
+ TAKE 金条 1
+ goquest 魔法师
+#SAY
+亲爱的勇士您已经完成了转职，现在是一位伟大的魔法师了。\ \
+ <返回/@gbzy>
+#ELSEACT
+ goto @usewg
+ break
+
+[@taos]
+#IF
+ checkjob taoist
+#SAY
+你现在的职业已经是道士，不需要再转。\ \
+ <返回/@zhzy-3>
+#ELSEACT
+ goto @taos-1
+ break
+
+[@taos-1]
+#IF
+ checklevel 40
+ checkitem 金条 1
+#ACT
+ goquest 火球术
+ goquest 治愈术
+ goquest 基本剑术
+ goquest 精神力战法
+ goquest 大火球
+ goquest 施毒术
+ goquest 攻杀剑术
+ goquest 抗拒火环
+ goquest 地狱火
+ goquest 疾光电影
+ goquest 雷电术
+ goquest 刺杀剑术
+ goquest 灵魂火符
+ goquest 幽灵盾
+ goquest 神圣战甲术
+ goquest 困魔咒
+ goquest 召唤骷髅
+ goquest 隐身术
+ goquest 集体隐身术
+ goquest 瞬息移动
+ goquest 诱惑之光
+ goquest 火墙
+ goquest 爆裂火焰
+ goquest 地狱雷光
+ goquest 半月弯刀
+ goquest 烈火剑法
+ goquest 野蛮冲撞
+ goquest 心灵启示
+ goquest 群体治疗术
+ goquest 召唤神兽
+ goquest 魔法盾
+ goquest 圣言术
+ goquest 冰咆哮
+ goquest 圣战诱惑
+ goquest 法神骷髅
+ goquest 天尊剑术
+ TAKE 金条 1
+ goquest 道士
+#SAY
+亲爱的勇士您已经完成了转职，现在是一位伟大的道士了。\ \
+ <返回/@gbzy>
+#ELSEACT
+ goto @usewg
+
+
+;购买宝宝
+;##################################################
+[@gmbb]
+欢迎使用我为你提供的买宝宝服务，每种宝宝都将用掉你\
+部分金币和物品。最多可以买<5>只宝宝，你要购买吗？\ \  
+ <买宝宝/@buybaby>\ \
+ <道士专用宝宝/@dsss>\ \
+ <返回/@main>
+
+[@buybaby]
+#IF
+ checkmarry 5
+#SAY
+你要购买哪种宝宝呢？ \ \
+ <沃玛宝宝/@wmhw>  <白猪宝宝/@byz>  <金刚宝宝/@stjg>  <祖玛宝宝/@zmws>\ \
+ <返回/@gmbb>
+#ELSESAY
+你已经有太多的宝宝，我不会再买给你了~~~
+
+;道士宝宝
+;-------------------------------------------------
+[@dsss]
+#IF
+ checklevel 45
+ checkjob taoist
+ checkmarry 1
+#ACT
+ marry mob 道士宝宝
+#SAY
+道士宝宝已经交给你了，好好照顾！\ \
+ <返回/@gmbb>
+#ELSESAY
+首先你要确定的是：\ \
+（1）你的职业必须是道士；\
+（2）你的等级已经在45级以上；\
+（3）你自己的宝宝数目不能超过1只。\ \
+ <返回/@gmbb>
+
+;祖玛宝宝
+;-------------------------------------------------
+[@zmws]
+#IF
+ checkitem 金条 1
+ checkitem 祖玛头像 1
+ checkmarry 5
+#ACT
+ take 金条 1
+ marry mob 祖玛宝宝 
+#SAY
+宠物商：“卖给你一个宝宝了。好好照顾他哦！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+#ELSESAY
+祖玛宝宝：“我要1个金条，还要看到教主的信物！”\ \
+ <返回/@gmbb>
+
+;沃玛宝宝
+;-------------------------------------------------
+[@wmhw]
+#IF
+ checkitem 金条 1
+ checkitem 沃玛号角 1
+ checkmarry 5
+#ACT
+ take 金条 1
+ marry mob 沃玛宝宝 
+#SAY
+宠物商：“卖给你一个宝宝了。好好照顾他哦！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <返回/@gmbb>
+#ELSESAY
+沃玛宝宝：“我要1个金条，还要看到教主的信物！”\ \
+ <返回/@gmbb>
+
+;白猪宝宝
+;-------------------------------------------------
+[@byz]
+#IF
+ checkitem 金条 1
+ checkitem 苹果 1
+ checkmarry 5
+#ACT
+ take 金条 1
+ take 苹果 1
+ marry mob 白猪宝宝 
+#SAY
+宠物商：“卖给你一个宝宝了。好好照顾他哦！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <返回/@gmbb>
+#ELSESAY
+白猪宝宝：“没有1个金条和喜欢吃的苹果我是不会跟你的！”\ \
+ <返回/@gmbb>
+
+;金刚宝宝
+;-------------------------------------------------
+[@stjg]
+#IF
+ checkitem 金条 1
+ checkitemw 赤血魔剑
+ checkmarry 5
+#ACT
+ take 金条 1
+ marry mob 金刚宝宝 
+#SAY
+宠物商：“卖给你一个宝宝了。好好照顾他哦！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <返回/@gmbb>
+#ELSESAY
+金刚宝宝：“除了给1个金条外，我只跟手持赤血魔剑的勇士！”\ \
+ <返回/@gmbb>
+
+
+;名字颜色
+;##################################################
+[@mzys]
+我的生意一直都很火，所以我只为有钱人服务！\
+不要说我势利眼，你要是真有本事就拿出钱来。\ \
+ <改变名字颜色/@ChangNameColor>\ \
+ <返回/@main>
+
+[@ChangNameColor]
+选择你要改变的颜色吧，注意不要选择你现在已有的颜色哦，\
+金条可不是那么容易赚到的！\ \
+ <还原/@ColorBai> <灰色/@ColorHui> <橙色/@ColorCheng> <绿色/@ColorLv> <青色/@ColorQing> <蓝色/@ColorLan> <紫色/@ColorZi>\ \
+ <返回/@mzys>
+
+;还原
+;-------------------------------------------------
+[@ColorBai]
+#ACT
+ marry ChaColor -1
+#SAY
+你已经成功还原了名字的颜色！\ \ \
+ <返回/@mzys>
+
+;灰色
+;-------------------------------------------------
+[@ColorHui]
+#IF
+ checklevel 15
+ checkgold 10000
+#ACT
+ marry ChaColor -8
+ take 金币 10000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你15级后带1万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;橙色
+;-------------------------------------------------
+[@ColorCheng]
+#IF
+ checklevel 25
+ checkgold 50000
+#ACT
+ marry ChaColor -13
+ take 金币 50000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你25级后带5万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;绿色
+;-------------------------------------------------
+[@ColorLv]
+#IF
+ checklevel 33
+ checkgold 150000
+#ACT
+ marry ChaColor -6
+ take 金币 150000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你33级后带15万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;青色
+;-------------------------------------------------
+[@ColorQing]
+#IF
+ checklevel 39
+ checkgold 300000
+#ACT
+ marry ChaColor -2
+ take 金币 300000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你39级后带30万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;蓝色
+;-------------------------------------------------
+[@ColorLan]
+#IF
+ checklevel 43
+ checkgold 600000
+#ACT
+ marry ChaColor -4
+ take 金币 600000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你43级后带60万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;紫色
+;-------------------------------------------------
+[@ColorZi]
+#IF
+ checklevel 45
+ checkgold 1000000
+#ACT
+ marry ChaColor -3
+ take 金币 1000000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你45级后带100万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+
+;清洗红名
+;##################################################
+[@qxhm]
+嘿嘿,要我帮助你减轻罪孽的话你需要花钱的，而且我是按\
+你的红名程度记费的。每100点PK值需要收取你<50万金币>。\ \
+ <减少我的罪孽/@jszn>\ \
+ <返回/@main>
+
+[@jszn]
+#IF
+ checkpkpoint 15
+#SAY
+你的PK值已经超过了1500，等降到1000我才能给你清洗！\ \
+ <我等/@exit>
+#ACT
+ break
+
+#IF
+ checkpkpoint 14
+#SAY
+你的PK值在1400-1500之间，等降到1000我才能给你清洗！\ \
+ <我等/@exit>
+#ACT
+ break
+
+#IF
+ checkpkpoint 13
+#SAY
+你的PK值在1300-1400之间，等降到1000我才能给你清洗！\ \
+ <我等/@exit>
+#ACT
+ break
+
+#IF
+ checkpkpoint 12
+#SAY
+你的PK值在1200-1300之间，等降到1000我才能给你清洗！\ \
+ <我等/@exit>
+#ACT
+ break
+
+#IF
+ checkpkpoint 11
+#SAY
+你的PK值在1100-1200之间，等降到1000我才能给你清洗！\ \
+ <我等/@exit>
+#ACT
+ break
+
+#IF
+ checkpkpoint 10
+#SAY
+你的PK值在1000-1100之间，等降到1000我才能给你清洗！\ \
+ <我等/@exit>
+#ACT
+ break
+
+#IF
+ checkpkpoint 9
+#SAY
+你的PK值在900-1000之间，需付450W金币和3瓶祝福油！\ \
+ <清洗红名/@qingkong>\ \
+ <关闭/@exit>
+#ACT
+ set [109] 1
+ break
+
+#IF
+ checkpkpoint 8
+#SAY
+你的PK值在800-900之间，需付400W金币和2瓶祝福油！\ \
+ <清洗红名/@qingkong>\ \
+ <关闭/@exit>
+#ACT
+ set [108] 1
+ break
+
+#IF
+ checkpkpoint 7
+#SAY
+你的PK值在700-800之间，需付350W金币和2瓶祝福油！\ \
+ <清洗红名/@qingkong>\ \
+ <关闭/@exit>
+#ACT
+ set [107] 1
+ break
+
+#IF
+ checkpkpoint 6
+#SAY
+你的PK值在600到700之间，需付300W金币和1瓶祝福油！\ \
+ <清洗红名/@qingkong>\ \
+ <关闭/@exit>
+#ACT
+ set [106] 1
+ break
+
+#IF
+ checkpkpoint 5
+#SAY
+你的PK值在500到600之间，需付250W金币和1瓶祝福油！\ \
+ <清洗红名/@qingkong>\ \
+ <关闭/@exit>
+#ACT
+ set [105] 1
+ break
+
+#IF
+ checkpkpoint 4
+#SAY
+你的PK值在400到500之间，需付200W金币！\ \
+ <清洗红名/@qingkong>\ \
+ <关闭/@exit>
+#ACT
+ set [104] 1
+ break
+
+#IF
+ checkpkpoint 3
+#SAY
+你的PK值在300到400之间，需付150W金币！\ \
+ <清洗红名/@qingkong>\ \
+ <关闭/@exit>
+#ACT
+ set [103] 1
+ break
+
+#IF
+ checkpkpoint 2
+#SAY
+你的PK值在200到300之间，需付100W金币！\ \
+ <清洗红名/@qingkong>\ \
+ <关闭/@exit>
+#ACT
+ set [102] 1
+ break
+#ELSESAY
+别开玩笑了，你还没有红名呢！\ \
+ <关闭/@exit>
+
+[@qingkong]
+#IF
+ checkpkpoint 10
+#ACT
+ goto @usewg
+ break
+
+#IF
+ check [109] 1
+ checkgold 4500000
+ checkitem 祝福油 3
+#SAY
+下次记得，不要再做孽了！\ \
+ <关闭/@exit>
+#ACT
+ set [109] 0
+ take 金币 4500000
+ take 祝福油 3
+ goquest PKPoint
+ break
+
+#IF
+ check [108] 1
+ checkgold 4000000
+ checkitem 祝福油 2
+#SAY
+下次记得，不要再做孽了！\ \
+ <关闭/@exit>
+#ACT
+ set [108] 0
+ take 金币 4000000
+ take 祝福油 2
+ goquest PKPoint
+ break
+
+#IF
+ check [107] 1
+ checkgold 3500000
+ checkitem 祝福油 2
+#SAY
+下次记得，不要再做孽了！\ \
+ <关闭/@exit>
+#ACT
+ set [107] 0
+ take 金币 3500000
+ take 祝福油 2
+ goquest PKPoint
+ break
+
+#IF
+ check [106] 1
+ checkgold 3000000
+ checkitem 祝福油 2
+#SAY
+下次记得，不要再做孽了！\ \
+ <关闭/@exit>
+#ACT
+ set [106] 0
+ take 金币 3000000
+ take 祝福油 2
+ goquest PKPoint
+ break
+
+#IF
+ check [105] 1
+ checkgold 2500000
+ checkitem 祝福油 1
+#SAY
+下次记得，不要再做孽了！\ \
+ <关闭/@exit>
+#ACT
+ set [105] 0
+ take 金币 2500000
+ take 祝福油 1
+ goquest PKPoint
+ break
+
+#IF
+ check [104] 1
+ checkgold 2000000
+ checkitem 祝福油 1
+#SAY
+下次记得，不要再做孽了！\ \
+ <关闭/@exit>
+#ACT
+ set [104] 0
+ take 金币 2000000
+ take 祝福油 1
+ goquest PKPoint
+ break
+
+#IF
+ check [103] 1
+ checkgold 1500000
+#SAY
+下次记得，不要再做孽了！\ \
+ <关闭/@exit>
+#ACT
+ set [103] 0
+ take 金币 1500000
+ goquest PKPoint
+ break
+
+#IF
+ check [102] 1
+ checkgold 1000000
+#SAY
+下次记得，不要再做孽了！\ \
+ <关闭/@exit>
+#ACT
+ set [102] 0
+ take 金币 1000000
+ goquest PKPoint
+ break
+#ELSESAY
+你没有足够的金币或祝福油！\ \
+ <关闭/@exit>
+
+
+;级别经验
+;##################################################
+[@jbjy]
+你好，我可以为你提供以下服务：\ \
+ <提升等级/@tsdj>\
+ <降低等级/@jddj>\
+ <增加经验/@zjjy>\
+ <减少经验/@qcjy>\ \
+ <返回/@main>
+
+[@tsdj]
+#ACT
+ CHANGELEVEL + 1
+#SAY
+你的等级已成功增加了1级！\ \
+ <返回/@jbjy>
+
+[@jddj]
+#ACT
+ CHANGELEVEL - 1
+#SAY
+你的等级已成功降低了1级！\ \
+ <返回/@jbjy>
+
+[@zjjy]
+#ACT
+  CHANGEEXP + 1000
+#SAY
+你的经验点数已经增加1000点！\ \
+ <返回/@jbjy>
+
+[@qcjy]
+#ACT
+CHANGEEXP - 1000
+#SAY
+你的经验点数已经减少1000点。\ \
+ <返回/@jbjy>
+
+
+;检测功能
+;##################################################
+[@jcgn]
+请选项你要检测的项目：\ \
+ <检测指定IP/@jczdip>\
+ <检测指定GMIP/@jczdgmip>\
+ <检测是否加入门派/@jczdhh>\
+ <检测沙成员/@jcscy>\
+ <检测掌门人/@jczmr>\ \
+ <返回/@main>
+
+[@jczdip]
+#IF
+  CHECKIPLIST IP会员.txt
+#SAY
+你是会员
+#ELSESAY
+你不是会员
+ <返回/@jcgn>
+
+[@jczdgmip]
+#IF
+ CHECKIPLIST IPGM.txt
+#SAY
+你的IP地址为 127.0.0.1\
+检测通过，已经获取GM权限！\ \
+ <返回/@jcgn>
+#ELSESAY
+你的IP地址不是 127.0.0.1\
+无法获取GM权限！\ \
+ <返回/@jcgn>
+
+[@jczdhh]
+#IF
+    HAVEGUILD
+    #SAY
+    你已经加入了行会！
+    #ELSESAY
+    你没加入门派！
+
+[@jcscy]
+#IF
+    ISCASTLEGUILD
+    #SAY
+    你是沙城成员！
+    #ELSESAY
+    你不是沙城成员！
+
+
+[@jczmr]
+#IF
+    ISGUILDMASTER
+    #SAY
+    你是行会老大！
+    #ELSESAY
+    你不是行会老大！
+
+
+;其它功能
+;##################################################
+[@qtgn]
+ <NPC公告/@npcgg>\
+ <玩家公告/@wjgg>\
+ <仓库解锁/@ckjs> 或用GM命令：@clearstorage 角色名\
+ <清除仓库密码/@qcckmm>\ \
+ <返回/@main>
+
+[@npcgg]
+#IF
+#ACT
+SENDMSG 0 [NPC]风云传说（v1.9）支持NPC发红字公告信息！%d
+#SAY
+NPC公告信息已成功发送！\ \
+ <返回/@qtgn>
+
+[@wjgg]
+此功能在比奇皇宫内国王处，玩家发送需要有金币30000，\
+发送成功的格式为红字：\
+<(!)玩家名:发送的公告内容>\ \
+ <返回/@qtgn>
+
+[@ckjs]
+#ACT
+ marry pass
+#SAY
+仓库已经解锁！\ \
+ <返回/@qtgn>
+
+[@qcckmm]
+#ACT
+ CLEARPASSWORD
+#SAY
+你的仓库密码已经成功清除！\ \
+ <返回/@qtgn>
+
+
+;转生功能
+;##################################################
+[@zsgn]
+据说超非的力量能使人物重生，重生后力量大增......\
+转第一重生最少要55级.\
+转生后，你要从1级开始，但是转生过后的转生人物可得到指定点数，\
+自由分配,已学技能不变.好处是可以穿神圣系列属性的装备。\ \
+<详细说明/@readme>\
+<我已经决定要转生了/@readychange>\
+<让我先考虑考虑.../@exit>\
+
+[@readme]
+转生后，在名字前会出现特殊的标记\ \
+武士：(圣)\
+法师：(神)\
+道士：(尊)\
+转生后，玩家名字颜色会自动发生改变\ \
+<关闭/@exit>\
+
+[@readychange]
+#if 
+CHECKRENEWLEVEL > 1
+#say
+你不是已经转过一次了吗?转第2重需65级!测试版只开放一重转生\ \
+想要更精彩的领域请到http://hmeee.com了解；客户服务：80003399\ \
+<关闭/@exit>\
+#elseact
+goto @readychange-2
+
+[@readychange-2]
+#IF
+check [357] 0
+CHECKRENEWLEVEL < 1
+checklevel 55
+#say
+转生精灵已经释放，你的功力得到提升....\ \
+你转生等级为第1重.转第2重需65级!测试版只开放一重转生\ \
+想要更精彩的领域请到http://hmeee.com了解；客户服务：80003399\ \
+<关闭/@exit>\
+#act
+RENEWLEVEL 1 1 100
+set [357] 1
+SENDMSG 2 恭喜！！！一位伟大的人就此转生... 
+break
+#ELSESAY
+对不起,您不能完成转生...\
+主要原因如下:\
+1.您的等级不够55级.\
+2.你已经完成了转生.\
+3.你是非法利用外挂跳转的...\
+<关闭/@exit>
+
+;修改说明
+;##################################################
+[@xgsm]
+#SAY
+文件所在位置：\
+服务端目录＼Mir200＼Envir＼Market_Def＼GM_功能-Q013.txt\
+服务端程序所支持的功能在此脚本中均已包含，如要在其它NPC中\
+增加这些功能可详细参考此文件的语法、命令等。\
+注意：编写提升等级、经验等功能时要写好检测的条件，防止玩家\
+利用脚本漏洞刷级刷经验等。\ \
+ <返回/@main>
+
+
+;使用外挂记录
+;##################################################
+[@usewg]
+#ACT
+ addnamelist 外挂记录.txt
+#SAY
+使用非法外挂，你已经被记录。\
+按不同服务器的管理制度，你可能受到不同程度的处分！

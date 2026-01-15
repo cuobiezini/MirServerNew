@@ -1,0 +1,223 @@
+
+[@main]
+作为战士您是否已经厌倦了烈火和半月呢？\
+作为法师您是否不再喜欢闪电和冰咆哮了呢？\
+作为道士您是否不在只想做为别人的配角只放宝宝和魔防了呢？\
+OK！现在机会来了，为了满足您的要求，特提供转职服务，\
+当然天上是不会掉“馅饼”的，自然您也得付出小小的代价，\
+先看清楚下面的需知再做决定吧！\ \
+　<转职必看/@readme>　<不转/@exit>
+
+[@readme]
+一：转职后你的等级<降2>，而且各项技能必须从头学起，\
+　　我们要相信“好好学习，天天向上”的真理。\ 
+二：需要等级45级以上才可以转职，而且要付<1根金条>的费用。\ 
+　　好了祝好运，快去体验那完全不一样的职业给您带来的快感吧！\ \
+　<转职/@zhzy>　<不转/@exit>
+
+[@zhzy]
+#IF
+ checklevel 45
+ checkitem 金条 1
+#SAY
+转职之前再次提醒你：\
+<转职后身上原有的技能将全部消失，等级降2，切记！>\
+你是否确定转职？\ \
+　<转职/@zhzy-3>　<不转/@exit>
+#ELSESAY
+“英雄”请确定您是否有45级，而且包里要有1根金条。\ \
+　<离开/@exit>
+
+[@zhzy-3]
+#IF
+ checklevel 45
+ checkitem 金条 1
+#SAY
+请选择合适的职业（注意不要选现在的职业）：\ \
+　<武士/@warr>　<魔法师/@wizard>　<道士/@taos>
+#ELSESAY
+干吗？想作弊，快把金条拿回来，不然别想转职！\ \
+<离开/@exit>
+
+[@warr]
+#IF
+ checkjob warrior
+#SAY
+你现在的职业就是武士，我不能给你再转。\ \
+<返回/@zhzy-3>
+#ELSEACT
+ goto @warr-1
+ break
+
+[@warr-1]
+#IF
+ checklevel 45
+ checkitem 金条 1
+#ACT
+DELSKILL 火球术
+DELSKILL 治愈术
+DELSKILL 基本剑术
+DELSKILL 精神力战法
+DELSKILL 大火球
+DELSKILL 施毒术
+DELSKILL 攻杀剑术
+DELSKILL 抗拒火环
+DELSKILL 地狱火
+DELSKILL 疾光电影
+DELSKILL 雷电术
+DELSKILL 刺杀剑术
+DELSKILL 灵魂火符
+DELSKILL 幽灵盾
+DELSKILL 神圣战甲术
+DELSKILL 困魔咒
+DELSKILL 召唤骷髅
+DELSKILL 隐身术
+DELSKILL 集体隐身术
+DELSKILL 瞬息移动
+DELSKILL 诱惑之光
+DELSKILL 火墙
+DELSKILL 爆裂火焰
+DELSKILL 地狱雷光
+DELSKILL 半月弯刀
+DELSKILL 烈火剑法
+DELSKILL 野蛮冲撞
+DELSKILL 心灵启示
+DELSKILL 群体治疗术
+DELSKILL 召唤神兽
+DELSKILL 魔法盾
+DELSKILL 圣言术
+DELSKILL 冰咆哮
+DELSKILL 圣战诱惑
+DELSKILL 法神骷髅
+DELSKILL 天尊剑术
+ TAKE 金条 1
+ CHANGEJOB Warrior
+ CHANGELEVEL - 2
+#SAY
+亲爱的勇士您已经完成了转职，您现在是一位伟大的战士了。\ \
+　<离开/@exit>
+#ELSESAY
+干吗？想作弊，快把金条拿回来，不然别想转职！\ \
+　<离开/@exit>
+
+[@wizard]
+#IF
+ checkjob wizard
+#SAY
+你现在的职业就是魔法师，我不能给你再转。\ \
+<返回/@zhzy-3>
+#ELSEACT
+ goto @wizard-1
+ break
+
+[@wizard-1]
+#IF
+ checklevel 45
+ checkitem 金条 1
+#ACT
+DELSKILL 火球术
+DELSKILL 治愈术
+DELSKILL 基本剑术
+DELSKILL 精神力战法
+DELSKILL 大火球
+DELSKILL 施毒术
+DELSKILL 攻杀剑术
+DELSKILL 抗拒火环
+DELSKILL 地狱火
+DELSKILL 疾光电影
+DELSKILL 雷电术
+DELSKILL 刺杀剑术
+DELSKILL 灵魂火符
+DELSKILL 幽灵盾
+DELSKILL 神圣战甲术
+DELSKILL 困魔咒
+DELSKILL 召唤骷髅
+DELSKILL 隐身术
+DELSKILL 集体隐身术
+DELSKILL 瞬息移动
+DELSKILL 诱惑之光
+DELSKILL 火墙
+DELSKILL 爆裂火焰
+DELSKILL 地狱雷光
+DELSKILL 半月弯刀
+DELSKILL 烈火剑法
+DELSKILL 野蛮冲撞
+DELSKILL 心灵启示
+DELSKILL 群体治疗术
+DELSKILL 召唤神兽
+DELSKILL 魔法盾
+DELSKILL 圣言术
+DELSKILL 冰咆哮
+DELSKILL 圣战诱惑
+DELSKILL 法神骷髅
+DELSKILL 天尊剑术
+ TAKE 金条 1
+ CHANGEJOB Wizard
+ CHANGELEVEL - 2
+#SAY
+亲爱的勇士您已经完成了转职，您现在是一位伟大的魔法师了。\ \
+　<离开/@exit>
+#ELSESAY
+干吗？想作弊，快把金条拿回来，不然别想转职！\ \
+　<离开/@exit>
+
+[@taos]
+#IF
+ checkjob taoist
+#SAY
+你现在的职业就是道士，我不能给你再转。\ \
+<返回/@zhzy-3>
+#ELSEACT
+ goto @taos-1
+ break
+
+[@taos-1]
+#IF
+ checklevel 45
+ checkitem 金条 1
+#ACT
+DELSKILL 火球术
+DELSKILL 治愈术
+DELSKILL 基本剑术
+DELSKILL 精神力战法
+DELSKILL 大火球
+DELSKILL 施毒术
+DELSKILL 攻杀剑术
+DELSKILL 抗拒火环
+DELSKILL 地狱火
+DELSKILL 疾光电影
+DELSKILL 雷电术
+DELSKILL 刺杀剑术
+DELSKILL 灵魂火符
+DELSKILL 幽灵盾
+DELSKILL 神圣战甲术
+DELSKILL 困魔咒
+DELSKILL 召唤骷髅
+DELSKILL 隐身术
+DELSKILL 集体隐身术
+DELSKILL 瞬息移动
+DELSKILL 诱惑之光
+DELSKILL 火墙
+DELSKILL 爆裂火焰
+DELSKILL 地狱雷光
+DELSKILL 半月弯刀
+DELSKILL 烈火剑法
+DELSKILL 野蛮冲撞
+DELSKILL 心灵启示
+DELSKILL 群体治疗术
+DELSKILL 召唤神兽
+DELSKILL 魔法盾
+DELSKILL 圣言术
+DELSKILL 冰咆哮
+DELSKILL 圣战诱惑
+DELSKILL 法神骷髅
+DELSKILL 天尊剑术
+ TAKE 金条 1
+ CHANGEJOB Taoist
+ CHANGELEVEL - 2
+#SAY
+亲爱的勇士您已经完成了转职，您现在是一位伟大的道士了。\ \
+　<离开/@exit>
+#ELSESAY
+干吗？想作弊，快把金条拿回来，不然别想转职！\ \
+　<离开/@exit>

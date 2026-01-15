@@ -1,0 +1,1311 @@
+[@main]　
+#IF
+ISADMIN
+#ACT
+goto @进入后台
+#ELSEACT
+SENDMSG 6 你的权限不够
+
+[@进入后台]
+这里是游戏管理后台，你想做些什么？   <GM喊话/@自由广播> <领取装备/@领取装备>\
+　\
+<进行怪物攻城活动/@进行怪物攻城>　    <清除四个城内怪物/@清除怪物>      <开启关闭补给战/@开启关闭补给战>\
+<开启关闭双倍经验/@开启关闭双倍经验>      <开启关闭５倍经验/@开启关闭５倍经验>      <开启关闭攻城战/@攻城战>\
+<开启关闭勇闯天关/@开启关闭勇闯天关>　    <开启关闭沙城奖励/@沙城装备奖励>  <设置首次攻沙/@首次攻沙>\  \ 
+<集体下线/@集体下线> 防重起复制，重起之前点一下！　 <飞到比奇/@飞到比奇>  <飞到土城/@飞到土城> \  \ 
+[@集体下线]
+#IF
+#ACT
+Gmexecute 开始提问 @全下线
+[@开启关闭勇闯天关]
+#IF
+ISADMIN
+#ACT
+goto @勇闯天关
+#ELSEACT
+SENDMSG 6 你的权限不够
+[@勇闯天关]
+#IF
+equal G2 1
+#SAY
+这里可以  <开启>  <关闭>  勇闯天关功能。\ \
+沙城勇闯天关功能现在为：开启状态。\ \
+<关闭勇闯天关/@关闭勇闯天关>  <开启勇闯天关/@开启勇闯天关>
+#ELSESAY
+这里可以  <开启>  <关闭>  勇闯天关功能。\ \
+沙城勇闯天关功能现在为：关闭状态。\ \
+<关闭勇闯天关/@关闭勇闯天关>  <开启勇闯天关/@开启勇闯天关>
+[@关闭勇闯天关]
+#IF
+ISADMIN
+#ACT
+mov G2 0
+SENDMSG 6 勇闯天关功能关闭。
+goto @勇闯天关
+[@开启勇闯天关]
+#IF
+ISADMIN
+#ACT
+mov G2 1
+SENDMSG 6 勇闯天关功能开启。
+goto @勇闯天关
+[@飞到比奇]
+#IF
+#ACT
+mapmove 0 333 268
+[@沙城装备奖励]
+#IF
+ISADMIN
+#ACT
+goto @装备奖励
+#ELSEACT
+SENDMSG 6 你的权限不够
+[@装备奖励]
+#IF
+equal G5 1
+#SAY
+这里可以  <开启>  <关闭>  沙城装备奖励功能。\ \
+沙城装备奖励功能现在为：开启状态。\ \
+<关闭装备奖励/@关闭装备奖励>  <开启装备奖励/@开启装备奖励>
+#ELSESAY
+这里可以  <开启>  <关闭>  沙城装备奖励功能。\ \
+沙城装备奖励功能现在为：关闭状态。\ \
+<关闭装备奖励/@关闭装备奖励>  <开启装备奖励/@开启装备奖励>
+[@关闭装备奖励]
+#IF
+ISADMIN
+#ACT
+mov G5 0
+SENDMSG 6 沙城装备奖励功能关闭。
+goto @装备奖励
+[@开启装备奖励]
+#IF
+ISADMIN
+#ACT
+mov G5 1
+SENDMSG 6 沙城装备奖励功能开启。
+goto @装备奖励
+[@解除禁言]
+#IF
+#ACT
+set [499] 0
+gmexecute 恢复禁言 self
+gmexecute 恢复禁言 self
+messagebox 您已经可以正常发言了
+[@飞到土城]
+#IF
+#ACT
+mapmove 3 330 330
+[@清除怪物]
+#IF
+ISADMIN
+#ACT
+CLEARMAPMON 3
+CLEARMAPMON 0
+CLEARMAPMON 4
+CLEARMAPMON 5
+SENDMSG 6 土城，比齐城，封魔谷，苍月岛内怪物已经全部清除！
+goto @main
+#ELSEACT
+SENDMSG 6 你的权限不够
+[@进行怪物攻城]
+这里可以控制怪物攻城，你想要怪物进攻哪个城市？\ \
+<盟重省/@盟重省>　　<比齐城/@比齐城>\ \
+<封魔谷/@封魔谷>　　<苍月岛/@苍月岛>\ \
+<返回/@main>
+[@盟重省]
+请选择进攻盟重省的怪物！\ 
+<暗之系怪物进攻/@盟暗之系>　<祖玛系怪物进攻/@盟祖玛系>\
+<牛魔系怪物进攻/@盟牛魔系>　<猪洞系怪物进攻/@盟猪洞系>\
+<幽冥系怪物进攻/@盟幽冥系>　<虹魔系怪物进攻/@盟虹魔系>\
+<统领系怪物进攻/@盟统领系>　<BOSS系怪物进攻/@盟BOSS系>\ \
+<返回/@进行怪物攻城>
+[@比齐城]
+请选择进攻比齐城的怪物！\ 
+<暗之系怪物进攻/@比暗之系>　<祖玛系怪物进攻/@比祖玛系>\
+<牛魔系怪物进攻/@比牛魔系>　<猪洞系怪物进攻/@比猪洞系>\
+<幽冥系怪物进攻/@比幽冥系>　<虹魔系怪物进攻/@比虹魔系>\
+<统领系怪物进攻/@比统领系>　<BOSS系怪物进攻/@比BOSS系>\ \
+<返回/@进行怪物攻城>
+[@封魔谷]
+请选择进攻封魔谷的怪物！\ 
+<暗之系怪物进攻/@封暗之系>　<祖玛系怪物进攻/@封祖玛系>\
+<牛魔系怪物进攻/@封牛魔系>　<猪洞系怪物进攻/@封猪洞系>\
+<幽冥系怪物进攻/@封幽冥系>　<虹魔系怪物进攻/@封虹魔系>\
+<统领系怪物进攻/@封统领系>　<BOSS系怪物进攻/@封BOSS系>\ \
+<返回/@进行怪物攻城>
+[@苍月岛]
+请选择进攻苍月岛的怪物！\ 
+<暗之系怪物进攻/@苍暗之系>　<祖玛系怪物进攻/@苍祖玛系>\
+<牛魔系怪物进攻/@苍牛魔系>　<猪洞系怪物进攻/@苍猪洞系>\
+<幽冥系怪物进攻/@苍幽冥系>　<虹魔系怪物进攻/@苍虹魔系>\
+<统领系怪物进攻/@苍统领系>　<BOSS系怪物进攻/@苍BOSS系>\ \
+<返回/@进行怪物攻城>
+[@苍BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 1
+PARAM4 50
+MOBPLACE 史前巨兽
+MOBPLACE 冰城帝王
+MOBPLACE 史前巨兽
+MOBPLACE 史前巨兽
+MOBPLACE 震天首将
+MOBPLACE 修罗教主500
+MOBPLACE 吸血兽
+MOBPLACE 吸血兽
+MOBPLACE 吸血兽
+MOBPLACE 吸血兽
+MOBPLACE 吸血兽
+
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 1
+PARAM4 50
+MOBPLACE 突变蛙
+MOBPLACE 突变蛙
+MOBPLACE 突变蛙
+MOBPLACE 突变蛙
+MOBPLACE 突变蛙
+MOBPLACE 突变蛙
+MOBPLACE 突变蛙
+MOBPLACE 突变蛙
+MOBPLACE 终极教主
+MOBPLACE 终极教主
+MOBPLACE 终极教主
+
+
+ SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 5
+PARAM4 50
+MOBPLACE 终极教主
+MOBPLACE 终极教主
+
+
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍幽冥系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 3
+PARAM4 50
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 5
+PARAM4 50
+MOBPLACE 炎龙神 2
+MOBPLACE 炎龙神 2
+MOBPLACE 炎龙神 2
+MOBPLACE 炎龙神 2
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 3
+PARAM4 50
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 5
+PARAM4 50
+MOBPLACE 巢穴恶魔
+MOBPLACE 青铜兽
+MOBPLACE 巢穴恶魔
+MOBPLACE 巢穴恶魔
+MOBPLACE 青铜兽
+
+
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 2
+PARAM4 50
+MOBPLACE 炎龙守护者
+MOBPLACE 炎龙守护者
+MOBPLACE 炎龙守护者
+MOBPLACE 炎龙守护者
+MOBPLACE 幻化石怪
+
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@封BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 1
+PARAM4 50
+MOBPLACE 赤月恶魔8
+MOBPLACE 终极教主
+MOBPLACE 修罗教主500
+MOBPLACE 二郎真君
+
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 1
+PARAM4 50
+MOBPLACE 邪恶钳虫
+MOBPLACE 骷髅精灵
+ SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 5
+PARAM4 50
+MOBPLACE 霸王教主
+MOBPLACE 霸王教主
+MOBPLACE 霸王教主
+MOBPLACE 霸王教主
+
+
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封幽冥系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 3
+PARAM4 50
+
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 5
+PARAM4 50
+MOBPLACE 双轮刀卫
+MOBPLACE 双轮刀卫
+MOBPLACE 双轮刀卫
+MOBPLACE 双轮刀卫
+MOBPLACE 双轮刀卫
+MOBPLACE 双轮刀卫
+MOBPLACE 双轮刀卫
+MOBPLACE 双轮刀卫
+MOBPLACE 双轮刀卫
+MOBPLACE 双轮刀卫
+MOBPLACE 陵墓石人
+MOBPLACE 陵墓石人
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司
+MOBPLACE 牛魔法师
+MOBPLACE 牛魔战士
+
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 5
+PARAM4 50
+MOBPLACE 吸血兽
+MOBPLACE 吸血兽
+MOBPLACE 武力神将
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 2
+PARAM4 50
+MOBPLACE 陵墓石人
+MOBPLACE 陵墓帝王
+MOBPLACE 武力神将
+MOBPLACE 陵墓守护神
+MOBPLACE 陵墓守护神
+MOBPLACE 陵墓守护神
+MOBPLACE 陵墓守护神
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@比BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 1
+PARAM4 50
+MOBPLACE 陵墓帝王
+MOBPLACE 陵墓帝王
+MOBPLACE 陵墓帝王
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 1
+PARAM4 50
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+ SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 5
+PARAM4 50
+MOBPLACE 八爪鱼
+MOBPLACE 八爪鱼
+
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比幽冥系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 3
+PARAM4 50
+
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 5
+PARAM4 50
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+MOBPLACE 深海骑士200
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司
+MOBPLACE 牛魔法师
+MOBPLACE 牛魔战士
+
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士
+MOBPLACE 祖玛弓箭手
+MOBPLACE 祖玛雕像
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 2
+PARAM4 50
+MOBPLACE 修罗教主600
+MOBPLACE 修罗教主700
+MOBPLACE 霸王教主
+MOBPLACE 二郎真君
+MOBPLACE 二郎真君
+MOBPLACE 二郎真君
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@盟BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 1
+PARAM4 50
+MOBPLACE 黄泉教主
+  
+MOBPLACE 二郎真君
+MOBPLACE 沃玛教主
+   
+  
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 1
+PARAM4 50
+MOBPLACE 邪恶钳虫
+MOBPLACE 骷髅精灵
+ SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 虹魔猪卫0
+MOBPLACE 虹魔猪卫0
+
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟幽冥系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 3
+PARAM4 50
+
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 白野猪
+MOBPLACE 白野猪
+MOBPLACE 白野猪
+MOBPLACE 白野猪
+MOBPLACE 白野猪
+MOBPLACE 白野猪
+MOBPLACE 白野猪
+MOBPLACE 白野猪
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 黑野猪
+MOBPLACE 红野猪
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司
+MOBPLACE 牛魔法师
+MOBPLACE 牛魔战士
+
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士
+MOBPLACE 祖玛弓箭手
+MOBPLACE 祖玛雕像
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 2
+PARAM4 50
+MOBPLACE 修罗教主600
+MOBPLACE 修罗教主700
+MOBPLACE 霸王教主
+MOBPLACE 二郎真君
+MOBPLACE 二郎真君
+MOBPLACE 二郎真君
+MOBPLACE 暗之牛魔王
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@开启关闭双倍经验]
+#IF
+ISADMIN
+#ACT
+goto @双倍经验
+#ELSEACT
+SENDMSG 6 你的权限不够
+[@双倍经验]
+#IF
+equal G1 1
+#SAY
+这里可以  <开启>  <关闭>  全区双倍经验功能。\ \
+全区双倍经验功能现在为：开启状态。\ \
+<关闭双倍经验/@关闭双倍经验>  <开启双倍经验/@开启双倍经验>
+#ELSESAY
+这里可以  <开启>  <关闭>  全区双倍经验功能。\ \
+全区双倍经验功能现在为：关闭状态。\ \
+<关闭双倍经验/@关闭双倍经验>  <开启双倍经验/@开启双倍经验>
+[@关闭双倍经验]
+#IF
+#ACT
+mov G1 0
+SENDMSG 6 双倍经验功能关闭。
+goto @双倍经验
+[@开启双倍经验]
+#IF
+#ACT
+mov G1 1
+SENDMSG 6 双倍经验功能开启。
+goto @双倍经验
+SENDMSG 1 【提示】本服务器已经开启了(双倍经验)活动,请小退参加！
+SENDMSG 1 【提示】本服务器已经开启了(双倍经验)活动,请小退参加！
+SENDMSG 1 【提示】本服务器已经开启了(双倍经验)活动,请小退参加！
+[@开启关闭５倍经验]
+#IF
+ISADMIN
+#ACT
+goto @５倍经验
+#ELSEACT
+SENDMSG 6 你的权限不够
+[@５倍经验]
+#IF
+equal G1 2
+#SAY
+这里可以  <开启>  <关闭>  全区５倍经验功能。\ \
+全区５倍经验功能现在为：开启状态。\ \
+<关闭５倍经验/@关闭５倍经验>  <开启５倍经验/@开启５倍经验>
+#ELSESAY
+这里可以  <开启>  <关闭>  全区５倍经验功能。\ \
+全区５倍经验功能现在为：关闭状态。\ \
+<关闭５倍经验/@关闭５倍经验>  <开启５倍经验/@开启５倍经验>
+[@关闭５倍经验]
+#IF
+ISADMIN
+#ACT
+mov G1 0
+SENDMSG 6 ５倍经验功能关闭。
+goto @５倍经验
+[@开启５倍经验]
+#IF
+ISADMIN
+#ACT
+mov G1 2
+SENDMSG 6 ５倍经验功能开启。
+goto @５倍经验
+SENDMSG 1 【提示】本服务器已经开启了(５倍经验)活动,请小退参加！
+SENDMSG 1 【提示】本服务器已经开启了(５倍经验)活动,请小退参加！
+SENDMSG 1 【提示】本服务器已经开启了(５倍经验)活动,请小退参加！
+[@开启关闭补给战]
+#IF
+ISADMIN
+#ACT
+goto @补给战
+#ELSEACT
+SENDMSG 6 你的权限不够
+[@补给战]
+#IF
+equal G3 0
+#SAY
+这里可以  <开启>  <关闭>  补给战活动。\ \
+补给战活动现在为：关闭状态。\ \
+<开启补给战/@开启补给战>  <关闭补给战/@关闭补给战>\
+#ELSESAY
+这里可以  <开启>  <关闭>  补给战活动。\ \
+补给战活动现在为：开启状态。\ \
+<开启补给战/@开启补给战>  <关闭补给战/@关闭补给战>\
+[@关闭补给战]
+#IF
+ISADMIN
+#ACT
+mov G3 0
+SENDMSG 6 补给战活动已经关闭。
+goto @补给战
+[@开启补给战]
+#IF
+ISADMIN
+#ACT
+mov G3 1
+SENDMSG 6 补给战活动已经开启。
+goto @补给战
+SENDMSG 1 【提示】本服务器已经开启了（补给攻防战）活动,请随时留意【元宝恶魔】进攻信息！
+SENDMSG 1 【提示】本服务器已经开启了（补给攻防战）活动,请随时留意【元宝恶魔】进攻信息！
+SENDMSG 1 【提示】本服务器已经开启了（补给攻防战）活动,请随时留意【元宝恶魔】进攻信息！
+SENDMSG 1 【提示】本服务器已经开启了（补给攻防战）活动,请随时留意【元宝恶魔】进攻信息！
+[@攻城战]
+#IF
+equal G6 0
+#SAY
+这里可以  <开启>  <关闭>  沙巴克攻城战活动。\ \
+攻城战活动现在为：关闭状态。\ \
+<开启攻城战/@开启攻城战>  <关闭攻城战/@关闭攻城战>\
+#ELSESAY
+这里可以  <开启>  <关闭>  沙巴克攻城战活动。\ \
+攻城战活动现在为：开启状态。\ \
+<开启攻城战/@开启攻城战>  <关闭攻城战/@关闭攻城战>\
+[@关闭攻城战]
+#IF
+ISADMIN
+#ACT
+mov G6 0
+SENDMSG 6 沙巴克攻城战已经禁止。
+goto @攻城战
+[@开启攻城战]
+#IF
+ISADMIN
+#ACT
+mov G6 1
+SENDMSG 6 沙巴克攻城战已经开启。
+goto @攻城战
+SENDMSG 1 【提示】本服务器已经开启了（沙巴克攻城战）活动,想攻城的行会会长快去交头像啊！
+SENDMSG 1 【提示】本服务器已经开启了（沙巴克攻城战）活动,想攻城的行会会长快去交头像啊！
+SENDMSG 1 【提示】本服务器已经开启了（沙巴克攻城战）活动,想攻城的行会会长快去交头像啊！
+SENDMSG 1 【提示】本服务器已经开启了（沙巴克攻城战）活动,想攻城的行会会长快去交头像啊！
+[@领取装备]
+#IF
+ISADMIN
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+部分套装在元宝商城中禁止出售，玩家买的话，GM可以在这里领。\
+然后交易给玩家！~~~~刷装备好累哦！！~~~\
+我要领取：\
+<天龙套/@150级套装> <180级套装/@180级套装> <恶魔套/@600级套装>\
+<套/@170级套装> \
+　\
+　                                              <返回对话/@main>\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#ELSESAY
+权限不够！
+
+[@150级套装]
+#IF
+ISADMIN
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+现在您可以领取天龙3职业套装，请您选择需要领取的套装职业：\
+　\
+　<150级战士套装-男/@150级战士套装男>  <150级战士套装-女/@150级战士套装女>\
+　<150级法师套装-男/@150级法师套装男>  <150级法师套装-女/@150级法师套装女>\
+　<150级道士套装-男/@150级道士套装男>  <150级道士套装-女/@150级道士套装女>\
+　\
+　                                              <返回对话/@领取装备>\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#ELSESAY
+权限不够！
+[@150级战士套装男]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 天龙战神链 1
+give 天龙战神镯 2
+give 天龙战神戒 2
+give 天龙战神盔 1
+give 天龙战神石 1
+give 天龙战神靴 1
+give 天龙战神腰带 1
+give 天龙战神盔 1
+give 天龙战神剑 1
+give 天龙战神铠(男) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@150级套装>
+[@150级战士套装女]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 天龙战神链 1
+give 天龙战神镯 2
+give 天龙战神戒 2
+give 天龙战神盔 1
+give 天龙战神石 1
+give 天龙战神靴 1
+give 天龙战神腰带 1
+give 天龙战勋章 1
+give 天龙战神剑 1
+give 天龙战神铠(女) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@150级套装>
+[@150级法师套装男]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 天龙魔魂链 1
+give 天龙魔魂镯 2
+give 天龙魔魂戒 1
+give 天龙魔魂靴 1
+give 天龙魔魂腰带 1 
+give 天龙魔魂勋章 1
+give 天龙魔魂铠(男) 1
+give 天龙魔魂盔 1
+give 天龙魔魂石 1
+give 天龙魔魂剑 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@150级套装>
+[@150级法师套装女]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 天龙魔魂链 1
+give 天龙魔魂镯 2
+give 天龙魔魂戒 2
+give 天龙魔魂靴 1
+give 天龙魔魂腰带 1
+give 天龙魔魂勋章 1
+give 天龙魔魂铠(女) 1
+give 天龙魔魂盔 1
+give 天龙魔魂石 1
+give 天龙魔魂剑 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@150级套装>
+[@150级道士套装男]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 天龙尊者链 1
+give 天龙尊者镯 2
+give 天龙尊者戒 2
+give 天龙尊者靴 1
+give 天龙尊者腰带 1
+give 天龙尊者勋章 1
+give 天龙尊者铠(男) 1
+give 天龙尊者盔 1
+give 天龙尊者石 1
+give 天龙尊者剑 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@150级套装>
+[@150级道士套装女]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 天龙尊者链 1
+give 天龙尊者镯 2
+give 天龙尊者戒 2
+give 天龙尊者靴 1
+give 天龙尊者腰带 1
+give 天龙尊者勋章 1
+give 天龙尊者铠(女) 1
+give 天龙尊者盔 1
+give 天龙尊者石 1
+give 天龙尊者剑 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@150级套装>
+[@170级套装]
+#IF
+ISADMIN
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+现在您可以领取3职业套装，请您选择需要领取的套装职业：\
+　\
+　<170级战士套装-男/@170级战士套装男>  <170级战士套装-女/@170级战士套装女>\
+　<170级法师套装-男/@170级法师套装男>  <170级法师套装-女/@170级法师套装女>\
+　<170级道士套装-男/@170级道士套装男>  <170级道士套装-女/@170级道士套装女>\
+　\
+　                                              <返回对话/@领取装备>\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#ELSESAY
+权限不够！
+[@170级战士套装男]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 项链(战) 1
+give 手镯(战) 2
+give 戒指(战) 2
+give 护体(战) 1
+give 宝石(战) 1
+give 靴(战) 1
+give 腰带(战) 1
+give 头盔(战) 1
+give 斩(战) 1
+give 甲(男战) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@170级套装>
+[@170级战士套装女]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 项链(战) 1
+give 手镯(战) 2
+give 戒指(战) 2
+give 护体(战) 1
+give 宝石(战) 1
+give 靴(战) 1
+give 腰带(战) 1
+give 头盔(战) 1
+give 斩(战) 1
+give 甲(女战) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@170级套装>
+[@170级法师套装男]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 项链(法) 1
+give 手镯(法) 2
+give 戒指(法) 2
+give 护体(法) 1
+give 宝石(法) 1
+give 靴(法) 1
+give 腰带(法) 1
+give 头盔(法) 1
+give 斩(法) 1
+give 甲(男法) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@170级套装>
+[@170级法师套装女]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 项链(法) 1
+give 手镯(法) 2
+give 戒指(法) 2
+give 护体(法) 1
+give 宝石(法) 1
+give 靴(法) 1
+give 腰带(法) 1
+give 头盔(法) 1
+give 斩(法) 1
+give 甲(女法) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@170级套装>
+[@170级道士套装男]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 项链(道) 1
+give 手镯(道) 2
+give 戒指(道) 2
+give 护体(道) 1
+give 宝石(道) 1
+give 靴(道) 1
+give 腰带(道) 1
+give 头盔(道) 1
+give 斩(道) 1
+give 甲(男道) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@170级套装>
+[@170级道士套装女]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 项链(道) 1
+give 手镯(道) 2
+give 戒指(道) 2
+give 护体(道) 1
+give 宝石(道) 1
+give 靴(道) 1
+give 腰带(道) 1
+give 头盔(道) 1
+give 斩(道) 1
+give 甲(女道) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@170级套装>
+[@180级套装]
+#IF
+ISADMIN
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+现在您可以领取180级3职业套装，请您选择需要领取的套装职业：\
+　\
+　<180级战士套装-男/@180级战士套装男>  <180级战士套装-女/@180级战士套装女>\
+　<180级法师套装-男/@180级法师套装男>  <180级法师套装-女/@180级法师套装女>\
+　<180级道士套装-男/@180级道士套装男>  <180级道士套装-女/@180级道士套装女>\
+　\
+　                                              <返回对话/@领取装备>\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#ELSESAY
+权限不够！
+[@180级战士套装男]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 杀神项链 1
+give 杀神手镯 2
+give 杀神戒指 2
+give 杀神龙影 1
+give 杀神宝石 1
+give 杀神靴 1
+give 杀神腰带 1
+give 杀神头盔 1
+give 杀神游龙刀 1
+give 杀神火翼甲(男) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@180级套装>
+[@180级战士套装女]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 杀神项链 1
+give 杀神手镯 2
+give 杀神戒指 2
+give 杀神龙影 1
+give 杀神宝石 1
+give 杀神靴 1
+give 杀神腰带 1
+give 杀神头盔 1
+give 杀神游龙刀 1
+give 杀神火翼甲(女) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@180级套装>
+[@180级法师套装男]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 斗法项链 1
+give 斗法手镯 2
+give 斗法戒指 2
+give 斗法龙影 1
+give 斗法宝石 1
+give 斗法靴 1
+give 斗法腰带 1
+give 斗法头盔 1
+give 斗法寒冰剑 1
+give 斗法冰翼袍(男) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@180级套装>
+[@180级法师套装女]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 斗法项链 1
+give 斗法手镯 2
+give 斗法戒指 2
+give 斗法龙影 1
+give 斗法宝石 1
+give 斗法靴 1
+give 斗法腰带 1
+give 斗法头盔 1
+give 斗法寒冰剑 1
+give 斗法冰翼袍(女) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@180级套装>
+[@180级道士套装男]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 八卦项链 1
+give 八卦手镯 2
+give 八卦戒指 2
+give 八卦护体 1
+give 八卦宝石 1
+give 八卦靴 1
+give 八卦腰带 1
+give 八卦头盔 1
+give 八卦空牙斩 1
+give 八卦飞龙甲(男) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@180级套装>
+[@180级道士套装女]
+#IF
+ISADMIN
+CHECKBAGSIZE 12
+#ACT
+give 八卦项链 1
+give 八卦手镯 2
+give 八卦戒指 2
+give 八卦护体 1
+give 八卦宝石 1
+give 八卦靴 1
+give 八卦腰带 1
+give 八卦头盔 1
+give 八卦空牙斩 1
+give 八卦飞龙甲(女) 1
+#ELSESAY
+包裹内空格不足12个，或权限不够！<返回对话/@180级套装>
+
+[@600级套装]
+#IF
+ISADMIN
+CHECKBAGSIZE 14
+#ACT
+give 恶魔破魂剑 1
+give 恶魔护盾 1
+give 恶魔项链(麻) 1
+give 恶魔手套 2
+give 恶魔戒指 2
+give 恶魔头盔 1
+give 恶魔靴 1
+give 恶魔腰带 1
+give 恶魔之翼(女) 1
+give 恶魔之翼(男) 1
+give 恶魔宝石 1
+give 加入黄金会员卷 1
+#ELSESAY
+包裹内空格不足14个，或权限不够！<返回对话/@领取装备>
+
+
+
+
+[@首次攻沙]
+尊敬的GM:<$USERNAME>您好！本系统方便您管理\
+第一次集体攻沙需要手动设置，以后每天拿沙系统自动安排\
+本功能只需要在您想要攻沙的当天设置[20点前]，比如您想\
+9月7日当天集体拿沙，那么就在7日的当天20点前设置一下，\
+以后每日拿沙不需要设置了，系统自动安排！\ \
+<设置首次拿沙/@设置攻城> 
+[@设置攻城]
+#IF
+EQUAL G200 0
+EQUAL G201 0
+#ACT
+MOV A119
+MOV G201 1
+ADDATTACKSABUKALL 0
+SENDMSG 0 ╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗
+SENDMSG 0 ┊今天晚上进行开区首次攻城.奖励YB8888 ┊
+SENDMSG 0 ╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝
+sendmsg 1今晚自动进行首次攻城，胜利行会老大奖励8888元宝，请各大行会做好战斗准备！
+sendmsg 1今晚自动进行首次攻城，胜利行会老大奖励8888元宝，请各大行会做好战斗准备！
+sendmsg 1今晚自动进行首次攻城，胜利行会老大奖励8888元宝，请各大行会做好战斗准备！
+#ELSESAY
+首次攻沙您已经设置过了，请谨慎使用.
+
+[@自由广播]
+#if
+CHECKBAGSIZE 10
+#act
+give 超级话筒 10
+#ELSESAY
+包裹内空格不足10个，或权限不够！<返回对话/@main>
+

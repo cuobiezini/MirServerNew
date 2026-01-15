@@ -1,0 +1,130 @@
+[@存物品]
+{
+#IF
+check [630] 1
+#SAY
+请选择你要存进去的装备类型: \ \
+　　　　<财宝类/@存财宝>  <项链类/@存>  <戒指类/@存>  <头盔类/@存头盔> \
+　　　　<手镯类/@存>  <靴子类/@存>  <衣服类/@存>  <武器类/@存> \ \
+
+　　　　<返回/@无限仓库>\
+#ELSEACT
+GOTO @开通 
+
+[@开通]
+#CALL [NPC\加入会员.txt] @lxfs2
+
+[@存财宝]
+#IF
+check [630] 1
+#SAY
+目前不收保管费！请多利用！\
+您目前保管在这里有：<$HUMAN(金盒)>个金盒,<$HUMAN(金箱)>个金箱\
+请选择你要保存的物品数量：\
+　　　　<一个金盒/@存一个金盒>  <三个金盒/@存三个金盒>  <十个金盒/@存十个金盒>\
+　　　　<一个金箱/@存一个金箱>  <三个金箱/@存三个金箱>  <十个金箱/@存十个金箱>\ \
+　　　　<返回/@存物品>\
+#ELSEACT
+GOTO @开通
+
+[@存]
+稍后开通！~
+
+[@存一个金盒]
+#IF
+check [630] 1
+CHECKITEM  金盒 1
+#ACT
+take 金盒 1
+CALCVAR HUMAN 金盒 + 1
+SAVEVAR HUMAN 金盒 ..\QuestDiary\数据文件\财宝\金盒Save.txt
+SENDMSG 6 提示：你当前拥有的金盒数量是：<$HUMAN(金盒)>个
+goto @存财宝
+#ELSESAY
+　\
+　\
+　　　对不起！你的背包里没有这么多的金盒！　\
+　　　<返回/@存财宝>\
+
+
+[@存三个金盒]
+#IF
+check [630] 1
+CHECKITEM  金盒 3
+#ACT
+take 金盒 3
+CALCVAR HUMAN 金盒 + 3
+SAVEVAR HUMAN 金盒 ..\QuestDiary\数据文件\财宝\金盒Save.txt
+SENDMSG 6 提示：你当前拥有的金盒数量是：<$HUMAN(金盒)>个
+goto @存财宝
+#ELSESAY
+　\
+　\
+　　　对不起！你的背包里没有这么多的金盒！　\
+　　　<返回/@存财宝>\
+
+[@存十个金盒]
+#IF
+check [630] 1
+CHECKITEM  金盒 10
+#ACT
+take 金盒 10
+CALCVAR HUMAN 金盒 + 10
+SAVEVAR HUMAN 金盒 ..\QuestDiary\数据文件\财宝\金盒Save.txt
+SENDMSG 6 提示：你当前拥有的金盒数量是：<$HUMAN(金盒)>个
+goto @存财宝
+#ELSESAY
+　\
+　\
+　　　对不起！你的背包里没有这么多的金盒！　\
+　　　<返回/@存财宝>\
+
+[@存一个金箱]
+#IF
+check [630] 1
+CHECKITEM  金箱 1
+#ACT
+take 金箱 1
+CALCVAR HUMAN 金箱 + 1
+SAVEVAR HUMAN 金箱 ..\QuestDiary\数据文件\财宝\金箱Save.txt
+SENDMSG 6 提示：你当前拥有的金箱数量是：<$HUMAN(金箱)>个
+goto @存财宝
+#ELSESAY
+　\
+　\
+　　　对不起！你的背包里没有这么多的金箱！　\
+　　　<返回/@存财宝>\
+
+[@存三个金箱]
+#IF
+check [630] 1
+CHECKITEM  金箱 3
+#ACT
+take 金箱 3
+CALCVAR HUMAN 金箱 + 3
+SAVEVAR HUMAN 金箱 ..\QuestDiary\数据文件\财宝\金箱Save.txt
+SENDMSG 6 提示：你当前拥有的金箱数量是：<$HUMAN(金箱)>个
+goto @存财宝
+#ELSESAY
+　\
+　\
+　　　对不起！你的背包里没有这么多的金箱！　\
+　　　<返回/@存财宝>\
+
+[@存十个金箱]
+#IF
+check [630] 1
+CHECKITEM  金箱 10
+#ACT
+take 金箱 10
+CALCVAR HUMAN 金箱 + 10
+SAVEVAR HUMAN 金箱 ..\QuestDiary\数据文件\财宝\金箱Save.txt
+SENDMSG 6 提示：你当前拥有的金箱数量是：<$HUMAN(金箱)>个
+goto @存财宝
+#ELSESAY
+　\
+　\
+　　　对不起！你的背包里没有这么多的金箱！　\
+　　　<返回/@存财宝>\
+
+}

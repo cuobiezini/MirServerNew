@@ -1,0 +1,10 @@
+[@main]
+#IF
+checkmonmap  t7 1
+#act
+break
+#SAY
+对不起!<$USERNAME> 你还没有清除所有怪物!请继续吧\
+<关闭/@exit>
+#elseact
+set [537] 1

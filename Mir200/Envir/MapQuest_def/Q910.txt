@@ -1,0 +1,6 @@
+[@main]
+#IF
+CHECKSLAVECOUNT < 10
+#ACT
+take 随机传送卷包 40
+SENDMSG 7 %s:皇宫禁止一切宠物入内!

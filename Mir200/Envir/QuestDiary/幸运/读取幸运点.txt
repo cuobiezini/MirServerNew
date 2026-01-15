@@ -1,0 +1,512 @@
+[@读取幸运值]
+{
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\100.txt
+#ACT
+mov d5 100
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\99.txt
+#ACT
+mov d5 99
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\98.txt
+#ACT
+mov d5 98
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\97.txt
+#ACT
+mov d5 97
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\96.txt
+#ACT
+mov d5 96
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\95.txt
+#ACT
+mov d5 95
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\94.txt
+#ACT
+mov d5 94
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\93.txt
+#ACT
+mov d5 93
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\92.txt
+#ACT
+mov d5 92
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\91.txt
+#ACT
+mov d5 91
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\90.txt
+#ACT
+mov d5 90
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\89.txt
+#ACT
+mov d5 89
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\88.txt
+#ACT
+mov d5 88
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\87.txt
+#ACT
+mov d5 87
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\86.txt
+#ACT
+mov d5 86
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\85.txt
+#ACT
+mov d5 85
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\84.txt
+#ACT
+mov d5 84
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\83.txt
+#ACT
+mov d5 83
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\82.txt
+#ACT
+mov d5 82
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\81.txt
+#ACT
+mov d5 81
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\80.txt
+#ACT
+mov d5 80
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\79.txt
+#ACT
+mov d5 79
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\78.txt
+#ACT
+mov d5 78
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\77.txt
+#ACT
+mov d5 77
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\76.txt
+#ACT
+mov d5 76
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\75.txt
+#ACT
+mov d5 75
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\74.txt
+#ACT
+mov d5 74
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\73.txt
+#ACT
+mov d5 73
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\72.txt
+#ACT
+mov d5 72
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\71.txt
+#ACT
+mov d5 71
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\70.txt
+#ACT
+mov d5 70
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\69.txt
+#ACT
+mov d5 69
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\68.txt
+#ACT
+mov d5 68
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\67.txt
+#ACT
+mov d5 67
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\66.txt
+#ACT
+mov d5 66
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\65.txt
+#ACT
+mov d5 65
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\64.txt
+#ACT
+mov d5 64
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\63.txt
+#ACT
+mov d5 63
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\62.txt
+#ACT
+mov d5 62
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\61.txt
+#ACT
+mov d5 61
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\60.txt
+#ACT
+mov d5 60
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\59.txt
+#ACT
+mov d5 59
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\58.txt
+#ACT
+mov d5 58
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\57.txt
+#ACT
+mov d5 57
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\56.txt
+#ACT
+mov d5 56
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\55.txt
+#ACT
+mov d5 55
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\54.txt
+#ACT
+mov d5 54
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\53.txt
+#ACT
+mov d5 53
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\52.txt
+#ACT
+mov d5 52
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\51.txt
+#ACT
+mov d5 51
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\50.txt
+#ACT
+mov d5 50
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\49.txt
+#ACT
+mov d5 49
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\48.txt
+#ACT
+mov d5 48
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\47.txt
+#ACT
+mov d5 47
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\46.txt
+#ACT
+mov d5 46
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\45.txt
+#ACT
+mov d5 45
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\44.txt
+#ACT
+mov d5 44
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\43.txt
+#ACT
+mov d5 43
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\42.txt
+#ACT
+mov d5 42
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\41.txt
+#ACT
+mov d5 41
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\40.txt
+#ACT
+mov d5 40
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\39.txt
+#ACT
+mov d5 39
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\38.txt
+#ACT
+mov d5 38
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\37.txt
+#ACT
+mov d5 37
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\36.txt
+#ACT
+mov d5 36
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\35.txt
+#ACT
+mov d5 35
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\34.txt
+#ACT
+mov d5 34
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\33.txt
+#ACT
+mov d5 33
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\32.txt
+#ACT
+mov d5 32
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\31.txt
+#ACT
+mov d5 31
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\30.txt
+#ACT
+mov d5 30
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\29.txt
+#ACT
+mov d5 29
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\28.txt
+#ACT
+mov d5 28
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\27.txt
+#ACT
+mov d5 27
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\26.txt
+#ACT
+mov d5 26
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\25.txt
+#ACT
+mov d5 25
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\24.txt
+#ACT
+mov d5 24
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\23.txt
+#ACT
+mov d5 23
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\22.txt
+#ACT
+mov d5 22
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\21.txt
+#ACT
+mov d5 21
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\20.txt
+#ACT
+mov d5 20
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\19.txt
+#ACT
+mov d5 19
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\18.txt
+#ACT
+mov d5 18
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\17.txt
+#ACT
+mov d5 17
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\16.txt
+#ACT
+mov d5 16
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\15.txt
+#ACT
+mov d5 15
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\14.txt
+#ACT
+mov d5 14
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\13.txt
+#ACT
+mov d5 13
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\12.txt
+#ACT
+mov d5 12
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\11.txt
+#ACT
+mov d5 11
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\10.txt
+#ACT
+mov d5 10
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\9.txt
+#ACT
+mov d5 9
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\8.txt
+#ACT
+mov d5 8
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\7.txt
+#ACT
+mov d5 7
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\6.txt
+#ACT
+mov d5 6
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\5.txt
+#ACT
+mov d5 5
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\4.txt
+#ACT
+mov d5 4
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\3.txt
+#ACT
+mov d5 3
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\2.txt
+#ACT
+mov d5 2
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\1.txt
+#ACT
+mov d5 1
+break
+#IF
+checknamelist ..\QuestDiary\幸运\幸运值\0.txt
+#ACT
+mov d5 0
+break
+#ELSEACT
+mov d5 0
+break
+
+}

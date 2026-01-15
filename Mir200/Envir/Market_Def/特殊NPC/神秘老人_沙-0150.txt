@@ -1,0 +1,30 @@
+()
+%100
+[@main]
+这里只有沙巴克成员才能前往！\
+沙巴克的宝藏到底有多少。。。。这个就不用我废话了吧，\
+就连那“王者禁地”才有的“霸者之刃”\
+都已经在这里收藏了好多把了，你能想到的所有宝藏这里都有了，\
+每天看着“地藏魔王”拿着“霸者之刃”在我面前炫耀，\
+我就想动手抢一把来耍耍！还有那“重装使者”，唉。。。。。\
+<马上前往沙巴克藏宝阁/@mashangmove>
+;======================
+[@mashangmove]
+#IF
+ISCASTLEGUILD
+#ACT
+goto @cbgemove
+#ELSESAY
+你不是沙巴克成员，无法前往藏宝阁！\ \
+<离开/@exit>
+[@cbgemove]
+#IF
+CHECKCREDITPOINT > 0
+ISCASTLEGUILD
+#ACT
+give 回城卷 1
+mapmove H201
+CREDITPOINT - 1
+#ELSESAY
+前往藏宝阁需要1点声望！\ \
+<离开/@exit>

@@ -1,0 +1,187 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+
+[@main]
+#IF
+ CHECK [101] 1
+ CHECK [102] 1
+ CHECK [103] 0
+ CHECKLEVEL 40
+ CHECKITEM 白菊花
+#SAY
+你很厉害，竟然能讨得我女儿的欢心，你不用说你的来意了。\
+拥有终级武器是每个人的梦想，但希望越大失望越大，虽然\
+很久没动身子骨了，但我仍能帮你打造千年难遇的神兵利器。\ \
+ <需要的材料/@cailiao>\
+ <打造武器/@dazao>\ \
+ <关闭/@exit>
+#ELSESAY
+半兽勇士住在沃玛森林里面...\
+这个怪物可不简单哦...\ \
+ <退出/@exit>
+
+[@cailiao]
+#IF
+checkjob warrior
+#act
+ GOTO @zhanshicl
+break
+
+#IF
+checkjob wizard
+#act
+ GOTO @fashicl
+break
+
+#IF
+checkjob taoist
+#act
+ GOTO @daoshicl
+break
+
+
+
+[@zhanshicl]
+打造终级武器所需材料：\ \
+　金箱 2 个\
+　记忆装备 1 套\
+　白菊花 1 朵、修炼石 1 块\
+　金色栗子 1 个、金色橡树果 1 个、屠龙(魔) 1 把\ \
+ <返回/@main>
+
+[@fashicl]
+打造终级武器所需材料：\ \
+　金箱 2 个\
+　记忆装备 1 套\
+　白菊花 1 朵、修炼石 1 块\
+　金色栗子 1 个、金色橡树果 1 个、血饮(魔) 1 把\ \
+ <返回/@main>
+
+[@daoshicl]
+打造终级武器所需材料：\ \
+　金箱 2 个\
+　记忆装备 1 套\
+　白菊花 1 朵、修炼石 1 块\
+　金色栗子 1 个、金色橡树果 1 个、龙纹(魔) 1 把\ \
+ <返回/@main>
+
+
+
+
+[@dazao]
+请选择你要打造武器的类型：\ \
+ <战士/@zs>　<法师/@fs>　<道士/@ds>\ \
+ <返回/@main>
+
+[@zs]
+#IF
+ CHECK [101] 1
+ CHECK [102] 1
+ CHECK [103] 0
+checkjob warrior
+ CHECKLEVEL 40
+ CHECKITEM 金箱 2
+ CHECKITEM 记忆头盔 1
+ CHECKITEM 记忆项链 1
+ CHECKITEM 记忆手镯 1
+ CHECKITEM 记忆戒指 1
+ CHECKITEM 金色栗子 1
+ CHECKITEM 金色橡树果 1
+ CHECKITEM 白菊花 1
+ CHECKITEM 修炼石 1
+ CHECKITEM 屠龙(魔) 1
+#ACT
+ TAKE 金箱 2
+ TAKE 记忆头盔 1
+ TAKE 记忆项链 1
+ TAKE 记忆手镯 1
+ TAKE 记忆戒指 1
+ TAKE 金色栗子 1
+ TAKE 金色橡树果 1
+ TAKE 白菊花 1
+ TAKE 修炼石 1
+ TAKE 屠龙(魔) 1
+ GIVE 寒铁 3
+ SET [103] 1
+ GOTO @jiesu
+ BREAK
+#ELSESAY
+你的材料不足，无法打造武器。
+
+[@fs]
+#IF
+ CHECK [101] 1
+ CHECK [102] 1
+ CHECK [103] 0
+checkjob wizard
+ CHECKLEVEL 40
+ CHECKITEM 金箱 2
+ CHECKITEM 记忆头盔 1
+ CHECKITEM 记忆项链 1
+ CHECKITEM 记忆手镯 1
+ CHECKITEM 记忆戒指 1
+ CHECKITEM 金色栗子 1
+ CHECKITEM 金色橡树果 1
+ CHECKITEM 白菊花 1
+ CHECKITEM 修炼石 1
+ CHECKITEM 血饮(魔) 1
+#ACT
+ TAKE 金箱 2
+ TAKE 记忆头盔 1
+ TAKE 记忆项链 1
+ TAKE 记忆手镯 1
+ TAKE 记忆戒指 1
+ TAKE 金色栗子 1
+ TAKE 金色橡树果 1
+ TAKE 白菊花 1
+ TAKE 修炼石 1
+ TAKE 血饮(魔) 1
+ GIVE 魔法石 3
+ SET [103] 1
+ GOTO @jiesu
+ BREAK
+#ELSESAY
+你的材料不足，无法打造武器。
+
+[@ds]
+#IF
+ CHECK [101] 1
+ CHECK [102] 1
+ CHECK [103] 0
+checkjob taoist
+ CHECKLEVEL 40
+ CHECKITEM 金箱 2
+ CHECKITEM 记忆头盔 1
+ CHECKITEM 记忆项链 1
+ CHECKITEM 记忆手镯 1
+ CHECKITEM 记忆戒指 1
+ CHECKITEM 金色栗子 1
+ CHECKITEM 金色橡树果 1
+ CHECKITEM 白菊花 1
+ CHECKITEM 修炼石 1
+ CHECKITEM 龙纹(魔) 1
+#ACT
+ TAKE 金箱 2
+ TAKE 记忆头盔 1
+ TAKE 记忆项链 1
+ TAKE 记忆手镯 1
+ TAKE 记忆戒指 1
+ TAKE 金色栗子 1
+ TAKE 金色橡树果 1
+ TAKE 白菊花 1
+ TAKE 修炼石 1
+ TAKE 龙纹(魔) 1 
+ GIVE 诅咒石 3
+ SET [103] 1
+ GOTO @jiesu
+ BREAK
+#ELSESAY
+你的材料不足，无法打造武器。
+
+[@jiesu]
+武器的最终合成其实还是由你的心智来决定的。\
+锻造神器的材料我已经给你了，好象要在神舰大厅\
+的神鼎里进行回炉!好好把握你的人生吧。\ \
+ <关闭/@exit>

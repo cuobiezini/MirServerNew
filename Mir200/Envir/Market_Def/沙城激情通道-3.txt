@@ -1,0 +1,54 @@
+[@main]
+  
+这里我们提供沙巴克皇传送,但是需要你破费点元宝。\  \
+
+ <沙巴克大门/@damen>     2元宝\  \
+ <沙巴克武器店/@wuqi>   5元宝\  \
+ <沙巴克复活点/@fuhuo>   6元宝\  
+
+[@damen]
+#IF 
+CHECKGAMEGOLD > 1
+#ACT
+GAMEGOLD - 2
+mapmove 3 672 333
+give 回城卷 1
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+break
+#ELSESAY
+你没有足够的元宝用来支付我们的服务费用!\
+请努力赚钱哦:)\\
+
+
+[@wuqi]
+#IF 
+CHECKGAMEGOLD > 4
+#ACT
+GAMEGOLD - 5
+mapmove 0151 21 25
+give 回城卷 1
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+break
+#ELSESAY
+你没有足够的元宝用来支付我们的服务费用!\
+请努力赚钱哦:)\\
+
+
+[@fuhuo]
+
+#IF 
+CHECKGAMEGOLD > 5
+#ACT
+GAMEGOLD - 6
+mapmove 3 646 298
+give 回城卷 1
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+break
+#ELSESAY
+你没有足够的元宝用来支付我们的服务费用!\
+请努力赚钱哦:)\\
+
+

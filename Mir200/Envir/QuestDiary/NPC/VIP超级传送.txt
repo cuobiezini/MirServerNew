@@ -1,0 +1,93 @@
+[@22221133]
+{
+<$USERNAME>,你好。欢迎使用我们的超级传送服务\
+我们将针对会员开发更多人性、体贴的功能\
+练级（<vip>传送）：<赤月峡谷/@vipcyxg>　<比奇矿区/@vipbqkq>　<沃玛寺庙/@vipwmsm>　<狐狸大陆/@viphldl>\
+练级（<vip>传送）：<死亡山谷/@vipswsg>　<石墓洞穴/@vipsmdx>　<祖玛寺庙/@vipzmsm>　<逆魔胜地/@vipnmsdd>\
+练级（<vip>传送）：<封魔神殿/@vipfmsd>　<尸魔洞穴/@vip5mdx>　<骨魔洞穴/@vipgmdx>　<牛魔寺庙/@vipnmsm>\
+练级（<vip>传送）：<石墓七层/@vipsmqc2>　<秦皇陵墓/@vipwmjzdt2>　<未知暗殿/@vipwzad2>　<尸王殿/@vipswd2>\
+打宝（<vip>传送）：<沉没之船/@vipcmzc>　<贵族神殿/@vipnldx>　<炎龙洞窟/@vipyldk>　\
+特殊（<vip>任务）：<通天塔/@vipttt>
+
+
+
+[@yhchaoji]
+<$USERNAME>,使用超级传送必须支付金币才能顺利到达。\
+您想免费使用我们的超级传送服务吗？<我想知道/@lxfs2>\
+练级（金币限制）：<赤月峡谷/@cyxg>　<比奇矿区/@bqkq>　<沃玛寺庙/@wmsm>　<狐狸大陆/@hldl> \
+练级（金币限制）：<死亡山谷/@swsg>　<石墓洞穴/@smdx>　<祖玛寺庙/@zmsm>　<逆魔胜地/@nmsdd>\
+练级（金币限制）：<封魔神殿/@fmsd>　<尸魔洞穴/@5mdx>　<骨魔洞穴/@gmdx>　<牛魔寺庙/@nmsm>\
+练级（金币限制）：<石墓七层/@smqc2>　<秦皇陵墓/@wmjzdt2>　<未知暗殿/@wzad2>　<尸王殿/@swd2>\
+打宝（金币限制）：<贵族神殿/@nldx>　<沉没之船/@cmzc>　<炎龙洞窟/@yldk>\
+特殊（任务专用）：<通天塔/@ttt2>
+
+
+
+
+[@viphuashaocf888]
+#if
+#ACT
+mapmove 3 333 333
+SENDMSG 2 %s因使用非法程序发送指令试图作弊被请出游戏!风云网络已经采用最新触发系统防止作弊，任何作弊的玩家将被禁止游戏.
+exeaction kick
+
+[@linqubaobao]
+#IF
+CHECKSLAVECOUNT = 5
+#ACT
+set [631] 1
+SENDMSG 6   幸运神：你的护卫已经够多了。你可以进去了。。
+break
+
+#IF
+CHECKLEVELEX < 42
+  EQUAL G0 0
+#ACT
+RECALLMOB  驽玛法王0 0 1 1200 0  -1 
+set [631] 1
+close
+break
+
+#IF
+  EQUAL G0 1
+#ACT
+RECALLMOB  黑色恶蛆0 0 5 120 0  -1 
+set [631] 1
+break
+
+#IF
+  EQUAL G0 2
+#ACT
+ReCALLMOB  虎卫 0 5 120 0  -1 
+set [631] 1
+break
+
+#IF
+  EQUAL G0 3
+#ACT
+ReCALLMOB  鹰卫 0 5 120 0  -1 
+set [631] 1
+break
+
+#IF
+  EQUAL G0 4
+#ACT
+ReCALLMOB  黑色恶蛆8 0 5 120 0  -1 
+set [631] 1
+break
+
+#IF
+  EQUAL G0 5
+#ACT
+ReCALLMOB  钳虫8 0 5 120 0  -1 
+set [631] 1
+break
+
+#IF
+  EQUAL G0 6
+#ACT
+ReCALLMOB  钳虫8 0 5 120 0  -1 
+set [631] 1
+break
+
+}

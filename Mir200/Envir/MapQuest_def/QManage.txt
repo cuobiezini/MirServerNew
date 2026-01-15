@@ -1,0 +1,331 @@
+[@Login]
+;#IF
+;checknamelist gm.txt
+;#ACT
+;GOTO @CHECKGM22    
+;#elseact
+;SENDMSG 5 %s，晚上8点准时开放。
+;exeaction kick
+
+
+;[@CHECKGM22]
+;#If
+;   checkitemw 记忆戒指
+;#Act
+;MESSAGEBOX 友情提示：\　　　　由于你可能佩带了召唤或传送装备而未开启登陆锁被留置仓库。
+; map 0140
+
+;#If
+;   checkitemw 传送戒指
+;#Act
+;MESSAGEBOX 友情提示：\　　　　由于你可能佩带了召唤或传送装备而未开启登陆锁被留置仓库。
+; map 0140
+
+;#If
+;   checkitem 记忆戒指
+;#Act
+;MESSAGEBOX 友情提示：\　　　　由于你可能佩带了召唤或传送装备而未开启登陆锁被留置仓库。
+; map 0140
+
+;#If
+;   checkitem 传送戒指
+;#Act
+;MESSAGEBOX 友情提示：\　　　　由于你可能佩带了召唤或传送装备而未开启登陆锁被留置仓库。
+; map 0140
+
+
+#IF
+  ISADMIN
+#ACT
+SETRANKLEVELNAME %s\★不败神话★
+;CHANGEMODE 1 1
+;CHANGEMODE 2 1
+;CHANGEMODE 3 1
+;mapmove G005 66 39
+
+
+ 
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+goto @main2
+
+VAR Integer HUMAN TSSH
+VAR Integer HUMAN 金盒
+VAR Integer HUMAN 金箱
+LOADVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+LOADVAR HUMAN 金盒 ..\QuestDiary\数据文件\财宝\金盒Save.txt
+LOADVAR HUMAN 金箱 ..\QuestDiary\数据文件\财宝\金箱Save.txt
+#CALL [NPC\检查会员及转生.txt] @检查会员转生1
+SENDMSG 5 %s,请登陆http://cq.grkfcs.cn/下载最新完整客户端，否则将无法进行召唤英雄，召唤英雄请在土城安全区找万事通。。
+;MESSAGEBOX 友情提示：\　　　　风云传奇已全面更新，请玩家登陆http://cq.grkfcs.cn/下载最新完整客\　　户端。没有下载最新客户端的玩家将会出现四格装备无法佩带及衣服\　　武器外观错乱.最新客户端已经集成诸多激动人心的功能和最新技能，\　　相关功能将根据玩家在论坛的投票逐步开放。\　　　　12月21日下载了的玩家请下载12月26日最新衣服及怪物补丁。
+   
+set [631] 0
+
+#IF
+checknamelist ../QuestDiary/数据文件/禁止登陆.txt
+#ACT
+SENDMSG 5 %s由于使用脱机软件进行挂机或使用非法软件发送作弊指令被冻结，非法登陆IP已被服务器记录，冻结帐号将在十天后自动解封。。。。
+exeaction kick
+break
+
+#IF
+checknamelist gm.txt
+#ACT
+GOTO @CHECKGM 
+
+
+
+[@CHECKGM]
+#IF
+  CHECKIPLIST GMIP.TXT
+#ACT
+    CHANGEMODE 2 1
+    CHANGEMODE 3 1 
+;POWERRATE  9000  6000000
+goto @Login1
+#elseact
+SENDMSG 5 %s非法登陆被强制下线，非法登陆IP已被服务器记录
+exeaction kick
+
+
+[@newhkfs]
+风云传说会员办理最新电话及客服QQ！\
+风云会员办理QQ：<1103740053  1103740053>\
+风云会员办理热线：<XXXX--XXXX  XXXX>\ \
+
+　　　　　　　　　　　　　　　　　　   <关闭/@exit>
+
+
+;---------------------------------------------------
+
+[@Member]
+#if
+#say
+<$USERNAME>您好:\
+　   欢迎使用风云辅助功能，您在任何时候需要我的时候我都会帮\
+你：<更加丰富强大的风云辅助功能将在12月1日前全面推出>\ \
+　     <游戏帮助/@help_ms>    <版主工资/@bzgz_ms>      <天之召唤/@tzzh_ms>\ \
+　     <联盟网吧/@lmwb_ms>    <人形宝宝/@rxbb_ms>      \ \ 
+　　　　　　　　　　     　　　　       <关闭/@exit>
+;;<风云商城/@shop_ms>
+
+[@shop_ms]
+#CALL [\\商城系统\风云商城.txt] @sxshop
+
+[@help_ms]
+#CALL [\\fymir\游戏帮助.txt] @misubz
+
+[@lmwb_ms]
+#CALL [\\fymir\联盟网吧.txt] @sxlmwb
+
+[@rxbb_ms]
+#CALL [\\fymir\人形宝宝.txt] @sxrxbb
+
+[@bzgz_ms]
+#CALL [\\fymir\版主工资.txt] @bzdystart
+
+[@tzzh_ms]
+#CALL [\\fymir\天之召唤.txt] @sxtzzh
+
+[@xlcs_ms]
+此功能为会员功能，即将添加。更多功能陆续添加中\
+请玩家登陆http://cq.grkfcs.cn/反馈
+
+
+[@novip]
+尊敬的<$USERNAME>，您好，感谢您在过去的岁月里选择了风云网\
+络提供的游戏服务。有了您的信任和支持，才有了风云传说\
+的不断发展与进步，在未来的日子里，风云传说将一如既往\
+地为玩家提供优质、安全、周到的服务！\
+您试图使用的辅助功能属于<会员功能>,如果您想享受会\
+员秘书功能，请<联系管理员/@newhkfs>办理会员，我们将十分荣\
+幸为您效劳!再次感谢您对风云传说的信任和支持！
+
+
+[@Startup]
+#IF
+#ACT
+#CALL [\\游戏登陆\登陆脚本.txt] @登陆设置
+
+
+
+[@main2]
+#IF
+CheckLevelEx < 101
+gender man
+checkjob warrior
+check [588] 0
+#ACT
+set [588] 1
+
+#IF
+CheckLevelEx < 101
+gender woman
+checkjob warrior
+check [588] 0
+#ACT
+set [588] 1
+
+#IF
+CheckLevelEx < 101
+gender man
+checkjob wizard
+check [588] 0
+#ACT
+set [588] 1
+
+
+
+#IF
+CheckLevelEx < 101
+gender woman
+checkjob wizard
+check [588] 0
+#ACT
+set [588] 1
+
+
+
+#IF
+CheckLevelEx < 101
+gender man
+checkjob taoist
+check [588] 0
+#ACT
+set [588] 1
+
+
+#IF
+CheckLevelEx < 101
+gender woman
+checkjob taoist
+check [588] 0
+#ACT
+set [588] 1
+
+
+
+
+break
+#IF
+check [525] 0
+checkjob warrior
+#ACT
+set [525] 1
+CLEARSKILL
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+RECALLMOB  驽玛法王0 1 1 600 0  -1 
+
+break
+#IF
+check [525] 0
+checkjob wizard
+#ACT
+set [525] 1
+CLEARSKILL
+ADDSKILL 火球术 3
+ADDSKILL 大火球 3
+ADDSKILL 地狱火 3
+ADDSKILL 雷电术 3
+ADDSKILL 爆裂火焰 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+RECALLMOB  驽玛法王0 1 1 600 0  -1 
+
+break
+#IF
+check [525] 0
+checkjob taoist
+#ACT
+set [525] 1
+CLEARSKILL
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 困魔咒 3
+ADDSKILL 群体治疗术 3
+RECALLMOB  驽玛法王0 1 1 600 0  -1 
+
+break
+
+
+
+
+[@OnTimer2]
+#IF
+checklevelex < 49 (检测等级)
+ISONMAP paodian (检查地图)
+;CHECKGAMEGOLD > 999 (检测元宝)
+#ACT
+
+CHANGEEXP + 30000
+;CHANGENGEXP + 3000000
+BREAK
+
+#IF
+checklevelex > 48
+ISONMAP paodian (检查地图)
+;CHECKGAMEGOLD > 999
+#ACT
+
+;CHANGEEXP + 30000
+;CHANGENGEXP + 30000
+BREAK
+#ELSEACT
+#IF
+ISONMAP paodian
+#ACT
+SETOFFTIMER 2
+;MESSAGEBOX 记时经验每一秒需要1000元宝,你没有元宝或者已经用完!
+;MAPMOVE 3 330 333
+BREAK
+#ELSEACT
+SETOFFTIMER 2
+
+
+
+;在此文件加 
+
+
+[@风雷召唤]
+#IF
+HaveGuild
+CheckOfGuild A99   
+#SAY
+同门师兄弟〖<$STR(A98)>〗需要帮助！\
+你是否愿意前往？\ \
+<前往帮助/@风雷召唤_1>　　<不前往帮助/@EXIT>\
+#ACT
+BREAK
+#ELSEACT
+BREAK
+
+[@风雷召唤_1]
+#IF
+HaveGuild
+CheckOfGuild A99
+#ACT
+Gmexecute 追杀 <$STR(A98)>
+BREAK
+#ELSEACT
+BREAK

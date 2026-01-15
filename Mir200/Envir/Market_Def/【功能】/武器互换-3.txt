@@ -1,0 +1,87 @@
+()
+%100
+[@main]
+#IF
+#ACT
+OpenBigDialogBox
+#SAY
+　　　　　<▁/AUTOCOLOR=249,95,70,133,146,241,238><▂/AUTOCOLOR=95,70,133,146,241,238,249><▃/AUTOCOLOR=70,133,146,241,238,249,95><▄/AUTOCOLOR=133,146,241,238,249,95,70><▅/AUTOCOLOR=146,241,238,249,95,70,133><▇/AUTOCOLOR=241,238,249,95,70,133,146><█/AUTOCOLOR=238,249,95,70,133,146,241><☆欢迎光临/SCOLOR=254> <★暴力中变★/SCOLOR=249> <欢迎光临☆/SCOLOR=254><█/AUTOCOLOR=238,249,95,70,133,146,241><▇/AUTOCOLOR=241,238,249,95,70,133,146><▅/AUTOCOLOR=146,241,238,249,95,70,133><▄/AUTOCOLOR=133,146,241,238,249,95,70><▃/AUTOCOLOR=70,133,146,241,238,249,95><▂/AUTOCOLOR=95,70,133,146,241,238,249><▁/AUTOCOLOR=249,95,70,133,146,241,238>\ 
+　　　　　　　　　　　<亲爱的玩家您好.欢迎你查看装备互换功能./SCOLOR=254>\
+　　　　　　　<━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　　　　<◇横行霸道ㄨ斩◇/SCOLOR=254>换→<邪恶×战天斧/@PG>  <我要换回去/@HQ1>\
+　　　　　　　<━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　　　　<◇横行霸道ㄨ斩◇/SCOLOR=254>换→<邪恶×霹雳剑/@XY>  <我要换回去/@HQ2>\
+　　　　　　　<━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　　　　<◇横行霸道ㄨ斩◇/SCOLOR=254>换→<邪恶×屠龙斩/@CY>  <我要换回去/@HQ3>\
+　　　　　　　<━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　　　　<横行霸道ㄨ换三把神器需要1个★邪恶碎片★ 换回去免费./SCOLOR=254>\
+　\
+\<┃╔〓╗╔〓╗╔〓╗╔〓╗╔〓╗╔〓╗┃/SCOLOR=253><┃╔〓╗╔〓╗╔〓╗╔〓╗╔〓╗╔〓╗┃/SCOLOR=253> 
+  \<┃╠最╣╠新╣╠独╣╠家╣╠中╣╠变╣┃/SCOLOR=250><┃╠独╣╠家╣╠暴╣╠力╣╠中╣╠变╣┃/SCOLOR=250>
+ \<┃╚〓╝╚〓╝╚〓╝╚〓╝╚〓╝╚〓╝┃/SCOLOR=253><┃╚〓╝╚〓╝╚〓╝╚〓╝╚〓╝╚〓╝┃/SCOLOR=253>
+
+[@HQ3]
+#IF
+CHECKITEM 邪恶×屠龙斩 1
+#ACT
+TAKE 邪恶×屠龙斩 1
+GIVE 横行霸道ㄨ斩 1
+SENDMSG 7 互换成功!
+#ELSEACT
+MESSAGEBOX 打不起!材料不够!请看说明!
+
+[@HQ2]
+#IF
+CHECKITEM 邪恶×霹雳剑 1
+#ACT
+TAKE 邪恶×霹雳剑 1
+GIVE 横行霸道ㄨ斩 1
+SENDMSG 7 互换成功!
+#ELSEACT
+MESSAGEBOX 打不起!材料不够!请看说明!
+
+[@HQ1]
+#IF
+CHECKITEM 邪恶×战天斧 1
+#ACT
+TAKE 邪恶×战天斧 1
+GIVE 横行霸道ㄨ斩 1
+SENDMSG 7 互换成功!
+#ELSEACT
+MESSAGEBOX 打不起!材料不够!请看说明!
+
+[@CY]
+#IF
+CHECKITEM 横行霸道ㄨ斩 1
+CHECKITEM ★邪恶碎片★ 1
+#ACT
+TAKE ★邪恶碎片★ 1
+TAKE 横行霸道ㄨ斩 1
+GIVE 邪恶×屠龙斩 1
+SENDMSG 7 互换成功!
+#ELSEACT
+MESSAGEBOX 打不起!材料不够!请看说明!
+
+[@XY]
+#IF
+CHECKITEM 横行霸道ㄨ斩 1
+CHECKITEM ★邪恶碎片★ 1
+#ACT
+TAKE ★邪恶碎片★ 1
+TAKE 横行霸道ㄨ斩 1
+GIVE 邪恶×霹雳剑 1
+SENDMSG 7 互换成功!
+#ELSEACT
+MESSAGEBOX 打不起!材料不够!请看说明!
+
+[@PG]
+#IF
+CHECKITEM 横行霸道ㄨ斩 1
+CHECKITEM ★邪恶碎片★ 1
+#ACT
+TAKE ★邪恶碎片★ 1
+TAKE 横行霸道ㄨ斩 1
+GIVE 邪恶×战天斧 1
+SENDMSG 7 互换成功!
+#ELSEACT
+MESSAGEBOX 打不起!材料不够!请看说明!

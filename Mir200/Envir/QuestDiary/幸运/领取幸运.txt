@@ -1,0 +1,646 @@
+[@领取幸运值]
+{
+幸运值这东西实在太奇妙了，\
+钻研了这么久我才悟到了其中的奥秘，\
+当然我知道的只是其中的皮毛，但已经很受用了。\
+你如果能提供我一块“紫水晶矿”或“绿宝石矿”\
+我便能帮你将“幸运值”加满到100点，\
+直接开启你的2倍个人经验！\
+不过在你下线或跳转大的场景时“幸运值”会消失。\
+<领取/@gerenshuang>幸运值\
+<查看/@chakanxingyun>幸运值
+
+[@gerenshuang]
+#IF
+checkitem 紫水晶矿 1
+#ACT
+take 紫水晶矿 1
+KILLMONEXPRATE 200 1800
+SENDMSG 6 幸运值释放，获得双倍经验。
+#CALL [\\幸运\删除幸运点.txt] @删除幸运点
+mov d5 0
+close
+break
+#IF
+checkitem 绿宝石矿 1
+#ACT
+take 绿宝石矿 1
+KILLMONEXPRATE 200 1800
+SENDMSG 6 幸运值释放，获得双倍经验。
+#CALL [\\幸运\删除幸运点.txt] @删除幸运点
+mov d5 0
+close
+#elsesay
+你没有矿石无法释放幸运值！\ \
+<返回/@main>
+
+[@chakanxingyun]
+#IF
+equal d5 0
+#ACT
+SENDMSG 6 您当前的幸运值为：0
+close
+break
+#IF
+equal d5 1
+#ACT
+SENDMSG 6 您当前的幸运值为：1
+close
+break
+#IF
+equal d5 2
+#ACT
+SENDMSG 6 您当前的幸运值为：2
+close
+break
+#IF
+equal d5 3
+#ACT
+SENDMSG 6 您当前的幸运值为：3
+close
+break
+#IF
+equal d5 4
+#ACT
+SENDMSG 6 您当前的幸运值为：4
+close
+break
+#IF
+equal d5 5
+#ACT
+SENDMSG 6 您当前的幸运值为：5
+close
+break
+#IF
+equal d5 6
+#ACT
+SENDMSG 6 您当前的幸运值为：6
+close
+break
+#IF
+equal d5 7
+#ACT
+SENDMSG 6 您当前的幸运值为：7
+close
+break
+#IF
+equal d5 8
+#ACT
+SENDMSG 6 您当前的幸运值为：8
+close
+break
+#IF
+equal d5 9
+#ACT
+SENDMSG 6 您当前的幸运值为：9
+close
+break
+#IF
+equal d5 10
+#ACT
+SENDMSG 6 您当前的幸运值为：10
+close
+break
+#IF
+equal d5 11
+#ACT
+SENDMSG 6 您当前的幸运值为：11
+close
+break
+#IF
+equal d5 12
+#ACT
+SENDMSG 6 您当前的幸运值为：12
+close
+break
+#IF
+equal d5 13
+#ACT
+SENDMSG 6 您当前的幸运值为：13
+close
+break
+#IF
+equal d5 14
+#ACT
+SENDMSG 6 您当前的幸运值为：14
+close
+break
+#IF
+equal d5 15
+#ACT
+SENDMSG 6 您当前的幸运值为：15
+close
+break
+#IF
+equal d5 16
+#ACT
+SENDMSG 6 您当前的幸运值为：16
+close
+break
+#IF
+equal d5 17
+#ACT
+SENDMSG 6 您当前的幸运值为：17
+close
+break
+#IF
+equal d5 18
+#ACT
+SENDMSG 6 您当前的幸运值为：18
+close
+break
+#IF
+equal d5 19
+#ACT
+SENDMSG 6 您当前的幸运值为：19
+close
+break
+#IF
+equal d5 20
+#ACT
+SENDMSG 6 您当前的幸运值为：20
+close
+break
+#IF
+equal d5 21
+#ACT
+SENDMSG 6 您当前的幸运值为：21
+close
+break
+#IF
+equal d5 22
+#ACT
+SENDMSG 6 您当前的幸运值为：22
+close
+break
+#IF
+equal d5 23
+#ACT
+SENDMSG 6 您当前的幸运值为：23
+close
+break
+#IF
+equal d5 24
+#ACT
+SENDMSG 6 您当前的幸运值为：24
+close
+break
+#IF
+equal d5 25
+#ACT
+SENDMSG 6 您当前的幸运值为：25
+close
+break
+#IF
+equal d5 26
+#ACT
+SENDMSG 6 您当前的幸运值为：26
+close
+break
+#IF
+equal d5 27
+#ACT
+SENDMSG 6 您当前的幸运值为：27
+close
+break
+#IF
+equal d5 28
+#ACT
+SENDMSG 6 您当前的幸运值为：28
+close
+break
+#IF
+equal d5 29
+#ACT
+SENDMSG 6 您当前的幸运值为：29
+close
+break
+#IF
+equal d5 30
+#ACT
+SENDMSG 6 您当前的幸运值为：30
+close
+break
+#IF
+equal d5 31
+#ACT
+SENDMSG 6 您当前的幸运值为：31
+close
+break
+#IF
+equal d5 32
+#ACT
+SENDMSG 6 您当前的幸运值为：32
+close
+break
+#IF
+equal d5 33
+#ACT
+SENDMSG 6 您当前的幸运值为：33
+close
+break
+#IF
+equal d5 34
+#ACT
+SENDMSG 6 您当前的幸运值为：34
+close
+break
+#IF
+equal d5 35
+#ACT
+SENDMSG 6 您当前的幸运值为：35
+close
+break
+#IF
+equal d5 36
+#ACT
+SENDMSG 6 您当前的幸运值为：36
+close
+break
+#IF
+equal d5 37
+#ACT
+SENDMSG 6 您当前的幸运值为：37
+close
+break
+#IF
+equal d5 38
+#ACT
+SENDMSG 6 您当前的幸运值为：38
+close
+break
+#IF
+equal d5 39
+#ACT
+SENDMSG 6 您当前的幸运值为：39
+close
+break
+#IF
+equal d5 40
+#ACT
+SENDMSG 6 您当前的幸运值为：40
+close
+break
+#IF
+equal d5 41
+#ACT
+SENDMSG 6 您当前的幸运值为：41
+close
+break
+#IF
+equal d5 42
+#ACT
+SENDMSG 6 您当前的幸运值为：42
+close
+break
+#IF
+equal d5 43
+#ACT
+SENDMSG 6 您当前的幸运值为：43
+close
+break
+#IF
+equal d5 44
+#ACT
+SENDMSG 6 您当前的幸运值为：44
+close
+break
+#IF
+equal d5 45
+#ACT
+SENDMSG 6 您当前的幸运值为：45
+close
+break
+#IF
+equal d5 46
+#ACT
+SENDMSG 6 您当前的幸运值为：46
+close
+break
+#IF
+equal d5 47
+#ACT
+SENDMSG 6 您当前的幸运值为：47
+close
+break
+#IF
+equal d5 48
+#ACT
+SENDMSG 6 您当前的幸运值为：48
+close
+break
+#IF
+equal d5 49
+#ACT
+SENDMSG 6 您当前的幸运值为：49
+close
+break
+#IF
+equal d5 50
+#ACT
+SENDMSG 6 您当前的幸运值为：50
+close
+break
+#IF
+equal d5 51
+#ACT
+SENDMSG 6 您当前的幸运值为：51
+close
+break
+#IF
+equal d5 52
+#ACT
+SENDMSG 6 您当前的幸运值为：52
+close
+break
+#IF
+equal d5 53
+#ACT
+SENDMSG 6 您当前的幸运值为：53
+close
+break
+#IF
+equal d5 54
+#ACT
+SENDMSG 6 您当前的幸运值为：54
+close
+break
+#IF
+equal d5 55
+#ACT
+SENDMSG 6 您当前的幸运值为：55
+close
+break
+#IF
+equal d5 56
+#ACT
+SENDMSG 6 您当前的幸运值为：56
+close
+break
+#IF
+equal d5 57
+#ACT
+SENDMSG 6 您当前的幸运值为：57
+close
+break
+#IF
+equal d5 58
+#ACT
+SENDMSG 6 您当前的幸运值为：58
+close
+break
+#IF
+equal d5 59
+#ACT
+SENDMSG 6 您当前的幸运值为：59
+close
+break
+#IF
+equal d5 60
+#ACT
+SENDMSG 6 您当前的幸运值为：60
+close
+break
+#IF
+equal d5 61
+#ACT
+SENDMSG 6 您当前的幸运值为：61
+close
+break
+#IF
+equal d5 62
+#ACT
+SENDMSG 6 您当前的幸运值为：62
+close
+break
+#IF
+equal d5 63
+#ACT
+SENDMSG 6 您当前的幸运值为：63
+close
+break
+#IF
+equal d5 64
+#ACT
+SENDMSG 6 您当前的幸运值为：64
+close
+break
+#IF
+equal d5 65
+#ACT
+SENDMSG 6 您当前的幸运值为：65
+close
+break
+#IF
+equal d5 66
+#ACT
+SENDMSG 6 您当前的幸运值为：66
+close
+break
+#IF
+equal d5 67
+#ACT
+SENDMSG 6 您当前的幸运值为：67
+close
+break
+#IF
+equal d5 68
+#ACT
+SENDMSG 6 您当前的幸运值为：68
+close
+break
+#IF
+equal d5 69
+#ACT
+SENDMSG 6 您当前的幸运值为：69
+close
+break
+#IF
+equal d5 70
+#ACT
+SENDMSG 6 您当前的幸运值为：70
+close
+break
+#IF
+equal d5 71
+#ACT
+SENDMSG 6 您当前的幸运值为：71
+close
+break
+#IF
+equal d5 72
+#ACT
+SENDMSG 6 您当前的幸运值为：72
+close
+break
+#IF
+equal d5 73
+#ACT
+SENDMSG 6 您当前的幸运值为：73
+close
+break
+#IF
+equal d5 74
+#ACT
+SENDMSG 6 您当前的幸运值为：74
+close
+break
+#IF
+equal d5 75
+#ACT
+SENDMSG 6 您当前的幸运值为：75
+close
+break
+#IF
+equal d5 76
+#ACT
+SENDMSG 6 您当前的幸运值为：76
+close
+break
+#IF
+equal d5 77
+#ACT
+SENDMSG 6 您当前的幸运值为：77
+close
+break
+#IF
+equal d5 78
+#ACT
+SENDMSG 6 您当前的幸运值为：78
+close
+break
+#IF
+equal d5 79
+#ACT
+SENDMSG 6 您当前的幸运值为：79
+close
+break
+#IF
+equal d5 80
+#ACT
+SENDMSG 6 您当前的幸运值为：80
+close
+break
+#IF
+equal d5 81
+#ACT
+SENDMSG 6 您当前的幸运值为：81
+close
+break
+#IF
+equal d5 82
+#ACT
+SENDMSG 6 您当前的幸运值为：82
+close
+break
+#IF
+equal d5 83
+#ACT
+SENDMSG 6 您当前的幸运值为：83
+close
+break
+#IF
+equal d5 84
+#ACT
+SENDMSG 6 您当前的幸运值为：84
+close
+break
+#IF
+equal d5 85
+#ACT
+SENDMSG 6 您当前的幸运值为：85
+close
+break
+#IF
+equal d5 86
+#ACT
+SENDMSG 6 您当前的幸运值为：86
+close
+break
+#IF
+equal d5 87
+#ACT
+SENDMSG 6 您当前的幸运值为：87
+close
+break
+#IF
+equal d5 88
+#ACT
+SENDMSG 6 您当前的幸运值为：88
+close
+break
+#IF
+equal d5 89
+#ACT
+SENDMSG 6 您当前的幸运值为：89
+close
+break
+#IF
+equal d5 90
+#ACT
+SENDMSG 6 您当前的幸运值为：90
+close
+break
+#IF
+equal d5 91
+#ACT
+SENDMSG 6 您当前的幸运值为：91
+close
+break
+#IF
+equal d5 92
+#ACT
+SENDMSG 6 您当前的幸运值为：92
+close
+break
+#IF
+equal d5 93
+#ACT
+SENDMSG 6 您当前的幸运值为：93
+close
+break
+#IF
+equal d5 94
+#ACT
+SENDMSG 6 您当前的幸运值为：94
+close
+break
+#IF
+equal d5 95
+#ACT
+SENDMSG 6 您当前的幸运值为：95
+close
+break
+#IF
+equal d5 96
+#ACT
+SENDMSG 6 您当前的幸运值为：96
+close
+break
+#IF
+equal d5 97
+#ACT
+SENDMSG 6 您当前的幸运值为：97
+close
+break
+#IF
+equal d5 98
+#ACT
+SENDMSG 6 您当前的幸运值为：98
+close
+break
+#IF
+equal d5 99
+#ACT
+SENDMSG 6 您当前的幸运值为：99
+close
+break
+#IF
+equal d5 100
+#ACT
+SENDMSG 6 您当前的幸运值为：100
+close
+break
+
+
+}

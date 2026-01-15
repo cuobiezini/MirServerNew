@@ -1,0 +1,16 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+(@storage @getback)
+%100
+
+[@main]
+　　年底正在清仓盘帐，去找盟重的仓库\
+保管员吧!\ \
+<好的,去盟重仓库/@haodee>
+
+[@haodee]
+#if
+#act
+map 0145

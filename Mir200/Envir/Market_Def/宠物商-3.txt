@@ -1,0 +1,214 @@
+;2003-07-08 Jacky编写
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+我不想和一个杀人狂做生意！请走开。\ 
+ <关闭/@exit>
+#ELSEACT
+goto @main-1
+
+[@main-1]
+欢迎使用我为你提供的买宝宝服务，\
+每种宝宝都将用掉你部分金币和物品。\
+最多可以买5只宝宝，你想买宝宝吗？\ \  
+ <买宝宝/@buybaby>\
+  <关闭/@exit>
+
+[@buybaby]
+#IF
+CHECKSLAVECOUNT < 5
+#SAY
+你要购买哪种宝宝呢？ \ \
+<恶蛆宝宝/@eqbb>  <钳虫宝宝/@qcbb>  <虎卫宝宝/@hwbb>  <鹰卫宝宝/@ywbb>\
+<驽玛法王/@M42>   \ \ 
+ 宝宝伺养中，下回来也许会多哦~~~\ \
+ <关闭/@exit>
+#ELSESAY
+宠物商：“你要买的宝宝已经卖完了。下次再来吧！”\ \
+ <关闭/@exit>
+
+[@eqbb]
+#IF
+checkgold 100000
+#ACT
+ReCALLMOB  黑色恶蛆 0 5 120 0  -1 
+take 金币 100000
+#SAY
+宠物商：“卖给你一个宝宝了。好好照顾他哦！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+#ELSESAY
+黑色恶蛆：“10万块都拿不出来？我是不会跟着穷鬼的”\ \
+ <关闭/@exit>
+
+[@qcbb]
+#IF
+checkgold 100000
+#ACT
+ReCALLMOB  钳虫 0 5 120 0  -1 
+take 金币 100000
+#SAY
+宠物商：“卖给你一个宝宝了。好好照顾他哦！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+#ELSESAY
+钳虫：“10万块都拿不出来？我是不会跟着穷鬼的”\ \
+ <关闭/@exit>
+
+[@hwbb]
+#IF
+checkgold 300000
+#ACT
+ReCALLMOB  虎卫 0 5 120 0  -1 
+take 金币 300000
+#SAY
+宠物商：“卖给你一个宝宝了。好好照顾他哦！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+#ELSESAY
+虎卫：“30万都拿不出来？我是不会跟着穷鬼的”\ \
+ <关闭/@exit>
+
+[@ywbb]
+#IF
+checkgold 300000
+#ACT
+ReCALLMOB  鹰卫 0 5 120 0  -1 
+take 金币 300000
+#SAY
+宠物商：“卖给你一个宝宝了。好好照顾他哦！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+#ELSESAY
+鹰卫：“30万都拿不出来？我是不会跟着穷鬼的”\ \
+ <关闭/@exit>
+
+
+[@M42]
+召唤驽玛法王是为了降低幽灵船难度和某些特殊场合特定\
+使用而设立的，你必须同意以下条款才能使用此功能\
+<1、自行承担服务器因网络和电力等不可抗拒因素造成驽玛法王消失>\
+<2、自行承担常规维护重起而造成驽玛法王消失的损失>(常规重起时间为\
+早上8点至9点期间)\
+<3、攻城期间禁止带驽玛法王进入攻城区域>\ \
+
+<我同意以上条款并购买/@nmbb>\
+<我怕怕，不买了/@exit>
+
+[@nmbb]
+#IF
+checkitem 金盒 2
+#SAY
+宠物商：“你要的东西我已经给你，好好拿着吧！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+#ACT
+give 会员勋章(Mon0) 1
+take 金盒 2
+break
+
+
+
+#IF
+checkitem 圣战项链 2
+checkitem 圣战手镯 4
+checkitem 圣战戒指 4
+checkitem 圣战头盔 2
+
+#SAY
+宠物商：“你要的东西我已经给你，好好拿着吧！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+
+#ACT
+give 会员勋章(Mon0) 1
+take 圣战项链 2
+take 圣战手镯 4
+take 圣战戒指 4
+take 圣战头盔 2
+break
+
+
+
+#IF
+checkitem 法神项链 2
+checkitem 法神手镯 4
+checkitem 法神戒指 4
+checkitem 法神头盔 2
+
+#SAY
+宠物商：“你要的东西我已经给你，好好拿着吧！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+
+#ACT
+give 会员勋章(Mon0) 1
+take 法神项链 2
+take 法神手镯 4
+take 法神戒指 4
+take 法神头盔 2
+break
+
+
+
+
+#IF
+checkitem 天尊项链 2
+checkitem 天尊手镯 4
+checkitem 天尊戒指 4
+checkitem 天尊头盔 2
+
+#SAY
+宠物商：“你要的东西我已经给你，好好拿着吧！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+
+#ACT
+give 会员勋章(Mon0) 1
+take 天尊项链 2
+take 天尊手镯 4
+take 天尊戒指 4
+take 天尊头盔 2
+break
+
+
+
+
+
+#IF
+checkitem 金砖
+checkitem 法王令牌 3
+#SAY
+宠物商：“你要的东西我已经给你，好好拿着吧！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+#ACT
+give 会员勋章(Mon0) 1
+take 金砖
+take 法王令牌 3
+break
+
+
+
+
+
+;10个元宝购买去掉
+;#IF
+;CHECKGAMEGOLD > 10
+;#SAY
+;宠物商：“你要的东西我已经给你，好好拿着吧！”\ \
+; <继续买宝宝/@buybaby>\ \
+; <关闭/@exit>
+;#ACT
+;give 会员勋章(Mon0) 1
+;GAMEGOLD - 10
+
+
+
+#ELSESAY
+驽玛法王：“两个金盒,你没有？法王令牌3个和金砖你应该有吧？\
+或者给我天尊、法神、圣战中的两套我才会跟你混.\
+ <关闭/@exit>
+

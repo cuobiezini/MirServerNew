@@ -1,0 +1,158 @@
+[@main]
+#IF
+ checkpkpoint 2
+#SAY
+我不想和一个杀人狂做生意！请走开。\ \ 
+ <关闭/@exit>
+#ELSEACT
+ goto @main-1
+
+[@main-1]
+我的生意一直都很火，所以我只为有钱人服务。\
+不要说我势利眼，你要是真有本事就拿出钱来。\
+注意改名字颜色只对白名有效！\ \
+ <改变名字颜色/@ChangNameColor>\ \
+ <关闭/@exit>
+
+[@ChangNameColor]
+选择你要改变的颜色吧，注意不要选择你现在已有的颜色哦，\
+金条可不是那么容易赚到的！\ \
+ <还原/@Color255> <蓝色/@Color0> <绿色/@Color1> <黄色/@Color2> <橙色/@Color3>\ \
+ <土黄/@Color4> <红色/@Color5> <淡兰/@Color6> <淡绿/@Color7>\ \
+ <返回/@mzys>
+
+;还原
+;-------------------------------------------------
+[@Color255]
+#ACT
+CHANGENAMECOLOR 255
+#SAY
+你已经成功还原了名字的颜色！\ \ \
+ <返回/@mzys>
+
+;蓝色
+;-------------------------------------------------
+[@Color0]
+#IF
+ checklevel 15
+ checkgold 10000
+#ACT
+CHANGENAMECOLOR 252
+take 金币 10000
+#SAY
+呵呵，你的颜色已经改变。\ \
+#ELSESAY
+等你15级后带1万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;绿色
+;-------------------------------------------------
+[@Color1]
+#IF
+ checklevel 25
+ checkgold 50000
+#ACT
+ CHANGENAMECOLOR 217
+ take 金币 50000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你25级后带5万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;黄色
+;-------------------------------------------------
+[@Color2]
+#IF
+ checklevel 33
+ checkgold 150000
+#ACT
+ CHANGENAMECOLOR 251
+ take 金币 150000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你33级后带15万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;橙色
+;-------------------------------------------------
+[@Color3]
+#IF
+ checklevel 39
+ checkgold 300000
+#ACT
+ CHANGENAMECOLOR 253
+ take 金币 300000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你39级后带30万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;土黄
+;-------------------------------------------------
+[@Color4]
+#IF
+ checklevel 43
+ checkgold 600000
+#ACT
+ CHANGENAMECOLOR 125
+ take 金币 600000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你43级后带60万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;红色
+;-------------------------------------------------
+[@Color5]
+#IF
+ checklevel 45
+ checkgold 1000000
+#ACT
+ CHANGENAMECOLOR 249
+ take 金币 1000000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你45级后带100万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;淡兰
+;-------------------------------------------------
+[@Color6]
+#IF
+ checklevel 43
+ checkgold 600000
+#ACT
+ CHANGENAMECOLOR 254
+ take 金币 600000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你43级后带60万金币来找我！\ \
+ <返回/@ChangNameColor>
+
+;淡绿
+;-------------------------------------------------
+[@Color7]
+#IF
+ checklevel 45
+ checkgold 1000000
+#ACT
+ CHANGENAMECOLOR 250
+ take 金币 100000
+#SAY
+你已经成功更改了名字的颜色！\ \
+ <返回/@mzys>
+#ELSESAY
+等你45级后带10万金币来找我！\ \
+ <返回/@ChangNameColor>

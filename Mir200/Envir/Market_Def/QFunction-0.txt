@@ -1,0 +1,770 @@
+(@@offlinemsg @@RecallPneuma @@useitemname @@sendmsg)
+[@HeroNameFilter]
+英雄名字中包含禁用字符\<关闭/@exit>
+[@CreateHeroOK]
+创建英雄成功\<关闭/@exit>
+[@HeroNameExists]
+英雄名字已经存在\<关闭/@exit>
+[@HeroOverChrCount]
+你的帐号角色过多\<关闭/@exit>
+[@CreateHeroFail]
+创建英雄失败\<关闭/@exit>
+[@CreateHeroFailEx]
+创建英雄失败，请稍候重试\<关闭/@exit>
+
+
+[@StdModeFunc1]
+
+#IF
+  EQUAL M2 1
+#ACT
+SENDMSG 6 由于您现在正在皇宫或进入过皇宫，请小退再上线进行召唤！！
+break
+
+
+#IF
+CheckSlaveCount < 1
+#ACT
+#ELSEACT
+SENDMSG 7 宠物的数量已达到上限 !
+give 万恶召唤令
+break
+
+
+
+#IF
+#ACT
+RECALLMOB  变异法王  0 1 1200 0  -1 
+sendmsg 7 万恶召唤令，尸横遍野，血流成河！！！
+
+
+[@StdModeFunc2]
+#IF
+CHECKRENEWLEVEL > 0
+#ACT
+take 金币 500000
+SENDMSG 6 %s因获得了邪恶力量而无法获得修炼领悟~~~~
+break
+
+#IF
+  EQUAL G0 5
+#ACT
+take 金币 500000
+CHANGEEXP + 45000000
+SENDMSG 6 %s获得了45000000修炼领悟
+break
+
+#IF
+  EQUAL G0 4
+#ACT
+take 金币 500000
+CHANGEEXP + 80000000
+SENDMSG 6 %s获得了80000000修炼领悟
+break
+
+#IF
+  EQUAL G0 3
+CHECKLEVELEX < 42
+#ACT
+take 金币 500000
+CHANGEEXP + 300000000
+SENDMSG 6 %s获得了300000000修炼领悟
+break
+
+#IF
+  EQUAL G0 2
+#ACT
+take 金币 500000
+CHANGEEXP + 50000000
+SENDMSG 6 %s获得了50000000修炼领悟
+break
+
+#IF
+  EQUAL G0 1
+#ACT
+take 金币 500000
+CHANGEEXP + 20000000
+SENDMSG 6 %s获得了20000000修炼领悟
+break
+
+#IF
+  EQUAL G0 0
+#ACT
+take 金币 500000
+CHANGEEXP + 70000000
+SENDMSG 6 %s获得了70000000修炼领悟
+break
+
+#ELSEACT
+take 金币 500000
+CHANGEEXP + 1
+SENDMSG 6 %s获得了1修炼领悟~~~~
+break
+
+[@UserCmd1]
+#ACT
+MessageBox 自定义游戏命令功能
+
+
+
+
+
+
+
+
+[@StdModeFunc100]
+#if
+checkgold 99000001
+#act
+give 金条 1
+SENDMSG 7 提示：你身上携带的金钱太多了.无法再进行兑换!
+#elseact
+give 金币 1000000
+SENDMSG 7 提示：金币已经增加100W在包裹里面.
+
+  
+  
+
+[@StdModeFunc500]
+#if
+checkgold 95000001
+#act
+give 金砖 1
+SENDMSG 7 提示：你身上携带的金钱太多了.无法再进行兑换!
+#elseact
+give 金币 5000000
+SENDMSG 7 提示：金币已经增加500W在包裹里面.
+
+  
+
+  
+
+[@StdModeFunc1000]
+#if
+checkgold 90000001
+#act
+give 金盒 1
+SENDMSG 7 提示：你身上携带的金钱太多了.无法再进行兑换!
+#elseact
+give 金币 10000000
+SENDMSG 7 提示：金币已经增加1000W在包裹里面.
+
+  
+
+
+;;5元宝
+[@StdModeFunc5]
+#IF 
+#ACT
+GAMEGOLD + 5
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+
+;;1元宝
+[@StdModeFunc11]
+#IF 
+#ACT
+GAMEGOLD + 1
+SENDMSG 7 【提示您】:<$USERNAME>在加后的元宝数量为：<$GAMEGOLD>个
+
+
+
+;;2元宝
+[@StdModeFunc22]
+#IF 
+#ACT
+GAMEGOLD + 2
+SENDMSG 7 【提示您】:<$USERNAME>在加后的元宝数量为：<$GAMEGOLD>个
+
+
+
+;;10元宝
+[@StdModeFunc10]
+#IF 
+#ACT
+GAMEGOLD + 10
+SENDMSG 7 【提示您】:<$USERNAME>在加后的元宝数量为：<$GAMEGOLD>个
+
+;;50元宝
+[@StdModeFunc50]
+#IF 
+#ACT
+GAMEGOLD + 50
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+
+
+;;1000元宝
+[@StdModeFunc130]
+#IF 
+#ACT
+GAMEGOLD + 1000
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+
+
+;;2000元宝
+[@StdModeFunc131]
+#IF 
+#ACT
+GAMEGOLD + 2000
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+
+;;2400元宝
+[@StdModeFunc132]
+#IF 
+#ACT
+GAMEGOLD + 2400
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+
+
+;;400元宝
+[@StdModeFunc133]
+#IF 
+#ACT
+GAMEGOLD + 400
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+
+
+;;100元宝
+[@StdModeFunc134]
+#IF 
+#ACT
+GAMEGOLD + 100
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+
+
+
+;;200元宝
+[@StdModeFunc135]
+#IF 
+#ACT
+GAMEGOLD + 200
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+
+
+
+
+;;500元宝
+[@StdModeFunc136]
+#IF 
+#ACT
+GAMEGOLD + 500
+SENDMSG 7 【提示您】:<$USERNAME>增加后的元宝数量为：<$GAMEGOLD>个
+
+
+
+
+
+
+
+
+
+[@StdModeFunc57]        
+#If 
+CheckItemAddValue 1 3 > 6 
+#Act 
+GIVE 超级祝福油 1 
+SendMsg 5 [提示]:你的武器已经幸运值+7点了。系统无法给你增加了. 
+BREAK 
+#IF 
+CHECKUSEITEM 1 
+#ACT 
+UPGRADEITEMEX 1 3 0 1 0 
+SendMsg 5 [提示]:恭喜您你的武器幸运值增加了1点。 
+break 
+#ELSEACT 
+GIVE 超级祝福油 1 
+SENDMSG 7  [失败]:你当前手上没有任何武器。 
+break
+
+
+
+
+;;炎龙套装
+[@StdModeFunc120]
+#IF
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+您购买的是 炎龙套装 套装！请您接受我们为您准备的特殊装备！\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　      <我要 炎龙套装卷男/@炎龙男衣服> \ \
+　      <我要 炎龙套装卷女/@炎龙女衣服> \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+[@炎龙男衣服]
+#IF
+#ACT
+give 炎龙项链 1
+give 炎龙手套 2
+give 炎龙戒指 2
+give 火龙鳞甲(男)  1
+give 炎龙靴 1
+give 炎龙腰带 1
+give 炎龙头盔 1
+give 炎龙剑 1
+give 天骄之徽(金)  1
+give 圣战佩       1
+
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+[@炎龙女衣服]
+#IF
+#ACT
+give 炎龙项链 1
+give 炎龙手套 2
+give 炎龙戒指 2
+give 火龙鳞甲(女) 1
+give 炎龙靴 1
+give 炎龙腰带 1
+give 炎龙头盔 1
+give 炎龙剑 1
+give 天骄之徽(金)  1
+give 圣战佩       1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+
+
+
+[@StdModeFunc121]
+#IF
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+您购买的是 真海魂法套套装！请您接受我们为您准备的特殊装备！\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　      <我要 真海魂法套装卷→男/@真海魂法男> \ \
+　      <我要 真海魂法套装卷→女/@真海魂法女> \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+[@真海魂法男]
+#IF
+#ACT
+give 海魂法链 1
+give 海魂法镯 2
+give 海魂法戒 2
+give 法神腰带 1
+give 海魂法靴 1
+give 天骄之徽(银)  1
+give 海魂头盔(法) 1
+give 天使神翼(男) 1
+give 血饮魔 1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+[@真海魂法女]
+#IF
+#ACT
+give 海魂法链 1
+give 海魂法镯 2
+give 海魂法戒 2
+give 法神腰带 1
+give 海魂法靴 1
+give 天骄之徽(银)  1
+give 海魂头盔(法)  1
+give 天使神翼(女)  1
+give 血饮魔 1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+
+
+
+[@StdModeFunc122]
+#IF
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+您购买的是 真海魂战套套装！请您接受我们为您准备的特殊装备！\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　      <我要 真海魂战套装卷→男/@男真海魂战> \ \
+　      <我要 真海魂战套装卷→女/@女真海魂战> \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+[@男真海魂战]
+#IF
+#ACT
+give 海魂战链 1
+give 海魂战镯 2
+give 海魂战戒 2
+give 圣战腰带 1
+give 海魂战靴 1
+give 天骄之徽(金)  1
+give 海魂头盔(战) 1
+give 天使圣翼(男) 1
+give 屠龙魔 1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+[@女真海魂战]
+#IF
+#ACT
+give 海魂战链 1
+give 海魂战镯 2
+give 海魂战戒 2
+give 圣战腰带 1
+give 海魂战靴 1
+give 天骄之徽(金)  1
+give 海魂头盔(战)  1
+give 天使圣翼(女)  1
+give 屠龙魔 1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+
+
+
+
+[@StdModeFunc123]
+#IF
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+您购买的是 真海魂道套套装！请您接受我们为您准备的特殊装备！\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　      <我要 真海魂道套装卷→男/@男真海魂道> \ \
+　      <我要 真海魂道套装卷→女/@女真海魂道> \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+[@男真海魂道]
+#IF
+#ACT
+give 海魂道链 1
+give 海魂道镯 2
+give 海魂道戒 2
+give 天尊腰带 1
+give 海魂道靴 1
+give 天骄之徽(铜)  1
+give 海魂头盔(道) 1
+give 天使尊翼(男) 1
+give 龙纹魔 1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+[@女真海魂道]
+#IF
+#ACT
+give 海魂道链 1
+give 海魂道镯 2
+give 海魂道戒 2
+give 天尊腰带 1
+give 海魂道靴 1
+give 天骄之徽(铜)  1
+give 海魂头盔(道) 1
+give 天使尊翼(女) 1
+give 龙纹魔 1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+
+
+[@StdModeFunc124]
+#IF
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+您购买的是 逆魔道套套装！请您接受我们为您准备的特殊装备！\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　      <我要逆魔道套装卷→男/@男逆魔道套> \ \
+　      <我要逆魔道套装卷→女/@女逆魔道套> \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+[@男逆魔道套]
+#IF
+#ACT
+give 逆魔项链(道)  1
+give 逆魔手镯(道)  2
+give 逆魔戒指(道) 2 
+give 天尊腰带     1
+give 海魂靴(道)   1
+give 天骄之徽(铜)  1
+give 海魂头盔(道) 1
+give 天使尊翼(男) 1
+give 龙纹(魔)      1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+[@女逆魔道套]
+#IF
+#ACT
+give 逆魔项链(道)  1
+give 逆魔手镯(道)  2
+give 逆魔戒指(道)  2 
+give 天尊腰带      1
+give 海魂靴(道)    1
+give 天骄之徽(铜)  1
+give 海魂头盔(道)  1
+give 天使尊翼(女)  1
+give 龙纹(魔)     1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+
+
+
+
+[@StdModeFunc125]
+#IF
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+您购买的是 逆魔战套套装！请您接受我们为您准备的特殊装备！\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　      <我要逆魔战套装卷→男/@男逆魔战> \ \
+　      <我要逆魔战套装卷→女/@女逆魔战> \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+[@男逆魔战]
+#IF
+#ACT
+give 逆魔项链(战)  1
+give 逆魔手镯(战)  2
+give 逆魔戒指(战)  2 
+give 圣战腰带      1
+give 海魂靴(战)    1
+give 天骄之徽(金)  1
+give 海魂头盔(战)  1
+give 天使圣翼(男)  1
+give 屠龙(魔)      1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+[@女逆魔战]
+#IF
+#ACT
+give 逆魔项链(战)  1
+give 逆魔手镯(战)  2
+give 逆魔戒指(战)  2 
+give 圣战腰带      1
+give 海魂靴(战)    1
+give 天骄之徽(金)  1
+give 海魂头盔(战)  1
+give 天使圣翼(女)  1
+give 屠龙(魔)      1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+
+
+
+[@StdModeFunc126]
+#IF
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+您购买的是 逆魔法套套装！请您接受我们为您准备的特殊装备！\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　      <我要逆魔法套装卷→男/@男逆魔法> \ \
+　      <我要逆魔法套装卷→女/@女逆魔法> \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+[@男逆魔法]
+#IF
+#ACT
+give 逆魔项链(法)  1
+give 逆魔手镯(法)  2
+give 逆魔戒指(法)  2 
+give 法神腰带      1
+give 海魂靴(法)    1
+give 天骄之徽(银)  1
+give 海魂头盔(法)  1
+give 天使神翼(男)  1
+give 血饮(魔)      1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+[@女逆魔法]
+#IF
+#ACT
+give 逆魔项链(法)  1
+give 逆魔手镯(法)  2
+give 逆魔戒指(法)  2 
+give 法神腰带      1
+give 海魂靴(法)    1
+give 天骄之徽(银)  1
+give 海魂头盔(法)  1
+give 天使神翼(女)  1
+give 血饮(魔)     1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+
+
+
+
+[@StdModeFunc127]
+#IF
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+您购买的是 记忆套装！请您接受我们为您准备的特殊装备！\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　      <我要记忆套装卷/@记忆1> \ \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+[@记忆1]
+#IF
+#ACT
+give 记忆项链  1
+give 记忆手镯  2
+give 记忆戒指  2
+give 记忆头盔  1 
+
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+
+
+
+
+[@StdModeFunc128]
+#IF
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+您购买的是 帝王套装！请您接受我们为您准备的特殊装备！\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　      <我要帝王套装卷→男/@男帝王> \ \
+　      <我要帝王套装卷→女/@女帝王> \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+[@男帝王]
+#IF
+#ACT
+give 帝王项链  1
+give 帝王手套  2
+give 帝王戒指  2 
+give 帝王腰带     1
+give 帝王勋章     1
+give 帝王靴    1
+give 圣战佩    1
+give 帝王头盔   1
+give 恶魔(男) 1
+give 嗜血狂刃    1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+[@女帝王]
+#IF
+#ACT
+give 帝王项链  1
+give 帝王手套  2
+give 帝王戒指  2 
+give 帝王腰带     1
+give 帝王勋章     1
+give 帝王靴    1
+give 圣战佩    1
+give 帝王头盔   1
+give 恶魔(女) 1
+give 嗜血狂刃    1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+
+
+
+[@StdModeFunc129]
+#IF
+#SAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+您购买的是 雷神套装！请您接受我们为您准备的特殊装备！\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　      <我要雷神套装卷→男/@男雷神> \ \
+　      <我要雷神套装卷→女/@女雷神> \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+[@男雷神]
+#IF
+#ACT
+give 雷神项链  1
+give 雷神手镯  2
+give 雷神戒指  2 
+give 雷神腰带  1
+give 雷神勋章  1
+give 雷神靴    1
+give 法神佩    1
+give 雷神帽    1
+give 邪恶冰魅(男)  1
+give 袭风      1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+[@女雷神]
+#IF
+#ACT
+give 雷神项链  1
+give 雷神手镯  2
+give 雷神戒指  2 
+give 雷神腰带     1
+give 雷神勋章     1
+give 雷神靴    1
+give 法神佩    1
+give 雷神帽   1
+give 邪恶冰魅(女) 1
+give 袭风        1
+goto @成功领取
+[@成功领取]
+你已经成功获得套装系列！\
+
+
+
+[@PlayOffLine]
+#IF
+INSAFEZONE ;检测是否是安全区
+CHECKONLINEPLAYCOUNT < 1000 ;检测服务器在线人数是否小于1000
+#ACT
+OFFLINE 7200 100 
+
+
+
+
+;加上，这2个，
+
+[@UserCmd4]
+#IF
+#ACT
+sendmsg 7      OK.........
+
+
+
+[@StdModeFunc95]
+#IF
+HaveGuild
+#ACT
+MOV A99 <$GUILDNAME>
+MOV A98 <$USERNAME>
+Gmexecute 全服触发 @风雷召唤
+SENDMSG 5 风雷召唤令已放出，请等待你的援军！
+BREAK
+#ELSEACT
+SENDMSG 5 您没有加入任何行会，使用风雷召唤令无效果。
+BREAK
+
+

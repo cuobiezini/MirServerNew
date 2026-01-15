@@ -1,0 +1,184 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+(@buy @Sell @repair @s_repair)
+%100
++10
++11
++15
+
+[@main]
+#IF
+CHECKVAR HUMAN TSSH = 1
+#say
+   你就是<$USERNAME>？霹雳天使给我说过了你想升华天\
+使！好吧，但是在帮你做衣服之前你必须帮我杀2个冰城帝\
+王，当年我的儿子就是被这个劣畜吸血而亡。唉~~\
+你能帮我报仇吗？\
+<好的，我帮你报仇/@bnbaocou>\
+<算了，我打不过/@exit>
+#ACT
+break
+
+#IF
+CHECKVAR HUMAN TSSH = 2
+#say
+   帮人帮到底啊，你才杀了一个冰城帝王呢\
+杀完两个冰城帝王再来找我吧\
+
+<好的，我知道了/@exit>\
+
+#ACT
+break
+
+
+#IF
+CHECKVAR HUMAN TSSH = 3
+#say
+    <$USERNAME>，真的很感谢你帮我报仇，现在\
+我可以帮你做衣服了，你的衣服材料准备好了吗?\
+<准备好了/@clzhbhl>\
+<还没有/@exit>
+#ACT
+break
+
+
+#IF
+#act
+goto @zcjiaoyi
+break
+
+[@bnbaocou]
+   你真是个好人！好的，那你先帮我去\
+杀冰城帝王吧，回来的时候不要忘了帮我把\
+做衣服的材料带回来！！\ \
+<我想知道需要那些材料？/@xzdcliao>
+
+[@clzhbhl]
+#if
+   CHECKVAR HUMAN TSSH = 3
+   checkitem 神针 2
+   checkitem 纯银 10
+   checkitem 龙骨 5
+   checkitem 金刚石 10
+   checkitem 祝福油 10
+   checkitem 天使之翼(男) 1
+#say
+    做的还不错吧，这件神衣会给你带\
+来好运的\
+#act
+   take 神针 2
+   take 纯银 10
+   take 龙骨 5
+   take 金刚石 10
+   take 祝福油 10
+   take 天使之翼(男) 1
+CALCVAR HUMAN TSSH = 10
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+goto @jianczy
+break
+
+#if
+   CHECKVAR HUMAN TSSH = 3
+   checkitem 神针 2
+   checkitem 纯银 10
+   checkitem 龙骨 5
+   checkitem 金刚石 10
+   checkitem 祝福油 10
+   checkitem 天使之翼(女) 1
+#say
+    做的还不错吧，这件神衣会给你带\
+来好运的\
+#act
+   take 神针 2
+   take 纯银 10
+   take 龙骨 5
+   take 金刚石 10
+   take 祝福油 10
+   take 天使之翼(女) 1
+CALCVAR HUMAN TSSH = 11
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+goto @jianczy
+break
+
+#if
+#say
+  材料没有准备好？还是~~？\ \
+<我想知道需要那些材料？/@xzdcliao>
+
+
+[@jianczy]
+#IF
+   CHECKVAR HUMAN TSSH = 10
+   checkjob warrior
+#ACT
+   give 天使圣翼(男) 1
+CALCVAR HUMAN TSSH = 0
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+addnamelist ..\QuestDiary\数据文件\TSSHYZ.txt
+break
+
+#IF
+   CHECKVAR HUMAN TSSH = 10
+   checkjob taoist
+#ACT
+   give 天使尊翼(男) 1
+CALCVAR HUMAN TSSH = 0
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+addnamelist ..\QuestDiary\数据文件\TSSHYZ.txt
+break
+
+#IF
+   CHECKVAR HUMAN TSSH = 10
+   checkjob wizard
+#ACT
+   give 天使神翼(男) 1
+CALCVAR HUMAN TSSH = 0
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+addnamelist ..\QuestDiary\数据文件\TSSHYZ.txt
+break
+;======检查女==========
+#IF
+   CHECKVAR HUMAN TSSH = 11
+   checkjob warrior
+#ACT
+   give 天使圣翼(女) 1
+CALCVAR HUMAN TSSH = 0
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+addnamelist ..\QuestDiary\数据文件\TSSHYZ.txt
+break
+
+#IF
+   CHECKVAR HUMAN TSSH = 11
+   checkjob taoist
+#ACT
+   give 天使尊翼(女) 1
+CALCVAR HUMAN TSSH = 0
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+addnamelist ..\QuestDiary\数据文件\TSSHYZ.txt
+break
+
+#IF
+   CHECKVAR HUMAN TSSH = 11
+   checkjob wizard
+#ACT
+   give 天使神翼(女) 1
+CALCVAR HUMAN TSSH = 0
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+addnamelist ..\QuestDiary\数据文件\TSSHYZ.txt
+break
+
+
+
+[@xzdcliao]
+   材料？大概就这些吧：\ \
+   2根神针，10块纯银，5块龙骨\
+   10颗金刚石，10瓶祝福油,天使之翼一件\ \
+<好的，我知道了/@exit>
+
+
+
+    
+[@zcjiaoyi]
+#CALL [\\商店\服饰店.txt] @sxsf

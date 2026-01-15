@@ -1,0 +1,65 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）脚本文件
+;2005/02/23	Jacky	调整更新
+
+{
+[@bzdystart]
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A包月制版主.txt   >    30   p2    p3
+#say
+版主同志，您好，感谢您在过去的岁月里对风云网络的支持\
+和管理。有了您的信任和支持，才有了风云网络的不断发展\
+与进步.你在风云网络版主资格需要<重新审核>,如果您想继\
+续享受版主待遇，请在<http://cq.grkfcs.cn/>论坛公告区版块提交\
+申请.
+再次感谢您对风云传说的信任和支持！
+#act
+DELUSERDATE ../QuestDiary/数据文件/A包月制版主.txt
+SENDMSG 6 版主同志，您好，感谢您在过去的岁月里对风云网络的支持和管理。有了您的信任和支持，才有了风云网络的不断发展与进步.你在风云网络版主资格需要<重新审核>,如果您想继续享受版主待遇，请在<http://cq.grkfcs.cn/>论坛公告区版块提交申请.再次感谢您对风云传说的信任和支持！
+#elseact
+goto @bzdaiyu
+
+[@bzdaiyu]
+风云网络为了答谢风云网络论坛版主的热情支持。我们将\
+在近期不断推出对版主的奖励措施。版主可以做更多任务.\
+每天上线领取元宝等\
+版主将在《风云传说》中领略到不同的感觉与更多的乐趣。\
+<提交版主凭证/@jrbz>  <版主领取元宝/@bzlqsxb> \ \
+<离开/@exit>
+
+[@jrbz]
+#IF
+checkitem 版主凭证 1
+#ACT
+take 金币 10000
+take 版主凭证 1
+ADDUSERDATE ../QuestDiary/数据文件/A包月制版主.txt
+#SAY
+风云网络：“风云小组感谢你对风云网络的支持！”\ \
+  <关闭/@exit>
+#ELSESAY
+想成为版主吗？在<http://cq.grkfcs.cn/>论坛公告区版块提交\
+申请后再来找我吧。没有版主凭证就不要浪费我的时间!\ \
+<关闭/@exit>
+
+
+[@bzlqsxb]
+#if
+checknamelist ../QuestDiary/数据文件/A版主当日已领.txt
+#act
+SENDMSG 5 您已经领取过了，重复提交将取消版主待遇~~~
+break
+
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A包月制版主.txt   <    30   p2    p3
+#act
+GAMEGOLD + 3
+addnamelist ../QuestDiary/数据文件/A版主当日已领.txt
+SENDMSG 5 【风云银联提示您】:<$USERNAME>在领取版主工资后的元宝余额为：<$GAMEGOLD>元
+#ELSESAY
+你不是风云网络论坛版主？去<http://cq.grkfcs.cn/>论坛公告区\
+版块提交申请后再来找我吧。不是版主就不要浪费我的时间!\ \
+<关闭/@exit>
+
+}

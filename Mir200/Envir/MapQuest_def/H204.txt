@@ -1,0 +1,5 @@
+[@main]
+#if
+checklevel 45
+#elsesay
+那里跑来的毛小子,想窥探我们藏宝室的秘密.滚蛋!

@@ -1,0 +1,233 @@
+;WWW.hmeee.com
+;http://bbs.hmeee.com
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+
+[@sxsf]
+{
+#IF
+  EQUAL M5 7
+#ACT
+goto @sxsfb11
+#ELSEACT
+goto @sxsfb22
+break
+
+
+[@sxsfb11]
+#IF
+  EQUAL M5 7
+#SAY 
+欢迎，你需要点什么？\ \
+ <买药品/@buy>\
+ <卖药品/@Sell>\ \
+ <离开/@exit> 
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@sxsfb22]
+#IF
+  EQUAL G0 6
+#SAY 
+欢迎，你需要点什么？\ \
+ <买药品/@buy6>\
+ <卖药品/@Sell>\ \
+ <离开/@exit> 
+#ACT
+  MOV M6 6
+break
+
+#IF
+  EQUAL G0 5
+#SAY 
+欢迎，你需要点什么？\ \
+ <买药品　/@buy5>\
+ <卖药品/@Sell>\ \
+ <离开/@exit> 
+#ACT
+  MOV M6 5
+break
+
+#IF
+  EQUAL G0 4
+#SAY 
+欢迎，你需要点什么？\ \
+ <买药品 /@buy4>\
+ <卖药品/@Sell>\ \
+ <离开/@exit> 
+#ACT
+  MOV M6 4
+break
+
+#IF
+  EQUAL G0 3
+#SAY 
+欢迎，你需要点什么？\ \
+ <买药品/@buy3>\
+ <卖药品/@Sell>\ \
+ <离开/@exit> 
+#ACT
+  MOV M6 3
+break
+
+#IF
+  EQUAL G0 2
+#SAY 
+欢迎，你需要点什么？\ \
+ <买药品 /@buy2>\
+ <卖药品/@Sell>\ \
+ <离开/@exit> 
+#ACT
+  MOV M6 2
+break
+
+#IF
+  EQUAL G0 1
+#SAY 
+欢迎，你需要点什么？\ \
+ <买药品 /@buy1>\
+ <卖药品/@Sell>\ \
+ <离开/@exit> 
+#ACT
+  MOV M6 1
+break
+
+#IF
+  EQUAL G0 0
+#SAY 
+欢迎，你需要点什么？\ \
+ <买药品 /@buy0>\
+ <卖药品/@Sell>\ \
+ <离开/@exit> 
+#ACT
+  MOV M6 0
+break
+
+[@buy6]
+#IF
+  EQUAL M6 6
+#SAY 
+   欢迎，你想购买什么药品？希望有你想要的药品\ \
+ <我要买药品/@buy>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@buy5]
+#IF
+  EQUAL M6 5
+#SAY 
+   欢迎，你想购买什么药品？希望有你想要的药品\ \
+ <我要买药品/@buy>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@buy4]
+#IF
+  EQUAL M6 4
+#SAY 
+   欢迎，你想购买什么药品？希望有你想要的药品\ \
+ <我要买药品/@buy>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@buy3]
+#IF
+  EQUAL M6 3
+#SAY 
+   欢迎，你想购买什么药品？希望有你想要的药品\ \
+ <我要买药品/@buy>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@buy2]
+#IF
+  EQUAL M6 2
+#SAY 
+   欢迎，你想购买什么药品？希望有你想要的药品\ \
+ <我要买药品/@buy>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@buy1]
+#IF
+  EQUAL M6 1
+#SAY 
+   欢迎，你想购买什么药品？希望有你想要的药品\ \
+ <我要买药品/@buy>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@buy0]
+#IF
+  EQUAL M6 0
+#SAY 
+   欢迎，你想购买什么药品？希望有你想要的药品\ \
+ <我要买药品/@buy>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@viphuashaocf123]
+#CALL [NPC\VIP超级传送.txt] @viphuashaocf888
+
+[@buy]
+你想买点什么药品？\ \
+ <返回/@Main>
+
+[@Sell]
+给我看看你的东西。\ \
+ <返回/@Main>
+
+[goods]
+金创药(小量)	10	5
+魔法药(小量)	10	5
+金创药(中量)	10	5
+魔法药(中量)	10	5
+强效金创药	40	5
+强效魔法药	40	5
+金创药(小)包	20	5
+魔法药(小)包	20	5
+金创药(中)包	20	5
+魔法药(中)包	20	5
+超级金创药	50	5
+超级魔法药	50	5
+太阳水		30	5
+强效太阳水	30	5
+万年雪霜	30	5
+;疗伤药		30	5
+}

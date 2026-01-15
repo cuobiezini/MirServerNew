@@ -1,0 +1,37 @@
+(@buy @Sell)
+[@main]
+你想直接潜入沙巴克皇宫吗？\
+只要你愿意付出酬劳给我，我可以带你前往\
+直接冲过去暗杀沙巴克城主一定很爽快吧\
+嘿嘿嘿....\\
+ <给他酬劳/@choulao>\
+ <离开/@exit>
+
+[@choulao]
+看你满脸煞气，算了，我拿走你100万块。\
+动作快点，跟我去沙巴克宫殿!\
+ <潜入/@qianru>\
+ <放弃/@exit>
+
+[@qianru]
+#IF
+checkcastlewar
+#ACT
+goto @qianru11
+#ELSESAY 
+攻城都还没没有开始，你进去干什么？\\ 
+<离开/@exit>\
+
+[@qianru11]
+#IF
+checkgold 1000000
+#ACT
+take 金币 1000000
+mapmove 0150
+take 随机传送卷包 40
+break 
+#ELSESAY 
+连钱都没有你都敢出来混?!\
+瞧你模样还算不错,竟然是个穷光蛋,\
+离我远一点,不要耽误了我的生意。\\ 
+<离开/@exit>\

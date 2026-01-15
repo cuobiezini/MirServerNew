@@ -1,0 +1,12 @@
+#AutoRun	NPC	RUNONWEEK	1:23:59	@Clearlock
+#AutoRun	NPC	RUNONWEEK	2:23:59	@Clearlock
+#AutoRun	NPC	RUNONWEEK	3:23:59	@Clearlock
+#AutoRun	NPC	RUNONWEEK	4:23:59	@Clearlock
+#AutoRun	NPC	RUNONWEEK	5:23:59	@Clearlock
+#AutoRun	NPC	RUNONWEEK	6:23:59	@Clearlock
+#AutoRun	NPC	RUNONWEEK	7:23:59	@Clearlock
+#AutoRun	NPC	RUNONWEEK	3:23:59	@Clearsxgold
+#AutoRun 	NPC 	MIN 		10 	@fangguji
+;#AutoRun 	NPC 	MIN 		60 	@fangguji11
+
+#AutoRun NPC MIN 62 @¶þÀÉÕæ¾ý

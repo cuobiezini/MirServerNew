@@ -1,0 +1,39 @@
+[@main]
+#if
+#act
+OpenBigDialogBox 
+#say
+┏═══════════════════════════┓\
+║　　<Hi~现在本服开发出了新鲜玩意儿!装备可以练星星!嘿嘿!/SCOLOR=253>║\
+║                                                      ║\
+║<装备加星星的意思是增加新属性.每加一星功,魔,道提升5点!/SCOLOR=250> ║\ 
+║                                                      ║\
+║<需要材料: 幸运宝石（必须物品）成功宝石（增加升级几率）/SCOLOR=254>║\ 
+┣═════════════┳═════════════┫\
+║　　　   <星级装备锻造/@sj>     ║     <哥只不过是路过/@exit>       ║\ 
+┗═════════════┻═════════════┛\
+　 <+20星装备开封/@sj1>     <+20星装备开封/@sj1>     <+20星装备开封/@sj1> \ 
+<特别提示:所有封号的倍数攻击!均不可叠加！只能按照最好的来计算/SCOLOR=254>\
+<特别提示:本服精心设置攻击力永远不会爆掉拒绝垃圾坑爹服！/SCOLOR=254>\
+[@sj]
+#ACT
+OpenUpgradeDialog
+
+[@sj1]
+#IF
+CheckItemAddValue 3 2 > 99
+CheckItemAddValue 5 2 > 99
+CheckItemAddValue 6 2 > 99
+CheckItemAddValue 4 2 > 99
+CheckItemAddValue 2 2 > 99
+CheckItemAddValue 12 2 > 99
+CheckItemAddValue 10 2 > 99
+CheckItemAddValue 11 2 > 99
+#act
+SetIcon 0 21  -32 -28
+POWERRATE 300 65535
+KILLMONEXPRATE 300 65535
+SETRANKLEVELNAME %s\←♂→╔〓╗╔〓╗╔〓╗╔〓╗←♂→\╠不╣╠死╣╠不╣╠灭╣\←♀→╚〓╝╚〓╝╚〓╝╚〓╝←♀→\.<$STR(S21)>.\「一击秒杀：<$CREDITPOINT>人」\「惨遭毒手：<$GAMEGIRD>回」\☆★极度危险☆★\★☆攻击力提升3倍★☆
+GuildNoticeMsg 251 219 玩家[%s]在加星使者处开启了全套+20触发3倍攻击属性、从此江湖上将在无敌手！
+#ELSEACT
+MESSAGEBOX 老板您的装备没有+20套啊！

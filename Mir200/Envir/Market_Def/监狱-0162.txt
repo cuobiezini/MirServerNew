@@ -1,0 +1,37 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+
+[@main]
+#IF
+ checkpkpoint 2
+#SAY
+<$USERNAME>，您违反了本服务器的游戏规则其中条款：\ \
+ ⑴使用了非法外挂或者对游戏造成不公平的程序之行为；\ 
+ ⑵骂人严重，引起玩家公愤之不良道德行为；\ 
+ ⑶故意捣乱，影响活动的正常举行。\ \ 
+所以您必须在这里接受惩罚，希望您能好好的反醒一下。\ \
+ <关闭/@exit>
+#ELSEACT
+ goto @main-1
+
+[@main-1]
+#IF
+ checkpkpoint 1
+#SAY
+<$USERNAME>，不要和我说话，您就快出狱了。\ \ \
+<关闭/@exit>
+#ELSEACT
+ goto @main-2
+
+[@main-2]
+<$USERNAME>，不要再违反游戏规则，我不想看到你了。\ \ \
+ 回<比奇城/@bwmove>\ \
+ <关闭/@exit>
+
+[@bwmove]
+#IF
+#SAY
+#act
+ mapmove 0 333 268

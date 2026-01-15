@@ -1,0 +1,61 @@
+[@登陆设置]
+{
+#IF
+checknamelist ..\QuestDiary\重要数据\禁止登陆人物.txt
+#ACT
+SENDMSG 5 该人物违反游戏规则，现已被永久禁止登陆！
+kick
+break
+#IF
+CHECKACCOUNTLIST ..\QuestDiary\重要数据\禁止登陆帐号.txt
+#ACT
+SENDMSG 5 %s你现在的帐号已被封，请更换帐号登陆！
+kick
+break
+#IF
+CHECKIPLIST ..\QuestDiary\重要数据\禁止登陆IP.txt
+#ACT
+SENDMSG 5 %s你现在登陆IP已被封，请更换IP登陆！
+kick
+break
+#IF
+checknamelist ..\QuestDiary\重要数据\被禁言的.txt
+#ACT
+MOV M10 1200
+SetOnTimer 4 60
+MESSAGEBOX 由于你中途小退.1200分钟重新计时开始
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1177 @@
+{
+
+[@sxshop]
+#IF
+CHECKGAMEGOLD > 4999
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/lock.txt
+
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+addnamelist ../MapQuest_def/sxmirgold100.txt
+
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+addnamelist ../MapQuest_def/sxmirgold1000.txt
+
+#IF
+checkitem 重设密码证 1
+#SAY
+【风云商城友情提示】<$USERNAME>目前可用的<元宝>余额为<$GAMEGOLD>个\ \
+ 　　您好，你忘记了风云商城密码是不是？不过看你这么着急，我\
+还是帮你一次吧！\
+　　　　　　<〓〓重新设置风云商城密码〓〓/@clrpassword>\ \
+#ELSESAY
+【风云商城友情提示】<$USERNAME>目前可用的<元宝>余额为<$GAMEGOLD>个\ \
+ 　　您好，欢迎光临风云商城，在这里可以用元宝买到服务器任\
+何装备，元宝就是在风云服务器里通行的一种与人民币等价的币\
+种，也就是元宝一个等于人民币一个.<如何得到元宝?/@dedaoyouxibei>\ \
+　　　　　　　　　<〓〓进入风云商城〓〓/@jinruoshandian_jc> \
+　<§风云银联§/@sxyinlian> \
+　<§诚招代理§/@sxczdaili>
+;=========风云商城密码重设========
+[@clrpassword]
+#IF
+#ACT
+take 重设密码证 1
+delnamelist ../QuestDiary/商城系统/lock/lock.txt
+goto @szmas
+
+;=========风云代理商========
+[@dedaoyouxibei]
+#CALL [商城系统\代理.txt] @daili_call
+
+;=========商城密码系统=======
+[@jinruoshandian_jc]
+#IF
+CHECKGAMEGOLD > 1
+#ACT
+goto @jinruoshandian_jc1
+#ELSEACT
+goto @jinruoshandian
+
+[@jinruoshandian_jc1]
+#IF
+
+#ACT
+goto @jinruoshandian
+#ELSEACT
+goto @jinruoshandian
+
+
+[@bb]
+首先告诉您：我为您提供的风云商城加密系统版本为1.9 是风云\
+传奇脚本开发人员与风云电信网络开发部联合开发的加密系统，\
+此版本的加密系统经过10万次安全测试，已消除所有BUG，加密后\
+的商城很难进行重复猜测,超过三次重试商城将会被系统锁死!\
+被系统锁死后的商城可以在24点后重试或通过GM才能解决！\ \
+<设置商城密码/@szma> \\
+<注意事项/@zysx> \
+<返回/@main>
+
+[@zysx] 
+设置商城密码注意事项：\
+1、密码一共是<五位数>。如果您在密码设置了一半时退出操作(或因为\
+　 掉线)。系统将默认您的设置为无效。\
+2、在您取回物品时，<连续三次>密码输入错误的话您的商城将被锁定。\
+3、为安全起见，【风云商城友情提示】:设置商城密码尽量避免使用\
+　 自己的生日;避免使用与ID密码及仓库密码相同的密码；避免使用\
+　 过于简单的密码(如123456)，以免被盗贼破解。\
+4、如果你的商城密码被锁定请在24点后重试！\
+<返回/@bb>
+
+[@szma]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ck.txt
+#SAY
+对不起，您已经<设置过密码>。\ \
+<返回/@main>
+#ELSEACT
+goto @szmas
+
+[@szmas]
+#IF
+#ACT
+delnamelist ../QuestDiary/商城系统/lock/ck.txt
+delnamelist ../QuestDiary/商城系统/lock/a.txt
+delnamelist ../QuestDiary/商城系统/lock/b.txt
+delnamelist ../QuestDiary/商城系统/lock/c.txt
+delnamelist ../QuestDiary/商城系统/lock/d.txt
+delnamelist ../QuestDiary/商城系统/lock/e.txt
+delnamelist ../QuestDiary/商城系统/lock/f.txt
+delnamelist ../QuestDiary/商城系统/lock/g.txt
+delnamelist ../QuestDiary/商城系统/lock/h.txt
+delnamelist ../QuestDiary/商城系统/lock/i.txt
+delnamelist ../QuestDiary/商城系统/lock/j.txt
+delnamelist ../QuestDiary/商城系统/lock/ab.txt
+delnamelist ../QuestDiary/商城系统/lock/bb.txt
+delnamelist ../QuestDiary/商城系统/lock/cb.txt
+delnamelist ../QuestDiary/商城系统/lock/db.txt
+delnamelist ../QuestDiary/商城系统/lock/eb.txt
+delnamelist ../QuestDiary/商城系统/lock/fb.txt
+delnamelist ../QuestDiary/商城系统/lock/gb.txt
+delnamelist ../QuestDiary/商城系统/lock/hb.txt
+delnamelist ../QuestDiary/商城系统/lock/ib.txt
+delnamelist ../QuestDiary/商城系统/lock/jb.txt
+delnamelist ../QuestDiary/商城系统/lock/ac.txt
+delnamelist ../QuestDiary/商城系统/lock/bc.txt
+delnamelist ../QuestDiary/商城系统/lock/dc.txt
+delnamelist ../QuestDiary/商城系统/lock/ec.txt
+delnamelist ../QuestDiary/商城系统/lock/fc.txt
+delnamelist ../QuestDiary/商城系统/lock/gc.txt
+delnamelist ../QuestDiary/商城系统/lock/hc.txt
+delnamelist ../QuestDiary/商城系统/lock/ic.txt
+delnamelist ../QuestDiary/商城系统/lock/jc.txt
+delnamelist ../QuestDiary/商城系统/lock/ad.txt
+delnamelist ../QuestDiary/商城系统/lock/bd.txt
+delnamelist ../QuestDiary/商城系统/lock/dd.txt
+delnamelist ../QuestDiary/商城系统/lock/ed.txt
+delnamelist ../QuestDiary/商城系统/lock/fd.txt
+delnamelist ../QuestDiary/商城系统/lock/gd.txt
+delnamelist ../QuestDiary/商城系统/lock/hd.txt
+delnamelist ../QuestDiary/商城系统/lock/id.txt
+delnamelist ../QuestDiary/商城系统/lock/jd.txt
+delnamelist ../QuestDiary/商城系统/lock/ae.txt
+delnamelist ../QuestDiary/商城系统/lock/be.txt
+delnamelist ../QuestDiary/商城系统/lock/de.txt
+delnamelist ../QuestDiary/商城系统/lock/ee.txt
+delnamelist ../QuestDiary/商城系统/lock/fe.txt
+delnamelist ../QuestDiary/商城系统/lock/ge.txt
+delnamelist ../QuestDiary/商城系统/lock/he.txt
+delnamelist ../QuestDiary/商城系统/lock/ie.txt
+delnamelist ../QuestDiary/商城系统/lock/je.txt
+delnamelist ../QuestDiary/商城系统/lock/cw.txt
+delnamelist ../QuestDiary/商城系统/lock/cw1.txt
+delnamelist ../QuestDiary/商城系统/lock/cw2.txt
+delnamelist ../QuestDiary/商城系统/lock/cw3.txt
+goto @szmaa
+
+[@szmaa]
+您的商城密码系统目前已经<全部清零>。接下去想做什么呢?\ \
+<密码设置/@szma-1>\ \
+
+<返回/@main>\
+
+[@szma-1]
+您现在正在进行密码设置操作。\
+请牢记您的密码。请输入您密码的<第一位>数字： \
+<1/@w1>　　<2/@w2>　　<3/@w3>　　<4/@w4>　　<5/@w5>　　<6/@w6>　　<7/@w7>　　<8/@w8>　　<9/@w9>　　<0/@w0>\ \
+　  为安全起见，【风云商城友情提示】:设置商城密码尽量避免使用\
+吉祥号;避免使用与ID密码及仓库密码相同的密码；避免使用过于简单\
+的密码(如123456)，以免被盗贼破解。\
+<返回/@main>
+[@w1]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/a.txt
+goto @szma-2
+
+[@w2]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/b.txt
+goto @szma-2
+
+[@w3]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/c.txt
+goto @szma-2
+
+[@w4]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/d.txt
+goto @szma-2
+
+[@w5]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/e.txt
+goto @szma-2
+
+[@w6]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/f.txt
+goto @szma-2
+
+[@w7]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/g.txt
+goto @szma-2
+
+[@w8]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/h.txt
+goto @szma-2
+
+[@w9]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/i.txt
+goto @szma-2
+
+[@w0]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/j.txt
+goto @szma-2
+
+
+[@szma-2]
+您现在正在进行密码设置操作。\
+请牢记您的密码。请输入您密码的<第二位>数字：\
+<1/@w11>　　<2/@w12>　　<3/@w13>　　<4/@w14>　　<5/@w15>　　<6/@w16>　　<7/@w17>　　<8/@w18>　　<9/@w19>　　<0/@w10>\ \
+　  为安全起见，【风云商城友情提示】:设置商城密码尽量避免使用\
+吉祥号;避免使用与ID密码及仓库密码相同的密码；避免使用过于简单\
+的密码(如123456)，以免被盗贼破解。\
+<返回/@main>
+[@w11]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ab.txt
+goto @szma-3
+
+[@w12]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/bb.txt
+goto @szma-3
+
+[@w13]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/cb.txt
+goto @szma-3
+
+[@w14]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/db.txt
+goto @szma-3
+
+[@w15]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/eb.txt
+goto @szma-3
+
+[@w16]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/fb.txt
+goto @szma-3
+
+[@w17]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/gb.txt
+goto @szma-3
+
+[@w18]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/hb.txt
+goto @szma-3
+
+[@w19]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ib.txt
+goto @szma-3
+
+[@w10]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/jb.txt
+goto @szma-3
+
+[@szma-3]
+您现在正在进行密码设置操作。\
+请牢记您的密码。请输入您密码的<第三位>数字：\
+<1/@w21>　　<2/@w22>　　<3/@w23>　　<4/@w24>　　<5/@w25>　　<6/@w26>　　<7/@w27>　　<8/@w28>　　<9/@w29>　　<0/@w20>\ \
+　  为安全起见，【风云商城友情提示】:设置商城密码尽量避免使用\
+吉祥号;避免使用与ID密码及仓库密码相同的密码；避免使用过于简单\
+的密码(如123456)，以免被盗贼破解。\
+<返回/@main>
+[@w21]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ac.txt
+goto @szma-4
+
+[@w22]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/bc.txt
+goto @szma-4
+
+[@w23]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/cc.txt
+goto @szma-4
+
+[@w24]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/dc.txt
+goto @szma-4
+
+[@w25]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ec.txt
+goto @szma-4
+
+[@w26]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/fc.txt
+goto @szma-4
+
+[@w27]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/gc.txt
+goto @szma-4
+
+[@w28]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/hc.txt
+goto @szma-4
+
+[@w29]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ic.txt
+goto @szma-4
+
+[@w20]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/jc.txt
+goto @szma-4
+
+[@szma-4]
+您现在正在进行密码设置操作。\
+请牢记您的密码。请输入您密码的<第四位>数字：\
+<1/@w31>　　<2/@w32>　　<3/@w33>　　<4/@w34>　　<5/@w35>　　<6/@w36>　　<7/@w37>　　<8/@w38>　　<9/@w39>　　<0/@w30>\ \
+　  为安全起见，【风云商城友情提示】:设置商城密码尽量避免使用\
+吉祥号;避免使用与ID密码及仓库密码相同的密码；避免使用过于简单\
+的密码(如123456)，以免被盗贼破解。\
+<返回/@main>
+[@w31]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ad.txt
+goto @szma-5
+
+[@w32]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/bd.txt
+goto @szma-5
+
+[@w33]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/cd.txt
+goto @szma-5
+
+[@w34]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/dd.txt
+goto @szma-5
+
+[@w35]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ed.txt
+goto @szma-5
+
+[@w36]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/fd.txt
+goto @szma-5
+
+[@w37]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/gd.txt
+goto @szma-5
+
+[@w38]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/hd.txt
+goto @szma-5
+
+[@w39]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/id.txt
+goto @szma-5
+
+[@w30]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/jd.txt
+goto @szma-5
+
+[@szma-5]
+您现在正在进行密码设置操作。\
+请牢记您的密码。请输入您密码的最后<第五位>数字： \
+<1/@w41>　　<2/@w42>　　<3/@w43>　　<4/@w44>　　<5/@w45>　　<6/@w46>　　<7/@w47>　　<8/@w48>　　<9/@w49>　　<0/@w40>\ \
+　  为安全起见，【风云商城友情提示】:设置商城密码尽量避免使用\
+吉祥号;避免使用与ID密码及仓库密码相同的密码；避免使用过于简单\
+的密码(如123456)，以免被盗贼破解。\
+<返回/@main>
+[@w41]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ae.txt
+addnamelist ../QuestDiary/商城系统/lock/ck.txt
+goto @szma-6
+
+[@w42]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/be.txt
+addnamelist ../QuestDiary/商城系统/lock/ck.txt
+goto @szma-6
+
+[@w43]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ce.txt
+addnamelist ../QuestDiary/商城系统/lock/ck.txt
+goto @szma-6
+
+[@w44]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/de.txt
+addnamelist ../QuestDiary/商城系统/lock/ck.txt
+goto @szma-6
+
+[@w45]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ee.txt
+addnamelist ../QuestDiary/商城系统/lock/ck.txt
+goto @szma-6
+
+[@w46]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/fe.txt
+addnamelist ../QuestDiary/商城系统/lock/ck.txt
+goto @szma-6
+
+[@w47]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ge.txt
+addnamelist ../QuestDiary/商城系统/lock/ck.txt
+goto @szma-6
+
+[@w48]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/he.txt
+addnamelist ../QuestDiary/商城系统/lock/ck.txt
+goto @szma-6
+
+[@w49]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/ie.txt
+addnamelist ../QuestDiary/商城系统/lock/ck.txt
+goto @szma-6
+
+[@w40]
+#IF
+#ACT
+addnamelist ../QuestDiary/商城系统/lock/je.txt
+addnamelist ../QuestDiary/商城系统/lock/ck.txt
+goto @szma-6
+
+[@szma-6]
+恭喜...您的密码设置完成。请牢记您自己的商城密码 \
+<返回/@main>
+
+[@bb-1]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ck.txt
+#ACT
+delnamelist ../QuestDiary/商城系统/lock/cw.txt
+goto @bb-2
+#ELSESAY
+对不起，您的<密码设置无效>或者您还未给你的商城加锁。\
+<请返回操作/@main>
+
+[@bb-2]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/lock.txt
+#ACT
+goto @lock
+#ELSEACT
+goto @bb-2-pass
+
+[@bb-2-pass]
+您现在正在用密码取回物品。密码<三次>输入错误的话您的\
+商城将被锁定。请输入您密码的<第一位>数字： \
+<1/@q1>　　<2/@q2>　　<3/@q3>　　<4/@q4>　　<5/@q5>　　<6/@q6>　　<7/@q7>　　<8/@q8>　　<9/@q9>　　<0/@q0>\ \
+<如果你的密码忘记了，请不要盲目乱试。以免被系统锁死!>\ \
+<返回/@main>
+[@q1]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/a.txt
+#ACT
+delnamelist ../QuestDiary/商城系统/lock/cw.txt
+goto @bb-3
+#ELSEACT
+goto @bb-3
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q2]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/b.txt
+#ACT
+goto @bb-3
+#ELSEACT
+goto @bb-3
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q3]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/c.txt
+#ACT
+goto @bb-3
+#ELSEACT
+goto @bb-3
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q4]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/d.txt
+#ACT
+goto @bb-3
+#ELSEACT
+goto @bb-3
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q5]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/e.txt
+#ACT
+goto @bb-3
+#ELSEACT
+goto @bb-3
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q6]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/f.txt
+#ACT
+goto @bb-3
+#ELSEACT
+goto @bb-3
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q7]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/g.txt
+#ACT
+goto @bb-3
+#ELSEACT
+goto @bb-3
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q8]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/h.txt
+#ACT
+goto @bb-3
+#ELSEACT
+goto @bb-3
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q9]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/i.txt
+#ACT
+goto @bb-3
+#ELSEACT
+goto @bb-3
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q0]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/j.txt
+#ACT
+goto @bb-3
+#ELSEACT
+goto @bb-3
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@bb-3]
+您现在正在用密码取回物品。密码<三次>输入错误的话您的\
+商城将被锁定。请输入您密码的<第二位>数字： \
+<1/@q11>　　<2/@q12>　　<3/@q13>　　<4/@q14>　　<5/@q15>　　<6/@q16>　　<7/@q17>　　<8/@q18>　　<9/@q19>　　<0/@q10>\ \ 
+<如果你的密码忘记了，请不要盲目乱试。以免被系统锁死!>\ \
+<返回/@main>
+[@q11]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ab.txt
+#ACT
+goto @bb-4
+#ELSEACT
+goto @bb-4
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q12]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/bb.txt
+#ACT
+goto @bb-4
+#ELSEACT
+goto @bb-4
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q13]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/cb.txt
+#ACT
+goto @bb-4
+#ELSEACT
+goto @bb-4
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q14]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/db.txt
+#ACT
+goto @bb-4
+#ELSEACT
+goto @bb-4
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q15]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/eb.txt
+#ACT
+goto @bb-4
+#ELSEACT
+goto @bb-4
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q16]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/fb.txt
+#ACT
+goto @bb-4
+#ELSEACT
+goto @bb-4
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q17]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/gb.txt
+#ACT
+goto @bb-4
+#ELSEACT
+goto @bb-4
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q18]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/hb.txt
+#ACT
+goto @bb-4
+#ELSEACT
+goto @bb-4
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q19]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ib.txt
+#ACT
+goto @bb-4
+#ELSEACT
+goto @bb-4
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q10]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/jb.txt
+#ACT
+goto @bb-4
+#ELSEACT
+goto @bb-4
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@bb-4]
+您现在正在用密码取回物品。密码<三次>输入错误的话您的\
+商城将被锁定。请输入您密码的<第三位>数字： \
+<1/@q21>　　<2/@q22>　　<3/@q23>　　<4/@q24>　　<5/@q25>　　<6/@q26>　　<7/@q27>　　<8/@q28>　　<9/@q29>　　<0/@q20>\ \
+<如果你的密码忘记了，请不要盲目乱试。以免被系统锁死!>\ \
+<返回/@main>
+[@q21]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ac.txt
+#ACT
+goto @bb-5
+#ELSEACT
+goto @bb-5
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q22]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/bc.txt
+#ACT
+goto @bb-5
+#ELSEACT
+goto @bb-5
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q23]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/cc.txt
+#ACT
+goto @bb-5
+#ELSEACT
+goto @bb-5
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q24]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/dc.txt
+#ACT
+goto @bb-5
+#ELSEACT
+goto @bb-5
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q25]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ec.txt
+#ACT
+goto @bb-5
+#ELSEACT
+goto @bb-5
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q26]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/fc.txt
+#ACT
+goto @bb-5
+#ELSEACT
+goto @bb-5
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q27]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/gc.txt
+#ACT
+goto @bb-5
+#ELSEACT
+goto @bb-5
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q28]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/hc.txt
+#ACT
+goto @bb-5
+#ELSEACT
+goto @bb-5
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q29]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ic.txt
+#ACT
+goto @bb-5
+#ELSEACT
+goto @bb-5
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q20]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/jc.txt
+#ACT
+goto @bb-5
+#ELSEACT
+goto @bb-5
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@bb-5]
+您现在正在用密码取回物品。密码<三次>输入错误的话您的\
+商城将被锁定。请输入您密码的<第四位>数字： \
+<1/@q31>　　<2/@q32>　　<3/@q33>　　<4/@q34>　　<5/@q35>　　<6/@q36>　　<7/@q37>　　<8/@q38>　　<9/@q39>　　<0/@q30>\ \
+<如果你的密码忘记了，请不要盲目乱试。以免被系统锁死!>\ \
+<返回/@main>
+[@q31]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ad.txt
+#ACT
+goto @bb-6
+#ELSEACT
+goto @bb-6
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q32]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/bd.txt
+#ACT
+goto @bb-6
+#ELSEACT
+goto @bb-6
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q33]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/cd.txt
+#ACT
+goto @bb-6
+#ELSEACT
+goto @bb-6
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q34]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/dd.txt
+#ACT
+goto @bb-6
+#ELSEACT
+goto @bb-6
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q35]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ed.txt
+#ACT
+goto @bb-6
+#ELSEACT
+goto @bb-6
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q36]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/fd.txt
+#ACT
+goto @bb-6
+#ELSEACT
+goto @bb-6
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q37]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/gd.txt
+#ACT
+goto @bb-6
+#ELSEACT
+goto @bb-6
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q38]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/hd.txt
+#ACT
+goto @bb-6
+#ELSEACT
+goto @bb-6
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q39]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/id.txt
+#ACT
+goto @bb-6
+#ELSEACT
+goto @bb-6
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q30]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/jd.txt
+#ACT
+goto @bb-6
+#ELSEACT
+goto @bb-6
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@bb-6]
+您现在正在用密码取回物品。密码<三次>输入错误的话您的\
+商城将被锁定。请输入您密码的<第五位>数字： \
+<1/@q41>　　<2/@q42>　　<3/@q43>　　<4/@q44>　　<5/@q45>　　<6/@q46>　　<7/@q47>　　<8/@q48>　　<9/@q49>　　<0/@q40>\ \
+<如果你的密码忘记了，请不要盲目乱试。以免被系统锁死!>\ \
+<返回/@main>
+[@q41]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ae.txt
+#ACT
+goto @bb-7
+#ELSEACT
+goto @bb-7
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+[@q42]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/be.txt
+#ACT
+goto @bb-7
+#ELSEACT
+goto @bb-7
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q43]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ce.txt
+#ACT
+goto @bb-7
+#ELSEACT
+goto @bb-7
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q44]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/de.txt
+#ACT
+goto @bb-7
+#ELSEACT
+goto @bb-7
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q45]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ee.txt
+#ACT
+goto @bb-7
+#ELSEACT
+goto @bb-7
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q46]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/fe.txt
+#ACT
+goto @bb-7
+#ELSEACT
+goto @bb-7
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q47]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ge.txt
+#ACT
+goto @bb-7
+#ELSEACT
+goto @bb-7
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q48]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/he.txt
+#ACT
+goto @bb-7
+#ELSEACT
+goto @bb-7
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q49]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ie.txt
+#ACT
+goto @bb-7
+#ELSEACT
+goto @bb-7
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@q40]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/je.txt
+#ACT
+goto @bb-7
+#ELSEACT
+goto @bb-7
+addnamelist ../QuestDiary/商城系统/lock/cw.txt
+
+[@bb-7]
+#if
+checknamelist ../QuestDiary/商城系统/lock/cw.txt
+#ACT
+goto @bb-7-CW
+#ELSEACT
+goto @bb-7-OK
+
+[@bb-7-OK]
+#IF
+#ACT
+delnamelist ../QuestDiary/商城系统/lock/cw.txt
+delnamelist ../QuestDiary/商城系统/lock/cw1.txt
+delnamelist ../QuestDiary/商城系统/lock/cw2.txt
+  MOV M0 1
+#SAY
+恭喜。密码输入正确。您现在可以进行以下操作： \
+<修改商城密码/@szmas> \
+<〓〓进入风云商城〓〓/@jinruoshandian_jc>\
+<返回/@main>
+
+
+[@bb-7-CW]
+#if
+checknamelist ../QuestDiary/商城系统/lock/cw1.txt
+#ACT
+goto @check-2
+#ELSEACT
+goto @check-1
+
+[@check-1]
+#IF
+#ACT
+delnamelist ../QuestDiary/商城系统/lock/cw.txt
+addnamelist ../QuestDiary/商城系统/lock/cw1.txt
+#SAY
+对不起，你的商城密码不正确! 请重新输入商城密码\
+
+<请注意！如果现在退出可能会导致你的商城锁死>\
+
+<如果连续三次重新输入密码错误的话 系统会锁死你的商城>\ \
+
+
+你还剩下二次重新输入的机会! 请慎重使用!\ \
+
+<重新输入商城密码/@bb-2>\
+<离开/@exit>\
+[@check-2]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/cw2.txt
+#ACT
+goto @lock
+#ELSEACT
+goto @cw-2
+
+[@cw-2]
+#ACT
+delnamelist ../QuestDiary/商城系统/lock/cw.txt
+addnamelist ../QuestDiary/商城系统/lock/cw2.txt
+#SAY
+对不起，你的商城密码不正确! 请重新输入密码\ \
+你还剩下一次重新输入的机会! 请慎重使用!\ \
+<重新输入/@bb-2>\
+<离开/@exit>\
+
+[@lock]
+#IF
+#ACT
+delnamelist ../QuestDiary/商城系统/lock/cw.txt
+addnamelist ../QuestDiary/商城系统/lock/lock.txt
+#SAY
+<$USERNAME> <对不起>\ \
+你连续密码<三次>输入错误。你的商城功能已被<锁定>。\ 
+<24点后>您可以重试密码。紧急情况下您可以请联系在线\
+GM.......提供<密码提示问题>由GM为你解锁。\ \
+<关闭/@exit>
+
+
+[@jinruoshandian]
+ 欢迎<$USERNAME>来到风云商城：\
+【风云商城友情提示】您目前可用的<元宝>余额为<$GAMEGOLD>个\
+<※>『技能类』<※>：<群雷术/@jileng>  <解毒术/@jileng>  <狮子吼/@jileng>\
+　　　　　　　　<火焰冰/@jileng>  <群毒术/@jileng>  <圣战诱/@jileng>\   
+<※>『装备类』<※>：<武器类/@wuqi>  <项链类/@xila>  <戒指类/@jiezhi>  <头盔类/@toukui> \
+　　　　　　　　<手镯类/@shezhuo>  <靴子类/@xizhang>  <衣服类/@yifu>  <套装类/@taozhu> \          
+<※>『其它类』<※>：<会员证  经验值  会员章  黑铁金盒/@hyxunzhang>\ \
+　　　　<返回首页/@sxshop>
+
+[@jileng]                                  
+#CALL [商城系统\技能.txt] @jileng_call
+
+
+[@hyxunzhang]
+#CALL [商城系统\其它.txt] @qt_1_call
+
+
+[@yifu]
+#CALL [商城系统\衣服.txt] @yy_1_call
+
+
+[@xila]
+#CALL [商城系统\项链.txt] @xi_1_call
+
+
+[@jiezhi]
+#CALL [商城系统\戒指.txt] @jz_1_call
+
+
+[@shezhuo]
+#CALL [商城系统\手镯.txt] @shouzhuo_1_call
+
+[@toukui]
+#CALL [商城系统\头盔.txt] @toukui_1_call
+
+
+[@xizhang]
+#CALL [商城系统\靴子.txt] @xong_1_call
+
+
+
+[@wuqi]
+#CALL [商城系统\武器.txt] @wu_1_call
+
+[@sxyinlian]
+#IF
+CHECKGAMEGOLD > 1
+#ACT
+goto @sxyinlian_jc1
+#ELSEACT
+goto @sxyinlian_tg
+
+[@sxyinlian_jc1]
+#IF
+
+#ACT
+goto @sxyinlian_tg
+#ELSEACT
+goto @jinruoshandian_jc112
+
+[@jinruoshandian_jc112]
+#IF
+checknamelist ../QuestDiary/商城系统/lock/ck.txt
+#SAY
+【风云银联友情提示】:\ \
+　　对不起。<$USERNAME>的银联<已经使用>了商城系统加密功能。\
+为了您的元宝安全，输入正确的商城密码才能使用银联系统。\ \
+　                <输入商城密码解密/@bb-2>\ \
+　　　　　　　　　　　　　　　　　　　　　　　　<关闭/@exit>\
+#ELSESAY
+【风云银联友情提示】:\ \
+　　经系统确认。您现在还<没有使用>商城加密服务.您确定不使用\
+商城密码功能吗?<为了保证您因帐号被盗后元宝的安全,必须使用商>\
+城加密才能使用风云银联> \
+　　　　<〓〓不设置密码进入逛逛〓〓/@sxyinlian_tg>\ \
+　　　　　　　　　　　　　　　　　　　　　　　　<商城加密/@szma> \
+　　　　　　　　　　　　　　　　　　　　　　　　<加密咨询/@bb>
+
+[@sxyinlian_tg]
+#CALL [商城系统\风云银联.txt] @sxyl_call
+
+[@taozhu]
+#CALL [商城系统\套装.txt] @taoz_1_call
+
+[@sxczdaili]
+#CALL [商城系统\诚招代理.txt] @czdaili_call
+
+}
+

@@ -1,0 +1,828 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2005/02/23	Jacky	调整更新
+
+{
+[@taoz_1_call]
+<※※※※※※※※※※※※>套<※※>装<※※※※※※※※※※※※>\
+【风云商城友情提示】<$USERNAME>目前可用的<元宝>余额为<$GAMEGOLD>个\
+战士：<圣战/@taoz_1> <英雄（战）/@taoz_4> <逆魔（战）/@taoz_7> \
+　　　　　 <海魂（战）/@taoz_10> <炎龙（战）/@taoz_13>\
+法师：<法神/@taoz_2> <英雄（法）/@taoz_5> <逆魔（法）/@taoz_8> \
+　　　　　 <海魂（法）/@taoz_11> <炎龙（法）/@taoz_13>\
+道士：<天尊/@taoz_3> <英雄（道）/@taoz_6> <逆魔（道）/@taoz_9> \
+　　　　　 <海魂（道）/@taoz_12> <炎龙（道）/@taoz_13>\
+
+　　　　　　　　　　　　　　　　　　　<上一页/@jinruoshandian>　　<返回首页/@sxshop>
+
+[@taoz_1]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<圣战一套>,物品价格为：<60元宝>\
+包含物品：圣战盔甲1件  圣战头盔1个  圣战项链1个 \ 
+　　　　　圣战戒指2个  圣战手镯2个  赤磷石1个\
+　　　　　屠龙刀1把 \ \
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买圣战一套/@taoz_1_1>
+
+
+[@taoz_1_1]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<圣战一套>价格\
+为<60元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买圣战一套>后将概不退换.\ \
+　　　　　　　<再次确认购买圣战一套/@tao_1>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_1]
+#IF
+gender man
+CHECKGAMEGOLD > 59
+CHECKBAGSIZE  10
+
+#ACT
+give 圣战盔甲(男) 
+
+#IF
+gender woman
+CHECKGAMEGOLD > 59
+CHECKBAGSIZE  10
+
+#ACT
+give 圣战盔甲(女)
+
+#IF
+CHECKGAMEGOLD > 59
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 60
+give 屠龙
+give 圣战头盔
+give 圣战项链
+give 圣战戒指 2
+give 圣战手镯 2
+give 赤磷石
+GAMEGOLD - 60
+SENDMSG 5 %s，您购买圣战一套花去了60元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买圣战一套花去了<60元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，圣战一套价格\
+　　 　为<60元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有10个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+
+
+[@taoz_2]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<法神一套>,物品价格为：<30元宝>\
+包含物品：法神魔袍1件  法神头盔1个  法神项链1个 \ 
+　　　　　法神戒指2个  法神手镯2个  青云石1个\
+　　　　　嗜魂魔杖1把 \ \
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买法神一套/@taoz_2_2>
+
+
+[@taoz_2_2]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<法神一套>价格\
+为<30元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买法神一套>后将概不退换.\ \
+　　　　　　　<再次确认购买法神一套/@tao_2>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_2]
+#IF
+gender man
+CHECKGAMEGOLD > 29
+CHECKBAGSIZE  10
+
+#ACT
+give 法神魔袍(男) 
+
+#IF
+gender woman
+CHECKGAMEGOLD > 29
+CHECKBAGSIZE  10
+
+#ACT
+give 法神魔袍(女)
+
+#IF
+CHECKGAMEGOLD > 29
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 30
+give 嗜魂魔杖
+give 法神头盔
+give 法神项链
+give 法神戒指 2
+give 法神手镯 2
+give 青云石
+SENDMSG 5 %s，您购买法神一套花去了30元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买法神一套花去了<30元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+
+
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，法神一套价格\
+　　 　为<30元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有10个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+[@taoz_3]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<天尊一套>,物品价格为：<60元宝>\
+包含物品：天尊战衣1件  天尊头盔1个  天尊项链1个 \ 
+　　　　　天尊戒指2个  天尊手镯2个  紫滕石1个\
+　　　　　玉竹扇1把 \ \
+
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买天尊一套/@taoz_3_3>
+
+
+[@taoz_3_3]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<天尊一套>价格\
+为<60元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买天尊一套>后将概不退换.\ \
+　　　　　　　<再次确认购买天尊一套/@tao_3>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_3]
+#IF
+gender man
+CHECKGAMEGOLD > 59
+CHECKBAGSIZE  10
+
+#ACT
+give 天尊战衣(男) 
+
+#IF
+gender woman
+CHECKGAMEGOLD > 59
+CHECKBAGSIZE  10
+
+#ACT
+give 天尊战衣(女)
+
+#IF
+CHECKGAMEGOLD > 59
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 60
+give 玉竹扇
+give 天尊头盔
+give 天尊项链
+give 天尊戒指 2
+give 天尊手镯 2
+give 紫滕石
+SENDMSG 5 %s，您购买天尊一套花去了60元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买天尊一套花去了<60元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，天尊一套价格\
+　　 　为<60元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有10个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+[@taoz_4]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<英雄（战）一套>,物品价格为：<500元宝>\
+包含物品：黄金战衣1件      英雄头盔(战)1个  英雄项链(战)1个 \ 
+　　　　　英雄戒指(战)2个  英雄手镯(战)2个  天骄之徽(金)1个\
+　　　　　斩龙1把 \ \
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买英雄（战）一套/@taoz_4_4>
+
+
+[@taoz_4_4]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<英雄（战）一套>价格\
+为<500元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买英雄（战）一套>后将概不退换.\ \
+　　　　　　　<再次确认购买英雄（战）一套/@tao_4>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_4]
+#IF
+gender man
+CHECKGAMEGOLD > 499
+CHECKBAGSIZE  10
+
+#ACT
+give 黄金战衣(男) 
+
+#IF
+gender woman
+CHECKGAMEGOLD > 499
+CHECKBAGSIZE  10
+
+#ACT
+give 黄金战衣(女)
+
+#IF
+CHECKGAMEGOLD > 499
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 500
+give 斩龙  1
+give 英雄头盔(战)   1
+give 英雄项链(战)   1
+give 英雄戒指(战)   2
+give 英雄手镯(战)   2
+give 天骄之徽(金)
+give 圣战腰带
+SENDMSG 5 %s，您购买英雄（战）一套花去了500元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买英雄（战）一套花去了<500元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，英雄（战）一套价格\
+　　 　为<500元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有10个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+
+[@taoz_5]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<英雄（法）一套>,物品价格为：<500元宝>\
+包含物品：黄金战衣1件      英雄头盔(法)1个  英雄项链(法)1个 \ 
+　　　　　英雄戒指(法)2个  英雄手镯(法)2个  天骄之徽(铜)1个\
+　　　　　铁轮1把 \ \
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买英雄（法）一套/@taoz_5_5>
+
+
+[@taoz_5_5]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<英雄（法）一套>价格\
+为<500元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买英雄（法）一套>后将概不退换.\ \
+　　　　　　　<再次确认购买英雄（法）一套/@tao_5>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_5]
+#IF
+gender man
+CHECKGAMEGOLD > 499
+CHECKBAGSIZE  10
+
+#ACT
+give 黄金战衣(男) 
+
+#IF
+gender woman
+CHECKGAMEGOLD > 499
+CHECKBAGSIZE  10
+
+#ACT
+give 黄金战衣(女)
+
+#IF
+CHECKGAMEGOLD > 499
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 500
+give 铁轮     1
+give 英雄头盔(法) 1
+give 英雄项链(法) 1
+give 英雄戒指(法) 2
+give 英雄手镯(法) 2
+give 天骄之徽(银)  1
+give 法神腰带
+SENDMSG 5 %s，您购买英雄（法）一套花去了500元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买英雄（法）一套花去了<500元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，英雄（法）一套价格\
+　　 　为<500元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有10个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+
+[@taoz_6]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<英雄（道）一套>,物品价格为：<500元宝>\
+包含物品：黄金战衣1件      英雄头盔(道)1个  英雄项链(道)1个 \ 
+　　　　　英雄戒指(道)2个  英雄手镯(道)2个  天骄之徽(铜)1个\
+　　　　　封魔剑1把 \ \
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买英雄（道）一套/@taoz_6_6>
+
+
+[@taoz_6_6]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<英雄（道）一套>价格\
+为<500元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买英雄（道）一套>后将概不退换.\ \
+　　　　　　　<再次确认购买英雄（道）一套/@tao_6>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_6]
+#IF
+gender man
+CHECKGAMEGOLD > 499
+CHECKBAGSIZE  10
+
+#ACT
+give 黄金战衣(男) 
+
+#IF
+gender woman
+CHECKGAMEGOLD > 499
+CHECKBAGSIZE  10
+
+#ACT
+give 黄金战衣(女)
+
+#IF
+CHECKGAMEGOLD > 499
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 500
+give 封魔剑      1
+give 英雄头盔(道) 1
+give 英雄项链(道) 1
+give 英雄戒指(道) 2
+give 英雄手镯(道) 2
+give 天骄之徽(铜)
+SENDMSG 5 %s，您购买英雄（道）一套花去了500元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买英雄（道）一套花去了<500元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，英雄（道）一套价格\
+　　 　为<500元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有10个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+
+[@taoz_7]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<逆魔（战）一套>,物品价格为：<1000元宝>\
+包含物品：天使之翼1件      逆魔项链(战)1个   逆魔手镯(战)2个\  
+　　　　　逆魔戒指(战)2个  逆魔战靴1个       霹雷1把\ \
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买逆魔（战）一套/@taoz_7_7>
+
+
+[@taoz_7_7]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<逆魔（战）一套>价格\
+为<1000元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买逆魔（战）一套>后将概不退换.\ \
+　　　　　　　<再次确认购买逆魔（战）一套/@tao_7>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_7]
+#IF
+gender man
+CHECKGAMEGOLD > 999
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(男)
+
+#IF
+gender woman
+CHECKGAMEGOLD > 999
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(女)
+
+#IF
+CHECKGAMEGOLD > 999
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 1000
+give 霹雷   1
+give 逆魔项链(战)  1
+give 逆魔戒指(战)  2
+give 逆魔手镯(战)  2
+give 海魂战靴
+SENDMSG 5 %s，您购买逆魔（战）一套花去了1000元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买逆魔（战）一套花去了<1000元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+
+
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，逆魔（战）一套价格\
+　　 　为<1000元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有10个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+
+[@taoz_8]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<逆魔（法）一套>,物品价格为：<1000元宝>\
+包含物品：天使之翼1件      逆魔项链(法)1个   逆魔手镯(法)2个\  
+　　　　　逆魔戒指(法)2个  海魂法靴1个       天神法杖1把\ \
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买逆魔（法）一套/@taoz_8_8>
+
+
+[@taoz_8_8]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<逆魔（法）一套>价格\
+为<1000元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买逆魔（法）一套>后将概不退换.\ \
+　　　　　　　<再次确认购买逆魔（法）一套/@tao_8>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_8]
+#IF
+gender man
+CHECKGAMEGOLD > 999
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(男)
+
+#IF
+gender woman
+CHECKGAMEGOLD > 999
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(女)
+#IF
+CHECKGAMEGOLD > 999
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 1000
+give 天神法杖   1
+give 逆魔项链(法)   1 
+give 逆魔戒指(法)   2
+give 逆魔手镯(法)   2
+give 海魂法靴
+SENDMSG 5 %s，您购买逆魔（法）一套花去了1000元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买逆魔（法）一套花去了<1000元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，逆魔（法）一套价格\
+　　 　为<1000元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有10个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+
+[@taoz_9]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<逆魔（道）一套>,物品价格为：<1000元宝>\
+包含物品：天使之翼1件      逆魔项链(道)1个   逆魔手镯(道)2个\  
+　　　　　逆魔戒指(道)2个  海魂道靴1个       道域剑1把\ \
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买逆魔（道）一套/@taoz_9_9>
+
+
+[@taoz_9_9]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<逆魔（道）一套>价格\
+为<1000元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买逆魔（道）一套>后将概不退换.\ \
+　　　　　　　<再次确认购买逆魔（道）一套/@tao_9>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_9]
+#IF
+gender man
+CHECKGAMEGOLD > 999
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(男)
+
+#IF
+gender woman
+CHECKGAMEGOLD > 999
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(女)
+
+#IF
+CHECKGAMEGOLD > 999
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 1000
+give 道域剑      1
+give 逆魔项链(道)    1
+give 逆魔戒指(道)    2
+give 逆魔手镯(道)    2
+give 海魂道靴        1
+give 海魂头盔(道)        1
+SENDMSG 5 %s，您购买逆魔（道）一套花去了1000元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买逆魔（道）一套花去了<1000元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，逆魔（道）一套价格\
+　　 　为<1000元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有10个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+
+[@taoz_10]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<海魂（战）一套>,物品价格为：<1500元宝>\
+包含物品：海魂头盔(战)1个   海魂战链1个  海魂战镯2个  \
+          海魂战戒2个  屠龙魔1把  海魂战靴1双\ \
+
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买海魂（战）一套/@taoz_10_10>
+
+
+[@taoz_10_10]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<海魂（战）一套>价格\
+为<1500元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买海魂（战）一套>后将概不退换.\ \
+　　　　　　　<再次确认购买海魂（战）一套/@tao_10>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_10]
+#IF
+gender man
+CHECKGAMEGOLD > 1499
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(男)
+
+#IF
+gender woman
+CHECKGAMEGOLD > 1499
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(女)
+
+#IF
+CHECKGAMEGOLD > 1499
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 1500
+give 海魂头盔(战)   1
+give 海魂战链       1 
+give 海魂战镯       2
+give 海魂战戒       2 
+give 屠龙魔         1 
+give 海魂战靴       1
+SENDMSG 5 %s，您购买海魂（战）一套花去了1500元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买海魂（战）一套花去了<1500元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，海魂（战）一套价格\
+　　 　为<1500元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有9个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+[@taoz_11]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<海魂（法）一套>,物品价格为：<1500元宝>\
+包含物品：海魂头盔(法)1个  海魂法链1个  海魂法镯2个\  
+          海魂法戒2个  血饮魔1把  海魂法靴1双\ \
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买海魂（法）一套/@taoz_11_11>
+
+
+[@taoz_11_11]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<海魂（法）一套>价格\
+为<1500元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买海魂（法）一套>后将概不退换.\ \
+　　　　　　　<再次确认购买海魂（法）一套/@tao_11>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_11]
+#IF
+gender man
+CHECKGAMEGOLD > 1499
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(男)
+
+#IF
+gender woman
+CHECKGAMEGOLD > 1499
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(女)
+#IF
+CHECKGAMEGOLD > 1499
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 1500
+give 海魂头盔(法)  1
+give 海魂法链  1
+give 海魂法镯  2
+give 海魂法戒  2
+give 血饮魔    1
+give 海魂法靴  1
+SENDMSG 5 %s，您购买海魂（法）一套花去了1500元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买海魂（法）一套花去了<1500元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，海魂（法）一套价格\
+　　 　为<1500元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有9个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+[@taoz_12]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<海魂（道）一套>,物品价格为：<1500元宝>\
+包含物品：海魂头盔(道)1个  海魂道链1个  海魂道镯2个\  
+          海魂道戒2个  龙纹魔1把  海魂道靴1双\ \
+
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买海魂（道）一套/@taoz_12_12>
+
+
+[@taoz_12_12]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<海魂（道）一套>价格\
+为<1500元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买海魂（道）一套>后将概不退换.\ \
+　　　　　　　<再次确认购买海魂（道）一套/@tao_12>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_12]
+#IF
+gender man
+CHECKGAMEGOLD > 1499
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(男)
+
+#IF
+gender woman
+CHECKGAMEGOLD > 1499
+CHECKBAGSIZE  10
+
+#ACT
+give 天使之翼(女)
+#IF
+CHECKGAMEGOLD > 1499
+CHECKBAGSIZE  9
+
+#ACT
+GAMEGOLD - 1500
+give 海魂头盔(道)  1
+give 海魂道链  1
+give 海魂道镯  2
+give 海魂道戒  2
+give 龙纹魔  1
+give 海魂道靴  1
+SENDMSG 5 %s，您购买海魂（道）一套花去了1500元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买海魂（道）一套花去了<1500元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，海魂（道）一套价格\
+　　 　为<1500元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有9个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+
+[@taoz_13]
+【风云商城提示您】您目前可用的元宝数量为：<$GAMEGOLD>个\
+您当前要购买的物品为<炎龙套装>,物品价格为：<2500元宝>\
+包含物品：炎龙头盔1个  火龙鳞甲1件  炎龙项链1个\
+          炎龙手套2个  炎龙腰带1个  炎龙戒指2个\ 
+          炎龙剑1把  炎龙靴1双\ \
+　　　　　　　　　　　<上一页/@taoz_1_call>　　<确认购买炎龙套装/@taoz_13_13>
+
+
+[@taoz_13_13]
+【风云商城提示您】:\ \
+　　<$USERNAME>目前可用的元宝数量为：<$GAMEGOLD>个，<炎龙炎龙套装>价格\
+为<2500元宝>。您在风云商城购买商品时请一定要慎重操作，\
+一旦您<再次确认购买炎龙（战）一套>后将概不退换.\ \
+　　　　　　　<再次确认购买炎龙套装/@tao_13>         <算了,还是再看看/@jinruoshandian>
+
+
+
+[@tao_13]
+#IF
+gender man
+CHECKGAMEGOLD > 2499
+CHECKBAGSIZE  11
+
+#ACT
+give 火龙鳞甲(男)
+
+#IF
+gender woman
+CHECKGAMEGOLD > 2499
+CHECKBAGSIZE  11
+
+#ACT
+give 火龙鳞甲(女)
+
+#IF
+CHECKGAMEGOLD > 2499
+CHECKBAGSIZE  10
+
+#ACT
+GAMEGOLD - 2500
+give 炎龙头盔  1
+give 炎龙项链  1
+give 炎龙手套  2
+give 炎龙腰带  1
+give 炎龙戒指  2
+give 炎龙剑  1
+give 炎龙靴  1
+SENDMSG 5 %s，您购买炎龙一套花去了2500元宝，您这次购买后的元宝数量为：<$GAMEGOLD>个
+#SAY
+【风云商城提示您】:\ \
+　　<$USERNAME>，您购买炎龙一套花去了<2500元宝>，您这次购买后的\
+元宝数量为：<$GAMEGOLD>个\
+　　　　　　　　　　 　<上一页/@taoz_1_call>    <知道了，我还要看看其它物品/@jinruoshandian>
+
+#ELSESAY
+【风云商城提示您】:您当前的条件无法进行购买！原因如下：\
+　　1、<$USERNAME>当前可用的元宝数量为<$GAMEGOLD>个，炎龙一套价格\
+　　 　为<2500元宝>.请确认您有<足够的元宝>进行购买\
+　　2、请确认您的背包<有11个以上的空格>.\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，我还要看看其它物品/@jinruoshandian>
+
+
+}

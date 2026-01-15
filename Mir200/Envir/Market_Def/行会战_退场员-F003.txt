@@ -1,0 +1,88 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+(@storage @getback)
+%100
+
+[@main]
+请选择你想要的操作：\ \
+ <存取物品/@main11>\
+ <回比奇仓库/@menzhong>\
+ <取消/@exit>
+
+
+[@main11]
+#CALL [商店\仓库.txt] @sxsf
+
+
+[@menzhong]
+#if
+CHECKUSEITEM 0
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 1
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 3
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 4
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 5
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 6
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 7
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 8
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 9
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 10
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 11
+#act
+goto @bunechuqu
+break
+#if
+CHECKUSEITEM 12
+#act
+goto @bunechuqu
+break
+#ELSEACT
+ map 0140
+
+
+[@bunechuqu]
+#IF
+#SAY
+    身上不允许戴任务物品，否则别想出去~~！\
+                               <返回/@main>

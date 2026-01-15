@@ -1,0 +1,30 @@
+[@检查会员]
+{
+#IF
+  CHECKIPLIST   ../QuestDiary/数据文件/A联盟网吧IP.txt
+#ACT
+break
+
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A包月制会员.txt   <    3000   p0    p1
+#act
+break
+
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A半年制会员.txt   <    1800  p0    p1
+#act
+break
+
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A全年制会员.txt   <    3600  p0    p1
+#act
+break
+
+
+#elseact
+set [630] 0
+DELUSERDATE ../QuestDiary/数据文件/A包月制会员.txt
+DELUSERDATE   ../QuestDiary/数据文件/A半年制会员.txt
+DELUSERDATE   ../QuestDiary/数据文件/A全年制会员.txt
+break
+}

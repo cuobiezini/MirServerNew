@@ -1,0 +1,153 @@
+[@main]
+你是会员吗？我只为会员提供下列服务\ \
+<美发>  <免费购买宝宝>  <幻境直通车> \
+<我是会员/@main11>\
+<不是会员/@hyzl>
+[@main11]
+#IF
+check [630] 1
+#SAY
+您好尊敬的会员，我们将为你提供优质的免费服务：\ \
+ <美发/@meifa>  <免费购买宝宝/@djgmbb> \
+<幻境直通车/@hjztc> 
+#ELSESAY
+GOTO @开通
+;---美发－－－－－－－－－－－－－－－－－－－－－--------------
+[@meifa]
+#IF
+CHECKPOSEGENDER MAN
+#ACT
+goto @ChangHairMan
+#ELSEACT
+goto @ChangHairWoman
+
+[@ChangHairMan]
+请告诉我你要做什么样的发型。\ \
+ <清凉型/@hairman0> <潇洒型/@hairman1>\ \
+ <关闭/@exit>
+
+
+[@ChangHairWoman]
+请告诉我你要做什么样的发型。\ \
+ <可爱型/@hairman1> <淑女型/@hairman0>\ \
+ <退出/@exit>
+
+[@hairman0]
+#ACT
+HAIRSTYLE 0
+#SAY
+呵呵，你的发型已经改变了...\ \
+ <关闭/@exit>
+
+[@hairman1]
+#ACT
+HAIRSTYLE 1
+#SAY
+呵呵，你的发型已经改变了...\ \
+ <关闭/@exit>
+;--------------------------------------------------
+[@djgmbb]
+<$USERNAME>，欢迎使用我为你喂养的宝宝，最多\
+可以送你5只宝宝，每个宝宝收你1万的手续费？\ \  
+ <领宝宝/@buybaby>\
+  <关闭/@exit>
+
+[@buybaby]
+#IF
+checkgold 10000
+#SAY
+你要领哪种宝宝呢？ \ \
+ <恶蛆宝宝/@eqbb> <钳虫宝宝/@qcbb>  <虎卫宝宝/@hwbb>  <鹰卫宝宝/@ywbb>    \ \ 
+ 宝宝伺养中，下回来也许会多哦~~~\ \
+ <关闭/@exit>
+#ELSESAY
+宠物商：“1万块都拿不出来？我是不会为穷鬼服务的”\ \
+ <关闭/@exit>
+
+
+[@eqbb]
+#IF
+  CHECKSLAVECOUNT < 5
+#ACT
+RECALLMOB 黑色恶蛆 0 5 120 0  -1 
+take 金币 50000
+goto @over
+#ELSESAY
+宠物商：“你要买的宝宝已经卖完了。下次再来吧！”\ \
+ <关闭/@exit>
+ 
+[@qcbb]
+#IF
+  CHECKSLAVECOUNT < 5
+#ACT
+RECALLMOB 钳虫 0 5 120 0  -1 
+take 金币 50000
+goto @over
+#ELSESAY
+宠物商：“你要买的宝宝已经卖完了。下次再来吧！”\ \
+ <关闭/@exit>
+
+
+[@hwbb]
+#IF
+  CHECKSLAVECOUNT < 5
+#ACT
+RECALLMOB 虎卫 0 5 120 0  -1 
+take 金币 50000
+goto @over
+#ELSESAY
+宠物商：“你要买的宝宝已经卖完了。下次再来吧！”\ \
+ <关闭/@exit>
+
+[@ywbb]
+#IF
+  CHECKSLAVECOUNT < 5
+#ACT
+RECALLMOB 鹰卫 0 5 120 0  -1 
+take 金币 50000
+goto @over
+#ELSESAY
+宠物商：“你要买的宝宝已经卖完了。下次再来吧！”\ \
+ <关闭/@exit>
+
+
+[@over]
+#IF
+check [630] 1
+#say
+宠物商：“送给你一个宝宝了。好好照顾他哦！”\ \
+ <继续买宝宝/@buybaby>\ \
+ <关闭/@exit>
+#ELSEACT
+goto @huashaocf
+
+;-----------------------------------------
+[@开通]
+#CALL [NPC\加入会员.txt] @lxfs2
+;----------------------------------------------
+[@hjztc]
+#IF
+check [630] 1
+#act
+mapmove r001 19 83
+#ELSEACT
+goto @huashaocf
+;----------------------------------------------
+[@huashaocf]
+#IF
+CHECKLEVEL 43
+#ACT
+CHANGELEVEL - 1
+  DELSKILL 召唤神兽
+  DELSKILL 冰咆哮
+  DELSKILL 烈火剑法
+mapmove 3 333 333
+KILL 0
+SENDMSG 2 %s因使用非法程序发送指令试图作弊被斩首!风云网络已经采用最新触发系统防止玩家作弊，任何作弊的玩家将受到惩罚！很抱歉.我们的服务只对会员开放，想要成为会员请和此游戏管理者联系.
+#ELSEACT
+  DELSKILL 召唤神兽
+  DELSKILL 冰咆哮
+  DELSKILL 烈火剑法
+take   金币 1000000
+mapmove 3 333 333
+KILL 0

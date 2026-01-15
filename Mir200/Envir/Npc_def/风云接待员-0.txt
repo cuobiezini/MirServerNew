@@ -1,0 +1,200 @@
+[@main]
+#if 
+CHECKLEVELEX < 40
+#act
+SENDMSG 4 你是新手吧？点击我可以获得帮助。同时,为了你更好的体验风云传说的精彩，请到http://www.hmeee.com下载补丁
+#IF
+ check [567] 0
+#SAY
+<$USERNAME>，你是新手吧？看来你需要点帮助，要去冒险吗？\
+没有点资本怎么行呢？让我来帮帮你吧！首先你要找来<5块鸡肉>，\
+我将会给你20000块救济金，还有你需要的装备！\ \
+同时,为了你更好的体验风云传说的精彩，请到我们的主页下载补丁。\
+补丁下载地址：http://www.hmeee.com\
+ <怎样获取鸡肉？/@Getitem>\ \
+ <领取男性装备/@nan>　<领取女性装备/@nv>
+#ELSESAY
+您已领过一次了，还是自己去努力赚吧！\ \
+<关闭/@exit> 
+
+[@nan]
+#IF
+ check [567] 0
+ checkitem 鸡肉 5
+ checkjob warrior
+#SAY
+装备领取成功，祝您玩儿的愉快！
+#ACT
+ take 鸡肉 5
+ set [567] 1
+ give 万年雪霜 2
+ give 超级金创药 5
+ give 回城卷
+ give 基本剑术 1
+ give 攻杀剑术 1
+ give 刺杀剑术 1
+ give 炼狱 1
+ give 骷髅头盔 1
+ give 重盔甲(男) 1
+ give 蓝翡翠项链 1
+ give 死神手套 2
+ give 珊瑚戒指 2
+ give 金币 20000
+ break
+
+#IF
+ check [567] 0
+ checkitem 鸡肉 5
+ checkjob wizard
+#SAY
+装备领取成功，祝您玩儿的愉快！
+#ACT
+ take 鸡肉 5
+ set [567] 1
+ give 万年雪霜 4
+ give 超级魔法药 5
+ give 回城卷
+ give 火球术 1
+ give 抗拒火环 1
+ give 诱惑之光 1
+ give 地狱火 1
+ give 雷电术 1
+ give 瞬息移动 1
+ give 大火球 1
+ give 爆裂火焰 1
+ give 火墙 1
+ give 疾光电影 1
+ give 魔杖 1
+ give 道士头盔 1
+ give 魔法长袍(男) 1
+ give 放大镜 1
+ give 黑檀手镯 2
+ give 降妖除魔戒指 2
+ give 金币 20000
+ break
+
+#IF
+ check [567] 0
+ checkitem 鸡肉 5
+ checkjob taoist
+#SAY
+装备领取成功，祝您玩儿的愉快！
+#ACT
+ take 鸡肉 5
+ set [567] 1
+ give 万年雪箱 2
+ give 超级金创药 1
+ give 超级魔法药 4
+ give 回城卷
+ give 护身符 3
+ give 治愈术 1
+ give 精神力战法 1
+ give 施毒术 1
+ give 灵魂火符 1
+ give 召唤骷髅 1
+ give 隐身术 1
+ give 集体隐身术 1
+ give 幽灵盾 1
+ give 神圣战甲术 1
+ give 心灵启示 1
+ give 银蛇 1
+ give 道士头盔 1
+ give 灵魂战衣(男) 1
+ give 竹笛 1
+ give 道士手镯 1
+ give 降妖除魔戒指 2
+ give 金币 20000
+#ELSESAY
+你没有5块鸡肉，请努力去获取！\ \
+ <返回/@main>
+
+[@nv]
+#IF
+ check [567] 0
+ checkitem 鸡肉 5
+ checkjob warrior
+#SAY
+装备领取成功，祝您玩儿的愉快！
+#ACT
+ take 鸡肉 5
+ set [567] 1
+ give 万年雪霜 2
+ give 超级金创药 5
+ give 回城卷
+ give 基本剑术 1
+ give 攻杀剑术 1
+ give 刺杀剑术 1
+ give 炼狱 1
+ give 骷髅头盔 1
+ give 重盔甲(女) 1
+ give 蓝翡翠项链 1
+ give 死神手套 2
+ give 珊瑚戒指 2
+ give 金币 20000
+ break
+
+#IF
+ check [567] 0
+ checkitem 鸡肉 5
+ checkjob wizard
+#SAY
+装备领取成功，祝您玩儿的愉快！
+#ACT
+ take 鸡肉 5
+ set [567] 1
+ give 万年雪霜 4
+ give 超级魔法药 5
+ give 回城卷
+ give 火球术 1
+ give 抗拒火环 1
+ give 诱惑之光 1
+ give 地狱火 1
+ give 雷电术 1
+ give 瞬息移动 1
+ give 大火球 1
+ give 爆裂火焰 1
+ give 火墙 1
+ give 疾光电影 1
+ give 魔杖 1
+ give 道士头盔 1
+ give 魔法长袍(女) 1
+ give 放大镜 1
+ give 黑檀手镯 2
+ give 降妖除魔戒指 2
+ give 金币 20000
+ break
+
+#IF
+ check [567] 0
+ checkitem 鸡肉 5
+ checkjob taoist
+#SAY
+装备领取成功，祝您玩儿的愉快！
+#ACT
+ take 鸡肉 5
+ set [567] 1
+ give 万年雪箱 2
+ give 超级金创药 1
+ give 超级魔法药 4
+ give 回城卷
+ give 护身符 3
+ give 治愈术 1
+ give 精神力战法 1
+ give 施毒术 1
+ give 灵魂火符 1
+ give 召唤骷髅 1
+ give 隐身术 1
+ give 集体隐身术 1
+ give 幽灵盾 1
+ give 神圣战甲术 1
+ give 心灵启示 1
+ give 银蛇 1
+ give 道士头盔 1
+ give 灵魂战衣(女) 1
+ give 竹笛 1
+ give 道士手镯 1
+ give 降妖除魔戒指 2
+ give 金币 20000
+#ELSESAY
+你没有5块鸡肉，请努力去获取！\ \
+ <返回/@main>

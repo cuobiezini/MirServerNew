@@ -1,0 +1,263 @@
+;WWW.hmeee.com
+;http://bbs.hmeee.com
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+
+[@sxsf]
+{
+#IF
+  EQUAL M5 7
+#ACT
+goto @sxsf11
+break
+#ELSEACT
+goto @sxsf22
+break
+
+[@sxsf11]
+#IF
+  EQUAL M5 7
+#SAY 
+欢迎，我可以为你做什么吗？\ \
+ <购买/@buy>物品\
+ <出售/@Sell>物品\ \
+ <修理/@repair>\
+ <特殊修理/@s_repair>\
+ <关 闭/@exit>
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@sxsf22]
+#IF
+  EQUAL G0 6
+#SAY 
+欢迎，我可以为你做什么吗？\ \
+ <购买物品/@buy>\
+ <出售物品/@sell1>\ \
+ <修理/@repair>\
+ <特殊修理/@s_repair>\
+ <关 闭/@exit>
+#ACT
+  MOV M6 6
+break
+
+#IF
+  EQUAL G0 5
+#SAY 
+欢迎，我可以为你做什么吗？\ \
+ <购买物品/@buy>\
+ <出售物品/@sell2>\ \
+ <修理/@repair>\
+ <特殊修理/@s_repair>\
+ <关 闭/@exit>
+#ACT
+  MOV M6 5
+break
+
+
+#IF
+  EQUAL G0 4
+#SAY 
+欢迎，我可以为你做什么吗？\ \
+ <购买物品/@buy>\
+ <出售物品/@sell3>\ \
+ <修理/@repair>\
+ <特殊修理/@s_repair>\
+ <关 闭/@exit>
+#ACT
+  MOV M6 4
+break
+
+#IF
+  EQUAL G0 3
+#SAY 
+欢迎，我可以为你做什么吗？\ \
+ <购买物品/@buy>\
+ <出售物品/@sell4>\ \
+ <修理/@repair>\
+ <特殊修理/@s_repair>\
+ <关 闭/@exit>
+#ACT
+  MOV M6 3
+break
+
+#IF
+  EQUAL G0 2
+#SAY 
+欢迎，我可以为你做什么吗？\ \
+ <购买物品/@buy>\
+ <出售物品/@sell7>\ \
+ <修理/@repair>\
+ <特殊修理/@s_repair>\
+ <关 闭/@exit>
+#ACT
+  MOV M6 2
+break
+
+#IF
+  EQUAL G0 1
+#SAY 
+欢迎，我可以为你做什么吗？\ \
+ <购买物品/@buy>\
+ <出售物品/@sell5>\ \
+ <修理/@repair>\
+ <特殊修理/@s_repair>\
+ <关 闭/@exit>
+#ACT
+  MOV M6 1
+break
+
+
+#IF
+  EQUAL G0 0
+#SAY 
+欢迎，我可以为你做什么吗？\ \
+ <购买物品/@buy>\
+ <出售物品/@sell6>\ \
+ <修理/@repair>\
+ <特殊修理/@s_repair>\
+ <关 闭/@exit>
+#ACT
+  MOV M6 0
+break
+
+[@sell1]
+#IF
+  EQUAL M6 6
+#SAY 
+   欢迎，你想出售什么物品？希望有我想要的物品\ \
+ <我要出售/@Sell>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+
+[@sell2]
+#IF
+  EQUAL M6 5
+#SAY 
+   欢迎，你想出售什么物品？希望有我想要的物品\ \
+ <我要出售/@Sell>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@sell3]
+#IF
+  EQUAL M6 4
+#SAY 
+   欢迎，你想出售什么物品？希望有我想要的物品\ \
+ <我要出售/@Sell>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@sell4]
+#IF
+  EQUAL M6 3
+#SAY 
+   欢迎，你想出售什么物品？希望有我想要的物品\ \
+ <我要出售/@Sell>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@sell7]
+#IF
+  EQUAL M6 2
+#SAY 
+   欢迎，你想出售什么物品？希望有我想要的物品\ \
+ <我要出售/@Sell>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@sell5]
+#IF
+  EQUAL M6 1
+#SAY 
+   欢迎，你想出售什么物品？希望有我想要的物品\ \
+ <我要出售/@Sell>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@sell6]
+#IF
+  EQUAL M6 0
+#SAY 
+   欢迎，你想出售什么物品？希望有我想要的物品\ \
+ <我要出售/@Sell>\
+ <关 闭/@exit>
+#ACT
+  MOV M5 7
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+
+[@repair]
+别看我像喝醉了酒，我会好好给你修的。\
+全包在我身上。\ \
+ <返 回/@main>
+[~@repair]
+修好了。\
+如果还有要修理的物品，就在这儿修理吧。\ \
+ <返 回/@main>
+[@buy]
+你需要哪种物品呢？\ \
+ <返回/@Main>
+
+[@Sell]
+#IF
+  EQUAL M5 7
+#SAY 
+我们出售蜡烛，护身符，卷轴，修理液等。\ \
+ <返回/@Main>
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@viphuashaocf123]
+#CALL [NPC\VIP超级传送.txt] @viphuashaocf888
+
+[goods]
+火把		10	10
+随机传送卷	20	3
+地牢逃脱卷	20	3
+行会回城卷	20	3
+回城卷		20	3
+地牢逃脱卷包	15	3
+随机传送卷包	20	3
+行会回城卷包	15	3
+回城卷包	15	3
+护身符		20	3
+超级护身符	10	3
+修复油		20	5
+}

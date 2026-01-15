@@ -1,0 +1,205 @@
+[@main]
+你想使用<转生>功能么？\
+转生成功后你的基本属性将增加\
+转生成功后你的技能威力将得到提升\
+而且特殊颜色显示你的名字！\
+但是你的等级可能会降到1级并收取你\
+一些金箱的费用\
+<我愿意转生/@zhuansheng>\
+<我才不呢/@exit>
+
+[@zhuansheng]
+#IF
+checkjob wizard
+CHECKLEVEL 50
+#act
+  MOV M1 1
+goto @881133
+break
+
+#IF
+checkjob taoist
+CHECKLEVEL 50
+#act
+  MOV M1 1
+goto @111111
+break
+
+#IF
+checkjob Warrior
+CHECKLEVEL 50
+#act
+  MOV M1 1
+goto @111111
+#ELSESAY
+无名：你不够等级或没有相应的金箱\ \
+
+
+
+[@881133]
+#IF
+CheckMagicName 群雷术 > 0
+#act
+  MOV M3 1
+
+#IF
+  EQUAL M1 1
+CHECKRENEWLEVEL = 1
+#act
+goto @zhuanhou
+break
+
+#IF
+  EQUAL M1 1
+CHECKRENEWLEVEL > 1
+#act
+goto @zhuanhou
+break
+
+#IF
+  EQUAL M1 1
+checkitem 金箱 8
+#act
+take 金箱 8
+RENEWLEVEL 1 3 100
+CLEARSKILL
+SENDMSG 1 %s转生成功,一位获得邪恶力量的勇士诞生了！
+MESSAGEBOX 转生精灵已经释放\　\请自行分配系统给你的100点数，点击聊天栏上\方'+'按钮分配,<分配机会只有一次>,切记!!!\
+goto @sayzhuan
+#ELSESAY
+无名：你不够等级或没有足够的金箱\ \
+
+
+[@111111]
+#IF
+CheckMagicName 群毒术 > 0
+#act
+  MOV M4 1
+
+#IF
+CheckMagicName 解毒术 > 0
+#act
+  MOV M5 1
+
+#IF
+  EQUAL M1 1
+CHECKRENEWLEVEL = 1
+#act
+goto @zhuanhou22
+break
+
+#IF
+  EQUAL M1 1
+CHECKRENEWLEVEL > 1
+#act
+goto @zhuanhou22
+break
+
+
+#IF
+  EQUAL M1 1
+checkitem 金箱 4
+#act
+take 金箱 4
+RENEWLEVEL 1 3 100
+CLEARSKILL
+SENDMSG 1 %s转生成功,一位获得邪恶力量的勇士诞生了！
+MESSAGEBOX 转生精灵已经释放\　\请自行分配系统给你的100点数，点击聊天栏上\方'+'按钮分配,<分配机会只有一次>,切记!!!\
+goto @sayzhuan
+#ELSESAY
+无名：你不够等级或没有足够的金箱\ \
+
+[@sayzhuan]
+#IF
+  EQUAL M3 1
+#act
+KILL 0 3
+  ADDSKILL 群雷术
+  MOV M3 0
+break
+
+#IF
+  EQUAL M4 1
+#act
+KILL 0 3
+  ADDSKILL 群毒术
+  MOV M4 0
+break
+
+#IF
+  EQUAL M5 1
+#act
+KILL 0 3
+  ADDSKILL 解毒术
+  MOV M5 0
+break
+
+#IF
+#act
+KILL 0 3
+
+;=====================================================
+[@zhuanhou]
+#IF
+  EQUAL M1 1
+CHECKRENEWLEVEL = 2
+checkitem 金箱 40
+CHECKLEVELEX >= 50
+#act
+take 金箱 40
+RENEWLEVEL 1 3 100
+CLEARSKILL
+SENDMSG 1 %s转生成功,一位获得邪恶力量的勇士诞生了！
+MESSAGEBOX 转生精灵已经释放\　\请自行分配系统给你的100点数，点击聊天栏上\方'+'按钮分配,<分配机会只有一次>,切记!!!\
+goto @sayzhuan
+break
+
+
+#IF
+  EQUAL M1 1
+CHECKRENEWLEVEL = 1
+checkitem 金箱 20
+CHECKLEVELEX >= 50
+#act
+take 金箱 20
+RENEWLEVEL 1 3 100
+CLEARSKILL
+SENDMSG 1 %s转生成功,一位获得邪恶力量的勇士诞生了！
+MESSAGEBOX 转生精灵已经释放\　\请自行分配系统给你的100点数，点击聊天栏上\方'+'按钮分配,<分配机会只有一次>,切记!!!\
+goto @sayzhuan
+break
+#ELSESAY
+无名：你不够等级或没有足够的金箱\ \
+
+
+;=====================================================
+[@zhuanhou22]
+#IF
+  EQUAL M1 1
+CHECKRENEWLEVEL = 1
+checkitem 金箱 20
+CHECKLEVELEX >= 50
+#act
+take 金箱 20
+RENEWLEVEL 1 3 100
+CLEARSKILL
+SENDMSG 1 %s转生成功,一位获得邪恶力量的勇士诞生了！
+MESSAGEBOX 转生精灵已经释放\　\请自行分配系统给你的100点数，点击聊天栏上\方'+'按钮分配,<分配机会只有一次>,切记!!!\
+goto @sayzhuan
+break
+
+#IF
+  EQUAL M1 1
+CHECKRENEWLEVEL = 2
+checkitem 金箱 40
+CHECKLEVELEX >= 50
+#act
+take 金箱 40
+RENEWLEVEL 1 3 100
+CLEARSKILL
+SENDMSG 1 %s转生成功,一位获得邪恶力量的勇士诞生了！
+MESSAGEBOX 转生精灵已经释放\　\请自行分配系统给你的100点数，点击聊天栏上\方'+'按钮分配,<分配机会只有一次>,切记!!!\
+goto @sayzhuan
+break
+#ELSESAY
+无名：你不够等级或没有足够的金箱\ \

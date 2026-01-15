@@ -1,0 +1,18 @@
+[@main]
+#if
+CHECKVAR HUMAN TSSH = 1
+#act
+CALCVAR HUMAN TSSH = 2
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+SENDMSG 6 冰城帝王：想为布衣店的儿子报仇？没那么容易!!！
+break
+
+
+#if
+CHECKVAR HUMAN TSSH = 2
+#act
+CALCVAR HUMAN TSSH = 3
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+SENDMSG 6 张家布店老板：感谢你为我儿子报仇！现在你可以带材料回来我帮你做衣服了！
+break
+

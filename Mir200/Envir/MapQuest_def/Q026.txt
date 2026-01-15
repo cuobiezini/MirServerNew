@@ -1,0 +1,5 @@
+[@main]
+#IF
+CHECKLEVELEX > 40
+#ACT
+messagebox 等级大于40级不能进入！

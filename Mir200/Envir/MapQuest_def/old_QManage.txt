@@ -1,0 +1,235 @@
+[@Login]
+;#IF
+;   checknamelist gm.txt
+;#ACT
+;GOTO @CHECKGM    
+;#elseact
+;SENDMSG 5 %s，对不起，服务器调试中，请稍后再登陆，给您造成的不便敬请谅解
+;exeaction kick
+#IF
+checknamelist gm.txt
+#ACT
+GOTO @CHECKGM 
+#elsesay
+为了提高人气使玩家更好的游戏，风云传说将与新开区不\
+久的天骄传奇合并。请您用风云传说的帐号和密码登陆天\
+骄传奇。如果您在登陆的时候出现ID不存在或密码错误请\
+在帐号后加字母a。如果您的帐号超过10位,请把帐号的最\
+后一位改为字母a（注：是改不是添加）\
+合区后有任何疑问和需要帮助的地方请联系：QQ:稍后公布\
+稍后公布  电话：020-稍后公布 稍后公布\
+天骄传奇服务器信息：\
+服务器名：天骄传奇　　IP:219.139.32.37
+#elseACT   
+SENDMSG 5 为了提高人气使玩家更好的游戏，风云传说将与新开区不久的天骄传奇合并。请您用风云传说的帐号和密码登陆天骄传奇。如果您在登陆的时候出现ID不存在或密码错误请在帐号后加字母a。如果您的帐号超过10位,请把帐号的最后一位改为字母a（注：是改不是添加）合区后有任何疑问和需要帮助的地方请联系：QQ:稍后公布　稍后公布　电话：020-稍后公布　稍后公布　天骄传奇服务器信息（服务器名：天骄传奇　IP:219.139.32.37）
+exeaction kick
+
+
+
+
+#if
+#act
+  GAMEPOINT = 0
+goto @qinglifhy813
+
+
+#IF
+CHECKGAMEGOLD > 1
+#ACT
+GAMEGOLD = 0
+addnamelist sxmirgold.txt
+
+
+#IF
+#ACT
+SENDMSG 5 为了消除仓库密码对挂机玩家造成的影响，风云工作组特增加玩家指令@locklogin来灵活控制。输入@locklogin开启仓库密码，重复输入关闭仓库密码。开启仓库密码功能后上线自动锁定。
+  MESSAGEBOX 为了消除仓库密码对挂机玩家造成的影响，风云工作组特增加玩家指令\@locklogin来灵活控制。输入@locklogin开启仓库密码，重复输入关闭\仓库密码。开启仓库密码功能后上线自动锁定。
+
+
+
+#IF
+checknamelist gm.txt
+#ACT
+GOTO @CHECKGM 
+
+;==========限制人物========
+#if
+checknamelist xianzhi3.txt
+#act
+SENDMSG 6 攻击力倍数:1.6　时长6000000秒
+SENDMSG 6 你的幸运提高了未知点数
+SENDMSG 6 你的毒物恢复提高了未知点数
+SENDMSG 6 你的魔法躲避提高了未知点数
+SENDMSG 6 你的神圣攻击提高了未知点数
+set [634] 0
+goto @Login1
+#elseact
+set [634] 0
+goto @zhuanshenst
+
+[@zhuanshenst]
+#if
+CHECKRENEWLEVEL = 3
+#act
+POWERRATE  160  6000000
+SENDMSG 6 你的幸运提高了未知点数
+SENDMSG 6 你的毒物恢复提高了未知点数
+SENDMSG 6 你的魔法躲避提高了未知点数
+SENDMSG 6 你的神圣攻击提高了未知点数
+addnamelist 3.txt
+goto @Login1
+#elseact
+goto @zhuan2
+
+[@zhuan2]
+#if
+CHECKRENEWLEVEL = 2
+#act
+POWERRATE  140  6000000
+SENDMSG 6 你的幸运提高了未知点数
+SENDMSG 6 你的毒物恢复提高了未知点数
+SENDMSG 6 你的魔法躲避提高了未知点数
+SENDMSG 6 你的神圣攻击提高了未知点数
+addnamelist 2.txt
+goto @Login1
+#elseact
+goto @zhuan1
+
+[@zhuan1]
+#if
+CHECKRENEWLEVEL = 1
+#act
+POWERRATE  120  6000000
+SENDMSG 6 你的幸运提高了未知点数
+SENDMSG 6 你的毒物恢复提高了未知点数
+SENDMSG 6 你的魔法躲避提高了未知点数
+SENDMSG 6 你的神圣攻击提高了未知点数
+addnamelist 1.txt
+goto @Login1
+#elseact
+goto @Login1
+
+
+[@CHECKGM]
+#IF
+  CHECKIPLIST GMIP.TXT
+#ACT
+    CHANGEMODE 2 1
+    CHANGEMODE 3 1 
+POWERRATE  100  6000000
+#elseact
+SENDMSG 5 %s非法登陆被强制下线，非法登陆IP已被服务器记录
+exeaction kick
+
+[@Login2]
+#if
+   checkgold 500000
+   checkitemw 会员勋章(Mon0) 1
+#act
+take 金币 500000
+RECALLMOB  驽玛法王0 0 12000
+SENDMSG 6 尊敬的会员，您的会员勋章已经生效,在持久点数范围内您可无限制使用！
+
+#if
+   checkitemw 会员勋章(2EXP) 1
+#act
+KILLMONEXPRATE  200 60000
+SENDMSG 6 尊敬的会员，您的会员勋章已经生效，在持久点数范围内您可无限制使用！
+;-------------------------------------------------
+[@fhy]
+#if
+   checkgold 500000
+   checkitemw 会员勋章(Mon0) 1
+#act
+take 金币 500000
+takew 会员勋章(Mon0) 1
+RECALLMOB  驽玛法王0 0 36000
+SENDMSG 5 %s，您的会员勋章已经失效，非会员只能使用一次
+
+#if
+   checkitemw 会员勋章(2EXP) 1
+#act
+takew 会员勋章(2EXP) 1
+KILLMONEXPRATE  200 1800
+SENDMSG 5 %s，您的会员勋章已经失效，非会员只能使用一次
+
+
+[@newhkfs]
+风云传说最新电话及汇款帐号！\
+元宝办理热线：<020--更多电话  稍后公布  稍后公布>\
+元宝办理QQ：<稍后公布  稍后公布>\
+点击查看汇款银行：（推荐工行、农行、招行）\
+<工商银行/@gsyh> <农业银行/@nyyh> <招商银行/@zsyh> <建设银行/@jsyh> \
+汇款后请立即拨打热线或加QQ确认汇款，我们郑重承诺:<5分钟>内给您\
+分配相应汇款金额的元宝\ \
+　　　　　　　　　　　　　　<上一页/@dedaoyouxibei>   <返回首页/@sxshop>
+
+
+;----------------汇款方式---------------------------
+;---------------------------------------------------
+
+[@Member]
+#if
+check [630] 1
+#say
+<$USERNAME>您好:\
+　   欢迎使用会员秘书功能，您在任何时候需要我的时候我都会帮\
+你：<更加丰富强大的会员秘书功能将在6月1日前全面推出>\ \
+　     <游戏帮助/@youxims>    <万恶召唤令/@baianms>\
+　　　　　　　　　　     　　　　       <关闭/@exit>
+#elsesay
+尊敬的<$USERNAME>，您好，感谢您在过去的岁月里选择了风云网\
+络提供的游戏服务。有了您的信任和支持，才有了风云传说\
+的不断发展与进步，在未来的日子里，风云传说将一如既往\
+地为玩家提供优质、安全、周到的服务！\
+您试图使用的会员秘书属于<会员功能>,如果您想享受会员秘\
+书功能，请<联系管理员/@newhkfs>办理会员，我们将十分荣幸为您效劳!\
+再次感谢您对风云传说的信任和支持！
+
+
+
+[@youxims]
+#CALL [会员秘书\游戏帮助.txt] @misubz
+
+[@baianms]
+#if
+checkitem 金盒 2
+#act
+take 金盒 2
+give 万恶召唤令 1
+#say
+     玛珐大陆凝聚怨气的变异法王随时等待召唤！！！
+#elsesay 
+     购买万恶召唤令需要2个金盒~~~
+
+
+[@Login1]
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A包月制会员.txt   <    10000   p0    p1
+#ACT
+set [630] 1
+goto @Login2
+#elseact
+goto @qinglifhy8132
+
+[@qinglifhy8132]
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A半年制会员.txt   <    10000   p0    p1
+#ACT
+set [630] 1
+goto @Login2
+#elseact
+goto @qinglifhy8133
+
+[@qinglifhy8133]
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A全年制会员.txt   <    10000   p0    p1
+#ACT
+set [630] 1
+goto @Login2
+#elseact
+set [630] 0
+set [631] 0
+set [632] 0
+set [633] 0
+goto @fhy

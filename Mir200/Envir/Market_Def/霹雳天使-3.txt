@@ -1,0 +1,208 @@
+[@main]
+#if 
+CHECKLEVELEX > 45
+#act
+SENDMSG 4 人民币收购天使之翼，有的狂M！
+
+#if 
+checknamelist ..\QuestDiary\数据文件\TSSHYZ.txt
+#act
+goto @tsyzweek
+break
+
+#if 
+   CHECKVAR HUMAN TSSH = 1
+#act
+goto @qzzdlb
+break
+
+#if 
+   CHECKVAR HUMAN TSSH = 6
+#act
+goto @jtanyij
+break
+
+#if 
+   CHECKVAR HUMAN TSSH = 4
+#act
+goto @zhidaommre
+break
+
+#if 
+   checkitemw 天使之翼(男) 1
+#act
+goto @xqmm
+break
+
+#if 
+   checkitemw 天使之翼(女) 1
+#act
+goto @xqmm
+break
+
+#IF
+CHECKVAR HUMAN TSSH = 2
+#ACT
+goto @qzzdlb
+break
+
+
+#IF
+CHECKVAR HUMAN TSSH = 3
+#ACT
+goto @qzzdlb
+break
+
+
+#if  gender man
+ #if checkitemw 天使之翼(男) 1
+  #elseSAY 
+#ELSEACT
+ #if checkitemw 天使之翼(女) 1
+ #elseSAY 
+   不要打扰我！没看我正在玩传奇吗！\ \ 
+<离开/@exit>\ 
+
+[@tsyzweek]
+天使升华任务一星期只可做一次！！！\ \
+<离开/@exit>\ 
+
+[@qzzdlb]
+还愣着干什么？\
+快去找张家布店老板啊！！！\ \
+
+<好的，知道了！/@exit>\
+
+[@xqmm]
+咦？你穿的衣服我好象在什么地方看见过？\
+哦，想起来了，是关于天使升华的秘密！\
+如果你能给我一个金盒的话我可以告诉你这个秘密！\
+<我想知道这个秘密/@zhidaomm>\
+<算了，我没金盒/@exit>\
+
+
+[@zhidaomm]
+#if 
+   checkitem 金盒 1
+#act
+take 金盒 1
+CALCVAR HUMAN TSSH = 4
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+goto @zhidaommre
+#elseSAY 
+呵呵，没金盒就免谈拉！\ \ 
+
+[@zhidaommre]
+那是很久以前的事了，当年有两个天使。他们穿着天使\
+之翼从神界而来，骑着两头麒麟.你知道那麒麟吗和天使\
+之翼吗？听说现在还在人间！但是那头麒麟被关在了一\
+个山洞里，我需要一把钥匙才能去救他们，如果你能给\
+我钥匙我就帮你升华天使.<石钥匙>你有吗？\
+天使升华以后可以全面提高属性，而且可以降低你\
+其他首饰掉落的几率 \
+<我有石钥匙/@woyaoa> \
+<没有/@exit>
+
+
+
+[@woyaoa]
+#if
+checkitem 石钥匙 1
+#ACT
+take 石钥匙 1
+CALCVAR HUMAN TSSH = 6
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+goto @jtanyij
+#ELSESAY 
+你身上没有石钥匙，你要知道，没有钥匙是进不了洞的。\
+据说逆魔谷的逆魔兽身上有这把钥匙，你可以去试试运气\
+我会在这里等你的。记住！是石钥匙！ \ \
+<取消/@exit>
+
+[@jtanyij]
+#IF
+ checkjob warrior
+#SAY
+给我天翼7号，然后你去找张家布店老板吧，我去救麒麟的\
+途中会把天翼交给她并让他帮你的 \ \
+<好的，给你/@TYwarrior>\
+<离开/@exit>
+#ACT
+break
+
+#IF
+checkjob wizard
+#SAY
+给我天翼6号，然后你去找张家布店老板吧，我去救麒麟的\
+途中会把天翼交给她并让他帮你的 \ \
+<好的，给你/@TYWizard>\
+<离开/@exit>
+#ACT
+break
+
+#IF
+checkjob taoist
+#SAY
+给我天翼5号，然后你去找张家布店老板吧，我去救麒麟的\
+途中会把天翼交给她并让他帮你的 \ \
+<好的，给你/@TYtaoist>\
+<离开/@exit>
+#ACT
+break
+
+
+[@TYWizard]
+#if
+   CHECKVAR HUMAN TSSH = 6
+   checkitem 天翼6号 1
+#act
+CALCVAR HUMAN TSSH = 1
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+take 天翼6号 1
+#SAY
+去找张家布店老板吧，我去救麒麟的途中会把天翼\
+交给她并让他帮你的 \ \
+<离开/@exit>
+#elsesay
+你身上没有天翼6号，你要知道，没有天翼6号升华不了\
+天使的，我会在这里等你的。记住！是天翼6号！ \ \
+<取消/@exit>
+   
+
+[@TYwarrior]
+#if
+   CHECKVAR HUMAN TSSH = 6
+   checkitem 天翼7号 1
+#act
+CALCVAR HUMAN TSSH = 1
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+take 天翼7号 1
+#SAY
+去找张家布店老板吧，我去救麒麟的途中会把天翼\
+交给她并让他帮你的 \ \
+<离开/@exit>
+#elsesay
+你身上没有天翼7号，你要知道，没有天翼7号升华不了\
+天使的，我会在这里等你的。记住！是天翼7号！ \ \
+<取消/@exit>
+
+[@TYtaoist]
+#if
+   CHECKVAR HUMAN TSSH = 6
+   checkitem 天翼5号 1
+#act
+CALCVAR HUMAN TSSH = 1
+SAVEVAR HUMAN TSSH ..\QuestDiary\数据文件\TSSHSave.txt
+take 天翼5号 1
+#SAY
+去找张家布店老板吧，我去救麒麟的途中会把天翼\
+交给她并让他帮你的 \ \
+<离开/@exit>
+#elsesay
+你身上没有天翼5号，你要知道，没有天翼5号升华不了\
+天使的，我会在这里等你的。记住！是天翼5号！ \ \
+<取消/@exit>
+
+
+
+

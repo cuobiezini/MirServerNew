@@ -1,0 +1,37 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2005/02/23	Jacky	调整更新
+
+{
+
+[@daili_call]
+您可以通过以下两种方式获得元宝：\ \
+方法一：<通过风云传说官方购买元宝！/@sxmirbuy>\ \
+方法二：<通过目前已经开通的地区代理商就近购买！/@dedaoyouxibei-dl>\ \
+　　　　　　　　　　　　　　　　　　　　　<返回首页/@sxshop>
+
+[@dedaoyouxibei-dl]
+玩家通过以下代理商就近购买元宝！\ \
+<湖北>:<宜昌/@hbyc> <武汉/@hbwh> <汉川/@hbhc> <荆州/@hbjz>\
+<湖南>:<衡阳/@hnhy> <益阳/@hnyy> <长沙/@hncs> <常德/@hncd> <怀化/@hnhh>\
+<广东>:<广州/@gdgz>  <东莞/@gddw>  <深圳/@gdsz>\
+<广西>:<玉林/@gxyl>\
+<陕西>:<西安/@sxxa>\
+<浙江>:<杭州/@zjhz>\ 
+　　　　　　　　　　　　　　<上一页/@dedaoyouxibei>   <返回首页/@sxshop>
+
+
+[@sxmirbuy]
+玩家通过风云官方购买元宝！\
+元宝办理热线：<020--XXXX  XXXX >\
+元宝办理QQ：<1103740053  1103740053>\
+
+　　　　　　　　　　　　　　<上一页/@dedaoyouxibei>   <返回首页/@sxshop>
+
+
+
+
+
+
+}

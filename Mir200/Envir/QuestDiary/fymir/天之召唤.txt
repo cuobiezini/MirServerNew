@@ -1,0 +1,268 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）脚本文件
+;2005/02/23	Jacky	调整更新
+
+{
+[@sxtzzh]
+<服务器将在12月28日晚上10点重起服务器>\ \
+天之神灵：你想召唤？\ \
+<变异法王/@法王12>　 <极品法王/@法王>　 <天尊召唤/@天尊召唤>　 <雇佣军队/@雇佣军队> \ \
+<双倍经验/@双倍经验>\ \
+<上一页/@Member> 　<关闭/@exit>\
+
+;=====================================
+[@法王12]
+#if
+  EQUAL M2 1
+#act
+SENDMSG 6 由于您现在正在皇宫或进入过皇宫，请小退再上线进行召唤！！
+break
+
+
+#IF
+CheckSlaveCount < 1
+#ACT
+#ELSEACT
+SENDMSG 7 宠物的数量已达到上限 !
+break
+
+
+
+#IF
+   checkitem 万恶召唤令 1
+#ACT
+take 万恶召唤令 1
+RECALLMOB  变异法王  0 1 1200 0  -1 
+    sendmsg 7 万恶召唤，尸横遍野，血流成河！！！
+#ELSESAY
+你带好召唤变异法王的东西了吗？\
+变异法王需要包裹里有 万恶召唤令 \ \
+ <知道了/@exit>
+
+[@法王]
+#if
+  EQUAL M2 1
+#act
+SENDMSG 6 由于您现在正在皇宫或进入过皇宫，请小退再上线进行召唤！！
+break
+
+
+#IF
+CheckSlaveCount < 1
+#ACT
+#ELSEACT
+SENDMSG 7 宠物的数量已达到上限 !
+break
+
+
+
+#if
+   check [630] 1
+   checkgold 1000000
+   checkitemw 会员勋章(Mon0) 1
+#act
+take 金币 1000000
+RECALLMOB  驽玛法王0 1 1 600 0  -1 
+SENDMSG 6 尊敬的会员，您的会员勋章已经生效,在持久点数范围内您可无限制使用！
+break
+
+#if
+   checkgold 1000000
+   checkitemw 会员勋章(Mon0) 1
+#act
+take 金币 1000000
+takew 会员勋章(Mon0) 1
+RECALLMOB  驽玛法王0 1 1 600 0  -1 
+SENDMSG 5 %s，您的会员勋章已经失效，非会员只能使用一次
+#ELSESAY
+你带好召唤法王的东西了吗？\
+极品法王需要佩带 会员勋章(Mon0) 并有100万的金币\ \
+
+ <知道了/@exit>
+;=========================================================
+
+[@天尊召唤]
+#IF
+checkjob taoist
+#act
+goto @sxtzzh-1
+#ELSEsay
+你身上不具备天尊的灵气，无法进行召唤！请走开。\ 
+ <关闭/@exit>
+
+[@sxtzzh-1]
+#if
+CHECKRENEWLEVEL > 2
+checkjob taoist
+#act
+take 金币 100000
+RECALLMOB  变异异兽 0 1 1200 0  -1 
+SENDMSG 6 天尊灵气已经凝聚，你获得了邪恶的力量~
+break
+
+#if
+CHECKRENEWLEVEL = 2
+checkjob taoist
+#act
+take 金币 100000
+RECALLMOB  变异圣兽 0 1 1200 0  -1 
+SENDMSG 6 天尊灵气已经凝聚，你获得了邪恶的力量~
+break
+
+#if
+CHECKRENEWLEVEL = 1
+checkjob taoist
+#act
+take 金币 100000
+RECALLMOB  变异神兽 0 1 1200 0  -1 
+SENDMSG 6 天尊灵气已经凝聚，你获得了邪恶的力量~
+#ELSEsay
+你还没有转生，无法进行召唤！请走开。\ \
+ <关闭/@exit>
+;=======================
+[@雇佣军队]
+【风云银联提示您】您目前可用的元宝余额为：<$GAMEGOLD>元\ \
+天之神灵：每召唤一个雇佣军需要<一元>元宝，确定\
+　　　　　召唤吗?\ \
+<确定召唤/@召唤雇佣军>\
+<算了，再看看/@exit>
+
+[@召唤雇佣军]
+#if
+ CHECKGAMEGOLD > 1
+  
+checkitemw 嗜血狂刃　 1
+CHECKSLAVECOUNT < 5
+#ACT
+SENDMSG 5 【风云银联提示您】:<$USERNAME>在召唤前的元宝余额为：<$GAMEGOLD>元
+GAMEGOLD - 1
+SENDMSG 5 【风云银联提示您】:<$USERNAME>在召唤后的元宝余额为：<$GAMEGOLD>元
+RECALLMOB  傀儡 0 1 1200 0  -1 
+    sendmsg 7 傀儡（<$USERNAME>）：请主人赐予我力量吧！！！
+    sendmsg 6 雇佣军戴装备命令：面对傀儡输入＠setslaveuseitem
+break
+
+#if
+ CHECKGAMEGOLD > 1
+  
+CHECKSLAVECOUNT < 1
+#ACT
+SENDMSG 5 【风云银联提示您】:<$USERNAME>在召唤前的元宝余额为：<$GAMEGOLD>元
+GAMEGOLD - 1
+SENDMSG 5 【风云银联提示您】:<$USERNAME>在召唤后的元宝余额为：<$GAMEGOLD>元
+RECALLMOB  傀儡 0 1 1200 0  -1 
+    sendmsg 7 傀儡（<$USERNAME>）：请主人赐予我力量吧！！！
+    sendmsg 6 雇佣军戴装备命令：面对傀儡输入＠setslaveuseitem
+break
+#ELSESAY
+天之神灵：无法进行召唤：\
+　　1、<$USERNAME>当前可用的元宝余额为<$GAMEGOLD>元，召唤\
+　　 　雇佣军必须余额必须大于1元元宝。\
+　　如果您的余额不足，请按此方式<获得元宝/@dedaoyouxibei>\  \
+　　　　　　　　　<获得元宝/@dedaoyouxibei>　 　<知道了，/@EXIT>
+;=======================
+[@双倍经验]
+#if
+CHECKLEVELEX > 0
+   check [630] 1
+   checkitemw 会员勋章(2EXP) 1
+   checkgold 3000000
+CHECKRENEWLEVEL > 0
+#act
+take 金币 3000000
+KILLMONEXPRATE  200 60000
+SENDMSG 6 尊敬的会员，您的会员勋章已经生效，在持久点数范围内您可无限制使用！
+break
+
+
+
+#if
+   check [630] 1
+   checkitemw 会员勋章(2EXP) 1
+   checkgold 500000
+CHECKLEVELEX < 46
+CHECKRENEWLEVEL < 1
+#act
+take 金币 500000
+KILLMONEXPRATE  200 60000
+SENDMSG 6 尊敬的会员，您的会员勋章已经生效，在持久点数范围内您可无限制使用！
+break
+
+
+
+#if
+   check [630] 1
+   checkitemw 会员勋章(2EXP) 1
+   checkgold 1000000
+CHECKLEVELEX < 53
+CHECKRENEWLEVEL < 1
+#act
+take 金币 1000000
+KILLMONEXPRATE  200 60000
+SENDMSG 6 尊敬的会员，您的会员勋章已经生效，在持久点数范围内您可无限制使用！
+break
+
+
+
+#if
+   check [630] 1
+#SAY
+系统：无法进行召唤双倍经验：\
+　　1、<$USERNAME>当前可用的金币余额为<$GOLDCOUNT>，召唤\
+　　 　双倍经验未转生金币余额必须大于100万游戏金币，已转\
+　　 　生金币余额必须大于300万游戏金币\。
+　　2、请确认你佩带了会员勋章(2EXP)\  \
+　　　　　　　　　       　<知道了，/@EXIT>
+#act
+break
+
+
+#if
+   checkitemw 会员勋章(2EXP) 1
+   checkgold 3000000
+CHECKRENEWLEVEL > 0
+#act
+take 金币 3000000
+takew 会员勋章(2EXP) 1
+KILLMONEXPRATE  200 1800
+SENDMSG 5 %s，您的会员勋章已经失效，非会员只能使用一次
+break
+
+
+#if
+   checkitemw 会员勋章(2EXP) 1
+   checkgold 500000
+CHECKLEVELEX < 46
+CHECKRENEWLEVEL < 1
+#act
+take 金币 500000
+takew 会员勋章(2EXP) 1
+KILLMONEXPRATE  200 1800
+SENDMSG 5 %s，您的会员勋章已经失效，非会员只能使用一次
+break
+
+
+#if
+   checkitemw 会员勋章(2EXP) 1
+   checkgold 1000000
+CHECKLEVELEX < 53
+CHECKRENEWLEVEL < 1
+#act
+take 金币 1000000
+takew 会员勋章(2EXP) 1
+KILLMONEXPRATE  200 1800
+SENDMSG 5 %s，您的会员勋章已经失效，非会员只能使用一次
+
+#ELSESAY
+系统：无法进行召唤双倍经验：\
+　　1、<$USERNAME>当前可用的金币余额为<$GOLDCOUNT>，召唤\
+　　 　双倍经验未转生金币余额必须大于100万游戏金币，已转\
+　　 　生金币余额必须大于300万游戏金币\。
+　　2、请确认你佩带了会员勋章(2EXP)\  \
+　　　　　　　　　       　<知道了，/@EXIT>
+
+
+
+
+}

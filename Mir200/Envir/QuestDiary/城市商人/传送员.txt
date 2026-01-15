@@ -1,0 +1,383 @@
+[@传送员]
+{
+<$SERVERNAME>提醒你:<$USERNAME>,请保护好ID密码保护资料!\
+当前系统时间<$LOGINTIME>，<你进入游戏时间>为：<$LOGINLONG>\
+<当前等级>：<$LEVEL>级 <当前PK点数>：<$PKPOINT>点，<泡点点数>：<$GAMEPOINT>点\
+<当前声望>：<$CREDITPOINT>点 <当前经验>：<$EXP><当前升级经验>：<$MAXEXP>\
+<◆杀非红名人物≡增加PK值110点||杀红名人物≡增加PK值10点◆>\
+╔┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╗\
+┇〖<安全区域/@安全区域>〗┇〖<危险区域/@危险区域>〗┇〖<结束对话/@exit>〗┇\
+╚┅┅┅┅┅┅╩┅┅┅┅┅┅╩┅┅┅┅┅┅╩┅┅┅┅┅┅╝\
+<温馨提示：请勿相信游戏里GM喊话，本服没有GM>
+
+
+
+
+
+
+
+
+[@安全区域]
+╔┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╗\
+┇提示︰欢迎您使用<安全区域传送员>，请您选择传送区域     ┇\
+╠┅┅┅┅┅┅╦┅┅┅┅┅┅╦┅┅┅┅┅┅╦┅┅┅┅┅┅╣\
+┇〖<盟重土城/@盟重土城>〗┇〖<比齐大城/@比齐大城>〗┇〖 <白日门/@白日门> 〗┇\
+╠┅┅┅┅┅┅╬┅┅┅┅┅┅╬┅┅┅┅┅┅╬┅┅┅┅┅┅╣\
+┇〖<封魔神谷/@封魔神谷>〗┇〖 <逆魔谷/@逆魔谷> 〗┇〖 <苍月岛/@苍月岛> 〗┇\
+╠┅┅┅┅┅┅╬┅┅┅┅┅┅╬┅┅┅┅┅┅╬┅┅┅┅┅┅╣\
+┇〖<姻缘神殿/@姻缘神殿>〗┇〖 <银杏村/@银杏村> 〗┇〖 <新手村/@新手村> 〗┇〖<返回对话/@传送员>〗┇\
+╚┅┅┅┅┅┅╩┅┅┅┅┅┅╩┅┅┅┅┅┅╩┅┅┅┅┅┅╝\
+[@银杏村]
+#IF
+#ACT
+mapmove 0 634 614
+[@新手村]
+#IF
+#ACT
+mapmove 0 289 618
+[@盟重土城]
+#IF
+#ACT
+mapmove 3 330 330
+[@比齐大城]
+#IF
+#ACT
+mapmove 0 333 268
+[@白日门]
+#IF
+#ACT
+mapmove 11 177 324
+[@苍月岛]
+#IF
+#ACT
+mapmove 5 139 337
+[@封魔神谷]
+#IF
+#ACT
+mapmove 4 241 201
+[@逆魔谷]
+#IF
+#ACT
+mapmove 6 119 153
+[@沙巴克外]
+#IF
+#ACT
+mapmove 3 642 285
+give 回城卷 1
+[@庄园]
+#IF
+#ACT
+mapmove GA0 73 75
+[@姻缘神殿]
+#IF
+#ACT
+map m101
+give 回城卷 1
+[@危险区域]
+╔┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╗\
+┇提示︰欢迎您使用危险地区传送员，请选择传送地区       ┇\
+┇       以下传送点，每次传送需要金币5千！！      ┇\
+╠┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╣\
+┇<沃玛二层/@沃玛二层> <祖玛五层/@祖玛五层> <祖玛七层/@祖玛七层> <死亡棺材/@死亡棺材>   ┇\
+┇<山谷暗道/@山谷暗道> <疾风大殿/@疾风大殿> <尸魔３层/@尸魔３层> <骨魔５层/@骨魔５层>   ┇\
+┇<幻境一层/@幻境一层> <未知暗殿/@未知暗殿> ┇\
+┇                            <返回对话/@传送员> <结束对话/@exit> ┇\
+╚┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╝\
+[@世外桃源]
+#IF
+checkgold 5000
+#ACT
+take 金币 5000
+map R001
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@沃玛二层]
+#IF
+checkgold 5000
+#ACT
+take 金币 5000
+map D023
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@祖玛五层]
+#IF
+checkgold 5000
+#ACT
+take 金币 5000
+map D505
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@祖玛七层]
+#IF
+checkgold 5000
+#ACT
+take 金币 5000
+map D5072
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@石墓五层]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map D715
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@死亡棺材]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map D606
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@未知暗殿]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map M001
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@山谷秘道]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map D10051
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@山谷暗道]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map D10052
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@疾风大殿]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map D2004
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@尸魔３层]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map D2052
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@骨魔５层]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map D2067
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@牛魔５层]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map D2076
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@圣域之门]
+#IF
+checkgold 5000
+#ACT
+take 金币 5000
+map B101
+give 回城卷 1
+break
+#ELSEACT
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@幻境一层]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map H001
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@影之道一]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map H201
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@魔龙东郊]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map 61
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@魔龙西郊]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map 62
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@尸王大殿]
+#IF
+checkgold 5000 
+#ACT
+take 金币 5000
+map Q004
+give 回城卷 1
+break 
+#ELSEACT 
+SENDMSG 7 钱不够5千！！
+CLOSE
+[@极度危险区域]
+╔┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╗\
+┇?u_?u︰不欢迎您使用本服务，死了掉东西，别找我！！！   ┇\
+┇       以下<七个>传送点，每次传送需要 <10万金币>          ┇\
+┇                                                      ┇\
+╠┅┅┅┅┅┅╦┅┅┅┅┅┅╦┅┅┅┅┅┅╦┅┅┅┅┅┅╣\
+┇〖<圣地一层/@圣地一层>〗┇〖<魔域通道/@魔域通道>〗┇〖<死亡回廊/@死亡回廊>〗┇〖<镜像殿堂/@镜像殿堂>〗┇\
+╠┅┅┅┅┅┅╬┅┅┅┅┅┅╬┅┅┅┅┅┅╬┅┅┅┅┅┅╣\
+┇〖<火龙洞窟/@火龙洞窟>〗┇〖<教皇大厅/@教皇大厅>〗┇〖<十八层地狱/@十八层地狱>〗〖<返回对话/@传送员>〗┇\
+╚┅┅┅┅┅┅╩┅┅┅┅┅┅╩┅┅┅┅┅┅╩┅┅┅┅┅┅╝\
+[@十八层地狱]
+╔┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╗\
+┇?u_?u︰通往阴界<十八层地狱>的大门已经打开！各位勇士你们 ┇\
+┇       准备好了吗？                                   ┇\
+┇       每次进入需要10万金币的费用！<好多的转生物品打哦> ┇\
+┇       每一层地狱里都有一个<小鬼NPC>。一定要找到他。    ┇\
+┇       只有他才可以帮你继续往下一层传送！             ┇\
+╠┅┅┅┅┅┅╦┅┅┅┅┅┅╦┅┅┅┅┅┅╦┅┅┅┅┅┅╣\
+┇〖<我要进入/@我要进入>〗┇            ┇〖<返回对话/@传送员>〗┇〖<结束对话/@exit>〗┇\
+╚┅┅┅┅┅┅╩┅┅┅┅┅┅╩┅┅┅┅┅┅╩┅┅┅┅┅┅╝\
+[@我要进入]
+#if
+checkgold 100000 
+#act
+take 金币 100000
+map L002D
+give 回城卷 1
+#ELSESAY
+钱不足10万  〖<返回对话/@传送员>〗〖<结束对话/@exit>〗
+[@圣地一层]
+#IF
+checkgold 100000 
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove E701 12 18
+#ELSESAY
+钱不足10万  〖<返回对话/@传送员>〗〖<结束对话/@exit>〗
+[@魔域通道]
+#IF
+checkgold 100000 
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove E001 10 20
+#ELSESAY
+钱不足10万  〖<返回对话/@传送员>〗〖<结束对话/@exit>〗
+[@死亡回廊]
+#IF
+checkgold 100000 
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove D2003 29 82
+#ELSESAY
+钱不足10万  〖<返回对话/@传送员>〗〖<结束对话/@exit>〗
+[@镜像殿堂]
+#IF
+checkgold 100000 
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove L006 51 89
+#ELSESAY
+钱不足10万  〖<返回对话/@传送员>〗〖<结束对话/@exit>〗
+[@火龙洞窟]
+一个恐怖而充满财富的地方，你愿意去吗？我可以送你去\
+一层下二层：19,218。二层下火龙巢穴：374,273。小心..\ \
+<进入./@火龙1>\
+<离开./@exit>\
+[@火龙1]
+#IF
+checkgold 100000 
+#ACT
+take 金币 100000
+give 回城卷 1
+map D2081
+#ELSESAY
+钱不足10万  〖<返回对话/@传送员>〗〖<结束对话/@exit>〗
+[@教皇大厅]
+#IF
+checkgold 100000 
+#ACT
+take 金币 100000
+give 回城卷 1
+map F011
+#ELSESAY
+钱不足10万  〖<返回对话/@传送员>〗〖<结束对话/@exit>〗
+}

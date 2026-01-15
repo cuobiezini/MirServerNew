@@ -1,0 +1,11 @@
+[@main]
+#if
+check [029] 0
+checklevel 15
+#say
+您已经15级了，请去下一个练级区
+#act
+set [029] 1
+mapmove D003
+#elseact
+goto @exit

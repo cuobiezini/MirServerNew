@@ -1,0 +1,50 @@
+[@main]
+#IF
+check [630] 1
+#SAY
+您好,尊敬的会员，在幻境您可以体验双倍经验和双倍\
+暴率的游戏乐趣!\
+<我是会员，我要去幻境/@011_00126>
+#ELSEACT
+GOTO @011_00125
+
+[@011_00126]
+#IF
+check [630] 1
+#ACT
+mapmove h001 72 65
+#ELSEACT
+GOTO @huashaocf
+
+[@qwty22]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove h001 72 65
+#ELSESAY
+幻境向导：“请确认你有30万的路费”
+
+[@011_00125]
+#CALL [NPC\加入会员.txt] @lxfs2
+
+
+;----------------------------------------------
+[@huashaocf]
+#IF
+CHECKLEVEL 43
+#ACT
+CHANGELEVEL - 1
+DELSKILL 召唤神兽
+DELSKILL 冰咆哮
+DELSKILL 烈火剑法
+mapmove 3 333 333
+KILL 0
+SENDMSG 2 %s因使用非法程序发送指令试图作弊被斩首!风云网络已经采用最新触发系统防止玩家作弊，任何作弊的玩家将受到惩罚！很抱歉.我们的服务只对会员开放，想要成为会员请和此游戏管理者联系.
+#ELSEACT
+DELSKILL 召唤神兽
+DELSKILL 冰咆哮
+DELSKILL 烈火剑法
+take   金币 1000000
+mapmove 3 333 333
+KILL 0

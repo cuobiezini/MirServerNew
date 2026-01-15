@@ -1,0 +1,38 @@
+[@main]
+#IF
+#SAY
+<$USERNAME>你好，欢迎来到<$SERVERNAME>，很高兴为您服务\
+-----------------------注意充值事项------------------------\
+①本系统支持网上银行、微信扫码、支付宝、各类充值卡。\
+②请在充值5分钟后在本NPC处领取\
+③本服充值比例为:1元=500元宝　您当前元宝为：<$GAMEGOLD>\
+④申明：请认准本服【官网】或本NPC充值渠道！！\ \
+<领取/@HF领取>　　　　<充值/@weburl>　　　　<关闭/@exit>\
+
+[@HF领取]
+#CALL [\HF元宝\hf.txt] @领取元宝
+
+[@weburl]
+#IF
+#SAY
+\ \ \
+<充值通道①/@通道一>　┆　<充值通道②/@通道二>　┆　<充值通道③/@通道三>\ \
+<退出/@exit>
+
+[@通道一]
+#IF
+#ACT
+OpenWebSite http://cz5.61card.com/User/Center?Gameid=941246&Groupid=52023
+break
+
+[@通道二]
+#IF
+#ACT
+OpenWebSite http://cz6.7api.cn/User/Center?Gameid=941246&Groupid=52023
+break
+
+[@通道三]
+#IF
+#ACT
+OpenWebSite http://cz2.61card.com/User/Center?Gameid=941246&Groupid=52023
+break

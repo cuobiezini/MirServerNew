@@ -1,0 +1,42 @@
+[@Clearlock]
+#IF
+#ACT
+  CLEARNAMELIST  ../QuestDiary/商城系统/lock/cw.txt
+  CLEARNAMELIST  ../QuestDiary/商城系统/lock/cw1.txt
+  CLEARNAMELIST  ../QuestDiary/商城系统/lock/cw2.txt
+  CLEARNAMELIST  ../QuestDiary/商城系统/lock/lock.txt
+  CLEARNAMELIST  ../QuestDiary/数据文件/A版主当日已领.txt
+  CLEARNAMELIST   ../Market_Def/守沙记录/城主30天.txt
+  CLEARNAMELIST   ../Market_Def/守沙记录/城主20天.txt
+  CLEARNAMELIST   ../Market_Def/守沙记录/城主10天.txt
+
+
+[@Clearsxgold]
+#IF
+#ACT
+  CLEARNAMELIST  ../MapQuest_def/sxmirgold100.txt
+  CLEARNAMELIST  ../MapQuest_def/sxmirgold1000.txt
+
+
+[@fangguji]
+#IF
+#ACT
+MOVR G0 6 
+SENDMSG 5 风云传奇12月26日已经全面更新并修复所有BUG，请登陆http://cq.grkfcs.cn/下载。已经下载过完整客户端的只需要下载并覆盖安装12月26日补丁，如不会安装补丁请直接下载最新完整客户端，安装后请使用老的风云传奇登陆器。最新装备和技能已经开放暴率，旧的客户端无法体验，元旦期间将举行系列活动并开放新技能和新功能。切勿错过元旦期间高暴率机会。。
+
+
+;[@fangguji11]
+;#IF
+;#ACT
+;SENDMSG 1 [系统公告]通往财富的异界之门已经打开。。。
+;MOV G1 2 
+
+;[@gwgc]
+;#IF
+;#ACT
+;SENDMSG 1 8月25日下午1点将举行大型怪物攻城，为回馈玩家对风云的大力支持，本次活动将暴出大量会员凭证、巨额元宝、上古神器、高级任务物品，欢迎玩家踊跃上线上怪夺宝！怪物攻城期间将采用最新技术关闭穿人；关闭安全区放火墙以避免攻城期间卡的问题。攻城期间玩家请取消外挂的穿人选项，以免造成反弹！请玩家通过各大城市传送石的怪物攻城传送进入怪物攻城地点
+
+
+
+
+

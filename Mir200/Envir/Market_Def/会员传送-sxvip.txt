@@ -1,0 +1,25 @@
+;WWW.486sf.cn
+;http://bbs.sfylf.com
+;风云三峡（v1.9）商店脚本文件
+;2004/12/23	风少	调整更新
+
+[@main]
+#IF
+check [630] 1
+#ACT
+goto @vipmove
+break
+
+
+#IF
+#ACT
+goto @move
+break
+
+[@move]
+#CALL [\\NPC\传送员.txt] @sxcs
+
+[@vipmove]
+#CALL [\\NPC\vip传送员.txt] @sxvipcs
+
+

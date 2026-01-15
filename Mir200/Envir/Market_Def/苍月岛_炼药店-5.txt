@@ -1,0 +1,7 @@
+(@buy @Sell @makedrug)
+%100
++0
++42
+
+[@main]
+#CALL [\\…ÃµÍ\¡∂“©µÍ.txt] @sxsf

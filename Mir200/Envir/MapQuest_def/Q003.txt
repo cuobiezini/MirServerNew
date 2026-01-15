@@ -1,0 +1,9 @@
+[@main]
+#ACT
+;give 金币 1000
+;give 金币 5000
+;give 金币 3000
+;give 金币 2000
+;give 金币 4000
+;give 金币 6000
+	
