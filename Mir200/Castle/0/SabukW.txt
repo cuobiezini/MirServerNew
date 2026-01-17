@@ -1,8 +1,8 @@
 [Setup]
-CastleName=霸视天下
-OwnGuild=
-ChangeDate=2024-08-25 21:59:14
-WarDate=2024-08-25 21:59:14
+CastleName=32
+OwnGuild=方法
+ChangeDate=2026-01-17 12:50:11
+WarDate=2026-01-17 12:49:11
 IncomeToday=2026-01-17 0:00:01
 TotalGold=10000000
 TodayIncome=2000
@@ -30,7 +30,7 @@ LeftWallHP=5000
 CenterWallX=627
 CenterWallY=278
 CenterWallName=沙巴克中城墙
-CenterWallHP=5000
+CenterWallHP=0
 RightWallX=634
 RightWallY=271
 RightWallName=沙巴克右城墙
