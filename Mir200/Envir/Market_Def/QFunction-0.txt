@@ -14,28 +14,28 @@
 
 
 [@StdModeFunc1]
-
+; 1. 检查是否在皇宫，如果是，则提示并归还物品
 #IF
   EQUAL M2 1
 #ACT
-SENDMSG 6 由于您现在正在皇宫或进入过皇宫，请小退再上线进行召唤！！
-break
+  SENDMSG 6 由于您现在正在皇宫或进入过皇宫，请小退再上线进行召唤！！
+  GIVE 万恶召唤令 1
+  break
 
-
+; 2. 检查宠物数量是否已满，如果是，则提示并归还物品
 #IF
-CheckSlaveCount < 1
+  CheckSlaveCount > 0
 #ACT
-#ELSEACT
-SENDMSG 7 宠物的数量已达到上限 !
-give 万恶召唤令
-break
+  SENDMSG 7 宠物的数量已达到上限 !
+  GIVE 万恶召唤令 1
+  break
 
-
-
+; 3. 所有检查通过，执行召唤 (物品在此处被默认消耗，无需TAKE)
 #IF
 #ACT
-RECALLMOB  变异法王  0 1 1200 0  -1 
-sendmsg 7 万恶召唤令，尸横遍野，血流成河！！！
+  RECALLMOB  变异法王  0 1 1200 0  -1 
+  SENDMSG 7 万恶召唤令，尸横遍野，血流成河！！！
+  break
 
 
 [@StdModeFunc2]
