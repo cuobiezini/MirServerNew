@@ -68,7 +68,7 @@ GameDiamond=½ğ¸ÕÊ¯
 GameGird=Áé·û
 CreditPoint=ÉùÍû
 [Setup]
-ItemNumber=729993535
+ItemNumber=729993539
 =======
 ItemNumber=730133306
 =======
