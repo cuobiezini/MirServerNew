@@ -1,2 +1,13 @@
 {
+    // 默认文件编码（推荐 gbk）
+    "files.encoding": "gbk",
+    // 自动检测编码（关闭可强制使用默认编码）
+    "files.autoGuessEncoding": false,
+    // 针对特定语言/文件类型单独设置编码
+    "[javascript]": {
+        "files.encoding": "gbk"
+    },
+    "[python]": {
+        "files.encoding": "gbk"
+    }
 }

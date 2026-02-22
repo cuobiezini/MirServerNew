@@ -68,7 +68,7 @@ GameDiamond=½ğ¸ÕÊ¯
 GameGird=Áé·û
 CreditPoint=ÉùÍû
 [Setup]
-ItemNumber=729993631
+ItemNumber=729986337
 =======
 ItemNumber=730133306
 =======
@@ -81,7 +81,7 @@ HomeY=618
 ClientFile1 =mir.dat
 ClientFile2 =mir.2
 ClientFile3 =mir.3
-ItemNumberEx=1073753507
+ItemNumberEx=1073753516
 RedHomeMap=3
 RedHomeX=845
 RedHomeY=674

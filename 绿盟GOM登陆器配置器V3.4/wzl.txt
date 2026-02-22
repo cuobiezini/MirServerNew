@@ -1,2 +1,2 @@
-D:\传奇\三峡传奇完整客户端\Data\Magic2.wzl
-D:\传奇\三峡传奇完整客户端\Data\magic5.wzl
+D:\传奇\三峡传奇龙魂客户端\Data\ui1.wzl
+D:\传奇\三峡传奇龙魂客户端\Data\ui2.wzl
