@@ -1,0 +1,158 @@
+(@@BuHero)
+[@main]
+#IF
+#SAY
+受伤的英雄经过我的治疗，大体已经康复。\
+新招募的英雄也刚好都在我这边休息。\
+他们都已经听说了你的事情，都非常愿意跟随你征途玛法大陆。\
+现在是时候，让这些英雄前往玛法大陆了。\
+<带领一个英雄/@@buHero>            <领取8张书页/@TY-LQSY>\ \
+
+
+<返回玛法大陆/@TY-FHMF>\ \
+　　　　　　　　                           <版权所有/@main22>:天宇六区\
+#ELSESAY
+快点返回玛法大陆吧！那边需要你们！\ \
+
+<返回玛法大陆/@TY-FHMF>
+
+
+[@main22]
+我们的官方网站<点击直接进入/@5201314>\
+
+
+
+[@TY-FHMF]
+#IF
+#ACT
+mapmove 3 330 330
+
+[@@buHero]
+#IF
+#ACT
+DELAYCALL 10 $CREATEHERO
+
+[$CREATEHERO]
+恭喜您可以带领您的英雄去闯荡玛法大陆了，\
+您想带领哪位英雄呢？\
+<英雄(男战士)/@CREATEHERO_WARR_MAN>     <英雄(男法师)/@CREATEHERO_WIZA_MAN>     <英雄(男道士)/@CREATEHERO_TAOS_MAN>\ \
+<英雄(女战士)/@CREATEHERO_WARR_WOM>     <英雄(女法师)/@CREATEHERO_WIZA_WOM>     <英雄(女道士)/@CREATEHERO_TAOS_WOM>\
+
+[@CREATEHERO_WARR_MAN]
+#IF
+CHECK [227] 1
+#ACT
+addnamelist ..\QuestDiary\英雄\英雄战士名单.txt
+CREATEHERO 0 0
+break
+#IF
+#ACT
+CREATEHERO 0 0
+
+[@CREATEHERO_WARR_WOM]
+#IF
+CHECK [227] 1
+#ACT
+addnamelist ..\QuestDiary\英雄\英雄战士名单.txt
+CREATEHERO 0 1
+break
+#IF
+#ACT
+CREATEHERO 0 1
+
+[@CREATEHERO_WIZA_MAN]
+#IF
+CHECK [227] 1
+#ACT
+addnamelist ..\QuestDiary\英雄\英雄法师名单.txt
+CREATEHERO 1 0
+break
+#IF
+#ACT
+CREATEHERO 1 0
+
+[@CREATEHERO_WIZA_WOM]
+#IF
+CHECK [227] 1
+#ACT
+addnamelist ..\QuestDiary\英雄\英雄法师名单.txt
+CREATEHERO 1 1
+break
+#IF
+#ACT
+CREATEHERO 1 1
+
+[@CREATEHERO_TAOS_MAN]
+#IF
+CHECK [227] 1
+#ACT
+addnamelist ..\QuestDiary\英雄\英雄道士名单.txt
+CREATEHERO 2 0
+break
+#IF
+#ACT
+CREATEHERO 2 0
+
+[@CREATEHERO_TAOS_WOM]
+#IF
+CHECK [227] 1
+#ACT
+addnamelist ..\QuestDiary\英雄\英雄道士名单.txt
+CREATEHERO 2 1
+break
+#IF
+#ACT
+CREATEHERO 2 1
+
+//返回消息
+[@CreateingHero]
+系统正在接受申请，请稍候……\
+<关闭/@exit>
+
+[@HaveHero]
+您已经有英雄了。\
+<关闭/@exit>
+
+[@SetHeroName]
+请先给您的英雄取名字。\
+<关闭/@exit>
+
+[@NotHaveHero]
+你没有英雄。\ \
+<关闭/@exit>
+
+[@DelMyHero]
+#ACT
+DELETEHERO
+//返回消息
+
+
+[@TY-LQSY]
+#IF
+checknamelist ..\QuestDiary\英雄\书页领取名单.txt
+#SAY
+你已经领过一次书页了！不能再领了！
+#act
+break
+#IF
+CHECK [224] 1
+#ACT
+GIVE 书页 8
+addnamelist ..\QuestDiary\英雄\书页领取名单.txt
+#SAY
+跟随你的英雄都是白日门最优秀的精英，\
+他们都可以掌握白日门特有的各种魔法技能。\
+不过很多白日门的技能书都在一场灾难中被毁得残破不堪，\
+现在只剩下一些零散的书页，\
+而且其中的很多书页已经流散的玛法的各处很难凑齐。\
+我这里还有两片残留的书页，你拿去找白日门的龙人，\
+他也许能从残留的书页里找到一些技能秘籍。\
+<好的，我这就去找他/@exit>
+#ELSESAY
+你已经领取过书页，或者你没有资格领取！
+
+[@1]
+《BLUE仿盛大明文版本1.1》提供给大家做参考之用，\
+此版本由BLUE官方制作，可以完美的兼容我们的程序！\
+如果对此版本有什么不理解的、请加QQ群：24605170\
+我们的官方网站:www.92th.com www.bluem2.com\

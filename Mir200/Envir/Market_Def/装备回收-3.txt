@@ -1,0 +1,657 @@
+[@main]
+#ACT
+CloseBigDialogBox
+#say
+<Img:70:0><装备回收/SCOLOR=254>  <Hot~>  <想要致富，从这里开始!/SCOLOR=125>\
+<---------------------------------------------------------/SCOLOR=150>\
+ <一键回收：赤月装备相同两套可以在宠物商处购买法王最高3个 明白\
+ <一键回收：/SCOLOR=254><[英雄系列]/@英雄图>  <→/SCOLOR=250> <每件可回收/SCOLOR=253>< 5/SCOLOR=249><元宝/SCOLOR=253> <←/SCOLOR=250>    <我要回收/@英雄图>  \
+ <一键回收：/SCOLOR=254><[逆魔系列]/@逆魔图>  <→/SCOLOR=250> <每件可回收/SCOLOR=253>< 50/SCOLOR=249><元宝/SCOLOR=253> <←/SCOLOR=250>   <我要回收/@逆魔图> \
+ <一键回收：/SCOLOR=254><[海魂系列]/@海魂真图>  <→/SCOLOR=250> <每件可回收/SCOLOR=253>< 200/SCOLOR=249><元宝/SCOLOR=253> <←/SCOLOR=250>  <我要回收/@海魂真图>  \
+ <一键回收：/SCOLOR=254><[炎龙系列]/@炎龙图>  <→/SCOLOR=250> <每件可回收/SCOLOR=253>< 400/SCOLOR=249><元宝/SCOLOR=253> <←/SCOLOR=250>  <我要回收/@炎龙图>  \
+ <一键回收：/SCOLOR=254><[其他系列]/@海魂假图>  <→/SCOLOR=250> <每件可回收/SCOLOR=253>< ***/SCOLOR=249><元宝/SCOLOR=253> <←/SCOLOR=250>  <*******>  \
+ <一键回收：/SCOLOR=254><[其他系列]/@海魂假图>  <→/SCOLOR=250> <每件可回收/SCOLOR=253>< ***/SCOLOR=249><元宝/SCOLOR=253> <←/SCOLOR=250>   <*******> \
+
+
+
+\
+
+
+
+
+
+[@英雄图]
+<Img:70:0><装备回收/SCOLOR=254>  <Hot~>  <想要致富，从这里开始!/SCOLOR=125>\
+<---------------------------------------------------------/SCOLOR=150>\
+\ \ \
+   　　　　<Img:534:1/@英雄头盔>      <Img:520:1/@英雄项链>      <Img:524:1/@英雄手镯>      <Img:523:1/@英雄戒指>  \ \ \ \
+<清风三峡传奇，制作人：清风大爷初出茅庐/SCOLOR=150>\
+<ˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉ/SCOLOR=150>
+
+
+[@逆魔图]
+<Img:70:0><装备回收/SCOLOR=254>  <Hot~>  <想要致富，从这里开始!/SCOLOR=125>\
+<---------------------------------------------------------/SCOLOR=150>\
+   　　　　<Img:654:1/@逆魔项链战>      <Img:655:1/@逆魔项链法>      <Img:656:1/@逆魔项链道> \
+　\
+   　　　　<Img:657:1/@逆魔手镯战>      <Img:658:1/@逆魔手镯法>      <Img:659:1/@逆魔手镯道> \
+ 　\
+ 　　　 　<Img:660:1/@逆魔戒指战>      <Img:661:1/@逆魔戒指法>      <Img:662:1/@逆魔戒指道>  \
+　\
+<清风三峡传奇，制作人：清风大爷初出茅庐/SCOLOR=150>\
+<ˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉ/SCOLOR=150>
+[@海魂假图]
+<Img:70:0><装备回收/SCOLOR=254>  <Hot~>  <想要致富，从这里开始!/SCOLOR=125>\
+<---------------------------------------------------------/SCOLOR=150>\
+ 　　　 　<Img:775:1/@逆魔>      <Img:776:1/@逆魔>      <Img:779:1/@逆魔>  \
+　\
+<Img:751:1/@逆魔>    <Img:750:1/@逆魔>    <Img:752:1/@逆魔>    <Img:679:1/@逆魔>    <Img:764:1/@逆魔>    <Img:766:1/@逆魔>\
+　\
+<Img:762:1/@逆魔>    <Img:764:1/@逆魔>    <Img:766:1/@逆魔>  　 <Img:768:1/@逆魔>    <Img:771:1/@逆魔>     <Img:772:1/@逆魔>  \
+　\
+ \
+
+<清风三峡传奇，制作人：清风大爷初出茅庐/SCOLOR=150>\
+<ˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉ/SCOLOR=150>
+
+[@海魂真图]
+<Img:70:0><装备回收/SCOLOR=254>  <Hot~>  <想要致富，从这里开始!/SCOLOR=125>\
+<---------------------------------------------------------/SCOLOR=150>\
+　　　 　　　　　　　　<Img:672:1/@海魂头盔>           \
+　\
+<Img:688:1/@海魂真法镯>    <Img:686:1/@海魂真战镯>     <Img:690:1/@海魂真道镯>   <Img:674:1/@海魂真靴子战>    <Img:676:1/@海魂真靴子法>    <Img:678:1/@海魂真靴子道>\
+　\
+<Img:692:1/@海魂真战戒>    <Img:694:1/@海魂真法戒>    <Img:696:1/@海魂真道戒>  　 <Img:698:1/@海魂真战链>    <Img:700:1/@海魂真法链>     <Img:702:1/@海魂真道链>  \
+　\
+ \
+
+<清风三峡传奇，制作人：清风大爷初出茅庐/SCOLOR=150>\
+<ˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉ/SCOLOR=150>
+
+[@炎龙图]
+<Img:70:0><装备回收/SCOLOR=254>  <Hot~>  <戒指衣服回收均为100元宝!/SCOLOR=125>\
+<---------------------------------------------------------/SCOLOR=150>\
+<Img:703:1/@炎龙靴>     <Img:704:1/@炎龙项链>     <Img:705:1/@炎龙戒指>    <Img:706:1/@炎龙腰带>    <Img:707:1/@炎龙手套>    <Img:708:1/@炎龙头盔>\
+　\
+　\
+<Img:709:1/@炎龙剑>      \
+　\
+　\
+<清风三峡传奇，制作人：清风大爷初出茅庐/SCOLOR=150>\
+<ˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉ/SCOLOR=150>
+
+[@英雄头盔]
+#if
+checkitem 英雄头盔(道) 1
+#ACT
+take 英雄头盔(道) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+
+
+
+#if
+checkitem 英雄头盔(法) 1
+#ACT
+take 英雄头盔(法) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+
+
+#if
+checkitem 英雄头盔(战) 1
+#ACT
+take 英雄头盔(战) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@英雄项链]
+#if
+checkitem 英雄项链(道) 1
+#ACT
+take 英雄项链(道) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+GOTO @main
+break
+
+
+#if
+checkitem 英雄项链(法) 1
+#ACT
+take 英雄项链(法) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+GOTO @main
+break
+
+
+#if
+checkitem 英雄项链(战) 1
+#ACT
+take 英雄项链(战) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@英雄戒指]
+#if
+checkitem 英雄戒指(道) 1
+#ACT
+take 英雄戒指(道) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+GOTO @main
+break
+
+
+#if
+checkitem 英雄戒指(法) 1
+#ACT
+take 英雄戒指(法) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+GOTO @main
+break
+
+
+
+#if
+checkitem 英雄戒指(战) 1
+#ACT
+take 英雄戒指(战) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@英雄手镯]
+#if
+checkitem 英雄手镯(道) 1
+#ACT
+take 英雄手镯(道) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+GOTO @main
+break
+
+
+#if
+checkitem 英雄手镯(法) 1
+#ACT
+take 英雄手镯(法) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+GOTO @main
+break
+
+
+#if
+checkitem 英雄手镯(战) 1
+#ACT
+take 英雄手镯(战) 1
+GAMEGOLD + 5
+SENDMSG 1    玩家[%s]使用回收使者回收了英雄装备元宝+5!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+
+; ˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉ
+[@逆魔项链战]
+#if
+checkitem 逆魔项链(战) 1
+#ACT
+take 逆魔项链(战) 1
+GAMEGOLD + 50
+SENDMSG 1    玩家[%s]使用回收使者回收了逆魔装备元宝+50!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@逆魔项链法]
+#if
+checkitem 逆魔项链(法) 1
+#ACT
+take 逆魔项链(法) 1
+GAMEGOLD + 50
+SENDMSG 1    玩家[%s]使用回收使者回收了逆魔装备元宝+50!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@逆魔项链道]
+#if
+checkitem 逆魔项链(道) 1
+#ACT
+take 逆魔项链(道) 1
+GAMEGOLD + 50
+SENDMSG 1    玩家[%s]使用回收使者回收了逆魔装备元宝+50!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@逆魔手镯战]
+#if
+checkitem 逆魔手镯(战) 1
+#ACT
+take 逆魔手镯(战) 1
+GAMEGOLD + 50
+SENDMSG 1    玩家[%s]使用回收使者回收了逆魔装备元宝+50!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@逆魔手镯法]
+#if
+checkitem 逆魔手镯(法) 1
+#ACT
+take 逆魔手镯(法) 1
+GAMEGOLD + 50
+SENDMSG 1    玩家[%s]使用回收使者回收了逆魔装备元宝+50!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@逆魔手镯道]
+#if
+checkitem 逆魔手镯(道) 1
+#ACT
+take 逆魔手镯(道) 1
+GAMEGOLD + 50
+SENDMSG 1    玩家[%s]使用回收使者回收了逆魔装备元宝+50!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@逆魔戒指战]
+#if
+checkitem 逆魔戒指(战) 1
+#ACT
+take 逆魔戒指(战) 1
+GAMEGOLD + 50
+SENDMSG 1    玩家[%s]使用回收使者回收了逆魔装备元宝+50!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@逆魔戒指法]
+#if
+checkitem 逆魔戒指(法) 1
+#ACT
+take 逆魔戒指(法) 1
+GAMEGOLD + 50
+SENDMSG 1    玩家[%s]使用回收使者回收了逆魔装备元宝+50!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@逆魔戒指道]
+#if
+checkitem 逆魔戒指(道) 1
+#ACT
+take 逆魔戒指(道) 1
+GAMEGOLD + 50
+SENDMSG 1    玩家[%s]使用回收使者回收了逆魔装备元宝+50!
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+
+; ˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉ
+
+[@海魂头盔]
+#if
+checkitem 海魂头盔(战) 1
+#ACT
+take 海魂头盔(战) 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+
+
+#if
+checkitem 海魂头盔(法) 1
+#ACT
+take 海魂头盔(法) 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+
+
+
+#if
+checkitem 海魂头盔(道) 1
+#ACT
+take 海魂头盔(道) 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真靴子战]
+#if
+checkitem 海魂战靴 1
+#ACT
+take 海魂战靴 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了逆魔装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真靴子法]
+#if
+checkitem 海魂法靴 1
+#ACT
+take 海魂法靴 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真靴子道]
+#if
+checkitem 海魂道靴 1
+#ACT
+take 海魂道靴 1
+GAMEGOLD +  200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真战镯]
+#if
+checkitem 海魂战镯 1
+#ACT
+take 海魂战镯 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真法镯]
+#if
+checkitem 海魂法镯 1
+#ACT
+take 海魂法镯 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真道镯]
+#if
+checkitem 海魂道镯 1
+#ACT
+take 海魂道镯 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真道戒]
+#if
+checkitem 海魂道戒 1
+#ACT
+take 海魂道戒 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真法戒]
+#if
+checkitem 海魂法戒 1
+#ACT
+take 海魂法戒 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真战戒]
+#if
+checkitem 海魂战戒 1
+#ACT
+take 海魂战戒 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真战链]
+#if
+checkitem 海魂战链 1
+#ACT
+take 海魂战链 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真法链]
+#if
+checkitem 海魂法链 1
+#ACT
+take 海魂法链 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@海魂真道链]
+#if
+checkitem 海魂道链 1
+#ACT
+take 海魂道链 1
+GAMEGOLD + 200
+SENDMSG 1    玩家[%s]使用回收使者回收了海魂装备元宝+200！
+GOTO @main
+break
+#ELSEACT
+goto @Upmiss
+; ˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉ
+[@炎龙靴]
+#if
+checkitem 炎龙靴 1
+#ACT
+take 炎龙靴 1
+GAMEGOLD + 400
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+400！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@炎龙项链]
+#if
+checkitem 炎龙项链 1
+#ACT
+take 炎龙项链 1
+GAMEGOLD + 400
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+400！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@炎龙戒指]
+#if
+checkitem 炎龙戒指 1
+#ACT
+take 炎龙戒指 1
+GAMEGOLD + 100
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+400！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@炎龙腰带]
+#if
+checkitem 炎龙腰带 1
+#ACT
+take 炎龙腰带 1
+GAMEGOLD + 400
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+400！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@炎龙手套]
+#if
+checkitem 炎龙手套 1
+#ACT
+take 炎龙手套 1
+GAMEGOLD + 400
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+400！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@炎龙头盔]
+#if
+checkitem 炎龙头盔 1
+#ACT
+take 炎龙头盔 1
+GAMEGOLD + 400
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+400！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@炎龙剑]
+#if
+checkitem 炎龙剑 1
+#ACT
+take 炎龙剑 1
+GAMEGOLD + 400
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+400！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+
+[@炎龙盔甲(男)]
+#if
+checkitem 炎龙盔甲(男) 1
+#ACT
+take 炎龙盔甲(男) 1
+GAMEGOLD + 100
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+100！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@炎龙盔甲(女)]
+#if
+checkitem 炎龙盔甲(女) 1
+#ACT
+take 炎龙盔甲(女) 1
+GAMEGOLD + 100
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+100！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@炎龙袍(男)]
+#if
+checkitem 炎龙袍(男) 1
+#ACT
+take 炎龙袍(男) 1
+GAMEGOLD + 100
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+100！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+[@炎龙袍(女)]
+#if
+checkitem 炎龙袍(女) 1
+#ACT
+take 炎龙袍(女) 1
+GAMEGOLD + 100
+SENDMSG 1    玩家[%s]使用了回收使者回收了炎龙装备元宝+100！
+goto @main
+break
+#ELSEACT
+goto @Upmiss
+
+;ˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉˉ
+
+[@Upmiss]
+#ACT
+MESSAGEBOX 装备都没有我怎么帮你回收啊?
+
+
+
+
+
+
+[@chakanteshujiage]
+<探测项链  200　　　传送戒指  500　　麻痹戒指　　5000 /SCOLOR=243>\ \
+<隐身戒指　20　　　 旋风流星刀 1500　复活戒指　　5000 /SCOLOR=243>\ \
+<护身戒指　5000　　　袭风   　1500　　魔刃　　　 1500 /SCOLOR=243>\ \
+
+
+
+[@chakanyifujiage]
+<朱雀战袍      500　　　毁灭天地    500    龙翼　　500 /SCOLOR=243>\
+<天使之翼(男)　2　　　  天使之翼(女)  2　霸王铁盖  500 /SCOLOR=243>\ \
+<黄金战衣(男)　1　　　  黄金战衣(女)  1  凤凰羽翼　300 /SCOLOR=243>\
+<火龙鳞甲(女)　500　　　火龙鳞甲(男) 500  圣灵铠甲  300 /SCOLOR=243>\ \
+
+
+[@wuqixiangqing]
+#if
+#act
+messagebox  此功能暂时不做添加，游戏技术问题咨询清风大爷
+

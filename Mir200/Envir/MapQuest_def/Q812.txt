@@ -1,0 +1,49 @@
+[@main]
+#IF
+CHECKRENEWLEVEL < 1
+CHECKLEVELEX < 47
+checkjob Warrior
+#ACT
+goto @zahohuan
+
+
+[@zahohuan]
+#IF
+CHECKSLAVECOUNT = 4
+#act
+ReCALLMOB  ţħսʿ
+break
+
+#IF
+CHECKSLAVECOUNT = 3
+#act
+ReCALLMOB  ţħսʿ
+ReCALLMOB  ţħսʿ
+break
+
+#IF
+CHECKSLAVECOUNT = 2
+#act
+ReCALLMOB  ţħսʿ
+ReCALLMOB  ţħսʿ
+ReCALLMOB  ţħսʿ
+break
+
+#IF
+CHECKSLAVECOUNT = 1
+#act
+ReCALLMOB  ţħսʿ
+ReCALLMOB  ţħսʿ
+ReCALLMOB  ţħսʿ
+ReCALLMOB  ţħսʿ
+break
+
+#IF
+CHECKSLAVECOUNT < 1
+#act
+ReCALLMOB  ţħսʿ
+ReCALLMOB  ţħսʿ
+ReCALLMOB  ţħսʿ
+ReCALLMOB  ţħսʿ
+ReCALLMOB  ţħսʿ
+break

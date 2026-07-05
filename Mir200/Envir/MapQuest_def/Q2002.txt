@@ -1,0 +1,13 @@
+[@main]
+#if
+check [030] 0
+checklevel 30
+#say
+您现在已经长大了，我也帮不了你什么了\
+你现在可以选择去蜈蚣洞，僵尸洞去升级\
+想了解我们的最新动态请到<www.hmeee.com>看看
+#act
+set [030] 1
+mapmove 0 290 618
+#elseact
+goto @exit

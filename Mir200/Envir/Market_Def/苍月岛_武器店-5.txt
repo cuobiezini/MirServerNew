@@ -1,0 +1,8 @@
+(@buy @Sell @repair @s_repair)
+%100
++5
++6
++43
+
+[@main]
+#CALL [\\ÉÌµê\ÎäÆ÷µê.txt] @sxsf

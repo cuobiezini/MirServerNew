@@ -1,0 +1,18 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+
+[@main]
+#IF
+check [630] 1
+#ACT
+goto @vipmove
+#ELSEACT
+goto @move
+
+[@move]
+#CALL [\\NPC\传送员.txt] @sxcs
+
+[@vipmove]
+#CALL [\\NPC\vip传送员.txt] @sxvipcs

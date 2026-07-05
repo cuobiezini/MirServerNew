@@ -1,0 +1,609 @@
+[@扣除幸运点]
+{
+#IF
+equal d5 100
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\100.txt
+
+break
+#IF
+equal d5 99
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\99.txt
+
+break
+#IF
+equal d5 98
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\98.txt
+
+break
+#IF
+equal d5 97
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\97.txt
+
+break
+#IF
+equal d5 96
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\96.txt
+
+break
+#IF
+equal d5 95
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\95.txt
+
+break
+#IF
+equal d5 94
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\94.txt
+
+break
+#IF
+equal d5 93
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\93.txt
+
+break
+#IF
+equal d5 92
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\92.txt
+
+break
+#IF
+equal d5 91
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\91.txt
+
+break
+#IF
+equal d5 90
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\90.txt
+
+break
+#IF
+equal d5 89
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\89.txt
+
+break
+#IF
+equal d5 88
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\88.txt
+
+break
+#IF
+equal d5 87
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\87.txt
+
+break
+#IF
+equal d5 86
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\86.txt
+
+break
+#IF
+equal d5 85
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\85.txt
+
+break
+#IF
+equal d5 84
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\84.txt
+
+break
+#IF
+equal d5 83
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\83.txt
+
+break
+#IF
+equal d5 82
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\82.txt
+
+break
+#IF
+equal d5 81
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\81.txt
+
+break
+#IF
+equal d5 80
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\80.txt
+
+break
+#IF
+equal d5 79
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\79.txt
+
+break
+#IF
+equal d5 78
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\78.txt
+
+break
+#IF
+equal d5 77
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\77.txt
+
+break
+#IF
+equal d5 76
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\76.txt
+
+break
+#IF
+equal d5 75
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\75.txt
+
+break
+#IF
+equal d5 74
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\74.txt
+
+break
+#IF
+equal d5 73
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\73.txt
+
+break
+#IF
+equal d5 72
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\72.txt
+
+break
+#IF
+equal d5 71
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\71.txt
+
+break
+#IF
+equal d5 70
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\70.txt
+
+break
+#IF
+equal d5 69
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\69.txt
+
+break
+#IF
+equal d5 68
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\68.txt
+
+break
+#IF
+equal d5 67
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\67.txt
+
+break
+#IF
+equal d5 66
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\66.txt
+
+break
+#IF
+equal d5 65
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\65.txt
+
+break
+#IF
+equal d5 64
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\64.txt
+
+break
+#IF
+equal d5 63
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\63.txt
+
+break
+#IF
+equal d5 62
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\62.txt
+
+break
+#IF
+equal d5 61
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\61.txt
+
+break
+#IF
+equal d5 60
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\60.txt
+
+break
+#IF
+equal d5 59
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\59.txt
+
+break
+#IF
+equal d5 58
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\58.txt
+
+break
+#IF
+equal d5 57
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\57.txt
+
+break
+#IF
+equal d5 56
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\56.txt
+
+break
+#IF
+equal d5 55
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\55.txt
+
+break
+#IF
+equal d5 54
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\54.txt
+
+break
+#IF
+equal d5 53
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\53.txt
+
+break
+#IF
+equal d5 52
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\52.txt
+
+break
+#IF
+equal d5 51
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\51.txt
+
+break
+#IF
+equal d5 50
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\50.txt
+
+break
+#IF
+equal d5 49
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\49.txt
+
+break
+#IF
+equal d5 48
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\48.txt
+
+break
+#IF
+equal d5 47
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\47.txt
+
+break
+#IF
+equal d5 46
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\46.txt
+
+break
+#IF
+equal d5 45
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\45.txt
+
+break
+#IF
+equal d5 44
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\44.txt
+
+break
+#IF
+equal d5 43
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\43.txt
+
+break
+#IF
+equal d5 42
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\42.txt
+
+break
+#IF
+equal d5 41
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\41.txt
+
+break
+#IF
+equal d5 40
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\40.txt
+
+break
+#IF
+equal d5 39
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\39.txt
+
+break
+#IF
+equal d5 38
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\38.txt
+
+break
+#IF
+equal d5 37
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\37.txt
+
+break
+#IF
+equal d5 36
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\36.txt
+
+break
+#IF
+equal d5 35
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\35.txt
+
+break
+#IF
+equal d5 34
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\34.txt
+
+break
+#IF
+equal d5 33
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\33.txt
+
+break
+#IF
+equal d5 32
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\32.txt
+
+break
+#IF
+equal d5 31
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\31.txt
+
+break
+#IF
+equal d5 30
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\30.txt
+
+break
+#IF
+equal d5 29
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\29.txt
+
+break
+#IF
+equal d5 28
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\28.txt
+
+break
+#IF
+equal d5 27
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\27.txt
+
+break
+#IF
+equal d5 26
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\26.txt
+
+break
+#IF
+equal d5 25
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\25.txt
+
+break
+#IF
+equal d5 24
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\24.txt
+
+break
+#IF
+equal d5 23
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\23.txt
+
+break
+#IF
+equal d5 22
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\22.txt
+
+break
+#IF
+equal d5 21
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\21.txt
+
+break
+#IF
+equal d5 20
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\20.txt
+
+break
+#IF
+equal d5 19
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\19.txt
+
+break
+#IF
+equal d5 18
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\18.txt
+
+break
+#IF
+equal d5 17
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\17.txt
+
+break
+#IF
+equal d5 16
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\16.txt
+
+break
+#IF
+equal d5 15
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\15.txt
+
+break
+#IF
+equal d5 14
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\14.txt
+
+break
+#IF
+equal d5 13
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\13.txt
+
+break
+#IF
+equal d5 12
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\12.txt
+
+break
+#IF
+equal d5 11
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\11.txt
+
+break
+#IF
+equal d5 10
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\10.txt
+
+break
+#IF
+equal d5 9
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\9.txt
+
+break
+#IF
+equal d5 8
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\8.txt
+
+break
+#IF
+equal d5 7
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\7.txt
+
+break
+#IF
+equal d5 6
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\6.txt
+
+break
+#IF
+equal d5 5
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\5.txt
+
+#IF
+equal d5 4
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\4.txt
+
+break
+#IF
+equal d5 3
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\3.txt
+
+break
+#IF
+equal d5 2
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\2.txt
+
+break
+#IF
+equal d5 1
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\1.txt
+
+break
+#IF
+equal d5 0
+#ACT
+addnamelist ..\QuestDiary\幸运\幸运值\0.txt
+
+break
+
+}

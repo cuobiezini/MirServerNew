@@ -1,0 +1,7 @@
+(@buy @Sell)
+%100
++3
++4
+
+[@main]
+#CALL [\\…ÃµÍ\ ÈµÍ.txt] @sxsf

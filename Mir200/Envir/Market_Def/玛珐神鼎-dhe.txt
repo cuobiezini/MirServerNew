@@ -1,0 +1,106 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+
+[@main]
+#IF
+ CHECK [103] 1
+checkjob warrior
+ CHECKITEM 寒铁 3
+#SAY
+蕴藏在屠龙魔里的寒铁也被你弄到了？你不用说你的来意了。\
+要想炼成蕴涵无限隐藏力量的屠龙魔，必须先把这里的怪物清\
+理干净，我可不想浪费千年难遇的寒铁。\ \
+ <回炉精炼/@lian>\ \
+ <关闭/@exit>
+#ACT
+break
+
+#IF
+ CHECK [103] 1
+checkjob wizard
+ CHECKITEM 魔法石 3
+#SAY
+蕴藏在屠龙魔里的寒铁也被你弄到了？你不用说你的来意了。\
+要想炼成蕴涵无限隐藏力量的屠龙魔，必须先把这里的怪物清\
+理干净，我可不想浪费千年难遇的寒铁。\ \
+ <回炉精炼/@lian>\ \
+ <关闭/@exit>
+#ACT
+break
+
+#IF
+ CHECK [103] 1
+checkjob taoist
+ CHECKITEM 诅咒石 3
+#SAY
+蕴藏在屠龙魔里的寒铁也被你弄到了？你不用说你的来意了。\
+要想炼成蕴涵无限隐藏力量的屠龙魔，必须先把这里的怪物清\
+理干净，我可不想浪费千年难遇的寒铁。\ \
+ <回炉精炼/@lian>\ \
+ <关闭/@exit>
+#ACT
+break
+
+#ELSESAY
+这里可不是随便来的...\
+快回去吧...\ \
+ <退出/@exit>
+
+[@lian]
+#IF
+CheckMonMap DHE 1
+#SAY
+要想炼成蕴涵无限隐藏力量的屠龙魔，必须先把这里的怪物清\
+理干净，我可不想浪费千年难遇的寒铁。\ \
+ <回炉精炼/@lian>\ \
+ <关闭/@exit>
+#ELSEACT
+goto @huilujinlian
+
+[@huilujinlian]
+#IF
+ CHECK [103] 1
+checkjob warrior
+ CHECKITEM 寒铁 3
+#SAY
+上古神器已经炼成。和海魂结合将有意想不到的威力\ \
+ <知道了/@exit>
+#ACT
+take 寒铁 3
+ GIVE 屠龙魔
+break
+
+
+
+#IF
+ CHECK [103] 1
+checkjob wizard
+ CHECKITEM 魔法石 3
+#SAY
+上古神器已经炼成。和海魂结合将有意想不到的威力\ \
+ <知道了/@exit>
+#ACT
+take 魔法石 3
+ GIVE 血饮魔
+break
+
+
+#IF
+ CHECK [103] 1
+checkjob taoist
+ CHECKITEM 诅咒石 3
+#SAY
+上古神器已经炼成。和海魂结合将有意想不到的威力\ \
+ <知道了/@exit>
+#ACT
+take 诅咒石 3
+ GIVE 龙纹魔
+break
+
+
+#ELSEACT
+mapmove 3 333 333
+SENDMSG 2 %s因使用非法程序发送指令试图作弊被斩首!风云网络已经采用最新触发系统防止玩家作弊，任何作弊的玩家将受到惩罚！
+exeaction KILL 0

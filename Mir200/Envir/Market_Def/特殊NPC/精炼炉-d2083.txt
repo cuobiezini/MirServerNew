@@ -1,0 +1,65 @@
+[@main]
+#if
+ check [110] 1
+ check [111] 0
+ check [112] 1
+ check [113] 0
+ check [114] 1
+ check [115] 1
+#act
+ goto @cxmj
+ break
+#elsesay
+我烧，我烧，我烧烧烧。。！\
+我烤，我烤，我烤烤烤。。！\
+嗯，你是来.....??\
+       <此脚本版权(版主):桃子/@taoyifb>
+
+[@cxmj]
+哦.~!?你是来炼赤血魔剑.>~??那要很大的耐心哦..~!\
+因为这里处于岩浆地带，气候条件好，所以是一个炼碳的好地方..~\
+但一次需要20个木料我才能为你炼出一块上等碳。！\
+而且要在没有怪的情况下我才能炼出一块上等碳。。！\
+       <此脚本版权(版主):桃子/@taoyifb>\
+  <我要炼碳/@tan>\
+  <我要炼剑/@jian>
+
+[@tan]
+#if
+ checkitem 木料 20
+ CheckRangeMonCount d2083 55 47 500 = 0
+#act
+ take 木料 20
+ give 碳 1
+#say
+已经炼好碳了..!
+#elsesay
+你没有把怪清干净或木料不够。。！
+
+[@jian]
+#if
+ check [110] 1
+ check [111] 0
+ check [112] 1
+ check [113] 0
+ check [114] 1
+ check [115] 1
+ checkitem 魔剑晶体 3
+ checkitem 碳 19
+ CheckRangeMonCount d2083 55 47 500 = 0
+#act
+ take 魔剑晶体 3
+ take 碳 19
+ give 赤血魔剑 1
+ set [110] 1
+ set [111] 1
+ set [112] 0
+ set [113] 1
+ set [114] 1
+ set [115] 1
+#say
+恭喜你，赤血魔剑出炉.!\
+       <此脚本版权(版主):桃子/@taoyifb>\
+#elsesay
+你没有把怪清干净或木料不够。。！\
+       <此脚本版权(版主):桃子/@taoyifb>

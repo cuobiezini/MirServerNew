@@ -1,0 +1,1520 @@
+[@main]
+亲爱的玩家：<$USERNAME>\
+<是不是为打到了不是本职业的装备而纠结呢？/SCOLOR=253>\
+<我可以为你做同系列装备的兑换，不过装备的属性会消失/SCOLOR=70>\\
+╔<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╗\
+┆ \
+┆　　<英雄系列/@英雄>　　<海魂假系列/@海魂假>　　 <衣服系列/@衣服> \
+┆ \
+┆　　<逆魔系列/@逆魔>　　<海魂真系列/@海魂真> 　　<炎龙系列/@炎龙> \
+┆　　　　　　　　　　　　　　　　　　　　　　<收费介绍/@介绍>  \
+╚<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╝\
+
+[@介绍]
+
+╔<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╗\
+┆英雄系列互换收取10个元宝手续费。　　　 　　　　　　　┆\
+┆逆魔系列互换收取100个元宝手续费。　　　　　　　　　　┆\
+┆海魂系列(假)互换收取50个元宝手续费。  　    　　　 　┆\
+┆海魂系列(真)互换收取1000个元宝手续费。　 　 　　　　　┆\
+┆衣服系列互换收取元宝100个元宝手续费。 　　　　　　　 ┆\
+┆炎龙系列是三职业无需互换、祝玩家游戏愉快！ 　　 　　 ┆\
+╚<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╝\
+
+[@衣服]
+#Act
+MessAgeBox 2014年5月1日开放衣服互换功能，！\\游戏长期开放、如果有好的建议不妨加客服QQ好好聊聊！！\\
+[@炎龙]
+#Act
+MessAgeBox 炎龙装备属于三职业无需进行互换，！！\\游戏长期开放、如果有好的建议不妨加客服QQ好好聊聊！！\\
+[@海魂真]
+　\
+亲爱的玩家：<$USERNAME>\
+<海魂真系列互换需要500元宝的手续费用.道士换战士法师需要1000元宝！/SCOLOR=253>\
+╔<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╗\
+┆　　<海魂真战→海魂真法/@海魂真战系列> 　　　　<海魂真战→海魂真道/@海魂真战系列> 　　　　┆\
+┆　　<海魂真法→海魂真道/@海魂真法系列> 　　　　<海魂真法→海魂真战/@海魂真法系列> 　　　　┆\
+┆　　<海魂真道→海魂真战/@海魂真道系列> 　　　　<海魂真道→海魂真法/@海魂真道系列> 　　　　┆\
+╚<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╝\
+
+[@海魂真道系列]
+<海魂类互换需要800元宝的手续费用.道士换道士道师需要1000元宝！/SCOLOR=253>\
+<海魂道戒换海魂战戒需要2200的手续费！！！！！！！！！！！！！/SCOLOR=253>\
+　　<海魂道戒→海魂战戒/@hz21> 　　┊　 <海魂道镯→海魂战镯/@hz22>　 \
+　　<海魂道盔→海魂战盔/@h3>  　 ┊　 <海魂道链→海魂战链/@hz24>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　　<海魂道戒→海魂法戒/@hz25> 　　┊　 <海魂道镯→海魂法镯/@hz26>　 \
+　　<海魂道盔→海魂法盔/@h7>  　 ┊　 <海魂道链→海魂法链/@hz28>  \
+　　<海魂道靴→海魂战靴/@hz29>  　 ┊　 <海魂道靴→海魂法靴/@hz30>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+
+[@hz21]
+#IF
+CHECKGAMEGOLD > 2200
+checkitem 海魂道戒 1
+#ACT
+take 海魂道戒 1
+GAMEGOLD - 2200
+give 海魂战戒　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道戒互换海魂战戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道戒互换海魂战戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道戒互换海魂战戒成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz22]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂道镯 1
+#ACT
+take 海魂道镯 1
+GAMEGOLD - 1000
+give 海魂战镯　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道镯互换海魂战镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道镯互换海魂战镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道镯互换海魂战镯成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@hz24]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂道链 1
+#ACT
+take 海魂道链 1
+GAMEGOLD - 1000
+give 海魂战链　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道链互换海魂战链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道链互换海魂战链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道链互换海魂战链成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@hz25]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂道戒 1
+#ACT
+take 海魂道戒 1
+GAMEGOLD - 1000
+give 海魂法戒　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道戒互换海魂法戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道戒互换海魂法戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道戒互换海魂法戒成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz26]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂道镯 1
+#ACT
+take 海魂道镯 1
+GAMEGOLD - 1000
+give 海魂法镯 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道镯互换海魂法镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道镯互换海魂法镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道镯互换海魂法镯成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz28]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂道链 1
+#ACT
+take 海魂道链 1
+GAMEGOLD - 1000
+give 海魂法链 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道链互换海魂法链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道链互换海魂法链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道链互换海魂法链成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz29]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂道靴 1
+#ACT
+take 海魂道靴 1
+GAMEGOLD - 1000
+give 海魂战靴　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道靴互换海魂战靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道靴互换海魂战靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道靴互换海魂战靴成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz30]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂道靴 1
+#ACT
+take 海魂道靴 1
+GAMEGOLD - 1000
+give 海魂法靴　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道靴互换海魂法靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道靴互换海魂法靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂道靴互换海魂法靴成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+
+[@海魂真法系列]
+<海魂类互换需要800元宝的手续费用.道士换法士法师需要1000元宝！/SCOLOR=253>\
+<海魂法戒→海魂战戒需要2000元宝海魂法链→海魂道链需要3000元宝手续费！/SCOLOR=253>\
+　　<海魂法戒→海魂战戒/@hz11> 　　┊　 <海魂法镯→海魂战镯/@hz12>　 \
+　　<海魂法盔→海魂战盔/@h23>  　 ┊　 <海魂法链→海魂战链/@hz14>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　　<海魂法戒→海魂道戒/@hz15> 　　┊　 <海魂法镯→海魂道镯/@hz16>　 \
+　　<海魂法盔→海魂道盔/@h27>  　 ┊　 <海魂法链→海魂道链/@hz18>  \
+　　<海魂法靴→海魂战靴/@hz19>  　 ┊　 <海魂法靴→海魂道靴/@hz20>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+
+[@hz11]
+#IF
+CHECKGAMEGOLD > 2000
+checkitem 海魂法戒　 1
+#ACT
+take 海魂法戒　 1
+GAMEGOLD - 2000
+give 海魂战戒　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法戒互换海魂战戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法戒互换海魂战戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法戒互换海魂战戒成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz12]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂法镯 1
+#ACT
+take 海魂法镯 1
+GAMEGOLD - 800
+give 海魂战镯　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法镯互换海魂战镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法镯互换海魂战镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法镯互换海魂战镯成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@hz14]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂法链 1
+#ACT
+take 海魂法链 1
+GAMEGOLD - 800
+give 海魂战链　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法链互换海魂战链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法链互换海魂战链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法链互换海魂战链成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@hz15]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂法戒　 1
+#ACT
+take 海魂法戒　 1
+GAMEGOLD - 800
+give 海魂道戒 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法戒互换海魂道戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法戒互换海魂道戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法戒互换海魂道戒成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz16]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂法镯 1
+#ACT
+take 海魂法镯 1
+GAMEGOLD - 800
+give 海魂道镯 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法镯互换海魂道镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法镯互换海魂道镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法镯互换海魂道镯成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz18]
+#IF
+CHECKGAMEGOLD > 3000
+checkitem 海魂法链 1
+#ACT
+take 海魂法链 1
+GAMEGOLD - 3000
+give 海魂道链 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法链互换海魂道链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法链互换海魂道链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法链互换海魂道链成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz19]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂法靴　 1
+#ACT
+take 海魂法靴　 1
+GAMEGOLD - 800
+give 海魂战靴　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法靴互换海魂战靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法靴互换海魂战靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法靴互换海魂战靴成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz20]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂法靴　 1
+#ACT
+take 海魂法靴　 1
+GAMEGOLD - 800
+give 海魂道靴 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法靴互换海魂道靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法靴互换海魂道靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂法靴互换海魂道靴成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+
+[@海魂真战系列]
+<海魂类互换需要800元宝的手续费用.道士换战士法师需要1000元宝！/SCOLOR=253>\
+<海魂战链兑换海魂道链需要3000元宝手续费！！！！！！！！！！！/SCOLOR=253>\
+　　<海魂战戒→海魂法戒/@hz1> 　　┊　 <海魂战镯→海魂法镯/@hz2>　 \
+　　<海魂战盔→海魂法盔/@h13>  　 ┊　 <海魂战链→海魂法链/@hz4>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+　　<海魂战戒→海魂道戒/@hz5> 　　┊　 <海魂战镯→海魂道镯/@hz6>　 \
+　　<海魂战盔→海魂道盔/@h17>  　 ┊　 <海魂战链→海魂道链/@hz8>  \
+　　<海魂战靴→海魂法靴/@hz9>   　┊　 <海魂战靴→海魂道靴/@hz10>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+
+[@hz1]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂战戒　 1
+#ACT
+take 海魂战戒　 1
+GAMEGOLD - 800
+give 海魂法戒　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战戒互换海魂法戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战戒互换海魂法戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战戒互换海魂法戒成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz2]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂战镯　 1
+#ACT
+take 海魂战镯　 1
+GAMEGOLD - 800
+give 海魂法镯 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战镯互换海魂法镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战镯互换海魂法镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战镯互换海魂法镯成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@hz4]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂战链　 1
+#ACT
+take 海魂战链　 1
+GAMEGOLD - 800
+give 海魂法链 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战链互换海魂法链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战链互换海魂法链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战链互换海魂法链成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@hz5]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂战戒　 1
+#ACT
+take 海魂战戒　 1
+GAMEGOLD - 800
+give 海魂道戒 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战戒互换海魂道戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战戒互换海魂道戒成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战戒互换海魂道戒成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz6]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂战镯　 1
+#ACT
+take 海魂战镯　 1
+GAMEGOLD - 800
+give 海魂道镯 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战镯互换海魂道镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战镯互换海魂道镯成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战镯互换海魂道镯成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz7]
+#Act
+MessAgeBox 你小子想骗我，这游戏还没这东西吧！！！
+[@hz8]
+#IF
+CHECKGAMEGOLD > 3000
+checkitem 海魂战链　 1
+#ACT
+take 海魂战链　 1
+GAMEGOLD - 3000
+give 海魂道链 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战链互换海魂道链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战链互换海魂道链成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战链互换海魂道链成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz9]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂战靴　 1
+#ACT
+take 海魂战靴　 1
+GAMEGOLD - 800
+give 海魂法靴　 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战靴互换海魂法靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战靴互换海魂法靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战靴互换海魂法靴成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@hz10]
+#IF
+CHECKGAMEGOLD > 800
+checkitem 海魂战靴　 1
+#ACT
+take 海魂战靴　 1
+GAMEGOLD - 800
+give 海魂道靴 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战靴互换海魂道靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战靴互换海魂道靴成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂战靴互换海魂道靴成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+
+
+[@逆魔]
+　\
+亲爱的玩家：<$USERNAME>\
+<逆魔系列互换需要100元宝的手续费用.道士换战士法师需要200元宝！/SCOLOR=253>\
+╔<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╗\
+┆　　　　<逆魔战→逆魔法/@逆魔战系列> 　　　　<逆魔战→逆魔道/@逆魔战系列> 　　　　┆\
+┆　　　　<逆魔法→逆魔道/@逆魔法系列> 　　　　<逆魔法→逆魔战/@逆魔法系列> 　　　　┆\
+┆　　　　<逆魔道→逆魔战/@逆魔道系列> 　　　　<逆魔道→逆魔法/@逆魔道系列> 　　　　┆\
+╚<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╝\
+[@逆魔道系列]
+<逆魔类互换需要100元宝的手续费用.道十换道士道师需要200元宝！/SCOLOR=253>\
+<逆魔戒指(道)兑换逆魔戒指(法)需要2000元宝手续费，道手镯换战手2000元宝！/SCOLOR=253>\
+<逆魔戒指(道)→逆魔戒指(法)/@n17> ┊ <逆魔手镯(道)→逆魔手镯(法)/@n18> \
+<逆魔头盔(道)→逆魔头盔(法)/@n19> ┊ <逆魔项链(道)→逆魔项链(法)/@n20>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+<逆魔戒指(道)→逆魔戒指(战)/@n21> ┊ <逆魔手镯(道)→逆魔手镯(战)/@n22>  \
+<逆魔头盔(道)→逆魔头盔(战)/@n23> ┊ <逆魔项链(道)→逆魔项链(战)/@n24>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+
+[@n17]
+#IF
+CHECKGAMEGOLD > 2000
+checkitem 逆魔戒指(道) 1
+#ACT
+take 逆魔戒指(道) 1
+GAMEGOLD - 2000
+give 逆魔戒指(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(道)互换逆魔戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(道)互换逆魔戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(道)互换逆魔戒指(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@n18]
+#IF
+CHECKGAMEGOLD > 200
+checkitem 逆魔手镯(道) 1
+#ACT
+take 逆魔手镯(道) 1
+GAMEGOLD - 200
+give 逆魔手镯(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(道)互换逆魔手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(道)互换逆魔手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(道)互换逆魔手镯(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@n19]
+#Act
+MessAgeBox 你小子想骗我，这游戏还没这东西吧！！！
+[@n20]
+#IF
+CHECKGAMEGOLD > 200
+checkitem 逆魔项链(道) 1
+#ACT
+take 逆魔项链(道) 1
+GAMEGOLD - 200
+give 逆魔项链(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(道)互换逆魔项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(道)互换逆魔项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(道)互换逆魔项链(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@n21]
+#IF
+CHECKGAMEGOLD > 200
+checkitem 逆魔戒指(道) 1
+#ACT
+take 逆魔戒指(道) 1
+GAMEGOLD - 200
+give 逆魔戒指(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(道)互换逆魔戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(道)互换逆魔戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(道)互换逆魔戒指(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@n22]
+#IF
+CHECKGAMEGOLD > 2000
+checkitem 逆魔手镯(道) 1
+#ACT
+take 逆魔手镯(道) 1
+GAMEGOLD - 2000
+give 逆魔手镯(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(道)互换逆魔手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(道)互换逆魔手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(道)互换逆魔手镯(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@n23]
+#Act
+MessAgeBox 你小子想骗我，这游戏还没这东西吧！！！
+[@n24]
+#IF
+CHECKGAMEGOLD > 200
+checkitem 逆魔项链(道) 1
+#ACT
+take 逆魔项链(道) 1
+GAMEGOLD - 200
+give 逆魔项链(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(道)互换逆魔项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(道)互换逆魔项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(道)互换逆魔项链(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+
+
+[@逆魔战系列]
+<逆魔类互换需要100元宝的手续费用.道十换战士战师需要200元宝！/SCOLOR=253>\
+<逆魔戒指(战)兑换逆魔戒指(法)需要1500元宝手续费！！！！！！/SCOLOR=253>\
+<逆魔戒指(战)→逆魔戒指(法)/@n9> ┊ <逆魔手镯(战)→逆魔手镯(法)/@n10> \
+<逆魔头盔(战)→逆魔头盔(法)/@n11> ┊ <逆魔项链(战)→逆魔项链(法)/@n12>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+<逆魔戒指(战)→逆魔戒指(道)/@n13> ┊ <逆魔手镯(战)→逆魔手镯(道)/@n14>  \
+<逆魔头盔(战)→逆魔头盔(道)/@n15> ┊ <逆魔项链(战)→逆魔项链(道)/@n16>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+
+
+[@n9]
+#IF
+CHECKGAMEGOLD > 1500
+checkitem 逆魔戒指(战) 1
+#ACT
+take 逆魔戒指(战) 1
+GAMEGOLD - 1500
+give 逆魔戒指(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(战)互换逆魔戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(战)互换逆魔戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(战)互换逆魔戒指(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@n10]
+#IF
+CHECKGAMEGOLD > 100
+checkitem 逆魔手镯(战) 1
+#ACT
+take 逆魔手镯(战) 1
+GAMEGOLD - 100
+give 逆魔手镯(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(战)互换逆魔手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(战)互换逆魔手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(战)互换逆魔手镯(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@n11]
+#Act
+MessAgeBox 你小子想骗我，这游戏还没这东西吧！！！
+[@n12]
+#IF
+CHECKGAMEGOLD > 100
+checkitem 逆魔项链(战) 1
+#ACT
+take 逆魔项链(战) 1
+GAMEGOLD - 100
+give 逆魔项链(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(战)互换逆魔项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(战)互换逆魔项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(战)互换逆魔项链(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@n13]
+#IF
+CHECKGAMEGOLD > 100
+checkitem 逆魔戒指(战) 1
+#ACT
+take 逆魔戒指(战) 1
+GAMEGOLD - 100
+give 逆魔戒指(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(战)互换逆魔戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(战)互换逆魔戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(战)互换逆魔戒指(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@n14]
+#IF
+CHECKGAMEGOLD > 100
+checkitem 逆魔手镯(战) 1
+#ACT
+take 逆魔手镯(战) 1
+GAMEGOLD - 100
+give 逆魔手镯(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(战)互换逆魔手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(战)互换逆魔手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(战)互换逆魔手镯(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@n15]
+#Act
+MessAgeBox 你小子想骗我，这游戏还没这东西吧！！！
+[@n16]
+#IF
+CHECKGAMEGOLD > 100
+checkitem 逆魔项链(战) 1
+#ACT
+take 逆魔项链(战) 1
+GAMEGOLD - 100
+give 逆魔项链(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(战)互换逆魔项链(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(战)互换逆魔项链(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(战)互换逆魔项链(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+
+[@逆魔法系列]
+<逆魔类互换需要100元宝的手续费用.道十换法士法师需要200元宝！/SCOLOR=253>\
+<逆魔手镯（法）兑换逆魔手镯（战）需要2000元宝！！！/SCOLOR=253>\
+<逆魔戒指(法)→逆魔戒指(战)/@n1> ┊ <逆魔手镯(法)→逆魔手镯(战)/@n2> \
+<逆魔头盔(法)→逆魔头盔(战)/@n3> ┊ <逆魔项链(法)→逆魔项链(战)/@n4>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+<逆魔戒指(法)→逆魔戒指(道)/@n5> ┊ <逆魔手镯(法)→逆魔手镯(道)/@n6>  \
+<逆魔头盔(法)→逆魔头盔(道)/@n7> ┊ <逆魔项链(法)→逆魔项链(道)/@n8>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+
+[@n1]
+#IF
+CHECKGAMEGOLD > 100
+checkitem 逆魔戒指(法) 1
+#ACT
+take 逆魔戒指(法) 1
+GAMEGOLD - 100
+give 逆魔戒指(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(法)互换逆魔戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(法)互换逆魔戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(法)互换逆魔戒指(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@n2]
+#IF
+CHECKGAMEGOLD > 2000
+checkitem 逆魔手镯(法) 1
+#ACT
+take 逆魔手镯(法) 1
+GAMEGOLD - 2000
+give 逆魔手镯(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(法)互换逆魔手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(法)互换逆魔手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(法)互换逆魔手镯(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@n3]
+#Act
+MessAgeBox 你小子想骗我，这游戏还没这东西吧！！！
+[@n4]
+#IF
+CHECKGAMEGOLD > 100
+checkitem 逆魔项链(法) 1
+#ACT
+take 逆魔项链(法) 1
+GAMEGOLD - 100
+give 逆魔项链(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(法)互换逆魔项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(法)互换逆魔项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(法)互换逆魔项链(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@n5]
+#IF
+CHECKGAMEGOLD > 100
+checkitem 逆魔戒指(法) 1
+#ACT
+take 逆魔戒指(法) 1
+GAMEGOLD - 100
+give 逆魔戒指(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(法)互换逆魔戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(法)互换逆魔戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔戒指(法)互换逆魔戒指(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@n6]
+#IF
+CHECKGAMEGOLD > 100
+checkitem 逆魔手镯(法) 1
+#ACT
+take 逆魔手镯(法) 1
+GAMEGOLD - 100
+give 逆魔手镯(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(法)互换逆魔手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(法)互换逆魔手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔手镯(法)互换逆魔手镯(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@n7]
+#Act
+MessAgeBox 你小子想骗我，这游戏还没这东西吧！！！
+[@n8]
+#IF
+CHECKGAMEGOLD > 100
+checkitem 逆魔项链(法) 1
+#ACT
+take 逆魔项链(法) 1
+GAMEGOLD - 100
+give 逆魔项链(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(法)互换逆魔项链(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(法)互换逆魔项链(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》逆魔项链(法)互换逆魔项链(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+
+[@海魂假]
+　\
+亲爱的玩家：<$USERNAME>\
+<海魂假系列互换需要50元宝的手续费用.道士换战士法师需要80元宝！/SCOLOR=253>\
+╔<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╗\
+┆　　　　<海魂战→海魂法/@海魂战系列> 　　　　<海魂战→海魂道/@海魂战系列> 　　　　┆\
+┆　　　　<海魂法→海魂道/@海魂法系列> 　　　　<海魂法→海魂战/@海魂法系列> 　　　　┆\
+┆　　　　<海魂道→海魂战/@海魂道系列> 　　　　<海魂道→海魂法/@海魂道系列> 　　　　┆\
+╚<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╝\
+[@海魂法系列]
+<海魂类互换需要50元宝的手续费用.法士换法士法师需要80元宝！/SCOLOR=253>\
+<海魂戒指(法)→海魂戒指(战)/@h21> ┊ <海魂手镯(法)→海魂手镯(战)/@h22> \
+<海魂头盔(法)→海魂头盔(战)/@h23> ┊ <海魂项链(法)→海魂项链(战)/@h24>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+<海魂戒指(法)→海魂戒指(道)/@h25> ┊ <海魂手镯(法)→海魂手镯(道)/@h26>  \
+<海魂头盔(法)→海魂头盔(道)/@h27> ┊ <海魂项链(法)→海魂项链(道)/@h28>  \
+<海魂靴子(法)→海魂靴子(道)/@h29> ┊ <海魂靴子(法)→海魂靴子(战)/@h30>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+
+[@h21]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂戒指(法) 1
+#ACT
+take 海魂戒指(法) 1
+GAMEGOLD - 50
+give 海魂戒指(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(法)互换海魂戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(法)互换海魂戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(法)互换海魂戒指(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h22]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂手镯(法) 1
+#ACT
+take 海魂手镯(法) 1
+GAMEGOLD - 50
+give 海魂手镯(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(法)互换海魂手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(法)互换海魂手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(法)互换海魂手镯(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@h23]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂头盔(法) 1
+#ACT
+take 海魂头盔(法) 1
+GAMEGOLD - 50
+give 海魂头盔(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(法)互换海魂头盔(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(法)互换海魂头盔(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(法)互换海魂头盔(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h24]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂项链(法) 1
+#ACT
+take 海魂项链(法) 1
+GAMEGOLD - 50
+give 海魂项链(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(法)互换海魂项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(法)互换海魂项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(法)互换海魂项链(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@h25]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂戒指(法) 1
+#ACT
+take 海魂戒指(法) 1
+GAMEGOLD - 50
+give 海魂戒指(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(法)互换海魂戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(法)互换海魂戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(法)互换海魂戒指(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h26]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂手镯(法) 1
+#ACT
+take 海魂手镯(法) 1
+GAMEGOLD - 50
+give 海魂手镯(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(法)互换海魂手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(法)互换海魂手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(法)互换海魂手镯(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h27]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂头盔(法) 1
+#ACT
+take 海魂头盔(法) 1
+GAMEGOLD - 50
+give 海魂头盔(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(法)互换海魂头盔(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(法)互换海魂头盔(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(法)互换海魂头盔(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h28]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂项链(法) 1
+#ACT
+take 海魂项链(法) 1
+GAMEGOLD - 50
+give 海魂项链(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(法)互换海魂项链(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(法)互换海魂项链(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(法)互换海魂项链(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h29]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂靴(法) 1
+#ACT
+take 海魂靴(法) 1
+GAMEGOLD - 50
+give 海魂靴(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(法)互换海魂靴(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(法)互换海魂靴(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(法)互换海魂靴(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@h30]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂靴(法) 1
+#ACT
+take 海魂靴(法) 1
+GAMEGOLD - 50
+give 海魂靴(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(法)互换海魂靴(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(法)互换海魂靴(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(法)互换海魂靴(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+
+
+[@海魂战系列]
+<海魂类互换需要50元宝的手续费用.战士换战士战师需要80元宝！/SCOLOR=253>\
+<海魂戒指(战)→海魂戒指(法)/@h11> ┊ <海魂手镯(战)→海魂手镯(法)/@h12> \
+<海魂头盔(战)→海魂头盔(法)/@h13> ┊ <海魂项链(战)→海魂项链(法)/@h14>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+<海魂戒指(战)→海魂戒指(道)/@h15> ┊ <海魂手镯(战)→海魂手镯(道)/@h16>  \
+<海魂头盔(战)→海魂头盔(道)/@h17> ┊ <海魂项链(战)→海魂项链(道)/@h18>  \
+<海魂靴子(战)→海魂靴子(道)/@h19> ┊ <海魂靴子(道)→海魂靴子(法)/@h20>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+
+[@h11]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂戒指(战) 1
+#ACT
+take 海魂戒指(战) 1
+GAMEGOLD - 50
+give 海魂戒指(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(战)互换海魂戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(战)互换海魂戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(战)互换海魂戒指(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h12]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂手镯(战) 1
+#ACT
+take 海魂手镯(战) 1
+GAMEGOLD - 50
+give 海魂手镯(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(战)互换海魂手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(战)互换海魂手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(战)互换海魂手镯(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@h13]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂头盔(战) 1
+#ACT
+take 海魂头盔(战) 1
+GAMEGOLD - 1000
+give 海魂头盔(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(战)互换海魂头盔(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(战)互换海魂头盔(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(战)互换海魂头盔(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h14]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂项链(战) 1
+#ACT
+take 海魂项链(战) 1
+GAMEGOLD - 50
+give 海魂项链(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(战)互换海魂项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(战)互换海魂项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(战)互换海魂项链(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@h15]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂戒指(战) 1
+#ACT
+take 海魂戒指(战) 1
+GAMEGOLD - 50
+give 海魂戒指(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(战)互换海魂戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(战)互换海魂戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(战)互换海魂戒指(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h16]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂手镯(战) 1
+#ACT
+take 海魂手镯(战) 1
+GAMEGOLD - 50
+give 海魂手镯(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(战)互换海魂手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(战)互换海魂手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(战)互换海魂手镯(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h17]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂头盔(战) 1
+#ACT
+take 海魂头盔(战) 1
+GAMEGOLD - 1000
+give 海魂头盔(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(战)互换海魂头盔(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(战)互换海魂头盔(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(战)互换海魂头盔(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h18]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂项链(战) 1
+#ACT
+take 海魂项链(战) 1
+GAMEGOLD - 50
+give 海魂项链(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(战)互换海魂项链(道)　成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(战)互换海魂项链(道)　成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(战)互换海魂项链(道)　成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h19]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂靴(战) 1
+#ACT
+take 海魂靴(战) 1
+GAMEGOLD - 50
+give 海魂靴(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(战)互换海魂靴(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(战)互换海魂靴(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(战)互换海魂靴(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@h20]
+#IF
+CHECKGAMEGOLD > 50
+checkitem 海魂靴(战) 1
+#ACT
+take 海魂靴(战) 1
+GAMEGOLD - 50
+give 海魂靴(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(战)互换海魂靴(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(战)互换海魂靴(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(战)互换海魂靴(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+
+
+[@海魂道系列]
+<海魂类互换需要50元宝的手续费用.道士换战士道师需要80元宝！/SCOLOR=253>\
+<海魂戒指(道)→海魂戒指(战)/@h1> ┊ <海魂手镯(道)→海魂手镯(战)/@h2> \
+<海魂头盔(道)→海魂头盔(战)/@h3> ┊ <海魂项链(道)→海魂项链(战)/@h4>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+<海魂戒指(道)→海魂戒指(法)/@h5> ┊ <海魂手镯(道)→海魂手镯(法)/@h6>  \
+<海魂头盔(道)→海魂头盔(法)/@h7> ┊ <海魂项链(道)→海魂项链(法)/@h8>  \
+<海魂靴子(道)→海魂靴子(法)/@h9> ┊ <海魂靴子(道)→海魂靴子(战)/@h10>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+
+[@h1]
+#IF
+CHECKGAMEGOLD > 80
+checkitem 海魂戒指(道) 1
+#ACT
+take 海魂戒指(道) 1
+GAMEGOLD - 80
+give 海魂戒指(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(道)互换海魂戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(道)互换海魂戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(道)互换海魂戒指(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h2]
+#IF
+CHECKGAMEGOLD > 80
+checkitem 海魂手镯(道) 1
+#ACT
+take 海魂手镯(道) 1
+GAMEGOLD - 80
+give 海魂手镯(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(道)互换海魂手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(道)互换海魂手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(道)互换海魂手镯(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@h3]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂头盔(道) 1
+#ACT
+take 海魂头盔(道) 1
+GAMEGOLD - 1000
+give 海魂头盔(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(道)互换海魂头盔(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(道)互换海魂头盔(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(道)互换海魂头盔(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h4]
+#IF
+CHECKGAMEGOLD > 80
+checkitem 海魂项链(道) 1
+#ACT
+take 海魂项链(道) 1
+GAMEGOLD - 80
+give 海魂项链(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(道)互换海魂项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(道)互换海魂项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(道)互换海魂项链(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@h5]
+#IF
+CHECKGAMEGOLD > 80
+checkitem 海魂戒指(道) 1
+#ACT
+take 海魂戒指(道) 1
+GAMEGOLD - 80
+give 海魂戒指(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(道)互换海魂戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(道)互换海魂戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂戒指(道)互换海魂戒指(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h6]
+#IF
+CHECKGAMEGOLD > 80
+checkitem 海魂手镯(道) 1
+#ACT
+take 海魂手镯(道) 1
+GAMEGOLD - 80
+give 海魂手镯(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(道)互换海魂手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(道)互换海魂手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂手镯(道)互换海魂手镯(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h7]
+#IF
+CHECKGAMEGOLD > 1000
+checkitem 海魂头盔(道) 1
+#ACT
+take 海魂头盔(道) 1
+GAMEGOLD - 1000
+give 海魂头盔(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(道)互换海魂头盔(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(道)互换海魂头盔(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂头盔(道)互换海魂头盔(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h8]
+#IF
+CHECKGAMEGOLD > 80
+checkitem 海魂项链(道) 1
+#ACT
+take 海魂项链(道) 1
+GAMEGOLD - 80
+give 海魂项链(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(道)互换海魂项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(道)互换海魂项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂项链(道)互换海魂项链(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@h9]
+#IF
+CHECKGAMEGOLD > 80
+checkitem 海魂靴(道) 1
+#ACT
+take 海魂靴(道) 1
+GAMEGOLD - 80
+give 海魂靴(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(道)互换海魂靴(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(道)互换海魂靴(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(道)互换海魂靴(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@h10]
+#IF
+CHECKGAMEGOLD > 80
+checkitem 海魂靴(道) 1
+#ACT
+take 海魂靴(道) 1
+GAMEGOLD - 80
+give 海魂靴(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(道)互换海魂靴(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(道)互换海魂靴(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》海魂靴(道)互换海魂靴(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+
+
+[@英雄]
+\
+亲爱的玩家：<$USERNAME>\
+<英雄类互换需要10元宝的手续费用.道士换战士法师需要20元宝！/SCOLOR=253>\
+╔<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╗\
+┆　　　　<英雄战→英雄法/@英雄战系列> 　　　　<英雄战→英雄道/@英雄战系列> 　　　　┆\
+┆　　　　<英雄法→英雄道/@英雄法系列> 　　　　<英雄法→英雄战/@英雄法系列> 　　　　┆\
+┆　　　　<英雄道→英雄战/@英雄道系列> 　　　　<英雄道→英雄法/@英雄道系列> 　　　　┆\
+╚<┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄/SCOLOR=254>╝\
+
+
+[@英雄战系列]
+<英雄类互换需要10元宝的手续费用.道士换战士法师需要20元宝！/SCOLOR=253>\
+<英雄戒指(战)→英雄戒指(法)/@y1> ┊ <英雄手镯(战)→英雄手镯(法)/@y2> \
+<英雄头盔(战)→英雄头盔(法)/@y3> ┊ <英雄项链(战)→英雄项链(法)/@y4>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+<英雄戒指(战)→英雄戒指(道)/@y5> ┊ <英雄手镯(战)→英雄手镯(道)/@y6>  \
+<英雄头盔(战)→英雄头盔(道)/@y7> ┊ <英雄项链(战)→英雄项链(道)/@y8>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+
+[@y1]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄戒指(战) 1
+#ACT
+take 英雄戒指(战) 1
+GAMEGOLD - 10
+give 英雄戒指(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(战)互换英雄戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(战)互换英雄戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(战)互换英雄戒指(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y2]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄手镯(战) 1
+#ACT
+take 英雄手镯(战) 1
+GAMEGOLD - 10
+give 英雄手镯(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(战)互换英雄手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(战)互换英雄手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(战)互换英雄手镯(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@y3]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄头盔(战) 1
+#ACT
+take 英雄头盔(战) 1
+GAMEGOLD - 10
+give 英雄头盔(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(战)互换英雄头盔(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(战)互换英雄头盔(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(战)互换英雄头盔(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y4]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄项链(战) 1
+#ACT
+take 英雄项链(战) 1
+GAMEGOLD - 10
+give 英雄项链(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(战)互换英雄项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(战)互换英雄项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(战)互换英雄项链(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@y5]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄戒指(战) 1
+#ACT
+take 英雄戒指(战) 1
+GAMEGOLD - 10
+give 英雄戒指(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(战)互换英雄戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(战)互换英雄戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(战)互换英雄戒指(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y6]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄手镯(战)  1
+#ACT
+take 英雄手镯(战)  1
+GAMEGOLD - 10
+give 英雄手镯(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(战)互换英雄手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(战)互换英雄手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(战)互换英雄手镯(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y7]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄头盔(战)  1
+#ACT
+take 英雄头盔(战) 1
+GAMEGOLD - 10
+give 英雄头盔(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(战)互换英雄头盔(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(战)互换英雄头盔(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(战)互换英雄头盔(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y8]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄项链(战) 1
+#ACT
+take 英雄项链(战) 1
+GAMEGOLD - 10
+give 英雄项链(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(战)互换英雄项链(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(战)互换英雄项链(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(战)互换英雄项链(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@英雄法系列]
+<英雄类互换需要10元宝的手续费用.道士换战士法师需要20元宝！/SCOLOR=253>\
+<英雄戒指(法)→英雄戒指(战)/@y9> ┊ <英雄手镯(法)→英雄手镯(战)/@y10> \
+<英雄头盔(法)→英雄头盔(战)/@y11> ┊ <英雄项链(法)→英雄项链(战)/@y12>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+<英雄戒指(法)→英雄戒指(道)/@y13> ┊ <英雄手镯(法)→英雄手镯(道)/@y14>  \
+<英雄头盔(法)→英雄头盔(道)/@y15> ┊ <英雄项链(法)→英雄项链(道)/@y16>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+[@y9]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄戒指(法) 1
+#ACT
+take 英雄戒指(法) 1
+GAMEGOLD - 10
+give 英雄戒指(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(法)互换英雄戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(法)互换英雄戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(法)互换英雄戒指(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y10]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄手镯(法) 1
+#ACT
+take 英雄手镯(法) 1
+GAMEGOLD - 10
+give 英雄手镯(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(法)互换英雄手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(法)互换英雄手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(法)互换英雄手镯(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@y11]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄头盔(法) 1
+#ACT
+take 英雄头盔(法) 1
+GAMEGOLD - 10
+give 英雄头盔(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(法)互换英雄头盔(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(法)互换英雄头盔(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(法)互换英雄头盔(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y12]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄项链(法) 1
+#ACT
+take 英雄项链(法) 1
+GAMEGOLD - 10
+give 英雄项链(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(法)互换英雄项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(法)互换英雄项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(法)互换英雄项链(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@y13]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄戒指(法) 1
+#ACT
+take 英雄戒指(法) 1
+GAMEGOLD - 10
+give 英雄戒指(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(法)互换英雄戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(法)互换英雄戒指(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(法)互换英雄戒指(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@y14]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄手镯(法) 1
+#ACT
+take 英雄手镯(法) 1
+GAMEGOLD - 10
+give 英雄手镯(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(法)互换英雄手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(法)互换英雄手镯(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(法)互换英雄手镯(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y15]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄头盔(法) 1
+#ACT
+take 英雄头盔(法) 1
+GAMEGOLD - 10
+give 英雄头盔(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(法)互换英雄头盔(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(法)互换英雄头盔(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(法)互换英雄头盔(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y16]
+#IF
+CHECKGAMEGOLD > 10
+checkitem 英雄项链(法) 1
+#ACT
+take 英雄项链(法) 1
+GAMEGOLD - 10
+give 英雄项链(道) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(法)互换英雄项链(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(法)互换英雄项链(道)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(法)互换英雄项链(道)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@英雄道系列]
+<英雄类互换需要10元宝的手续费用.道士换战士道师需要20元宝！/SCOLOR=253>\
+<英雄戒指(道)→英雄戒指(战)/@y17> ┊ <英雄手镯(道)→英雄手镯(战)/@y18> \
+<英雄头盔(道)→英雄头盔(战)/@y19> ┊ <英雄项链(道)→英雄项链(战)/@y20>  \
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+<英雄戒指(道)→英雄戒指(法)/@y21> ┊ <英雄手镯(道)→英雄手镯(法)/@y22>  \
+<英雄头盔(道)→英雄头盔(法)/@y23> ┊ <英雄项链(道)→英雄项链(法)/@y24>  \
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+<三峡传奇官方网站：www.jungebbk.com，客服QQ：官方网址查询!!/SCOLOR=253>\
+[@y17]
+#IF
+CHECKGAMEGOLD > 20
+checkitem 英雄戒指(道) 1
+#ACT
+take 英雄戒指(道) 1
+GAMEGOLD - 20
+give 英雄戒指(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(道)互换英雄戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(道)互换英雄戒指(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(道)互换英雄戒指(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y18]
+#IF
+CHECKGAMEGOLD > 20
+checkitem 英雄手镯(道) 1
+#ACT
+take 英雄手镯(道) 1
+GAMEGOLD - 20
+give 英雄手镯(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(道)互换英雄手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(道)互换英雄手镯(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(道)互换英雄手镯(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@y19]
+#IF
+CHECKGAMEGOLD > 20
+checkitem 英雄头盔(道) 1
+#ACT
+take 英雄头盔(道) 1
+GAMEGOLD - 20
+give 英雄头盔(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(道)互换英雄头盔(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(道)互换英雄头盔(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(道)互换英雄头盔(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y20]
+#IF
+CHECKGAMEGOLD > 20
+checkitem 英雄项链(道)  1
+#ACT
+take 英雄项链(道)  1
+GAMEGOLD - 20
+give 英雄项链(战) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(道)互换英雄项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(道)互换英雄项链(战)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(道)互换英雄项链(战)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+
+[@y21]
+#IF
+CHECKGAMEGOLD > 20
+checkitem 英雄戒指(道) 1
+#ACT
+take 英雄戒指(道) 1
+GAMEGOLD - 20
+give 英雄戒指(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(道)互换英雄戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(道)互换英雄戒指(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄戒指(道)互换英雄戒指(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y22]
+#IF
+CHECKGAMEGOLD > 20
+checkitem 英雄手镯(道) 1
+#ACT
+take 英雄手镯(道) 1
+GAMEGOLD -20
+give 英雄手镯(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(道)互换英雄手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(道)互换英雄手镯(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄手镯(道)互换英雄手镯(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y23]
+#IF
+CHECKGAMEGOLD > 20
+checkitem 英雄头盔(道) 1
+#ACT
+take 英雄头盔(道) 1
+GAMEGOLD - 20
+give 英雄头盔(法) 1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(道)互换英雄头盔(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(道)互换英雄头盔(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄头盔(道)互换英雄头盔(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!
+[@y24]
+#IF
+CHECKGAMEGOLD > 20
+checkitem 英雄项链(道)  1
+#ACT
+take 英雄项链(道)  1
+GAMEGOLD - 20
+give 英雄项链(法)  1
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(道)互换英雄项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(道)互换英雄项链(法)成功!!!
+SendCenterMsg 254 0 恭喜玩家《<$USERNAME>》英雄项链(道)互换英雄项链(法)成功!!!
+#ELSESAY
+不会吧,你连我要的东西都没有,还来互换啊!

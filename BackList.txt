@@ -1,0 +1,16 @@
+[0]
+Source=D:\MirServerNew\DBServer\FDB\
+Save=D:\MirServerNew\数据备份\
+Hour=6
+Min=0
+BackMode=1
+GetBack=0
+IsCompress=1
+[1]
+Source=D:\MirServerNew\LoginSrv\IDDB\
+Save=D:\MirServerNew\数据备份\
+Hour=6
+Min=0
+BackMode=1
+GetBack=0
+IsCompress=1

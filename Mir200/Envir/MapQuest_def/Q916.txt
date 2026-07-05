@@ -1,0 +1,153 @@
+[@main]
+#IF
+check [631] 1
+#ACT
+break
+
+#IF
+check [630] 1
+#ACT
+set [631] 1
+break
+
+#IF
+CHECKRENEWLEVEL > 0
+#ACT
+set [631] 1
+break
+
+#IF
+  EQUAL G0 0
+#SAY
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领取/@>\
+<离开/@exit>\
+#ACT
+  MOV M5 10
+close
+break
+
+#IF
+  EQUAL G0 1
+#SAY
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领取/@>\
+<离开/@exit>\
+#ACT
+  MOV M5 11
+close
+break
+
+#IF
+  EQUAL G0 2
+#SAY
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领取/@>\
+<离开/@exit>\
+#ACT
+  MOV M5 12
+close
+break
+
+#IF
+  EQUAL G0 3
+#SAY
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领取/@>\
+<离开/@exit>\
+#ACT
+  MOV M5 13
+close
+break
+
+#IF
+  EQUAL G0 4
+#SAY
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领取/@>\
+<离开/@exit>\
+#ACT
+  MOV M5 14
+close
+break
+
+#IF
+  EQUAL G0 5
+#SAY
+  幸运神：你得到了神秘护卫一个，你需要护卫才能进入\
+你需要神秘护卫吗？\ \
+<领取/@>\
+<离开/@exit>\
+#ACT
+  MOV M5 15
+close
+break
+
+
+[@]
+#IF
+  EQUAL M5 10
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@]
+#IF
+  EQUAL M5 11
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@]
+#IF
+  EQUAL M5 12
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@]
+#IF
+  EQUAL M5 13
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@]
+#IF
+  EQUAL M5 14
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@]
+#IF
+  EQUAL M5 15
+#ACT
+#CALL [NPC\VIP超级传送.txt] @linqubaobao
+break
+#ELSEACT
+goto @viphuashaocf123
+break
+
+[@viphuashaocf123]
+#CALL [NPC\VIP超级传送.txt] @viphuashaocf888

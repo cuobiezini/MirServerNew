@@ -1,0 +1,734 @@
+[@main]
+我是Jacky三峡传奇版本制作者，请问你需要合成什么？\
+　\\
+　\\
+　　　　　　<武器合成/@武器合成>　　　　　　　　<衣服合成/@衣服合成>
+　　　\\　<逆魔装备合成/@逆魔合成>
+　　　　　　<海魂装备合成/@海魂装备合成>　　　　<炎龙装备合成/@炎龙装备合成>
+
+　\\
+　\\
+　\\　　　　　　　　　　　　　　　　　　　　　　<关闭/@exit>
+
+
+[@衣服合成]
+我是Jacky三峡传奇版本制作者，请问你需要合成什么？\
+<凤凰羽翼/@凤凰羽翼> [天使<神><圣><尊>翼(女)]+2000YB\
+<圣灵铠甲/@圣灵铠甲> [天使<神><圣><尊>翼(男)]+2000YB\
+
+
+[@圣灵铠甲]
+#if
+CHECKGAMEGOLD > 1999
+checkitem  天使圣翼(男)
+checkitem  天使神翼(男)
+checkitem  天使尊翼(男)
+#act
+GAMEGOLD - 2000
+take   天使圣翼(男)
+take   天使神翼(男)
+take   天使尊翼(男)
+give 圣灵铠甲 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[圣灵铠甲]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[圣灵铠甲]材料不够！
+break
+
+[@凤凰羽翼]
+#if
+CHECKGAMEGOLD > 1999
+checkitem  天使圣翼(女)
+checkitem  天使神翼(女)
+checkitem  天使尊翼(女)
+#act
+GAMEGOLD - 2000
+take   天使圣翼(女)
+take   天使神翼(女)
+take   天使尊翼(女)
+give 凤凰羽翼 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[凤凰羽翼]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[凤凰羽翼]材料不够！
+break
+
+[@武器合成]
+我是Jacky三峡传奇版本制作者，请问你需要合成什么？\
+<屠龙魔/@屠龙魔> [屠龙(魔)*2]+2000YB\
+<血饮魔/@血饮魔> [血饮(魔)*2]+2000YB\
+<龙纹魔/@龙纹魔> [龙纹(魔)*2]+2000YB\
+
+[@血饮魔]
+#if
+CHECKGAMEGOLD > 1999
+checkitem 血饮(魔) 2
+#act
+GAMEGOLD - 2000
+take 血饮(魔) 2
+give 血饮魔 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[血饮魔]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[血饮魔]材料不够！
+break
+
+
+[@龙纹魔]
+#if
+CHECKGAMEGOLD > 1999
+checkitem 龙纹(魔) 2
+#act
+GAMEGOLD - 2000
+take 龙纹(魔) 2
+give 龙纹魔 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[龙纹魔]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[龙纹魔材料不够！
+break
+
+
+[@屠龙魔]
+#if
+CHECKGAMEGOLD > 1999
+checkitem 屠龙(魔) 2
+#act
+GAMEGOLD - 2000
+take 屠龙(魔) 2
+give 屠龙魔 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[屠龙魔]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[屠龙魔]材料不够！
+break
+
+
+[@炎龙装备合成]
+#if
+#act
+messagebox  前期不开放炎龙合成，详情咨询客服！！！
+
+[@炎龙道合成]
+我是Jacky三峡传奇版本制作者，请问你需要合成什么？\
+<炎龙靴/@炎龙靴3>   [需要海魂道靴*2]+400YB\
+<炎龙项链/@炎龙项链3> [需要海魂道链*2]+400YB\
+<炎龙手套/@炎龙手套3> [需要海魂道镯*2]+400YB\
+<炎龙戒指/@炎龙戒指3> [需要海魂道戒*2]+400YB\
+<炎龙腰带/@炎龙腰带3> [需要海魂道腰带*2]+400YB\
+<炎龙头盔/@炎龙头盔3> [需要海魂头盔(道)*2]+400YB\
+
+[@炎龙项链3]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂道链 2
+#act
+GAMEGOLD - 400
+take 海魂道链 2
+give 炎龙项链 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙项链]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙项链]材料不够！
+break
+
+[@炎龙手套3]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂道镯
+#act
+GAMEGOLD - 400
+take 海魂道镯
+give 炎龙手套 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙手套]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙手套]材料不够！
+break
+
+[@炎龙头盔3]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂头盔(道)
+#act
+GAMEGOLD - 400
+take 海魂头盔(道)
+give 炎龙头盔 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙头盔]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙头盔]材料不够！
+break
+
+[@炎龙戒指3]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂道戒
+#act
+GAMEGOLD - 400
+take 海魂道戒
+give 炎龙戒指 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙戒指]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙戒指]材料不够！
+break
+
+[@炎龙腰带3]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂腰带道
+#act
+GAMEGOLD - 400
+take 海魂腰带道
+give 炎龙腰带 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙腰带]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙腰带]材料不够！
+break
+
+[@炎龙靴3]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂道靴
+#act
+GAMEGOLD - 400
+take 海魂道靴
+give 炎龙靴 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙靴]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙靴]材料不够！
+break
+
+
+
+
+
+
+[@炎龙法合成]
+我是Jacky三峡传奇版本制作者，请问你需要合成什么？\
+<炎龙靴/@炎龙靴2>   [需要海魂法靴*2]+400YB\
+<炎龙项链/@炎龙项链2> [需要海魂法链*2]+400YB\
+<炎龙手套/@炎龙手套2> [需要海魂法镯*2]+400YB\
+<炎龙戒指/@炎龙戒指2> [需要海魂法戒*2]+400YB\
+<炎龙腰带/@炎龙腰带2> [需要海魂法腰带*2]+400YB\
+<炎龙头盔/@炎龙头盔2> [需要海魂头盔(法)*2]+400YB\
+
+[@炎龙项链2]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂法链 2
+#act
+GAMEGOLD - 400
+take 海魂法链 2
+give 炎龙项链 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙项链]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙项链]材料不够！
+break
+
+[@炎龙手套2]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂法镯
+#act
+GAMEGOLD - 400
+take 海魂法镯
+give 炎龙手套 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙手套]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙手套]材料不够！
+break
+
+[@炎龙头盔2]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂头盔(法)
+#act
+GAMEGOLD - 400
+take 海魂头盔(法)
+give 炎龙头盔 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙头盔]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙头盔]材料不够！
+break
+
+[@炎龙戒指2]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂法戒
+#act
+GAMEGOLD - 400
+take 海魂法戒
+give 炎龙戒指 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙戒指]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙戒指]材料不够！
+break
+
+[@炎龙腰带2]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂腰带法
+#act
+GAMEGOLD - 400
+take 海魂腰带法
+give 炎龙腰带 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙腰带]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙腰带]材料不够！
+break
+
+[@炎龙靴2]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂法靴
+#act
+GAMEGOLD - 400
+take 海魂法靴
+give 炎龙靴 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙靴]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙靴]材料不够！
+break
+
+
+
+
+
+
+[@炎龙战合成]
+我是Jacky三峡传奇版本制作者，请问你需要合成什么？\
+<炎龙靴/@炎龙靴>   [需要海魂战靴*2]+400YB\
+<炎龙项链/@炎龙项链> [需要海魂战链*2]+400YB\
+<炎龙手套/@炎龙手套> [需要海魂战镯*2]+400YB\
+<炎龙戒指/@炎龙戒指> [需要海魂战戒*2]+400YB\
+<炎龙腰带/@炎龙腰带> [需要海魂战腰带*2]+400YB\
+<炎龙头盔/@炎龙头盔> [需要海魂头盔(战)*2]+400YB\
+
+[@炎龙项链]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂战链 2
+#act
+GAMEGOLD - 400
+take 海魂战链 2
+give 炎龙项链 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙项链]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙项链]材料不够！
+break
+
+[@炎龙手套]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂战镯
+#act
+take 海魂战镯
+GAMEGOLD - 400
+give 炎龙手套 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙手套]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙手套]材料不够！
+break
+
+[@炎龙头盔]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂头盔(战)
+#act
+GAMEGOLD - 400
+take 海魂头盔(战)
+give 炎龙头盔 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙头盔]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙头盔]材料不够！
+break
+
+[@炎龙戒指]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂战戒
+#act
+GAMEGOLD - 400
+take 海魂战戒
+give 炎龙戒指 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙戒指]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙戒指]材料不够！
+break
+
+[@炎龙腰带]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂腰带战
+#act
+GAMEGOLD - 400
+take 海魂腰带战
+give 炎龙腰带 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙腰带]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙腰带]材料不够！
+break
+
+[@炎龙靴]
+#if
+CHECKGAMEGOLD > 399
+checkitem 海魂战靴
+#act
+GAMEGOLD - 400
+take 海魂战靴
+give 炎龙靴 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[炎龙靴]
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[炎龙靴]材料不够！
+break
+
+
+
+
+
+
+
+
+
+
+
+[@海魂装备合成]
+我是Jacky三峡传奇版本制作者，请问你需要合成什么？\
+合成都需要必须的材料加888元宝才能合成！！！\
+<海魂战链/@海魂战链>[逆魔项链(战)*2+神水2]　　<海魂法链/@海魂法链>[逆魔项链(法)*2+神水2]\
+<海魂道链/@海魂道链>[逆魔项链(道)*2+神水2]　　<海魂战镯/@海魂战镯>[逆魔手镯(战)*2+神水2]\
+<海魂法镯/@海魂法镯>[逆魔手镯(法)*2+神水2]　　<海魂道镯/@海魂道镯>[逆魔手镯(道)*2+神水2]\
+<海魂战戒/@海魂战戒>[逆魔戒指(战)*2+神水2]　　<海魂法戒/@海魂法戒>[逆魔戒指(法)*2+神水2]\
+<海魂道戒/@海魂道戒>[逆魔戒指(道)*2+神水2]\
+　\\
+
+　　　　　　　　　　　　　　　　　　　　　　　　　　　<关闭/@exit>
+[@海魂战链]
+#if
+CHECKGAMEGOLD > 887
+checkitem 逆魔项链(战) 2
+checkitem  神水   2
+#act
+GAMEGOLD - 888
+take 逆魔项链(战) 2
+take  神水   2
+give 海魂战链 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[海魂战链]！
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[海魂战链]材料不够！
+break
+
+[@海魂法链]
+#if
+CHECKGAMEGOLD > 887
+checkitem 逆魔项链(法) 2
+checkitem  神水   2
+#act
+GAMEGOLD - 888
+take 逆魔项链(法) 2
+take  神水  2
+give 海魂法链 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[海魂法链]！
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[海魂法链]材料不够！
+break
+
+[@海魂道链]
+#if
+CHECKGAMEGOLD > 887
+checkitem 逆魔项链(道) 2
+checkitem  神水   2
+#act
+GAMEGOLD - 888
+take 逆魔项链(道) 2
+take  神水  2
+give 海魂道链 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[海魂道链]！
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[海魂道链]材料不够！
+break
+
+[@海魂战镯]
+#if
+CHECKGAMEGOLD > 887
+checkitem 逆魔手镯(战) 2
+checkitem  神水   2
+#act
+GAMEGOLD - 888
+take 逆魔手镯(战) 2
+take  神水  2
+give 海魂战镯 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[海魂战镯]！
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[海魂战镯]材料不够！
+break
+
+[@海魂法镯]
+#if
+CHECKGAMEGOLD > 887
+checkitem  神水   2
+checkitem 逆魔手镯(法) 2
+#act
+GAMEGOLD - 888
+take 逆魔手镯(法) 2
+take  神水  2
+give 海魂法镯 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[海魂法镯]！
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[海魂法镯]材料不够！
+break
+
+[@海魂道镯]
+#if
+CHECKGAMEGOLD > 887
+checkitem 逆魔手镯(道) 2
+checkitem  神水   2
+#act
+GAMEGOLD - 888
+take 逆魔手镯(道) 2
+take 神水   2
+give 海魂道镯 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[海魂道镯]！
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[海魂道镯]材料不够！
+break
+
+[@海魂战戒]
+#if
+CHECKGAMEGOLD > 887
+checkitem  神水   2
+checkitem 逆魔戒指(战) 2
+#act
+GAMEGOLD - 888
+take 逆魔戒指(战) 2
+take  神水  2
+give 海魂战戒 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[海魂战戒]！
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[海魂战戒]材料不够！
+break
+
+[@海魂法戒]
+#if
+CHECKGAMEGOLD > 887
+checkitem  神水   2
+checkitem 逆魔戒指(法) 2
+#act
+GAMEGOLD - 888
+take  神水  2
+take 逆魔戒指(法) 2
+give 海魂法戒 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[海魂法戒]！
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[海魂法戒]材料不够！
+break
+[@海魂道戒]
+#if
+CHECKGAMEGOLD > 887
+checkitem  神水   2
+checkitem 逆魔戒指(道) 2
+#act
+GAMEGOLD - 888
+take 神水  2
+take 逆魔戒指(道) 2
+give 海魂道戒 1
+SENDMSG 0 〖提示〗玩家[%s]成功合成[海魂道戒]！
+#elseact
+SENDMSG 6 〖失败〗对不起！你合成[海魂道戒]材料不够！
+break
+
+[@逆魔合成]
+#IF
+#ACT
+OpenBigDialogBox -1
+#SAY
+　\
+　\
+　\
+我是Jacky三峡传奇版本制作者，请问你需要合成什么？\
+合成都需要必须的材料加50元宝才能合成！！！\
+<逆魔头盔(法)/@逆魔头盔(法)>[英雄头盔(法)*2+神水2]　　<逆魔头盔(战)/@逆魔头盔(战)>[英雄头盔(战)*2+神水2]\
+<逆魔头盔(道)/@逆魔头盔(道)>[英雄头盔(道)*2+神水2]　　<逆魔项链(战)/@逆魔项链(战)>[英雄项链(战)*2+神水2]\
+<逆魔项链(法)/@逆魔项链(法)>[英雄项链(法)*2+神水2]　　<逆魔项链(道)/@逆魔项链(道)>[英雄项链(道)*2+神水2]\
+<逆魔手镯(战)/@逆魔手镯(战)>[英雄手镯(战)*2+神水2]　　<逆魔手镯(法)/@逆魔手镯(法)>[英雄手镯(法)*2+神水2]\
+<逆魔手镯(道)/@逆魔手镯(道)>[英雄手镯(道)*2+神水2]　　<逆魔戒指(法)/@逆魔戒指(法)>[英雄戒指(法)*2+神水2]\
+<逆魔戒指(战)/@逆魔戒指(战)>[英雄戒指(战)*2+神水2]　　<逆魔戒指(道)/@逆魔戒指(道)>[英雄戒指(道)*2+神水2]\
+　\\
+
+　　　　　　　　　　　　　　　　　　　　　　　　　　　<关闭/@exit>
+[@海魂战链]
+---逆魔
+[@逆魔手镯(战)]
+#IF
+CHECKITEM 英雄手镯(战) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄手镯(战) 2
+Take 神水 2
+Give 逆魔手镯(战) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔手镯(法)]
+#IF
+CHECKITEM 英雄手镯(法) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄手镯(法) 2
+Take 神水 2
+Give 逆魔手镯(法) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔手镯(道)]
+#IF
+CHECKITEM 英雄手镯(道) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄手镯(道) 2
+Take 神水 2
+Give 逆魔手镯(道) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔项链(道)]
+#IF
+CHECKITEM 英雄项链(道) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄项链(道) 2
+Take 神水 2
+Give 逆魔项链(道) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔项链(战)]
+#IF
+CHECKITEM 英雄项链(战) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄项链(战) 2
+Take 神水 2
+Give 逆魔项链(战) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔项链(法)]
+#IF
+CHECKITEM 英雄项链(法) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄项链(法) 2
+Take 神水 2
+Give 逆魔项链(法) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔头盔(法)]
+#IF
+CHECKITEM 英雄头盔(法) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄头盔(法) 2
+Take 神水 2
+Give 逆魔头盔(法) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔头盔(战)]
+#IF
+CHECKITEM 英雄头盔(战) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄头盔(战) 2
+Take 神水 2
+Give 逆魔头盔(战) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔头盔(道)]
+#IF
+CHECKITEM 英雄头盔(道) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄头盔(道) 2
+Take 神水 2
+Give 逆魔头盔(道) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔戒指(道)]
+#IF
+CHECKITEM 英雄戒指(道) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄戒指(道) 2
+Take 神水 2
+Give 逆魔戒指(道) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔戒指(战)]
+#IF
+CHECKITEM 英雄戒指(战) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄戒指(战) 2
+Take 神水 2
+Give 逆魔戒指(战) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+[@逆魔戒指(法)]
+#IF
+CHECKITEM 英雄戒指(法) 2
+CHECKITEM 神水 2
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+Take 英雄戒指(法) 2
+Take 神水 2
+Give 逆魔戒指(法) 1
+sendmsg 0 恭喜玩家<$USERNAME>，合成装备逆魔成功！
+#ELSEACT
+MESSAGEBOX 对不起，由于你缺少物品，所以无法给您合成
+Break
+
+

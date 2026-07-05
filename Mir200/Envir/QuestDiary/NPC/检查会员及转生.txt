@@ -1,0 +1,99 @@
+[@检查会员转生1]
+{
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A包月制会员.txt   >    30   p0    p1
+#act
+DELUSERDATE ../QuestDiary/数据文件/A包月制会员.txt
+set [630] 0
+goto @会员提示
+
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A包月制会员.txt   =    30   p0    p1
+#act
+goto @会员提示
+
+
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A半年制会员.txt   >    180   p0    p1
+#act
+DELUSERDATE   ../QuestDiary/数据文件/A半年制会员.txt
+set [630] 0
+goto @会员提示
+
+
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A半年制会员.txt   =    180   p0    p1
+#act
+goto @会员提示
+
+
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A全年制会员.txt   >    360   p0    p1
+#act
+DELUSERDATE   ../QuestDiary/数据文件/A全年制会员.txt
+set [630] 0
+goto @会员提示
+
+
+#if
+CHECKUSERDATE   ../QuestDiary/数据文件/A全年制会员.txt   =    360   p0    p1
+#act
+goto @会员提示
+
+#IF
+  CHECKIPLIST   ../QuestDiary/数据文件/A联盟网吧IP.txt
+#ACT
+set [630] 1
+
+
+#if
+CHECKRENEWLEVEL > 2
+#act
+POWERRATE  160  6000000
+SENDMSG 6 你的幸运提高了未知点数
+SENDMSG 6 你的毒物恢复提高了未知点数
+SENDMSG 6 你的魔法躲避提高了未知点数
+SENDMSG 6 你的神圣攻击提高了未知点数
+addnamelist 3.txt
+break
+
+#if
+CHECKRENEWLEVEL = 2
+#act
+POWERRATE  140  6000000
+SENDMSG 6 你的幸运提高了未知点数
+SENDMSG 6 你的毒物恢复提高了未知点数
+SENDMSG 6 你的魔法躲避提高了未知点数
+SENDMSG 6 你的神圣攻击提高了未知点数
+addnamelist 2.txt
+break
+
+#if
+CHECKRENEWLEVEL = 1
+#act
+POWERRATE  120  6000000
+SENDMSG 6 你的幸运提高了未知点数
+SENDMSG 6 你的毒物恢复提高了未知点数
+SENDMSG 6 你的魔法躲避提高了未知点数
+SENDMSG 6 你的神圣攻击提高了未知点数
+addnamelist 1.txt
+break
+
+
+
+[@会员提示]
+#if
+#say
+尊敬的会员，您好，感谢您在过去的岁月里选择了风云网络\
+提供的会员服务。有了您的信任和支持，才有了风云传说的\
+不断发展与进步，在未来的日子里，风云传说将一如既往地\
+为会员提供优质、安全、周到的服务！\
+你在风云网络办理的会员还剩<$STR(p1)>天有效期,如果您想继续\
+享受会员功能，请<联系管理员/@newhkfs>进行续费，我们将十分荣幸为\
+您继续效劳!\
+再次感谢您对风云传说的信任和支持！
+#act
+SENDMSG 6 尊敬的会员，您好，感谢您在过去的岁月里选择了风云网络提供的会员服务。有了您的信任和支持，才有了风云传说的不断发展与进步，在未来的日子里，风云传说将一如既往地为会员提供优质、安全、周到的服务！你在风云网络办理的会员还剩<$STR(p1)>天有效期,如果您想继续享受会员功能，请联系管理员进行续费，我们将十分荣幸为您继续效劳!再次感谢您对风云传说的信任和支持！续费电话：0717-8915678
+
+
+}

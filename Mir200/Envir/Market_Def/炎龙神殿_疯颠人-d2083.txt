@@ -1,0 +1,73 @@
+(@buy @Sell @repair @s_repair)
+%100
++22
++23
+
+[@main]
+#IF
+ checkpkpoint 2
+#SAY
+我不想和你这样的人打交道...你这个杀人犯\ \
+ <离开/@exit>
+#ELSEACT
+ goto @hao
+
+
+
+[@hao]
+#IF
+ checkitem 龙之戒指 1
+#SAY
+朋友，把你身上的龙之戒指送我好吗？\ \
+ <送你/@song>\ \
+ <不送/@exit>
+#ELSESAY
+世人笑我太疯颠，\
+我笑世人看不穿。\
+风华一生光辉尽，\
+犹比雪雾霜满天。\ \
+我的东西名字里面有个龙 是我的戒指弄丢了？ 你能帮我找找么？\ \
+ <劳烦了/@exit>
+
+[@song]
+#IF
+ checkitem 龙之戒指 1
+#SAY
+年轻人，心眼不错。今天我老头子就告诉你个秘密。\
+我可以打造传说中的炎龙戒指。\
+当然，我只帮好心眼的人打造。他可以带有特殊属性的哦\
+打造需要火焰戒指、镇龙珠、修炼石*2，石钥匙*10。\ \
+ <打造/@zao>\ \
+ <离开/@exit>
+#ELSESAY
+竟然又拿走了？这辈子别再来找我！\ \
+ <离开/@exit>
+
+[@zao]
+#IF
+ checkitem 龙之戒指 1
+ checkitem 火焰戒指 1
+ checkitem 镇龙珠 1
+ checkitem 修炼石 2
+ checkitem 石钥匙 10
+#ACT
+ take 龙之戒指 1
+ take 火焰戒指 1
+ take 镇龙珠 1
+ take 修炼石 2
+ take 石钥匙 10
+ give 炎龙戒指  1
+#SAY
+我喜欢好心眼的年轻人，我们下次见喽。\ \
+<离开/@exit>
+#ELSEACT
+ goto @wrong
+
+[@wrong]
+#ACT
+ take 龙之戒指 1
+#SAY
+东西不够呀？那等下次再来找我吧。\
+只不过我老了。下次我所就忘记你的样子了。\
+再来要再带个龙之戒指哦。\ \
+ <离开/@exit>

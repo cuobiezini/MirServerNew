@@ -1,0 +1,28 @@
+[@Main]
+<尊崇的玩家：/FCOLOR=3> <$USERNAME> 你好，<欢送来到：/FCOLOR=3><$SERVERNAME>\\
+这里我们提供超级传送!但是需求你破费点元宝!\\
+　\
+胆子不错，里面神秘怪哦，你想进去吗？\\
+　\
+费用：50元宝！\\
+　\
+挑战难度：★★★★★★\\
+
+                           <进入/@沙大门>                               <退出/@exit> \\\
+
+
+
+
+[@沙大门]
+#IF
+checklevelex > 40
+CHECKGAMEGOLD > 50
+#ACT
+GAMEGOLD - 50
+mapmove 1121
+give 回城卷 1
+SENDMSG 0  玩家[%s]进入了洪荒世界,---弃天帝·無上轮回世界!
+SENDMSG 0  玩家[%s]进入了洪荒世界,---弃天帝·無上轮回世界!
+SENDMSG 0  玩家[%s]进入了洪荒世界,---弃天帝·無上轮回世界!
+#ELSEACT
+MESSAGEBOX 你的元宝不够50个，请去兑换更多的银子后再来！

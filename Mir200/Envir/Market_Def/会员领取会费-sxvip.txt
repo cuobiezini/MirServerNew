@@ -1,0 +1,414 @@
+[@main]
+#IF
+check [630] 1
+CHECKLEVEL 30
+#act
+goto @main-1
+#ELSESAY
+很抱歉.我们的服务只对级别达到30以上会员开放.\
+想要成为会员请和此游戏管理者联系.\
+加入会员请咨询土城安全区<[329，331]>的会员专区\ \
+　　　　　　　　　　　　<离开/@exit>
+[@main-1]
+#if
+dayofweek sun
+#act
+goto @sun
+break
+#if
+dayofweek mon
+#act
+goto @mon
+break
+#if
+dayofweek tue
+#act
+goto @tue
+break
+#if
+dayofweek wed
+#act
+goto @wed
+break
+#if
+dayofweek thu
+#act
+goto @thu
+break
+#if
+dayofweek fri
+#act
+goto @fri
+break
+#if
+dayofweek sat
+#act
+goto @sat
+break
+[@sun]
+#if
+dayofweek mon
+#act
+goto @jingao
+break
+#if
+dayofweek tue
+#act
+goto @jingao
+break
+#if
+dayofweek wed
+#act
+goto @jingao
+break
+#if
+dayofweek thu
+#act
+goto @jingao
+break
+#if
+dayofweek fri
+#act
+goto @jingao
+break
+#if
+dayofweek sat
+#act
+goto @jingao
+break
+#IF
+check [701] 0
+check [630] 1
+#act
+reset [701] 7
+set [701] 1
+give 金币 300000
+give 超级祝福油   1
+
+#SAY
+<星期天>\
+嘻嘻！约会的好机会！\
+这是今天的工资，还有购物补贴，你拿好了！
+#ELSEACT
+goto @huashaocf
+[@mon]
+#if
+dayofweek sun
+#act
+goto @jingao
+break
+#if
+dayofweek tue
+#act
+goto @jingao
+break
+#if
+dayofweek wed
+#act
+goto @jingao
+break
+#if
+dayofweek thu
+#act
+goto @jingao
+break
+#if
+dayofweek fri
+#act
+goto @jingao
+break
+#if
+dayofweek sat
+#act
+goto @jingao
+break
+#IF
+check [702] 0
+check [630] 1
+#act
+reset [701] 7
+set [702] 1
+give 金币 200000
+give 超级祝福油   1
+
+#SAY
+<星期一>\
+新的开始哟！\
+这是今天的工资，你拿好了！
+#ELSEACT
+goto @huashaocf
+
+[@tue]
+#if
+dayofweek sun
+#act
+goto @jingao
+break
+#if
+dayofweek mon
+#act
+goto @jingao
+break
+#if
+dayofweek wed
+#act
+goto @jingao
+break
+#if
+dayofweek thu
+#act
+goto @jingao
+break
+#if
+dayofweek fri
+#act
+goto @jingao
+break
+#if
+dayofweek sat
+#act
+goto @jingao
+break
+#IF
+check [703] 0
+check [630] 1
+#act
+reset [701] 7
+set [703] 1
+give 金币 200000
+give 超级祝福油   1
+
+#SAY
+<星期二>\
+要好好努力呀！\
+这是今天的工资，你拿好了！
+#ELSEACT
+goto @huashaocf
+[@wed]
+#if
+dayofweek sun
+#act
+goto @jingao
+break
+#if
+dayofweek mon
+#act
+goto @jingao
+break
+#if
+dayofweek tue
+#act
+goto @jingao
+break
+
+#if
+dayofweek thu
+#act
+goto @jingao
+break
+#if
+dayofweek fri
+#act
+goto @jingao
+break
+#if
+dayofweek sat
+#act
+goto @jingao
+break
+#IF
+check [704] 0
+check [630] 1
+#act
+reset [701] 7
+set [704] 1
+give 金币 200000
+give 超级祝福油   1
+
+#SAY
+<星期三>\
+好好关心你另一半呀！\
+这是今天的工资，你拿好了！
+#ELSEACT
+goto @huashaocf
+[@thu]
+#if
+dayofweek sun
+#act
+goto @jingao
+break
+
+#if
+dayofweek mon
+#act
+goto @jingao
+break
+#if
+dayofweek tue
+#act
+goto @jingao
+break
+#if
+dayofweek wed
+#act
+goto @jingao
+break
+#if
+dayofweek fri
+#act
+goto @jingao
+break
+#if
+dayofweek sat
+#act
+goto @jingao
+break
+#IF
+check [705] 0
+check [630] 1
+#act
+reset [705] 7
+set [705] 1
+give 金币 200000
+give 超级祝福油   1
+
+#SAY
+<星期四>\
+今天小心点，怪物很厉害的！\
+这是今天的工资，你拿好了！
+#ELSEACT
+goto @huashaocf
+[@fri]
+#if
+dayofweek sun
+#act
+goto @jingao
+break
+
+#if
+dayofweek mon
+#act
+goto @jingao
+break
+#if
+dayofweek tue
+#act
+goto @jingao
+break
+#if
+dayofweek wed
+#act
+goto @jingao
+break
+#if
+dayofweek thu
+#act
+goto @jingao
+break
+#if
+dayofweek sat
+#act
+goto @jingao
+break
+#IF
+check [706] 0
+check [630] 1
+#act
+reset [706] 7
+set [706] 1
+give 金币 200000
+give 超级祝福油   1
+
+#SAY
+<星期五>\
+今天你约会了吗？\
+这是今天的工资，你拿好了！
+#ELSEACT
+goto @huashaocf
+[@sat]
+#if
+dayofweek sun
+#act
+goto @jingao
+break
+#if
+dayofweek mon
+#act
+goto @jingao
+break
+#if
+dayofweek tue
+#act
+goto @jingao
+break
+#if
+dayofweek wed
+#act
+goto @jingao
+break
+#if
+dayofweek thu
+#act
+goto @jingao
+break
+#if
+dayofweek fri
+#act
+goto @jingao
+break
+#IF
+check [707] 0
+check [630] 1
+#act
+reset [707] 7
+set [707] 1
+give 金币 200000
+give 超级祝福油   1
+
+#SAY
+<星期六>\
+晚上去哪里宵夜？\
+这是今天的工资，你拿好了！
+#ELSEACT
+goto @huashaocf
+[@jingao]
+#if
+checknamelist 刷钱.txt
+#act
+goto @huashaocf1
+#elseact
+addnamelist 刷钱.txt
+#elsesay
+<警告>发送非法数据包,已被记录!不听劝告者风云网络将对你进行惩罚\ \ \ \
+<关闭/@exit>
+
+
+[@huashaocf]
+#IF
+check [630] 1
+#say
+你好象今天已经领过了啊，怎么，还想再领？走开!不然我\
+请<jacky>将你逐出会员。\
+<退出/@exit>
+#ELSEACT
+goto @huashaocf1
+
+[@huashaocf1]
+#IF
+CHECKLEVEL 43
+#ACT
+CHANGELEVEL -1
+  DELSKILL 召唤神兽
+  DELSKILL 冰咆哮
+  DELSKILL 烈火剑法
+mapmove 3 333 333
+exeaction KILL 0
+SENDMSG 2 %s因使用非法程序发送指令试图作弊被斩首!风云网络已经采用最新触发系统防止玩家作弊，任何作弊的玩家将受到惩罚！很抱歉.我们的服务只对会员开放，想要成为会员请和此游戏管理者联系.
+exeaction KILL 0
+#ELSEACT
+  DELSKILL 召唤神兽
+  DELSKILL 冰咆哮
+  DELSKILL 烈火剑法
+take   金币 1000000
+mapmove 3 333 333
+exeaction KILL 0

@@ -1,0 +1,538 @@
+;WWW.hmeee.com
+
+;风云传说（v1.9）商店脚本文件
+;2004/12/23	Jacky	调整更新
+
+[@main]
+见到像你这么勇敢的人，真让人高兴。我是一个生于海边的合成师，\
+对于一切水属性的装备都有特殊的研究。\
+很乐意让你见识一下我的手艺。\ \
+ <合成/@laitcn>物品\
+ <如何合成物品/@price>\
+ <进行对话/@lait>\ \
+ <关闭/@exit>
+
+[@laitcn]
+请选择你要合成的装备：\ \
+<海魂战靴/@hzx> <海魂法靴/@hfx> <海魂道靴/@hdx>\
+<海魂战腕/@hzw> <海魂法腕/@hfw> <海魂道腕/@hdw>\
+<海魂战镯/@hzz> <海魂法镯/@hfz> <海魂道镯/@hdz>\
+<海魂战戒/@hzj> <海魂法戒/@hfj> <海魂道戒/@hdj>\
+<海魂战链/@hzl> <海魂法链/@hfl> <海魂道链/@hdl>\ \
+ <返回/@main>
+
+[@hzx]
+#IF
+ checkitem 海魂靴(战) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 圣战头盔 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂靴(战) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 圣战头盔 1
+ take 祝福油 1
+ give 海魂战靴 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hfx]
+#IF
+ checkitem 海魂靴(法) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 法神头盔 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂靴(法) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 法神头盔 1
+ take 祝福油 1
+ give 海魂法靴 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hdx]
+#IF
+ checkitem 海魂靴(道) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 天尊头盔 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂靴(道) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 天尊头盔 1
+ take 祝福油 1
+ give 海魂道靴 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hzw]
+#IF
+ checkitem 海魂护腕(战) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 神水 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂护腕(战) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 神水 1
+ take 祝福油 1
+ give 海魂战腕 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hfw]
+#IF
+ checkitem 海魂护腕(法) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 神水 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂护腕(法) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 神水 1
+ take 祝福油 1
+ give 海魂法腕 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hdw]
+#IF
+ checkitem 海魂护腕(道) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 神水 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂护腕(道) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 神水 1
+ take 祝福油 1
+ give 海魂道腕 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hzz]
+#IF
+ checkitem 海魂手镯(战) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 圣战手镯 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂手镯(战) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 圣战手镯 1
+ take 祝福油 1
+ give 海魂战镯 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hfz]
+#IF
+ checkitem 海魂手镯(法) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 法神手镯 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂手镯(法) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 法神手镯 1
+ take 祝福油 1
+ give 海魂法镯 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hdz]
+#IF
+ checkitem 海魂手镯(道) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 天尊手镯 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂手镯(道) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 天尊手镯 1
+ take 祝福油 1
+ give 海魂道镯 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hzj]
+#IF
+ checkitem 海魂戒指(战) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 圣战戒指 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂戒指(战) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 圣战戒指 1
+ take 祝福油 1
+ give 海魂战戒 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hfj]
+#IF
+ checkitem 海魂戒指(法) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 法神戒指 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂戒指(法) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 法神戒指 1
+ take 祝福油 1
+ give 海魂法戒 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hdj]
+#IF
+ checkitem 海魂戒指(道) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 天尊戒指 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂戒指(道) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 天尊戒指 1
+ take 祝福油 1
+ give 海魂道戒 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hzl]
+#IF
+ checkitem 海魂项链(战) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 圣战项链 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂项链(战) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 圣战项链 1
+ take 祝福油 1
+ give 海魂战链 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hfl]
+#IF
+ checkitem 海魂项链(法) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 法神项链 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂项链(法) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 法神项链 1
+ take 祝福油 1
+ give 海魂法链 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@hdl]
+#IF
+ checkitem 海魂项链(道) 1
+ checkitem 修炼石 1
+ checkitem 金条 1
+ checkitem 黑铁矿石 10
+ checkitem 天尊项链 1
+ checkitem 祝福油 1
+#ACT
+ take 海魂项链(道) 1
+ take 修炼石 1
+ take 金条 1
+ take 黑铁矿石 10
+ take 天尊项链 1
+ take 祝福油 1
+ give 海魂道链 1
+#SAY
+合成的不错，带上试试吧。\ \
+ <离开/@exit>
+#ELSESAY
+你身上带的不全，我无法为你合成！\ \
+ <离开/@exit>
+
+[@lait]
+古老神秘的沉船上，有着上古遗留下来的宝藏。\
+但千年来都由强大的海底生物所看守，\
+没有人可以活着回来。\
+希望你可以创造法玛大陆的奇迹！\ \
+ <回盟重/@hmc>\ \
+ <关闭/@exit>
+
+[@hmc]
+#ACT
+mapmove 3 330 330
+
+[@price]
+请选择你要查看的道具：\ \
+<海魂战靴/@zx> <海魂法靴/@fx> <海魂道靴/@dx>\
+<海魂战腕/@zw> <海魂法腕/@fw> <海魂道腕/@dw>\
+<海魂战镯/@zz> <海魂法镯/@fz> <海魂道镯/@dz>\
+<海魂战戒/@zj> <海魂法戒/@fj> <海魂道戒/@dj>\
+<海魂战链/@zl> <海魂法链/@fl> <海魂道链/@dl>\ \
+ <返回/@main>
+
+[@zx]
+海魂靴(战)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+圣战头盔一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@fx]
+海魂靴(法)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+法神头盔一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@dx]
+海魂靴(道)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+天尊头盔一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@zw]
+海魂护腕(战)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+神水一瓶\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@fw]
+海魂护腕(法)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+神水一瓶\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@dw]
+海魂护腕(道)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+神水一瓶\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@zz]
+海魂手镯(战)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+圣战手镯一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@fz]
+海魂手镯(法)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+法神手镯一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@dz]
+海魂手镯(道)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+天尊手镯一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@zj]
+海魂戒指(战)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+圣战戒指一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@fj]
+海魂戒指(法)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+法神戒指一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@dj]
+海魂戒指(道)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+天尊戒指一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@zl]
+海魂项链(战)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+圣战项链一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@fl]
+海魂项链(法)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+法神项链一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
+
+[@dl]
+海魂项链(道)一个 \
+修炼石一个 \
+金条一根 \
+黑铁矿石十个\
+天尊项链一个\
+祝福油一瓶\
+如果你准备好以上材料，我将为你合成。\ \
+ <返回/@price>　 <离开/@exit>
